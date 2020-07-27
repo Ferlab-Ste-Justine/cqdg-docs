@@ -18,7 +18,7 @@ Molecular data will be submitted to your local **Regional Data Processing Centre
 
 To support the gathering of high-quality data, a clinical data dictionary defines the ARGO data model as well as some data validations that are performed at the time of submission. Clinical data is defined in logical groupings, which will be submitted as TSV files in the ARGO Program Services section.
 
-Explore the details of the ARGO clinical dataset in the **[ARGO Data Dictionary Viewer](/dictionary).**
+Explore the details of the ARGO clinical dataset in the **[ARGO Data Dictionary Viewer](/scripts/dictionary).**
 
 ## Data Submission and Release Process
 

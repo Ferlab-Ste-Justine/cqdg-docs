@@ -82,6 +82,8 @@ npm ci
 3. Run the 'Add Dictionary' script:
 
 ```
+export export LECTERN_USERNAME= ...
+export export LECTERN_PASSWORD= ...
 npm run add
 ```
 

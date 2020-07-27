@@ -142,7 +142,7 @@ The experiment section contains details that are relevant to the experimental re
 
 #### **Samples:**
 
-The sample section contains details of the clinical data and key sample descriptors related to the submitted files. In order to submit a payload, this data must be [registered](/docs/submission/registering-samples) in the ARGO Data Platform. For allowed values of all fields, please see the Sample Registration file of the [Data Dictionary](/dictionary).
+The sample section contains details of the clinical data and key sample descriptors related to the submitted files. In order to submit a payload, this data must be [registered](/docs/submission/registering-samples) in the ARGO Data Platform. For allowed values of all fields, please see the Sample Registration file of the [Data Dictionary](/scripts/dictionary).
 
 If the data for a sample is different than what has been registered, metadata validation will fail immediately upon submission.
 

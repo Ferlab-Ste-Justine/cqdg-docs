@@ -4,13 +4,13 @@ title: Data Dictionary
 platform_key: DOCS_DICTIONARY_OVERVIEW
 ---
 
-The ICGC ARGO [Data Dictionary](/dictionary) expresses the details of the ARGO data model, which adheres to specific formats and restrictions to ensure a standard of data quality. The Data Dictionary defines a set of files, each related to a clinical concept, that can be submitted to the ARGO Data Platform.
+The ICGC ARGO [Data Dictionary](/scripts/dictionary) expresses the details of the ARGO data model, which adheres to specific formats and restrictions to ensure a standard of data quality. The Data Dictionary defines a set of files, each related to a clinical concept, that can be submitted to the ARGO Data Platform.
 
 For recent updates, check the [Dictionary Release Notes](/docs/release-notes/dictionary-releases).
 
 ## Understanding the Data Dictionary
 
-The [dictionary table view](/dictionary) lists all of the clinical fields that the ARGO Data Platform accepts, separated by clinical TSV file.
+The [dictionary table view](/scripts/dictionary) lists all of the clinical fields that the ARGO Data Platform accepts, separated by clinical TSV file.
 
 Field listings can be filtered by Data Tier and Attribute, which can help identify which fields are necessary for [clinical data completion](/docs/submission/clinical-data-validation-rules).
 

@@ -8,7 +8,7 @@ It is important that the relationships between entities are maintained across al
 
 > Registration is the first step in the data submission life cycle. You **must** register samples before submitting any clinical or molecular data.
 
-The basic set of data that must be registered for each sample can be found in the Sample Registration section of the [Data Dictionary](/dictionary).
+The basic set of data that must be registered for each sample can be found in the Sample Registration section of the [Data Dictionary](/scripts/dictionary).
 
 During sample registration, **ARGO IDs** will be assigned to your program entities. Any attempts to submit data that does not refer to a registered donor, specimen, or sample will result in an error. You will be prompted to complete sample registration before any clinical or molecular data is submitted to your program.
 
@@ -26,7 +26,7 @@ There is only one Sample Registration workspace for each program. You can check 
 
 1. When logged in, navigate to the **Program Services** area in the top menu.
 1. Click on the **Register Samples** section in the left menu for your program.
-1. Download the **TSV Template** for the sample registration file and format it according to the current [Data Dictionary](/dictionary) specifications.
+1. Download the **TSV Template** for the sample registration file and format it according to the current [Data Dictionary](/scripts/dictionary) specifications.
 
 For help with formatting this file, please refer to [Tips for Formatting your TSV files](/docs/submission/submitting-clinical-data#tips-for-formatting-tsv-files)
 

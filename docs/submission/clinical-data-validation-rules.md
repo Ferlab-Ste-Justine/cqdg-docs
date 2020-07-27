@@ -85,7 +85,7 @@ Once all core clinical fields and files have been submitted for a donor, the don
 
 ### How is clinical data completion calculated?
 
-Complete clinical data means that a donor has a valid value submitted for all fields labelled **"core"** in the [data dictionary](/dictionary), for a minimum set of clinical files. In more detail:
+Complete clinical data means that a donor has a valid value submitted for all fields labelled **"core"** in the [data dictionary](/scripts/dictionary), for a minimum set of clinical files. In more detail:
 
 - A donor must have a donor file submitted with all core fields provided.
 - A donor must have at least one primary diagnosis with all core fields provided.
