@@ -1,0 +1,296 @@
+{
+  "name": "treatment",
+  "description": "The collection of data elements related to a donor's treatment at a specific point in the clinical record. To submit multiple treatments for a single donor, please submit treatment rows in the treatment file for this donor.",
+  "meta": {
+    "parent": "donor"
+  },
+  "fields": [
+    {
+      "name": "program_id",
+      "valueType": "string",
+      "description": "Unique identifier of the ARGO program.",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "foreignKey": "sample_registration.program_id",
+        "displayName": "Program ID"
+      },
+      "restrictions": {
+        "required": true
+      }
+    },
+    {
+      "name": "submitter_donor_id",
+      "description": "Unique identifier of the donor, assigned by the data provider.",
+      "valueType": "string",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "foreignKey": "sample_registration.submitter_donor_id",
+        "displayName": "Submitter Donor ID",
+        "notes": "#/notes/submitter_id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/submitter_id"
+      }
+    },
+    {
+      "name": "submitter_treatment_id",
+      "description": "Unique identifier of the treatment, assigned by the data provider.",
+      "valueType": "string",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "Submitter Treatment ID",
+        "notes": "#/notes/submitter_id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/submitter_id"
+      }
+    },
+    {
+      "name": "submitter_primary_diagnosis_id",
+      "valueType": "string",
+      "description": "Indicate the primary diagnosis event in the clinical timeline that this treatment was related to.",
+      "meta": {
+        "primaryId": true,
+        "displayName": "Submitter Primary Diagnosis ID",
+        "notes": "#/notes/submitter_id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/submitter_id"
+      }
+    },
+    {
+      "name": "treatment_type",
+      "description": "Indicate the type of treatment regimen that the donor completed.",
+      "valueType": "string",
+      "isArray": true,
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "Ablation",
+          "Bone marrow transplant",
+          "Chemotherapy",
+          "Endoscopic therapy",
+          "Hormonal therapy",
+          "Immunotherapy",
+          "No treatment",
+          "Other targeting molecular therapy",
+          "Photodynamic therapy",
+          "Radiation therapy",
+          "Stem cell transplant",
+          "Surgery"
+        ]
+      },
+      "meta": {
+        "validationDependency": true,
+        "core": true,
+        "notes": "Depending on the treatment_type(s) selected, additional treatment details may be required to be submitted. For example, if treatment_type includes 'Chemotherapy', the supplemental Chemotherapy treatment type file is required.\nTo include multiple values, separate values with a pipe delimiter '|' within your file.",
+        "displayName": "Treatment Type",
+        "examples": "Chemotherapy|Hormonal therapy"
+      }
+    },
+    {
+      "name": "age_at_consent_for_treatment",
+      "description": "Indicate the age of donor when consent was given for treatment.",
+      "valueType": "integer",
+      "meta": { "displayName": "Age At Consent For Treatment" }
+    },
+    {
+      "name": "is_primary_treatment",
+      "description": "Indicate if the treatment was the primary treatment following the initial diagnosis.",
+      "valueType": "string",
+      "restrictions": {
+        "required": true,
+        "codeList": "#/list/yes_no"
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Is Primary Treatment"
+      }
+    },
+    {
+      "name": "line_of_treatment",
+      "description": "Indicate the line of treatment if it is not the primary treatment.",
+      "valueType": "integer",
+      "meta": {
+        "displayName": "Line Of treatment",
+        "examples": "2,3,4"
+      }
+    },
+    {
+      "name": "treatment_start_interval",
+      "description": "The interval between the primary diagnosis and initiation of treatment, in days.",
+      "valueType": "integer",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "units": "days",
+        "notes": "The associated primary diagnosis is used as the reference point for this interval. To calculate this, find the number of days since the date of primary diagnosis.",
+        "displayName": "Treatment Start Interval"
+      }
+    },
+    {
+      "name": "treatment_duration",
+      "description": "The duration of treatment regimen, in days.",
+      "valueType": "integer",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "units": "days",
+        "displayName": "Treatment Duration"
+      }
+    },
+    {
+      "name": "days_per_cycle",
+      "description": "Indicate the number of days in a treatment cycle.",
+      "valueType": "integer",
+      "meta": { "displayName": "Days Per Cycle" }
+    },
+    {
+      "name": "number_of_cycles",
+      "description": "Indicate the number of treatment cycles.",
+      "valueType": "integer",
+      "meta": { "displayName": "Number Of Cycles" }
+    },
+    {
+      "name": "therapeutic_intent",
+      "description": "The therapeutic intent, the reason behind the choice of a therapy, of the treatment.",
+      "valueType": "string",
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "Adjuvant",
+          "Concurrent",
+          "Curative",
+          "Neoadjuvant",
+          "Not applicable",
+          "Palliative",
+          "Unknown"
+        ]
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Therapeutic Intent"
+      }
+    },
+    {
+      "name": "response_to_therapy",
+      "description": "The donor's response to the applied treatment regimen. (Source: RECIST)",
+      "valueType": "string",
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "Complete response",
+          "Disease progression",
+          "NED",
+          "Partial response",
+          "Stable disease"
+        ]
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Response To Therapy"
+      }
+    },
+    {
+      "name": "outcome_of_therapy",
+      "description": "Indicate the donor's outcome of the prescribed treatment.",
+      "valueType": "string",
+      "restrictions": {
+        "codeList": [
+          "Treatment completed as prescribed",
+          "Treatment incomplete due to technical or organizational problems",
+          "Treatment incomplete because patient died",
+          "Patient choice (stopped or interrupted treatment)",
+          "Physician decision (stopped or interrupted treatment)",
+          "Treatment stopped due to lack of efficacy (disease progression)",
+          "Treatment stopped due to acute toxicity",
+          "Other",
+          "Not applicable",
+          "Unknown"
+        ]
+      },
+      "meta": {
+        "displayName": "Outcome Of Therapy"
+      }
+    },
+    {
+      "name": "toxicity_type",
+      "description": "If the treatment was terminated early due to acute toxicity, indicate whether it was due to hemotological toxicity or non-hemotological toxicity.",
+      "valueType": "string",
+      "restrictions": {
+        "codeList": ["Hemotological", "Non-hemotological"]
+      },
+      "meta": {
+        "displayName": "Toxicity Type"
+      }
+    },
+    {
+      "name": "hemotological_toxicity",
+      "description": "Indicate the hemotological toxicities which caused early termination of the treatment. (Codelist reference: NCI-CTCAE (v5.0))",
+      "valueType": "string",
+      "isArray": true,
+      "restrictions": {
+        "codeList": [
+          "Anemia - Grade 3",
+          "Anemia - Grade 4",
+          "Anemia - Grade 5",
+          "Neutropenia - Grade 3",
+          "Neutropenia - Grade 4",
+          "Neutropenia - Grade 5",
+          "Thrombocytopenia - Grade 3",
+          "Thrombocytopenia - Grade 4",
+          "Thrombocytopenia - Grade 5"
+        ]
+      },
+      "meta": {
+        "displayName": "Hemotological Toxicity",
+        "notes": "#/notes/multiple_values"
+      }
+    },
+    {
+      "name": "adverse_events",
+      "description": "Report any treatment related adverse events. (Codelist reference: NCI-CTCAE (v5.0))",
+      "valueType": "string",
+      "isArray": true,
+      "restrictions": {
+        "codeList": "#/list/adverse_events"
+      },
+      "meta": {
+        "displayName": "Adverse Events",
+        "notes": "#/notes/multiple_values"
+      }
+    },
+    {
+      "name": "clinical_trials_database",
+      "description": "If the donor is a participant in a clinical trial, indicate the clinical trial database where the clinical trial is registered.",
+      "valueType": "string",
+      "meta": { "display name": "Clinical Trials Database" },
+      "restrictions": {
+        "codeList": ["NCI Clinical Trials", "EU Clinical Trials Register"]
+      }
+    },
+    {
+      "name": "clinical_trial_number",
+      "description": "Based on the clinical_trial_database, indicate the unique NCT or EudraCT clinical trial identifier of which the donor is a participant.",
+      "valueType": "string",
+      "meta": {
+        "display name": "Clinical Trial Number",
+        "dependsOn": "treatment.clinical_trials_database",
+        "examples": "2016-002120-83,NCT02465060"
+      },
+      "restrictions": {
+        "script": "#/script/treatment/clinicalTrialValidation"
+      }
+    }
+  ]
+}
