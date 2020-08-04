@@ -1,11 +1,11 @@
 {
   "name": "exposure",
-  "description": "The collection of data elements related to a donor's clinically relevant patient information not immediately resulting from genetic predispositions.",
+  "description": "The collection of data elements related to a donor's exposure to specific risk factors.",
   "fields": [
     {
       "name": "program_id",
       "valueType": "string",
-      "description": "Unique identifier of the ARGO program.",
+      "description": "Unique identifier of the CQDG program.",
       "restrictions": {
         "required": true
       },
@@ -26,119 +26,50 @@
       }
     },
     {
-      "name": "tobacco_smoking_history",
-      "description": "Description of the donors smoking history.",
+      "name": "smoking_status",
+      "description": "Smoking status of a patient at the time of the data collection.",
       "valueType": "string",
       "restrictions": {
         "codeList": [
-          "Lifelong non-smoker (<100 cigarettes smoked in lifetime)",
-          "Current smoker (includes daily smokers non-daily/occasional smokers)",
-          "Current reformed smoker for > 15 years",
-          "Current reformed smoker for <= 15 years",
-          "Current reformed smoker, duration not specified",
-          "Smoking history not documented"
+          "Current every day smoker",
+          "Current some day smoker",
+          "Former smoker",
+          "Never smoker",
+          "Smoker, current status unknown",
+          "Unknown if ever smoked",
+          "Current Heavy tobacco smoker (more than 20)",
+          "Current Light tobacco smoker"
         ]
       },
       "meta": {
-        "displayName": "Tobacco Smoking History"
+        "displayName": "Smoking status"
       }
     },
     {
-      "name": "tobacco_smoking_use",
-      "description": "Indicate the average number of cigarettes smoked per day by donor.",
-      "valueType": "integer",
-      "restrictions": {
-        "script": [
-          "function validate() {\r\n  var result = { valid: true, message: \"required if current OR reformed smoker enums\" };\r\n  return result;\r\n}\r\n\r\nvalidate();"
-        ]
-      },
+      "name": "smoking_pack_years",
+      "description": "Number of packs of cigarette multiplied by the number of cigarettes smoked",
+      "valueType": "string",
       "meta": {
-        "displayName": "Tobacco Smoking Use"
+        "dependsOn": "exposure.smoking_status",
+        "notes": "Pack-years is calculated by multiplying the number of packs of cigarettes smoked per day by the number of years the person has smoked. For example, 1 pack year is equal to smoking 1 pack per day for 1 year",
+        "displayName": "smoking_pack_years"
       }
     },
     {
-      "name": "tobacco_smoking_duration",
-      "description": "Indicate the duration of time, in years, that the donor was a smoker.",
-      "valueType": "integer",
-      "restrictions": {
-        "script": [
-          "function validate() {\r\n  var result = { valid: true, message: \"required if current OR reformed smoker enums\" };\r\n  return result;\r\n}\r\n\r\nvalidate();"
-        ]
-      },
-      "meta": {
-        "displayName": "Tobacco Smoking Duration"
-      }
-    },
-    {
-      "name": "alternative_tobacco_use",
-      "description": "Indicate if the donor has a history of using alternative tobacco products. Smokeless tobacco includes chewing tobacco, snuff, and dissolvable tobacco.",
+      "name": "alcohol_status",
+      "description": "Alcohol consumtion based on recommended daily limit",
       "valueType": "string",
       "restrictions": {
-        "codeList": ["E-cigarettes/vaping", "Smokeless tobacco", "Waterpipe"]
-      },
-      "meta": {
-        "displayName": "Alternative Tobacco Use"
-      }
-    },
-    {
-      "name": "alternative_tobacco_duration",
-      "description": "Indicate the duration of time, in years, that the donor was a user of a form of tobacco usage other than cigarettes.",
-      "valueType": "integer"
-    },
-    {
-      "name": "second_hand_smoke_exposure",
-      "description": "Indicate if the donor was exposed to second hand smoke.",
-      "valueType": "string",
-      "restrictions": {
-        "codeList": "#/list/yes_no"
-      },
-      "meta": {
-        "displayName": "Second Hand Smoke Exposure"
-      }
-    },
-    {
-      "name": "second_hand_smoke_duration",
-      "description": "If the donor was exposed to second hand smoke, indicate the duration of time, in years, that they were exposed.",
-      "valueType": "integer",
-      "restrictions": {
-        "script": [
-          "function validate() {\r\n  var result = { valid: true, message: \"required if second_hand_smoke_exposure = YES\" };\r\n  return result;\r\n}\r\n\r\nvalidate();"
-        ]
-      },
-      "meta": {
-        "displayName": "Second Hand Smoke Duration"
-      }
-    },
-    {
-      "name": "alcohol_history",
-      "description": "Indicate the donors response to whether the patient has consumed at least 12 drinks of any alchoholic beverage in their lifetime.",
-      "valueType": "string",
-      "restrictions": {
-        "codeList": "#/list/yes_no"
-      },
-      "meta": {
-        "displayName": "Alcohol History"
-      }
-    },
-    {
-      "name": "alcohol_consumption",
-      "description": "Describe the donor current level of alcohol use as self-reported by the donor.",
-      "valueType": "string",
-      "restrictions": {
-        "script": [
-          "function validate() {\r\n  var result = { valid: true, message: \"required if alcohol_history = YES\" };\r\n  return result;\r\n}\r\n\r\nvalidate();"
-        ],
         "codeList": [
-          "None",
-          "Social drinker (> once a month, < once a week)",
-          "Weekly drinker (>=1x a week)",
-          "Daily drinker",
-          "Occassional drinker (< once a month)",
-          "Not documented"
+          "No alcohol consumtion",
+          "Alcohol intake within recommended daily limit",
+          "Alcohol intake exceeds recommended daily limit",
+          "Alcohol consumption unknownr"
         ]
       },
       "meta": {
-        "displayName": "Alcohol Consumption"
+        "notes": "Refer to the Canadian Centre on Substance Abuse, for men, no more than 15 drinks a week, with no more than 3 drinks a day most days. No more than 4 drinks on any single occasion. For women, no more than 10 drinks a week, with no more than 2 drinks a day most days. No more than 3 drinks on any single occasion.",
+        "displayName": "Alcohol status"
       }
     },
     {
@@ -147,6 +78,15 @@
       "valueType": "integer",
       "meta": {
         "displayName": "Alcolohol Consumption Duration"
+      }
+    },
+    {
+      "name": "FSA",
+      "description": "Forward Sortation Area (3-digit postal code)",
+      "valueType": "string",
+      "meta": {
+        "notes": "Forward Sortaion Area (FSA) is the 3 first digits of the postal code",
+        "displayName": "Forward Sortation Area"
       }
     }
   ]
