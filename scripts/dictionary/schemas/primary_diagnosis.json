@@ -79,7 +79,7 @@
     {
       "name": "age_at_diagnosis",
       "valueType": "integer",
-      "description": "Age at diagnosis of condition (in days)",
+      "description": "Age at diagnosis of condition",
       "restrictions": {
         "required": true
       },
@@ -209,7 +209,7 @@
       "valueType": "string",
       "meta": {
         "dependsOn": "primary_diagnosis.tumour_staging_system",
-        "notes": "This field is required only if the selected clinical_tumour_staging_system is any edition of the AJCC cancer staging system.",
+        "notes": "This field is required only if the selected tumour_staging_system is any edition of the AJCC cancer staging system.",
         "displayName": "M Category"
       },
       "restrictions": {
