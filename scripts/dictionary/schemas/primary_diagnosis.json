@@ -105,23 +105,6 @@
       }
     },
     {
-      "name": "diagnosis_type",
-      "description": "Basis of diagnosis",
-      "restrictions": {
-        "dependsOn": "primary_diagnosis.is_cancer",
-        "codeList": [
-          "Clinical",
-          "Histological"
-        ]
-      },
-      "valueType": "string",
-      "meta": {
-        "notes": "Basis of diagnosis is only required to be submitted if the donor's diagnosis is cancer",
-        "core": true,
-        "displayName": "Basis of Diagnosis"
-      }
-    },
-    {
       "name": "is_cancer",
       "description": "The diagnosis is a cancer diagnosis",
       "restrictions": {
@@ -135,6 +118,22 @@
       "meta": {
         "core": true,
         "displayName": "Is cancer diagnosis"
+      }
+    },
+    {
+      "name": "diagnosis_type",
+      "description": "Basis of diagnosis",
+      "restrictions": {
+        "codeList": [
+          "Clinical",
+          "Histological"
+        ]
+      },
+      "valueType": "string",
+      "meta": {
+        "notes": "Basis of diagnosis is only required to be submitted if the donor's diagnosis is cancer",
+        "core": true,
+        "displayName": "Basis of Diagnosis"
       }
     },
     {
