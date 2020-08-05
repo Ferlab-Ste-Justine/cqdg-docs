@@ -6,14 +6,13 @@
   },
   "fields": [
     {
-      "name": "program_id",
+      "name": "study_id",
       "valueType": "string",
-      "description": "Unique identifier of the ARGO program.",
+      "description": "Unique identifier for the Study.",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "sample_registration.program_id",
-        "displayName": "Program ID"
+        "displayName": "Study ID"
       },
       "restrictions": {
         "required": true
@@ -96,8 +95,7 @@
         "codeList": [
           "Yes",
           "No"
-        ],
-        "required": true
+        ]
       },
       "valueType": "string",
       "meta": {
@@ -131,6 +129,7 @@
       },
       "valueType": "string",
       "meta": {
+        "dependsOn": "primary_diagnosis.is_cancer",
         "notes": "Basis of diagnosis is only required to be submitted if the donor's diagnosis is cancer",
         "core": true,
         "displayName": "Basis of Diagnosis"
@@ -142,7 +141,6 @@
       "description": "Indicate the tumour staging system used to stage the cancer at the time of primary diagnosis (prior to treatment).",
       "restrictions": {
         "script": "#/script/common/ajccValidation",
-        "required": true,
         "codeList": [
           "AJCC 8th edition",
           "AJCC 7th edition",
@@ -157,6 +155,7 @@
         ]
       },
       "meta": {
+        "dependsOn": "primary_diagnosis.is_cancer",
         "core": true,
         "displayName": "Tumour Staging System"
       }
@@ -166,7 +165,6 @@
       "description": "Stage group of the tumour, as assigned by the reporting clinical_tumour_staging_system, that indicates the overall prognostic tumour stage (ie. Stage I, Stage II, Stage III etc.).",
       "valueType": "string",
       "restrictions": {
-        "required": true,
         "codeList": "#/list/stage_groups",
         "script": "#/script/primary_diagnosis/stageGroup"
       },

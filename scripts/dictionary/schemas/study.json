@@ -1,0 +1,142 @@
+{
+  "name": "study",
+  "description": "The collection of data elements related to a specific study in the CQDG program.",
+  "fields": [
+    {
+      "name": "study_id",
+      "valueType": "string",
+      "description": "Unique identifier for the Study.",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "Study ID"
+      },
+      "restrictions": {
+        "required": true
+      }
+    },
+    {
+      "name": "name",
+      "valueType": "string",
+      "description": "Name of the Study",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Name of the Study"
+      }
+    },
+    {
+      "name": "short_name",
+      "valueType": "string",
+      "description": "Accronym or short name of the Study",
+      "meta": {
+        "displayName": "Short name of the Study"
+      }
+    },
+    {
+      "name": "description",
+      "valueType": "string",
+      "description": "Description of the Study",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Description of the Study"
+      }
+    },
+    {
+      "name": "keyword",
+      "valueType": "string",
+      "description": "Keywords associated with the Study",
+      "meta": {
+        "displayName": "Keywords for the Study"
+      }
+    },
+    {
+      "name": "website",
+      "valueType": "string",
+      "description": "Website of the Study",
+      "meta": {
+        "displayName": "Website of the Study"
+      }
+    },
+    {
+      "name": "domain",
+      "description": "Research domain of the Study",
+      "valueType": "string",
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "Cancer",
+          "Rare disease",
+          "Neurodevelopmental conditions",
+          "General health",
+          "Not applicable"
+        ]
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Research domain"
+      }
+    },
+    {
+      "name": "population",
+      "description": "Describes the population that is the focus of the study",
+      "valueType": "string",
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "Pediatric",
+          "Adult",
+          "Pediatic and adult"
+        ]
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Study population"
+      }
+    },
+    {
+      "name": "access_limitations",
+      "description": "Data access limitations as defined in the GA4GH Data Use Ontology (DUO)",
+      "valueType": "string",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Data Access Limitations",
+        "notes": "Refer to the Data Use Ontology code https://github.com/EBISPOT/DUO "
+      }
+    },
+    {
+      "name": "submitter_access_requirement_id",
+      "description": "Unique identifier associated with the data use requirements",
+      "valueType": "string",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "displayName": "Submitter Data Requirement ID",
+        "validationDependency": true,
+        "primaryId": true
+      }
+    },
+    {
+      "name": "access_requirements",
+      "description": "Data use requirements as defined in the GA4GH Data Use Ontology (DUO)",
+      "valueType": "string",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Data Use Requirements",
+        "notes": "Refer to the Data Use Ontology code https://github.com/EBISPOT/DUO "
+      }
+    }
+  ]
+}
