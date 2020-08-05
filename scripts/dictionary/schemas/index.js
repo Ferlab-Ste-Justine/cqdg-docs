@@ -18,20 +18,28 @@
  *
  */
 
-const sample_registration = require('./sample_registration.json');
+const study = require('./study.json');
 const donor = require('./donor.json');
 const specimen = require('./specimen.json');
 const primary_diagnosis = require('./primary_diagnosis.json');
 const treatment = require('./treatment.json');
 const follow_up = require('./follow_up.json');
 const exposure = require('./exposure.json');
+const phenotype = require('./phenotype.json');
+const family = require('./family.json');
+const family_relationship = require('./family_relationship.json');
+const family_history = require('./family_history.json');
 
 module.exports = [
-  sample_registration,
+  study, 
   donor,
   specimen,
   primary_diagnosis,
   treatment,
   follow_up,
-  exposure
+  exposure,
+  phenotype, 
+  family, 
+  family_relationship, 
+  family_history
 ];

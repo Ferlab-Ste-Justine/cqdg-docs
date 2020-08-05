@@ -1,0 +1,52 @@
+{
+  "name": "family",
+  "description": "The collection of data elements related to a family. This table should be completed only if the Study is contributing data from groups of donors who share family ties (ex: twins, trios, sib-pairs).",
+  "fields": [
+  {
+    "name": "study_id",
+    "valueType": "string",
+    "description": "Unique identifier for the Study.",
+    "meta": {
+      "validationDependency": true,
+      "primaryId": true,
+      "displayName": "Study ID"
+    },
+    "restrictions": {
+      "required": true
+    }
+  },
+    {
+      "name": "submitter_family_id",
+      "valueType": "string",
+      "description": "Unique identifier of the family, assigned by the data provider.",
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/submitter_id"
+      },
+      "meta": {
+        "displayName": "Submitter Family ID",
+        "validationDependency": true,
+        "primaryId": true
+      }
+    },
+    {
+      "name": "family_type",
+      "description": "Type of family-based study design.",
+      "valueType": "string",
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "Case-parent trio",
+          "Case-sibling",
+          "Twins",
+          "Case - affected relative",
+          "Other"
+        ]
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Family Type"
+      }
+    }
+  ]
+}
