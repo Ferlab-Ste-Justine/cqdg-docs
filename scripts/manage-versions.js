@@ -224,6 +224,22 @@ async function postNewDictionary(version) {
     }
 }
 
+async function validateNewDictionary(version) {
+    const dictionary = {name: dictionaryName, version, references, schemas};
+    console.log(`${chalk.cyan('\nValidating dictionary for version')} ${version} ${chalk.cyan('...')}`);
+    let url = `${apiRoot}/validate`;
+    try {
+        const response = await axios.post(
+          url,
+          dictionary
+        );
+        return response.data;
+    } catch (e) {
+        console.log(chalk.red(`Error validating dict!!`), e.response.data);
+        throw e;
+    }
+}
+
 async function setLecternCredentials() {
 
     const username = await promptUserName();
@@ -236,6 +252,17 @@ async function setLecternCredentials() {
         error => {
             Promise.reject(error)
         });
+}
+
+async function runValidation() {
+    console.log(chalk.green(`Validating your new dictionary version`));
+    printConfig();
+    await setLecternCredentials();
+    // Fetch the dictionary for this version and save data and tree files
+    const version = await promptVersion();
+    await validateNewDictionary(version);
+
+    console.log(chalk.green('\n\nYour dictionary is valid :D'));
 }
 
 async function runAdd() {
@@ -300,7 +327,10 @@ function run() {
     } else if (argv.a || argv.add) {
         // ADD A NEW VERSION (first list all to show, then query the add)
         runAdd();
-    } else {
+    } else if (argv.v || argv.validate) {
+        // Simulation
+        runValidation();
+    }  else {
         // HELP MENU
         runHelp();
     }
