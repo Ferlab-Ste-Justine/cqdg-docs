@@ -21,14 +21,14 @@
 const path = require('path');
 
 module.exports = {
-  title: 'ICGC ARGO Docs',
-  url: 'https://docs.icgc-argo.com',
+  title: 'CQDG Docs',
+  url: 'https://docs.qa.cqdg.ferlab.bio',
   baseUrl: '/',
-  organizationName: 'ICGC-ARGO',
-  projectName: 'icgc-argo-documentation',
+  organizationName: 'CQDG',
+  projectName: 'cqdg-documentation',
 
   favicon: 'favicon.ico',
-  tagline: 'ICGC ARGO Docs',
+  tagline: 'CQDG Docs',
 
   stylesheets: ['https://fonts.googleapis.com/css?family=Source+Code+Pro|Work+Sans&display=swap'],
 
@@ -63,7 +63,7 @@ module.exports = {
     navbar: {
       title: '',
       logo: {
-        alt: 'ICGC-ARGO',
+        alt: 'CQDG',
         src: 'img/logos/icgc_argo_name.svg',
       },
       links: [
@@ -85,7 +85,7 @@ module.exports = {
     },
     footer: {
       logo: null,
-      copyright: `© ${new Date().getFullYear()} ICGC ARGO. All Rights reserved.`,
+      copyright: `© ${new Date().getFullYear()} CQDG. All Rights reserved.`,
     },
   },
   customFields: {
