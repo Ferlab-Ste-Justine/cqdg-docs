@@ -57,7 +57,20 @@
       },
       "meta": {
         "core": true,
-        "displayName": "Diagnosis ICD term"
+        "displayName": "Diagnosis ICD-10 term"
+      }
+    },
+    {
+      "name": "diagnosis_ICD_category",
+      "valueType": "string",
+      "description": "Disease caregory as defined in the ICD-10",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "notes": "This refers to the body systems chapters of the WHO ICD-10",
+        "displayName": "ICD-10 Disease category"
       }
     },
     {
