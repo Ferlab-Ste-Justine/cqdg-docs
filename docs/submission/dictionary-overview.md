@@ -4,6 +4,8 @@ title: Data Dictionary
 platform_key: DOCS_DICTIONARY_OVERVIEW
 ---
 
+Le dictionnaire de données est une ressource qui définit la structure de la base de données cliniques génomiques, le modèle de données et les règles liées à ces données. Le dictionnaire de données définit aussi les liens qui existent entre les différentes entités du modèle de données.
+
 The ICGC ARGO [Data Dictionary](/scripts/dictionary) expresses the details of the ARGO data model, which adheres to specific formats and restrictions to ensure a standard of data quality. The Data Dictionary defines a set of files, each related to a clinical concept, that can be submitted to the ARGO Data Platform.
 
 For recent updates, check the [Dictionary Release Notes](/docs/release-notes/dictionary-releases).
