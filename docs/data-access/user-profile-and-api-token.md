@@ -4,38 +4,23 @@ title: User Profile & API Token
 platform_key: DOCS_API_TOKEN
 ---
 
-The ARGO User Profile page displays important user information including:
+Il est nécessaire de s’inscrire comme utilisateur du CQDG pour avoir accès à l’ensemble des outils de la plateforme. Ceci inclut: 
 
-- the email address associated with your ARGO Platform user
-- your ARGO member permissions
-- API Token management
+-	Le portail de données pour explorer, visualiser et analyser en ligne le catalogue des variants et le répertoire des fichiers de données génomiques disponibles pour la recherche; 
+-	Les outils d’analyse incluent dans l’environnement de calcul infonuagique; 
+-	Le portail de soumission de données 
 
-To get to your User Profile, click the icon in the top right corner and select **Profile and Token**.
+ > **IMPORTANT: En créant votre compte d’utilisateur, vous adhérez aux conditions d’utilisation des outils de la plateforme CQDG et aux exigences relatives au respect de la confidentialité.** 
 
-## API Token
+## Comment créer un compte d’utilisateur
 
-Your authentication API Token uniquely identifies you and your permissions. These permissions apply to all ARGO Data Platform applications, for example when using the Song or Score clients for molecular data submission.
+Vous pouvez créer votre compte d'utilisateur du CQDG en remplissant le bref formulaire dans la [section utilisateur du portail](https://plateforme.cqdg.ca/utilisateur)  > Créer votre profile d'utilisateur. 
 
-You can get your authentication API Token from the [User Profile](https://platform.icgc-argo.org/user) > API Token section.  
-![Profile API Token](/assets/data-access/user-profile-api-token.png)
-Some important things to note about your API Token:
+Vous recevrez un courriel afin d'activer votre compte.
 
-- ARGO API Tokens have a duration of **30 days**.
-- This is a _personal key_. **Never** share your user credentials with anyone else.
-- If you suspect that your API Token security has been compromised, simply regenerate it from this page. All former API Tokens will be revoked when you regenerate a token.
+## Permissions des utilisateurs
 
-## Permissions
+Votre inscription comme utilisateur de la plateforme CQDG permet aussi de gérer vos permissions quant à la soumission, l’accès et l’utilisation des données.
 
-Permissions are assigned based on the role that has been granted to you in a specific program, the type of program you are a member of, and your application for access to controlled data.
-
-![ARGO Member Permissions](/assets/data-access/user-profile-program-access.png)
-
-### DACO Access
-
-DACO access is required to download controlled data from any program you have approval for. If you have been granted DACO access, you should see a green "DACO Approved" checkmark.
-
-If you do not have DACO access, please see the instructions for [applying to controlled access data](/docs/data-access/data-access).
-
-### Program Permission
-
-Under "My Memberships", you will see a list of Programs that you have been granted access to for the purpose of data submission or management, along with your [role and permissions](/docs/submission/managing-program-access#user-roles-and-permissions) for those programs. If you are not part of a program that is submitting data to the ARGO Data Platform, then this section will not list any Programs.
+-	Il est recommandé de prendre connaissance du dictionnaire de données et du modèle de données avant de débuter le processus de soumission des données.
+-	Les données devront être soumises en utilisant les gabarits proposés pour chacune des tables du dictionnaire de données. Ces gabarits peuvent être téléchargés sous format TSV.  Les soumissionnaires doivent complétés tous les champs inscrits comme étant requis, sans quoi les données ne peuvent être jugées recevables. 

@@ -4,6 +4,9 @@ title: How to Download Data
 platform_key: DOCS_DATA_DOWNLOAD
 ---
 
+Étant donné la taille des fichiers de données génomiques, le CQDG utilise certains outils pour faciliter leur téléchargement. 
+
+
 The ARGO Data Platform uses the score-client as a file download manager. The score-client facilitates the transfer of data with resumable download and has built in BAM/CRAM slicing to make data download fast and smooth.
 
 Please note:

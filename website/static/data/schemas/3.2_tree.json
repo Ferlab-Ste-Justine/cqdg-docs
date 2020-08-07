@@ -1,0 +1,1 @@
+{"name":"family_relationship","fields":[{"name":"program_id","required":true},{"name":"submitter_family_id","required":true},{"name":"submitter_donor_id_1","required":true},{"name":"submitter_donor_id_2","required":true},{"name":"family_1_2_relationship","required":true},{"name":"family_2_1_relationship","required":true}],"required":false,"parentName":"","children":[]}
