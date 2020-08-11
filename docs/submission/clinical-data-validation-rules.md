@@ -4,92 +4,78 @@ title: Clinical Data Validation Rules
 platform_key: DOCS_CLINICAL_VALIDATION_RULES
 ---
 
-## Clinical Data Encoding Rules
+## Règles de codage des données cliniques
 
-### Identifier fields
+### Codes d'identification
 
-The data dictionary contains certain data elements regarded as "identifiers". These fields have an ![ID](/assets/submission/dictionary-id.svg) descriptor in the data dictionary and include:
+Le dictionnaire de données contient certains champs qui sont des codes d'identification. Ces champs sont identifiés à l'aide d'une étiquette ![ID](/assets/submission/dictionary-id.svg) dans le dictionnaire de données. Ces codes incluent:
 
+- Study: `submitter_study_id`
 - Donor: `submitter_donor_id`
-- Specimen: `submitter_specimen_id`
-- Sample: `submitter_sample_id`
-- Primary Diagnosis: `submitter_primary_diagnosis_id`
+- Data Use Requirements: `submitter_access_requirement_id`
+- Biospecimen: `submitter_biospecimen_id`
+- Diagnosis: `submitter_diagnosis_id`
 - Treatment: `submitter_treatment_id`
 - Follow Up: `submitter_follow_up_id`
-
-These fields must to be coded specifically for ICGC ARGO purposes using the following rules:
-
-- These identifiers should not be derived from biobank or hospital identifiers or any other personal identifying information. These IDs are to be coded in such a way that they cannot be tracked back to the individual donors, except by the submitting program. Only the program will keep the key that will permit the data to be linked back to the individual donors. This key must not be communicated to the data users.
-- Identifiers are assigned by each submitting program and must be unique within all the data submitted by that program (no duplicate IDs allowed).
-- Identifiers referring to the same entity should be consistent across separate program submissions and should not be re-used for different entities. For example, the same donor should not be assigned different identifiers in different files or subsequent data submissions.
-- Identifiers cannot begin with DO, SP, SA, PD, TR or FU. These prefixes are reserved for ICGC ARGO IDs.
-- Identifiers are case-sensitive.
-
-### Primary Diagnosis, Treatment and Follow Up Identifiers:
-
-These identifier fields allow for linking across the different clinical events and should be coded using the following rules:
-
-- Each primary diagnosis should be assigned a unique `submitter_primary_diagnosis_id`, so in the case where a donor has multiple primary diagnoses, each primary diagnosis should have a different `submitter_primary_diagnosis_id`. You will be required to submit the `submitter_primary_diagnosis_id` in the `Specimen` file - this provides information about which primary diagnosis the specimen is linked to. The `submitter_primary_diagnosis_id` is also required in the `Treatment` file, so it is understood which primary diagnosis the treatment is being administered for.
-- Each treatment regimen in the `Treatment` file should be assigned a unique `submitter_treatment_id`. If the treatment regimen consists of chemotherapy, hormone therapy or radiation therapy, then you will use the same `submitter_treatment_id` in the appropriate `Chemotherapy`, `Radiation` or `Hormone Therapy` files. For example, a treatment regimen consisting of Chemotherapy and Radiation therapy is assigned `cr01` as the `submitter_treatment_id` in the `Treatment` file. You would then submit the relevant clinical treatment information in the `Chemotherapy` and `Radiation` files using the same `submitter_treatment_id` (`cr01`) in those files. This allows the information in the two files to be linked together so it is understood that the two therapies were combined.
-- Each follow up should be assigned a unique `submitter_follow_up_id`. Optionally, if a follow up is linked to a specific treatment, you may include the `submitter_treatment_id` for that follow up.
-
-### Time Intervals
-
-To prevent potential identification of donors, actual calendar dates are not permitted. The timing of different clinical events are collected in days counted from the date of primary diagnosis. The date of primary diagnosis is the date on which a definitive diagnostic procedure was performed. Validation checks are in place to ensure the values submitted for the different time interval fields make sense according to the following assumptions:
-
-- The `age_at_primary_diagnosis` is used as the reference time point.
-- The day the patient dies is the clinical endpoint (`survival_time`).
-
-Examples of time interval validation checks:
-
-- If a patient's `vital_status` is `Deceased`, all time intervals must be less than or equal to `survival_time`.
-- The `relapse_interval` must be less than the `interval_of_followup` in the follow up entry that the relapse was recorded.
-- If a follow up is associated with a particular treatment (via the `submitter_treatment_id`), the `interval_of_followup` must be greater than the `treatment_start_interval`.
+- Phenotype: `submitter_phenotype_id`
+- Family: `submitter_family_id`
 
 
-### Donors Older than 90 years old
-
-Since the occurrence of individuals over the age of 90 is rare, it is therefore considered a potentially identifiable value. Thus, the allowed value for the `age_at_diagnosis` field is capped at 90.
+La création de ces codes d'identification doit être faite en respectant les directives suivantes: 
 
 
-## Cross Field Validations
+- Aucun numéro d'identification d'hôpital, de biobanque ou information personnelle ne doit être utilisé pour générer les codes d'identification. 
+- Les codes d'identification doivent être conçus de manière à protéger l'identité des donneurs. 
+- Les projets partenaires ont l'entière responsabilité de conserver les clés permettant de faire le lien entre les données des donneurs soumises au CQDG et l'ensemble des données détenues sur ces donneurs par les projets (incluant possiblement leurs informations personnelles). Ces clés ne doivent, en aucun cas, être communiquées avec le CQDG ou avec les utilisateurs des données du CQDG. 
+- Les codes d'identification doivent être assignés par les projets soumissionnaires et doivent être uniques parmi tous les codes d'identification soumis par ces projets. 
+- Les mêmes codes d'identification doivent être conservés durant toute la période de conservation des données par le CQDG. Lors d'une mise à jour des données ou d'une nouvelle soumission, les codes d'identification attribués aux donneurs, par exemple, ne peuvent ni changer, ni être réutilisés pour identifier d'autres donneurs.  
+- Les codes d'identification sont sensibles aux majuscules et minuscules. 
 
-A number of cross-field consistency checks within files are implemented to ensure quality control and data correctness. This requires the value of another field to validate the current field. The cross-field validation checks are implemented using Javascript. For the advanced user, you will be able to see the actual cross-field validation scripts in the Dictionary Viewer by clicking on the `View Script` buttons in the notes column. Examples include:
+### Codes d'identification des diagnostics, phénotypes, traitements et suivis médicaux:
 
-- Criteria for staging fields are dependent on the selected `clinical_staging_system`.
-- Submitted `tumour_grade` is checked against selected `tumour_grading_system`.
-- Valid values for `specimen_type` are cross-checked with the `tumour_normal_designation` field.
-- The requirement for fields related to relapse/recurrence are dependent on the `disease_status_at_followup` field.
-- The requirement for `survival_time` is depenedent on the `vital_status` field.
+Ces codes d'identification permettent de faire des liens entre différents évènements cliniques dans le parcours d'un patient. Les règles entourant le création de ces codes d'identification sont les suivantes:
 
+- Un code d'identification unique doit être attribué à chaque diagnostic `submitter_diagnosis_id`. Par conséquent, si un donneur a plusieurs diagnostic, chacun des diagnostic doit avoir son code d'identification unique `submitter_diagnosis_id`. Afin de pouvoir lier un diagnostic à un biospécimen, vous allez devoir incluew le code d'identification `submitter_diagnosis_id` dans la table `Biopecimen` file. Le code d'identification `submitter_diagnosis_id` est aussi requis dans la table `Treatment` pour permettre d'associer un traitement à un diagnostic donné.
+- Un code d'identification unique doit être attribué à chaque traitement `submitter_treatment_id` dans la table `Treatment`. Si le traitement est un traitement pharmacologique, vous aurez l'option de fournir sont numéro d'identification d'une drogue (DIN), qui est un numéro attribué par Santé Canada avant d'être commercialisé au Canada. 
+- Un code d'identification unique doit également être attribué à chaque phénotype `submitter_phenotype_id` et à chaque suivi médical `submitter_follow_up_id`.  
 
-## Cross File Validations
+### Dates partielles
 
-Relationships between different clinical fields across files are validated to ensure data integrity and correctness. This requires checking the existence and relationships of different identifiers in different files, and checking the value of a field in another file to validate the current field or enforce supplemental file requirements. Examples include:
+Pour prévenir l'identification des donneurs, il est possible de soumettre des dates partielles, incluant minimalement l'année. Ceci est le cas pour la date de naissance. Pour ce type de données, comme pour tout autre type de données soumis au CQDG, le projet partenaire est resonsable d'en assurer la qualité. Par conséquent, s'attend à voir une concordance entre les dates des évènements d'un parcours-patient (naissance, diagnostic, suivi, décès, etc.). 
 
-- A `submitter_sample_id` must belong to only one `submitter_specimen_id`. A `submitter_specimen_id` must belong to only one `submitter_donor_id`.
-- A `submitter_donor_id` or `submitter_specimen_id` submitted in any of the clinical submission files must have been submitted in the `Sample Registration` file.
-- A `submitter_specimen_id` in the `Specimen` file must belong to a registered `submitter_donor_id` in the `Sample Registration` file.
-- A `submitter_primary_diagnosis_id` in the `Treatment`, `Specimen` or `Follow Up` file must have been submitted using the `Primary Diagnosis` file.
-- A `submitter_treatment_id` in the `Follow Up` file must have been submitted using the `Treatment` file.
-- The value of a specimen's `tumour_normal_designation` field in the `Sample Registration` file is checked to determine whether fields in the `Specimen` file are required.
-- If `survival_time` is submitted in the `Donor` file, all time interval fields are validated to ensure they are less than or equal to the `survival_time`.
-- Depending on the `treatment_type` selected in the Treatment file, additional treatment details may be required to be submitted. For example, if `treatment_type` includes `Chemotherapy`, the supplemental `Chemotherapy` treatment file is required. 
+Le CQDG peut mettre en place une procédure de vérification de la concordance des données et signaler ou rejetter toute données ne rencontrant pas certaines exigence en matière de qualité  
 
 
-## Clinical Data Completion
+## Contrôle de qualité
 
-Once all core clinical fields and files have been submitted for a donor, the donor is considered "clinically complete".
+### Validation entre les différents champs du dictionnaire de données
 
-> **A donor must be clinically complete before any of their molecular analysis files are released to the program members for download.**
 
-### How is clinical data completion calculated?
+Un certain nombre de vérifications de la concodance entre les champs sera effectué par le CQDG afin d'assurer le contrôle de la qualité des données. Certaines de ces vérifications sont documentées dans le dictionnaire de données; voir le bouton `View Script` dans la colonne notes du dictionnaire. Celles-ci incluent, notamment la vérification de la concorance entre des champs liés par une dépendence (champs conditionnels), par exemple: 
 
-Complete clinical data means that a donor has a valid value submitted for all fields labelled **"core"** in the [data dictionary](/scripts/dictionary), for a minimum set of clinical files. In more detail:
+- Le sytème de gradation d'une tumeur `tumour_grading_system` et le grade de la tumeur `tumour_grade`.   
+- Le type de biospécimen `specimen_type` et sa désignation comme échantillon tumoral ou normal `tumour_normal_designation`.
+- L'âge du décès `age_of_death` et le status du donneur `vital_status`. 
 
-- A donor must have a donor file submitted with all core fields provided.
-- A donor must have at least one primary diagnosis with all core fields provided.
-- A donor must have at least one tumour and one normal specimen submitted.
-- For each registered specimen, a donor must have all specimen core fields provided.
-- A donor must have at least one treatment and a corresponding treatment detail file (if applicable, e.g. for chemotherapy, hormonal therapy or radiation) with all core fields provided.
-- A donor must have at least one followup with all core fields provided.
+
+### Validation entre les différentes tables du dictionnaire de données
+
+Les relations entre les différents champs cliniques des différentes tables peuvent aussi être validées pour assurer l'intégrité et l'exactitude des données. Cette validation requiert la mise en correspondence des codes d'identification dans les différentes tables de données et la vérification de la valeur d'un champs d'une table à l'autre. En voici quelques exemples:  
+
+- Vérification qu'il n'existe qu'un code d'identification donneur `submitter_donor_id` pour un biospécimen donné `submitter_biospecimen_id`.
+- Vérification qu'il n'existe qu'un code d'identification famille `submitter_family_id` pour un donneur   `submitter_donor_id`.
+- Vérification de l'existence d'un code `submitter_diagnosis_id` qui corresponde à un code dans les tables  `Treatment`, `Specimen` ou `Follow Up`.
+
+
+## Complétude des données cliniques
+
+Les données cliniques ne peuvent être considérées complétes que lorsque des valeurs ont été soumises pour tous les champs requis (indiqué par la mention 'core' dans le dictionnaire de données). 
+
+ > **IMPORTANT: Les données cliniques doivent être considérées complètes afin que les fichiers d'analyses moléculaires soient rendus accessible pour la recherche.** 
+
+### Comment évaluer la complétude des données cliniques?
+
+On considère que les données cliniques sont complètes si le soumissionnaire a fourni des valeurs pour tous les champs qui sont définis comme étant des champs **"core"**  dans le [data dictionary](/scripts/dictionary), et ce, pour un ensemble minimal de tables: C'est à dire: 
+
+- Un donneur doit avoir une table donneur dont tous les champs core comportent des valeurs.
+- Au moins une table biospécimen doit être complétée pour chaque donneur, incluant tous les champs cores. 

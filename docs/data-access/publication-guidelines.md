@@ -8,4 +8,4 @@ Les chercheurs qui ont consulté ou utilisé les données du CQDG sont invite
 
 Pour citer le CQDG, veuillez utiliser la page principale du portail d'accès (http://platforme.CQDG.ca). 
 
-   > **IMPORTANT: Les chercheurs aillant utilisés les données du CQDG doivent aussi adhérer aux politiques de publication des projets partenaires desquels sont issues les données.** 
+   > **IMPORTANT: Les chercheurs ayant utilisés les données du CQDG doivent aussi adhérer aux politiques de publication des projets partenaires desquels sont issues les données.** 

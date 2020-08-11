@@ -23,4 +23,4 @@ Vous recevrez un courriel afin d'activer votre compte.
 Votre inscription comme utilisateur de la plateforme CQDG permet aussi de gérer vos permissions quant à la soumission, l’accès et l’utilisation des données.
 
 -	Il est recommandé de prendre connaissance du dictionnaire de données et du modèle de données avant de débuter le processus de soumission des données.
--	Les données devront être soumises en utilisant les gabarits proposés pour chacune des tables du dictionnaire de données. Ces gabarits peuvent être téléchargés sous format TSV.  Les soumissionnaires doivent complétés tous les champs inscrits comme étant requis, sans quoi les données ne peuvent être jugées recevables. 
+-	Les données devront être soumises en utilisant les gabarits proposés pour chacune des tables du dictionnaire de données. Ces gabarits peuvent être téléchargés en format TSV.  Les soumissionnaires doivent compléter tous les champs inscrits comme étant requis, sans quoi les données ne peuvent être jugées recevables. 
