@@ -50,12 +50,12 @@
       }
     },
     {
-      "name": "submitter_primary_diagnosis_id",
+      "name": "submitter_diagnosis_id",
       "valueType": "string",
-      "description": "Indicate the primary diagnosis event in the clinical timeline that this treatment was related to.",
+      "description": "Indicate the diagnosis event in the clinical timeline that this treatment was related to.",
       "meta": {
         "primaryId": true,
-        "displayName": "Submitter Primary Diagnosis ID",
+        "displayName": "Submitter Diagnosis ID",
         "notes": "#/notes/submitter_id"
       },
       "restrictions": {
