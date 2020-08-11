@@ -17,7 +17,7 @@
  *
  *
  */
-
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 const axios = require('axios');
 const chalk = require('chalk');
 const inquirer = require('inquirer');
@@ -235,7 +235,7 @@ async function validateNewDictionary(version) {
         );
         return response.data;
     } catch (e) {
-        console.log(chalk.red(`Error validating dict!!`), e.response.data);
+        console.log(chalk.red(`Error validating dict!!`), e);
         throw e;
     }
 }
