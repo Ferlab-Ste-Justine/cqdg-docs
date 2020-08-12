@@ -3,15 +3,33 @@
   "description": "The collection of data elements related to a donor's exposure to specific risk factors.",
   "fields": [
     {
+      "name": "study_id",
+      "valueType": "string",
+      "description": "Unique identifier for the Study.",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "foreignKey": "study.study_id",
+        "displayName": "Study ID"
+      },
+      "restrictions": {
+        "required": true
+      }
+    },
+    {
       "name": "submitter_donor_id",
       "valueType": "string",
       "description": "Unique identifier of the donor, assigned by the data provider.",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "foreignKey": "donor.submitter_donor_id",
+        "displayName": "Submitter Donor ID",
+        "notes": "#/notes/submitter_id"
+      },
       "restrictions": {
         "required": true,
         "regex": "#/regex/submitter_id"
-      },
-      "meta": {
-        "displayName": "Submitter Donor ID"
       }
     },
     {
@@ -75,7 +93,8 @@
       "valueType": "string",
       "meta": {
         "notes": "Forward Sortaion Area (FSA) is the 3 first digits of the postal code",
-        "displayName": "Forward Sortation Area"
+        "displayName": "Forward Sortation Area",
+        "examples": "H3W"
       }
     }
   ]

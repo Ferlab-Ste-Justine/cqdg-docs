@@ -9,6 +9,7 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
+        "foreignKey": "study.study_id",
         "displayName": "Study ID"
       },
       "restrictions": {
@@ -22,7 +23,7 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "sample_registration.submitter_donor_id",
+        "foreignKey": "donor.submitter_donor_id",
         "displayName": "Submitter Donor ID",
         "notes": "#/notes/submitter_id"
       },

@@ -11,6 +11,7 @@
       "description": "Unique identifier for the Study.",
       "meta": {
         "validationDependency": true,
+        "foreignKey": "study.study_id",
         "primaryId": true,
         "displayName": "Study ID"
       },
@@ -25,7 +26,7 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "sample_registration.submitter_donor_id",
+        "foreignKey": "donor.submitter_donor_id",
         "displayName": "Submitter Donor ID",
         "notes": "#/notes/submitter_id"
       },
@@ -73,6 +74,20 @@
       "meta": {
         "core": true,
         "displayName": "Human Phenotype Ontology term"
+      }
+    },
+    {
+      "name": "phenotype_HPO_category",
+      "valueType": "string",
+      "description": "Term used for the phenotypic abnormality category in the Human Phenotype Ontology terminology",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Category of phenotypic abnormality", 
+        "notes": "Refer to the categories of the Phenotypic Abnormality Subontology of the HPO (HP:000018) https://hpo.jax.org/app/browse/term/HP:0000118", 
+        "examples": "Abnormality of the eye"
       }
     },
     {

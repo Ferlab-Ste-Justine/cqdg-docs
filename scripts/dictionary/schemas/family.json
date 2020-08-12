@@ -9,6 +9,7 @@
     "meta": {
       "validationDependency": true,
       "primaryId": true,
+      "foreignKey": "study.study_id",
       "displayName": "Study ID"
     },
     "restrictions": {

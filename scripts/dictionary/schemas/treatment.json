@@ -11,6 +11,7 @@
       "description": "Unique identifier for the Study.",
       "meta": {
         "validationDependency": true,
+        "foreignKey": "study.study_id",
         "primaryId": true,
         "displayName": "Study ID"
       },
@@ -25,7 +26,7 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "sample_registration.submitter_donor_id",
+        "foreignKey": "donor.submitter_donor_id",
         "displayName": "Submitter Donor ID",
         "notes": "#/notes/submitter_id"
       },
@@ -55,6 +56,7 @@
       "description": "Indicate the diagnosis event in the clinical timeline that this treatment was related to.",
       "meta": {
         "primaryId": true,
+        "foreignKey": "diagnosis.submitter_diagnosis_id",
         "displayName": "Submitter Diagnosis ID",
         "notes": "#/notes/submitter_id"
       },

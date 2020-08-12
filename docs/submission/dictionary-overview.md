@@ -4,68 +4,61 @@ title: Data Dictionary
 platform_key: DOCS_DICTIONARY_OVERVIEW
 ---
 
-Le dictionnaire de données est une ressource qui définit la structure de la base de données cliniques génomiques, le modèle de données et les règles liées à ces données. Le dictionnaire de données définit aussi les liens qui existent entre les différentes entités du modèle de données.
+Le dictionnaire de données est une ressource qui définit la structure de la base de données cliniques et génomiques, le modèle de données et les règles liées à ces données. Le dictionnaire de données définit aussi les liens qui existent entre les différentes entités du modèle de données.
 
-The ICGC ARGO [Data Dictionary](/scripts/dictionary) expresses the details of the ARGO data model, which adheres to specific formats and restrictions to ensure a standard of data quality. The Data Dictionary defines a set of files, each related to a clinical concept, that can be submitted to the ARGO Data Platform.
+Le dictionnaire de données CQDG [Data Dictionary](/scripts/dictionary) représente les détails du modèle de données et les formats et restrictions auxquels adhére ce modèle pour assurer le portentiel d'harmonisation et la qualité des données. Chacune des tables dans le dictionnaire données est reliée un concept clinique. Les projets pertenaires doivent soumettre au CQDG des données pour un minumum de tables pour que l'ensemble de données soit considéré recevable.  
 
-For recent updates, check the [Dictionary Release Notes](/docs/release-notes/dictionary-releases).
+Pour avoir des informations concernant les plus récentes mises à jour du dictionnaire, veuillez vous référer à la section Dictionary Release Notes](/docs/release-notes/dictionary-releases).
 
-## Understanding the Data Dictionary
+## COMPRENDRE LE DICTIONNAIRE DE DONNÉES
 
-The [dictionary table view](/scripts/dictionary) lists all of the clinical fields that the ARGO Data Platform accepts, separated by clinical TSV file.
+Le visionneur de dictionnaire [dictionary table view](/scripts/dictionary) présente la liste des champs de données cliniques qui peuvent être intégés dans la plateforme CQDG.
 
-Field listings can be filtered by Data Tier and Attribute, which can help identify which fields are necessary for [clinical data completion](/docs/submission/clinical-data-validation-rules).
+La liste des champs peut être filtée en fonction du niveau d'exigence des données et de leur attribut, ce qui permet d'identifier les champs nécessaires pour la soumission [clinical data completion](/docs/submission/clinical-data-validation-rules).
 
-You can explore previous dictionary versions using the dropdown at the top of the dictionary. Using the latest version of the dictionary is required during data submission.
+Les anciuennes versions du dictionnaire peuvent être consultées en utilisant le menu déroulant au dessus du dictionnaire. Cependant, la dernière version du dictionnaire doit être utilisée lors de la soumission de données.
 
-### Field Descriptors
+### Descripteurs des chamnps
 
-Each field has a data tier and an attribute classification, which reflects the importance of the field in terms of clinical data completion.
+Chacun des champs est classé en fonction de l'exigence des données et de ses attributs. Ces information permette d'identifier les champs qui sont considérés nécesaires pour qu'une soumission soit jugée recevable. Les champs peuvent être classés ainsi:  
 
-![ID](/assets/submission/dictionary-id.svg) classification indicates:
+![ID](/assets/submission/dictionary-id.svg): 
 
-- Field is a unique identifier that is used for cross file validation.
-- Field is a primary or foreign key.
+- Ces champs représentent des codes d'indentification uniques qui sont utilisés pour créer les liens entre les diffférentes tables de données.
+- Ces champs peuvent être une clé primaire ou externe à une table du dictionnaire. 
 
-![Conditional](/assets/submission/dictionary-conditional.svg) classification indicates:
+![Conditional](/assets/submission/dictionary-conditional.svg):
 
-- Field must meet certain conditions, depending on the value of another field.
-- Conditional rules are described in the data dictionary scripts & notes.
+- Ces champs doivent rencontrer certaines conditions et dépendent de la valeur d'un autre champs. Par exemple, l'âge du décès ne peut être soumis que lorsque le status du doneur est "décédé". 
+- Les règles entourant les champs conditionnels sont décrites dans les notes et scripts du dictionnaire de données.
 
-![Required](/assets/submission/dictionary-required.svg) classification indicates:
+![Required](/assets/submission/dictionary-required.svg):
 
-- Field must be provided in the submitted TSV file.
+- Ces champs doivent être soumi sans condition.
 
-![Core](/assets/submission/dictionary-core.svg) classification indicates:
+![Core](/assets/submission/dictionary-core.svg):
 
-- Field is part of the mandatory minimum set of clinical data that must be submitted.
-- When paired with the `Conditional` attribute, this field is only required if conditional requirements are met.
+- Ces champs font partie de l'ensemble de données cliniques essentiel à être soumis.  is part of the mandatory minimum set of clinical data that must be submitted.
+- Lorsqu'un champs "core" est aussi considéré `Conditional`, ce dernier doit être soumis uniquement si les condtions sont rencontrées.
 
-The set of core clinical fields were defined by the [Tissue & Clinical Annotations Working Group](http://www.icgc-argo.org/page/84/tissue-clinical-annotation-working-group) which involved regular discussions with members of the working group and ARGO Programs. Core clinical fields are commonly acquired in cohort-based studies and clinical trials and are required to address clinically relevant topics by cross entity analyses, and therefore constitute a critical element in the analysis of diverse ARGO Programs.
+![Extended](/assets/submission/dictionary-extended.svg):
 
-![Extended](/assets/submission/dictionary-extended.svg) classification indicates:
+- Ces champs sont considérés d'intérêt mais optionnels.
+- Afin d'augmenter la valeur des données du CQDG, il est fortement encouragé de soumettre des données sur un maximum de champs optionnels. 
 
-- Field is not required for clinical data completion.
-- It is _strongly encouraged_ to provide as many extended fields as possible.
+### Valeurs permissibles
 
-### Permissible Values
+- Afin de favoriser la standardisation des données, certains champs n'acceptent que les valeurs provenant d'une terminologie reconnue (WHO ICD-10, ICD-O-3, HPO, DUO), ou certaines valeurs d'une énumération prédéfinie. Les valeurs permissibles sont présentées dans le dictionnaire de données ou, si cette liste est trop long, celles-ci sont décrites dans les notes du dictionnaire. Prenez note que l'orthographe des mots doit être respectée.   
 
-- Some fields will only accept certain values from a list of controlled terminology that is provided in the permissible values column of the dictionary tables. Values must match the dictionary spelling exactly, but can be submitted case-insensitive.
 
-- Other fields must meet a regular expression for their value.
+## TERMINOLOGIE STANDARD 
 
-## Dictionary Standards Used
+Le CQDG préconise l'utilisation de termiologies standards. Celles-ci incluent, notamment: 
 
-The dictionary controlled terminology values were derived from external standards or common terminology used by ICGC ARGO programs. These include:
-
-- [American Joint Committee on Cancer Staging Classifications](https://cancerstaging.org/references-tools/deskreferences/Pages/Cancer-Staging-Forms.aspx)
 - [World Health Organization International Classification of Diseases, 10th Revision (ICD-10)](https://icd.who.int/browse10/2019/en)
 - [International Classification of Diseases for Oncology (ICD-O))](http://www.iacr.com.fr/index.php?option=com_content&view=category&layout=blog&id=100&Itemid=577)
-- [Cancer Data Standards Registry and Repository (caDSR)](https://cdebrowser.nci.nih.gov/cdebrowserClient/cdeBrowser.html#/search)
-- [Cancer Care Ontario Data Book Reporting Standards](https://www.cancercareontario.ca/en/data-book-reporting-standards)
-- [RxNorm](https://www.nlm.nih.gov/research/umls/rxnorm/index.html)
-- [Common Terminology Criteria for Adverse Events (CTCAE)](https://ctep.cancer.gov/protocolDevelopment/electronic_applications/ctc.htm)
-- [ECOG-ACRIN Cancer Research Group](https://ecog-acrin.org/resources/ecog-performance-status)
+- [Data Use Ontology)](https://github.com/EBISPOT/DUO)
+- [Human Phenotype Ontology](https://hpo.jax.org/app/)
  
 
 ## Tumour Staging Classifications
