@@ -195,8 +195,7 @@
           "Xenograft - derived from tumour cell line",
           "Derived from allogenic bone marrow transplant",
           "Derived from autologous bone marrow transplant"
-        ],
-        "script": "#/script/sample_registration/specimentypeDesignation"
+        ]
       },
       "meta": {
         "validationDependency": true,
