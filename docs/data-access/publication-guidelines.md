@@ -1,6 +1,6 @@
 ---
 id: publication-guidelines
-title: Publication Guidelines
+title: Lignes directrices pour la publication
 platform_key: DOCS_PUBLICATION_GUIDELINE
 ---
 

@@ -1,9 +1,7 @@
 ---
 id: dictionary-releases
-title: Dictionary Releases
+title: Publication du dictionnaire
 ---
-
-A DCC dictionary release happens when there has been an update to the clinical dataset in the **[ARGO Data Dictionary](/scripts/dictionary)**. Dictionary releases happen whenever needed.
 
 <!---
 ## Dictionary Release
@@ -19,13 +17,10 @@ Coming soon.
 None to report.
 ------>
 
-## Initial Dictionary Release 1.0.0
+## Publication initiale du dictionnaire 1.0.0
 
-**Release Date:** June 19, 2020
+**Date de publication:**  18 septembre, 2020
 
-ICGC ARGO is excited to announce its initial data dictionary release, established as the minimum set of clinical data elements that the ARGO Data Platform requires. This includes:
+Le CQDG est heureux de publier une première version du **[Dictionnaire de Données CQDG](/scripts/dictionary)**. Ce dictionnaire est organisé en onze tables représentant des concepts cliniques distincts et contient un total de 42 chanmps considérés obligatoires et 31 champs condirérés optionnels. 
 
-- Basic Donor, Specimen, and Sample data
-- Donor clinical record information including Primary Diagnosis, Follow Up and Treatment data
-
-Future releases will extend clinical data concepts and integrations of standard clinical data elements.
+Le dictionnaire est un outil dynamique qui sera mis à jour à mesure que certains concepts soient intégrés ou modifiés. 

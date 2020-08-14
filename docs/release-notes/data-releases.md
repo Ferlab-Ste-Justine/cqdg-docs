@@ -1,10 +1,12 @@
 ---
 id: data-releases
-title: Data Releases
+title: Publication des données
 platform_key: DOCS_DATA_RELEASES
 ---
 
-An ARGO data release is a curated data set of clinical and molecular data submitted to the ARGO Data Platform. Data releases happen approximately four times a year and are cumulative in nature. Released data can be browsed using the [File Repository](https://platform.icgc-argo.org/repository) and [downloaded](/docs/data-access/data-download) using a client tool, provided that access to controlled data has been granted. To access controlled data, please see the [DACO application process here](/docs/data-access/data-access).
+Les données soumises au CQDG sont publiées et rendues disponibles pour la recherche une fois qu'elles sont jugées complètes et de bonne qualité. Les mécanismes d'assurance et contrôle de la qualité mis en place par le CQDG permettent de garantir un ensemble de données standard et parfaitement harmonisé. La publication des données est effectuée régulièrement. 
+
+Veuillez consulter le [Répertoire des fichiers](https://platform.icgc-argo.org/repository) pour connaître le contenu des données qui sont disponibles pour la recherche. 
 
 <!---
 ## Data Release 2.0
@@ -23,13 +25,17 @@ None to report.
 None to report.
 ------>
 
-## Data Release 1.0
+## Publication des données 1.0
 
-**Release Date:** June 19, 2020
+**Date de publication:** 18 septembre, 2020
 
-### New Updates
+### Nouvelles mises à jour
 
-ICGC ARGO is excited to announce its initial data release including whole genome sequencing (WGS) data from pancreatic cancer [(PACA-CA)](https://www.icgc-argo.org/page/96/panchope) and esophageal cancer [(OCCAMS-GB)](https://www.icgc-argo.org/page/112/occams). Both programs were members of the original ICGC-25K data portal. While clinical data will soon be submitted by the programs, a selection of their molecular data has been reprocessed against the latest GRCh38 Human Reference Genome using the [ARGO DNA Seq Pipeline](/docs/analysis-workflows/dna-pipeline). The resulting somatic mutation calls include single nucleotide variations (SNVs), insertion-deletion (indels), copy number variations (CNVs) and structural variations (SVs). This release includes:
+|        |version 1.0|nouveau|
+|:---------|:---------:|:---------:|
+|Études|4|0|
+|Donneurs|999|0|
+|Fichiers|2500|0|
+|WGS|0|0|
+|WES|0|0|
 
-- PACA-CA: 81 donors with aligned WGS reads, and 62 donors with variant calls.
-- OCCAMS-GB: 96 donors with aligned WGS reads, and 95 donors with variant calls.

@@ -1,6 +1,6 @@
 ---
 id: clinical-data-validation-rules
-title: Clinical Data Validation Rules
+title: Validation des données cliniques
 platform_key: DOCS_CLINICAL_VALIDATION_RULES
 ---
 
