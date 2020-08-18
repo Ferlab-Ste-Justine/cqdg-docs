@@ -37,16 +37,16 @@ git clone git@github.com:icgc-argo/argo-docs.git
 cd argo-docs/website
 ```
 
-...and install dependencies via npm:
+...and install dependencies via yarn:
 
 ```
-npm ci
+yarn
 ```
 
 3. Run the development server to see your edits live in the browser:
 
 ```
-npm start
+yarn start
 ```
 
 The site should open in a new page in your browser at the address: [localhost:3000](http://localhost:3000)
@@ -76,7 +76,7 @@ cd scripts
 2. Install script dependencies:
 
 ```
-npm ci
+yarn
 ```
 
 3. Run the 'Add Dictionary' script:
