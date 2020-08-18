@@ -84,7 +84,7 @@ yarn
 ```
 export export LECTERN_USERNAME= ...
 export export LECTERN_PASSWORD= ...
-npm run add
+yarn run add
 ```
 
 4. Follow the prompts in the script - Use keyboard arrow keys to highlight the version you want to add. Hit enter when you have selected the desired version.
