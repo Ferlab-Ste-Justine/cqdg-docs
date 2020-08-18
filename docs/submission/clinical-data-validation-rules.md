@@ -26,8 +26,8 @@ La création de ces codes d'identification doit être faite en respectant les di
 
 - Aucun numéro d'identification d'hôpital, de biobanque ou information personnelle ne doit être utilisé pour générer les codes d'identification. 
 - Les codes d'identification doivent être conçus de manière à protéger l'identité des donneurs. 
-- Les projets partenaires ont l'entière responsabilité de conserver les clés permettant de faire le lien entre les données des donneurs soumises au CQDG et l'ensemble des données détenues sur ces donneurs par les projets (incluant possiblement leurs informations personnelles). Ces clés ne doivent, en aucun cas, être communiquées avec le CQDG ou avec les utilisateurs des données du CQDG. 
-- Les codes d'identification doivent être assignés par les projets soumissionnaires et doivent être uniques parmi tous les codes d'identification soumis par ces projets. 
+- Les études partenaires ont l'entière responsabilité de conserver les clés permettant de faire le lien entre les données des donneurs soumises au CQDG et l'ensemble des données détenues sur ces donneurs par les études (incluant possiblement leurs informations personnelles). Ces clés ne doivent, en aucun cas, être communiquées avec le CQDG ou avec les utilisateurs des données du CQDG. 
+- Les codes d'identification doivent être assignés par les études soumissionnaires et doivent être uniques parmi tous les codes d'identification soumis par ces études. 
 - Les mêmes codes d'identification doivent être conservés durant toute la période de conservation des données par le CQDG. Lors d'une mise à jour des données ou d'une nouvelle soumission, les codes d'identification attribués aux donneurs, par exemple, ne peuvent ni changer, ni être réutilisés pour identifier d'autres donneurs.  
 - Les codes d'identification sont sensibles aux majuscules et minuscules. 
 
@@ -41,7 +41,7 @@ Ces codes d'identification permettent de faire des liens entre différents évè
 
 ### Dates partielles
 
-Pour prévenir l'identification des donneurs, il est possible de soumettre des dates partielles, incluant minimalement l'année. Ceci est le cas pour la date de naissance. Pour ce type de données, comme pour tout autre type de données soumis au CQDG, le projet partenaire est resonsable d'en assurer la qualité. Par conséquent, s'attend à voir une concordance entre les dates des évènements d'un parcours-patient (naissance, diagnostic, suivi, décès, etc.). 
+Pour prévenir l'identification des donneurs, il est possible de soumettre des dates partielles, incluant minimalement l'année. Ceci est le cas pour la date de naissance. Pour ce type de données, comme pour tout autre type de données soumis au CQDG, l'étude partenaire est resonsable d'en assurer la qualité. Par conséquent, s'attend à voir une concordance entre les dates des évènements d'un parcours-patient (naissance, diagnostic, suivi, décès, etc.).
 
 Le CQDG peut mettre en place une procédure de vérification de la concordance des données et signaler ou rejetter toute données ne rencontrant pas certaines exigence en matière de qualité  
 

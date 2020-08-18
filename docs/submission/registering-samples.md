@@ -23,18 +23,14 @@ L'information de base qui doit être inscrite pour chaque échantillon molécula
 
 ### Étape 2: Validation du fichier d'inscription TSV
 
-1. Une fois que votre fichier d'inscription est formatté, cliquez sur **Validation du fichier d'inscription**. Veillez à ce que le fichier soit en format TSV est soit nommé en débutant par _sample-registration_.
+1. Une fois que votre fichier d'inscription est formatté, cliquez sur `validation du fichier d'inscription`. Veillez à ce que le fichier soit en format TSV est soit nommé en débutant par _sample-registration_.
 1. Si des erreurs sont détecté dans le fichier soumis, celles-ci seront énumées. Toutes les erreurs doivent être corrigées avant de pouvoir soumettre de nouveau le fichier. 
 1. Les fichiers valides peuvent être visionnés avant d'être inscrits. 
 
 ### Étape 3: Inscription des échantillons
 
-1. Une fois validé, les fichiers peuvent être inscrits en cliquant **Inscrire les échantillons**.
+1. Une fois validés, les fichiers peuvent être inscrits en cliquant `inscrire les échantillons`.
 
-Once registered, donors, along with specimen and sample counts, will be visible on your [Program Dashboard](/docs/submission/submitted-data).
+## Faire des corrections après l'inscription des échantillons
 
-## Correcting Already Registered Data
-
-Once samples are registered and data processing and analysis proceeds, it can be difficult to correct the data manually.
-
-If you have made an error with registered sample data, please [contact the DCC](https://platform.icgc-argo.org/contact) and they will assist in correcting your registered data.
+[Contactez-nous](https://platform.icgc-argo.org/contact) si vous avez des changements à faire après l'insciption de vos échantillons.
