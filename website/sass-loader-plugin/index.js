@@ -1,6 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = function (context, options) {
-    console.log('H: ' + context);
     const devEnv = process.env.NODE_ENV === 'development';
     return {
         name: "sass-loader-plugin",
