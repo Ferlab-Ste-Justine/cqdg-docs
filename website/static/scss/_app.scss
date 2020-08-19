@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap');
+
+$color-white: #ffffff;
+$color-neutrals-neutral-10: #003457;
+$color-neutrals-neutral-9: #18486b;
+$color-neutrals-neutral-8: #305c7e;
+$color-neutrals-neutral-7: #486f90;
+$color-neutrals-neutral-6: #6082a1;
+$color-neutrals-neutral-5: #7896b2;
+$color-neutrals-neutral-4: #90a9c1;
+$color-neutrals-neutral-3: #b5c6d8;
+$color-neutrals-neutral-2: #d8e1eb;
+$color-neutrals-neutral-1: #f0f3f8;
+$color-neutrals-neutral-0: #f8f9fc;
+$color-brand-blue-blue-1: #f2fbfe;
+$color-brand-blue-blue-2: #c2ecfb;
+$color-brand-blue-blue-3: #91dcf8;
+$color-brand-blue-blue-4: #61cdf5;
+$color-brand-blue-blue-5: #31bdf2;
+$color-brand-blue-blue-6: #00aeef;
+$color-brand-blue-blue-7: #0093cd;
+$color-brand-blue-blue-8: #0075a2;
+$color-brand-blue-blue-9: #005673;
+$color-brand-blue-blue-10: #003545;
+$color-brand-yellow-yellow-1: #fffbf2;
+$color-brand-yellow-yellow-2: #ffeec2;
+$color-brand-yellow-yellow-3: #ffe091;
+$color-brand-yellow-yellow-4: #ffd261;
+$color-brand-yellow-yellow-5: #ffc431;
+$color-brand-yellow-yellow-6: #d19900;
+$color-brand-yellow-yellow-7: #a27b00;
+$color-brand-yellow-yellow-9: #735a00;
+$color-brand-yellow-yellow-10: #453700;
+$color-brand-green-green-1: #fbfbf2;
+$color-brand-green-green-2: #eaebc2;
+$color-brand-green-green-3: #dadc91;
+$color-brand-green-green-4: #c9cc61;
+$color-brand-green-green-5: #b9bd31;
+$color-brand-green-green-6: #a8ad00;
+$color-brand-green-green-7: #909500;
+$color-brand-green-green-8: #757900;
+$color-brand-green-green-9: #575a00;
+$color-brand-green-green-10: #363800;
+$color-brand-red-red-1: #fcf6f5;
+$color-brand-red-red-2: #f1d4cf;
+$color-brand-red-red-3: #e6b2a9;
+$color-brand-red-red-4: #db8f84;
+$color-brand-red-red-5: #d06d5e;
+$color-brand-red-red-6: #c54b38;
+$color-brand-red-red-7: #a73928;
+$color-brand-red-red-8: #86291b;
+$color-brand-red-red-9: #631b10;
+$color-brand-red-red-10: #3d0f08;
+
+
+@mixin font-regular-12-px-16-px {
+	font-size:12px;
+	font-family:"IBM Plex Sans";
+	font-weight:normal;
+	line-height:16px;
+}
+@mixin font-regular-12-px-20-px {
+	font-size:12px;
+	font-family:"IBM Plex Sans";
+	font-weight:normal;
+	line-height:20px;
+}
+@mixin font-regular-14-px-20-px {
+	font-size:14px;
+	font-family:"IBM Plex Sans";
+	font-weight:normal;
+	line-height:20px;
+}
+@mixin font-regular-16-px-24-px {
+	font-size:16px;
+	font-family:"IBM Plex Sans";
+	font-weight:normal;
+	line-height:24px;
+}
+@mixin font-regular-18-px-26-px {
+	font-size:18px;
+	font-family:"IBM Plex Sans";
+	font-weight:normal;
+	line-height:26px;
+}
+@mixin font-regular-20-px-28-px {
+	font-size:20px;
+	font-family:"IBM Plex Sans";
+	font-weight:normal;
+	line-height:28px;
+}
+@mixin font-regular-24-px-32-px {
+	font-size:24px;
+	font-family:"IBM Plex Sans";
+	font-weight:normal;
+	line-height:32px;
+}
+@mixin font-regular-30-px-38-px {
+	font-size:30px;
+	font-family:"IBM Plex Sans";
+	font-weight:normal;
+	line-height:38px;
+}
+@mixin font-regular-36-px-44-px {
+	font-size:36px;
+	font-family:"IBM Plex Sans";
+	font-weight:normal;
+	line-height:44px;
+}
+@mixin font-regular-42-px-50-px {
+	font-size:42px;
+	font-family:"IBM Plex Sans";
+	font-weight:normal;
+	line-height:50px;
+}
+@mixin font-regular-54-px-64-px {
+	font-size:54px;
+	font-family:"IBM Plex Sans";
+	font-weight:normal;
+	line-height:64px;
+}
+@mixin font-semibold-12-px-16-px {
+	font-size:12px;
+	font-family:"IBM Plex Sans";
+	font-weight:semibold;
+	line-height:16px;
+}
+@mixin font-semibold-14-px-20-px {
+	font-size:14px;
+	font-family:"IBM Plex Sans";
+	font-weight:semibold;
+	line-height:20px;
+}
+@mixin font-semibold-16-px-24-px {
+	font-size:16px;
+	font-family:"IBM Plex Sans";
+	font-weight:semibold;
+	line-height:24px;
+}
+@mixin font-semibold-18-px-26-px {
+	font-size:18px;
+	font-family:"IBM Plex Sans";
+	font-weight:semibold;
+	line-height:26px;
+}
+@mixin font-semibold-20-px-28-px {
+	font-size:20px;
+	font-family:"IBM Plex Sans";
+	font-weight:semibold;
+	line-height:28px;
+}
+@mixin font-semibold-24-px-32-px {
+	font-size:24px;
+	font-family:"IBM Plex Sans";
+	font-weight:semibold;
+	line-height:32px;
+}
+@mixin font-semibold-30-px-38-px {
+	font-size:30px;
+	font-family:"IBM Plex Sans";
+	font-weight:semibold;
+	line-height:38px;
+}
+@mixin font-semibold-36-px-44-px {
+	font-size:36px;
+	font-family:"IBM Plex Sans";
+	font-weight:semibold;
+	line-height:44px;
+}
+@mixin font-semibold-42-px-50-px {
+	font-size:42px;
+	font-family:"IBM Plex Sans";
+	font-weight:semibold;
+	line-height:50px;
+}
+@mixin font-semibold-54-px-64-px {
+	font-size:54px;
+	font-family:"IBM Plex Sans";
+	font-weight:semibold;
+	line-height:64px;
+}
+@mixin font-mono-12-px-16-px {
+	font-size:12px;
+	font-family:"IBM Plex Mono";
+	font-weight:normal;
+	line-height:16px;
+}
+@mixin font-mono-14-px-20-px {
+	font-size:14px;
+	font-family:"IBM Plex Mono";
+	font-weight:normal;
+	line-height:20px;
+}
