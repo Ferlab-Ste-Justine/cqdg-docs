@@ -29,7 +29,7 @@ Check out [Clinical Data Validation Rules](/docs/submission/clinical-data-valida
 
 #### % Donors with Tumour & Normal
 
-_Coming Soon:_ Once a donor has both a tumour and matched normal raw sequencing data [submitted through Song](/docs/submission/submitting-molecular-data), they will be counted towards this percentage.
+_Coming Soon:_ Once a donor has both a tumour and matched normal raw sequencing data [ they will be counted towards this percentage.
 
 #### Donors in Molecular Data Processing
 

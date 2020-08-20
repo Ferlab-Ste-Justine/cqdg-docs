@@ -68,7 +68,6 @@ module.exports = {
       },
       links: [
         { to: 'dictionary', label: 'Data Dictionary', position: 'right' },
-        { to: 'docs/submission/submission-overview', label: 'Submission', position: 'right' },
         { to: 'docs/data-access/data-access', label: 'Data Access', position: 'right' },
         {
           to: 'docs/analysis-workflows/analysis-overview',

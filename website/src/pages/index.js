@@ -90,19 +90,8 @@ function Index() {
             >
               <ul>
                 <li>
-                  <a href="/docs/submission/submission-overview">Get started</a>: a quick guide to
-                  data submission
-                </li>
-                <li>
-                  How to <a href="/docs/submission/registering-samples">register samples</a>
-                </li>
-                <li>
                   How to{' '}
                   <a href="/docs/submission/submitting-clinical-data">submit clinical data</a>
-                </li>
-                <li>
-                  How to{' '}
-                  <a href="/docs/submission/submitting-molecular-data">submit molecular data</a>
                 </li>
               </ul>
             </ContentBlock>
