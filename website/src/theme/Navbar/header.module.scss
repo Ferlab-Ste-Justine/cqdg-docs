@@ -1,0 +1,100 @@
+@import '../../../static/scss/app';
+
+.theme-navbar{
+    display: flex;
+    height: 72px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px 0 24px;
+
+
+    &__links{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+
+        &__item{
+            @include font-regular-16-px-24-px;
+            height: 26px;
+            margin-right: 4px;
+            cursor: pointer;
+            color: $color-neutrals-neutral-9;
+            padding-left: 8px;
+            padding-right: 8px;
+            display: flex;
+            transition: background-color 50ms linear;
+
+            &:hover{
+                background: $color-neutrals-neutral-1;
+            }
+
+            &--last{
+                margin-right: 8px;
+            }
+
+            &--active{
+                background: $color-neutrals-neutral-1;
+            }
+        }
+
+        &__divider{
+            width: 2px;
+            height: 24px;
+            margin-right: 16px;
+            background: $color-brand-yellow-yellow-5;
+        }
+
+        &__right-item{
+            display: flex;
+            margin-right: 8px;
+            justify-content: flex-end;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover{
+                div{
+                    color: $color-neutrals-neutral-9;
+                    
+                }
+                path{
+                    fill: $color-neutrals-neutral-9;
+                }
+                text-decoration: underline;
+                text-decoration-color: $color-neutrals-neutral-9;
+            }
+
+            &__text{
+                color: $color-neutrals-neutral-7;
+                @include font-regular-12-px-16-px;
+            }
+
+            &>:first-child{
+                margin-right: 6px;
+            }
+        }
+
+        &__lang{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid $color-neutrals-neutral-3;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            transition: background-color 50ms linear, border 10ms linear; 
+
+            &:hover{
+                cursor: pointer;
+                background: $color-neutrals-neutral-1;
+                border: none;
+            }
+
+            &__content{
+                @include font-regular-12-px-16-px;
+                color: $color-neutrals-neutral-9;
+            }
+        }
+    }
+}
