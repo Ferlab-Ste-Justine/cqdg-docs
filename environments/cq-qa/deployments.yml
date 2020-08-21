@@ -15,7 +15,7 @@ spec:
         app: docs
     spec:
       containers:
-      - image: chusj/cqdg-docs:21f202e
+      - image: chusj/cqdg-docs:491b416
         name: docs
         resources:
           requests:
@@ -24,3 +24,6 @@ spec:
           limits:
             memory: "512Mi"
             cpu: '0.5'
+        envFrom:
+        - secretRef:
+            name: algolia-search
