@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
 $color-white: #ffffff;
 $color-neutrals-neutral-10: #003457;
@@ -51,6 +51,8 @@ $color-brand-red-red-7: #a73928;
 $color-brand-red-red-8: #86291b;
 $color-brand-red-red-9: #631b10;
 $color-brand-red-red-10: #3d0f08;
+
+$semibold: 600;
 
 
 @mixin font-regular-12-px-16-px {
@@ -122,61 +124,61 @@ $color-brand-red-red-10: #3d0f08;
 @mixin font-semibold-12-px-16-px {
 	font-size:12px;
 	font-family:"IBM Plex Sans";
-	font-weight:semibold;
+	font-weight:$semibold;
 	line-height:16px;
 }
 @mixin font-semibold-14-px-20-px {
 	font-size:14px;
 	font-family:"IBM Plex Sans";
-	font-weight:semibold;
+	font-weight:$semibold;
 	line-height:20px;
 }
 @mixin font-semibold-16-px-24-px {
 	font-size:16px;
 	font-family:"IBM Plex Sans";
-	font-weight:semibold;
+	font-weight:$semibold;
 	line-height:24px;
 }
 @mixin font-semibold-18-px-26-px {
 	font-size:18px;
 	font-family:"IBM Plex Sans";
-	font-weight:semibold;
+	font-weight:$semibold;
 	line-height:26px;
 }
 @mixin font-semibold-20-px-28-px {
 	font-size:20px;
 	font-family:"IBM Plex Sans";
-	font-weight:semibold;
+	font-weight:$semibold;
 	line-height:28px;
 }
 @mixin font-semibold-24-px-32-px {
 	font-size:24px;
 	font-family:"IBM Plex Sans";
-	font-weight:semibold;
+	font-weight:$semibold;
 	line-height:32px;
 }
 @mixin font-semibold-30-px-38-px {
 	font-size:30px;
 	font-family:"IBM Plex Sans";
-	font-weight:semibold;
+	font-weight:$semibold;
 	line-height:38px;
 }
 @mixin font-semibold-36-px-44-px {
 	font-size:36px;
 	font-family:"IBM Plex Sans";
-	font-weight:semibold;
+	font-weight:$semibold;
 	line-height:44px;
 }
 @mixin font-semibold-42-px-50-px {
 	font-size:42px;
 	font-family:"IBM Plex Sans";
-	font-weight:semibold;
+	font-weight:$semibold;
 	line-height:50px;
 }
 @mixin font-semibold-54-px-64-px {
 	font-size:54px;
 	font-family:"IBM Plex Sans";
-	font-weight:semibold;
+	font-weight:$semibold;
 	line-height:64px;
 }
 @mixin font-mono-12-px-16-px {

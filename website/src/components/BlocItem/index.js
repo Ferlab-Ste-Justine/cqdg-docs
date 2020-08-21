@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 const BlocItem = (props) => {
     const [hover, setHover] = useState(false);
     return (
-        <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className={styles["bloc-item"]}>
+        <div onClick={props.onClick} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className={styles["bloc-item"]}>
             <div className={styles["bloc-item__background"]}>
                 {
                     (!hover) ?
