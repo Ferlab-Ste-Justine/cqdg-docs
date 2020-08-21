@@ -28,6 +28,7 @@ module.exports = function (context, options) {
                                 {
                                     loader: 'sass-loader',
                                     options: {
+                                        additionalData: '@import "./static/scss/_app.scss";',
                                         sourceMap: devEnv
                                     }
                                 }
@@ -42,6 +43,7 @@ module.exports = function (context, options) {
                                 {
                                     loader: 'sass-loader',
                                     options: {
+                                        additionalData: '@import "./static/scss/_app.scss";',
                                         sourceMap: devEnv
                                     }
                                 }
