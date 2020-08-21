@@ -1,3 +1,7 @@
+![](https://github.com/Ferlab-Ste-Justine/cqdg-docs/workflows/Build/badge.svg)
+![](https://github.com/Ferlab-Ste-Justine/cqdg-docs/workflows/Publish/badge.svg)
+
+
 # ICGC-ARGO Doc Site
 
 User documentation for the ICGC-ARGO platform.
