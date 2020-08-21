@@ -1,0 +1,14 @@
+.landing-search {
+  &__input {
+    padding: 8px 16px;
+    width: 365px;
+    min-height: 40px;
+    border: 1px solid #ffffff;
+    border-radius: 100px 0px 0px 100px;
+
+    &::placeholder {
+      @include font-regular-16-px-24-px;
+      color: $color-neutrals-neutral-7;
+    }
+  }
+}
