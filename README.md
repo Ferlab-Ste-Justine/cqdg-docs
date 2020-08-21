@@ -1,3 +1,7 @@
+![](https://github.com/Ferlab-Ste-Justine/clin-proxy-api/workflows/Build/badge.svg)
+![](https://github.com/Ferlab-Ste-Justine/clin-proxy-api/workflows/Publish/badge.svg)
+
+
 # ICGC-ARGO Doc Site
 
 User documentation for the ICGC-ARGO platform.
