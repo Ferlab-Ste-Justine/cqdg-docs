@@ -53,13 +53,13 @@ function Index() {
           </div>
           <div className={styles['pages__splash__content__link']}>
 
-            <div className={styles["pages__splash__content__link__text"]}>
+            <a className={styles["pages__splash__content__link__text"]}>
               Accès au portail
 
               <div className={styles["pages__splash__content__link__text__underline"]}>
 
               </div>
-            </div>
+            </a>
 
             <OpenNew />
           </div>

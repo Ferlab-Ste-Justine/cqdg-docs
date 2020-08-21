@@ -56,6 +56,26 @@
                 }
             }
 
+            a:link {
+                color: white;
+            }
+
+            /* visited link */
+            a:visited {
+                color: white;
+            }
+
+            /* mouse over link */
+            a:hover {
+                color: white;
+                text-decoration: none;
+            }
+
+            /* selected link */
+            a:active {
+                color: white;
+            }
+
             &__link {
                 @include font-regular-14-px-20-px;
                 cursor: pointer;
