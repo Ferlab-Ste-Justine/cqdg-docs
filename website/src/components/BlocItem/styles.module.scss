@@ -1,0 +1,17 @@
+.bloc-item {
+    cursor: pointer;
+    position: relative;
+    width: 284px;
+    height: 248px;
+    margin: 0 56px;
+
+    &__background {
+        position: absolute;
+    }
+
+    &__content {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+}
