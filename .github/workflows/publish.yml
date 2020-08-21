@@ -1,4 +1,4 @@
-name: Publish
+name: Publish Image
 
 on:
   push:
@@ -10,8 +10,13 @@ jobs:
     name: Publish Image
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
-      - name: Log into registry
-        run: echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login -u chusj --password-stdin
-      - name: Publish the image
-        run: ./push_image.sh
+    - uses: actions/checkout@v2
+    - name: Push the frontend image on the docker registry
+      uses: Ferlab-Ste-Justine/action-push-image@master
+      with:
+        username: chusj
+        password: ${{ secrets.DOCKER_HUB_TOKEN }}
+        image: chusj/cqdg-docs
+        tag_source: sha
+        location: .
+        dockerfile: Dockerfile
