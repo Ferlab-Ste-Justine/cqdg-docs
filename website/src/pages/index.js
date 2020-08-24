@@ -26,6 +26,7 @@ import PillsBackground from '../components/PillsBackground';
 import OpenNew from '../components/OpenNew';
 import Search from '../components/LandingSearch';
 import BlocItem from '../components/BlocItem';
+import { t } from '../theme/Utils/translation';
 
 
 const SplashContent = (props) => {
@@ -40,25 +41,20 @@ function Index() {
     <Layout permalink="/" title="ICGC ARGO Docs">
       <div className={styles['pages__splash']}>
         <SplashContent className={styles['pages__splash__content']} >
-          <div className={styles['pages__splash__content__title']}>
-            Centre de Documentation
-          </div>
-          <div className={styles['pages__splash__content__description']}>
-            Trouver de la documentation concernant les différents services du CQDG incluant
-            l’accès, la soumission et l’analyse de données cliniques et moléculaires.
-          </div>
-          <div className={styles['pages__splash__content__search']}>
+          <p className={styles['pages__splash__content__title']}>
+            {t('landing.header.title')}
+          </p>
+          <p className={styles['pages__splash__content__description']}>
+            {t('landing.header.subtitle')}
+          </p>
+          <p className={styles['pages__splash__content__search']}>
             <Search></Search>
             <button className={styles['pages__splash__content__search__button']} onClick={() => { }}>Rechercher</button>
-          </div>
+          </p>
           <div className={styles['pages__splash__content__link']}>
 
-            <a className={styles["pages__splash__content__link__text"]}>
-              Accès au portail
-
-              <div className={styles["pages__splash__content__link__text__underline"]}>
-
-              </div>
+            <a href="" className={styles["pages__splash__content__link__text"]}>
+              {t('landing.header.to_portal')}
             </a>
 
             <OpenNew />
@@ -71,36 +67,36 @@ function Index() {
         <BlocItem onClick={() => { }}>
           <div className={styles["pages__blocs__item"]}>
             <img src="/img/body/cloud_base.svg"></img>
-            <div className={styles["pages__blocs__item__title"]}>
-              Soumettre des données
-            </div>
-            <div className={styles["pages__blocs__item__description"]}>
-              Guide pour la soumission de données génomiques
-            </div>
+            <h2 className={styles["pages__blocs__item__title"]}>
+              {t("landing.content.items.submit.title")}
+            </h2>
+            <p className={styles["pages__blocs__item__description"]}>
+              {t("landing.content.items.submit.subtitle")}
+            </p>
           </div>
         </BlocItem>
 
         <BlocItem>
           <div className={styles["pages__blocs__item"]}>
             <img src="/img/body/genetic_engineering.svg"></img>
-            <div className={styles["pages__blocs__item__title"]}>
-              Accès aux données
-            </div>
-            <div className={styles["pages__blocs__item__description"]}>
-              Apprenez à accéder et télécharger des données
-            </div>
+            <h2 className={styles["pages__blocs__item__title"]}>
+              {t("landing.content.items.access.title")}
+            </h2>
+            <p className={styles["pages__blocs__item__description"]}>
+              {t("landing.content.items.access.subtitle")}
+            </p>
           </div>
         </BlocItem>
 
         <BlocItem>
           <div className={styles["pages__blocs__item"]}>
             <img src="/img/body/scientific_literature.svg"></img>
-            <div className={styles["pages__blocs__item__title"]}>
-              Dictionnaire des données
-            </div>
-            <div className={styles["pages__blocs__item__description"]}>
-              Normes pour le formatage des fichiers de données cliniques
-            </div>
+            <h2 className={styles["pages__blocs__item__title"]}>
+              {t("landing.content.items.dictionary.title")}
+            </h2>
+            <p className={styles["pages__blocs__item__description"]}>
+              {t("landing.content.items.dictionary.subtitle")}
+            </p>
           </div>
         </BlocItem>
       </div>

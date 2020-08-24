@@ -12,7 +12,6 @@
         align-items: center;
 
         &__item {
-            @include font-regular-16-px-24-px;
             height: 26px;
             margin-right: 4px;
             cursor: pointer;
@@ -22,7 +21,16 @@
             display: flex;
             transition: background-color 50ms linear;
 
+            & > a {
+                @include font-regular-16-px-24-px;
+                padding: 0 !important;
+                margin: 0 !important;
+                color: $color-neutrals-neutral-9 !important;
+                text-decoration: none !important;
+            }
+
             &:hover {
+                text-decoration: none;
                 background: $color-neutrals-neutral-1;
             }
 
@@ -48,6 +56,14 @@
             justify-content: flex-end;
             align-items: center;
             cursor: pointer;
+
+            & > a {
+                @include font-regular-16-px-24-px;
+                padding: 0 !important;
+                margin: 0 !important;
+                color: $color-neutrals-neutral-9 !important;
+                text-decoration: none !important;
+            }
 
             &:hover {
                 div {

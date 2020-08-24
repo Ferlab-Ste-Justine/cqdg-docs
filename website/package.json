@@ -20,8 +20,10 @@
     "clipboard": "^2.0.4",
     "docsearch.js": "^2.6.3",
     "emotion": "^10.0.27",
+    "js-cookie": "^2.2.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-intl": "^5.7.0",
     "react-zoom-pan-pinch": "^1.6.1"
   },
   "devDependencies": {
