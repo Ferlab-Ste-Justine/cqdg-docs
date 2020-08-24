@@ -4,5 +4,15 @@
     "dictionary": "Dictionnaire",
     "portal": "Portail",
     "website": "Site web",
-    "opposite-locale": "EN"
+    "opposite-locale": "EN",
+    "landing.header.title": "Centre de Documentation",
+    "landing.header.subtitle": "Trouver de la documentation concernant les différents services du CQDG incluant l’accès, la soumission et l’analyse de données cliniques et moléculaires.",
+    "landing.header.search.placeholder": "Commencer une recherche...",
+    "landing.header.to_portal": "Accès au portail",
+    "landing.content.items.submit.title": "Soumettre des données",
+    "landing.content.items.submit.subtitle": "Guide pour la soumission de données génomiques",
+    "landing.content.items.access.title": "Accès aux données",
+    "landing.content.items.access.subtitle": "Apprenez à accéder et télécharger des données",
+    "landing.content.items.dictionary.title": "Dictionnaire des données",
+    "landing.content.items.dictionary.subtitle": "Normes pour le formatage des fichiers de données cliniques"
 }

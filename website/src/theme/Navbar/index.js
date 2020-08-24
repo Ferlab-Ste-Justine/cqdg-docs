@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import styles from './header.module.scss';
 import OpenNew from '../../components/OpenNew';
 import { FormattedMessage } from 'react-intl';
-import t from '../Utils/translation'
+import { t } from '../Utils/translation'
 import TranslationContext from '../TranslationContext';
 
 function Navbar() {
@@ -32,31 +32,33 @@ function Navbar() {
     }
 
     return (
-        <div className={styles["theme-navbar"]}>
-            <img src={"/img/navbar/logo.svg"}></img>
+        <nav className={styles["theme-navbar"]}>
+            <img src={"/img/navbar/logo.svg"} alt="CQDG"></img>
             <div className={styles["theme-navbar__links"]}>
                 {links.map((link, index) =>
                     (
                         (index + 1 < links.length) ?
                             <div key={index} onClick={link.action} className={`${styles["theme-navbar__links__item"]} ${(selectedIndex === index) ? styles['theme-navbar__links__item--active'] : ''}`}>
-                                {link.title}
+                                <a>{link.title}</a>
                             </div>
                             :
                             <div key={index} onClick={link.action} className={`${styles["theme-navbar__links__item"]} ${styles["theme-navbar__links__item--last"]} ${(selectedIndex === index) ? styles['theme-navbar__links__item--active'] : ''}`}>
-                                {link.title}
+                                <a>{link.title}</a>
                             </div>
                     )
                 )}
                 <div className={styles["theme-navbar__links__divider"]}></div>
                 <div className={styles["theme-navbar__links__right-item"]}>
                     <div className={styles["theme-navbar__links__right-item__text"]}>
-                        {t('portal')}
+                        <a className={styles["theme-navbar__links__right-item__text"]}>
+                            {t('portal')}
+                        </a>
                     </div>
                     <OpenNew></OpenNew>
                 </div>
                 <div className={styles["theme-navbar__links__right-item"]}>
                     <div className={styles["theme-navbar__links__right-item__text"]}>
-                        {t('website')}
+                        <a>{t('website')}</a>
                     </div>
                     <OpenNew></OpenNew>
                 </div>
@@ -66,7 +68,7 @@ function Navbar() {
                     </div>
                 </div>
             </div>
-        </div >
+        </nav >
     )
 }
 

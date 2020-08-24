@@ -1,6 +1,8 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import config from '../IntlProvider/translations';
 
-const translation = (id, value = {}) => <FormattedMessage id={id} values={value}></FormattedMessage>
+export const t = (id, value = {}) => <FormattedMessage id={id} values={value}></FormattedMessage>
 
-export default translation;
+export const translate = (locale, key) => config[locale][key];
+

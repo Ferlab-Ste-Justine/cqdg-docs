@@ -26,6 +26,7 @@ import PillsBackground from '../components/PillsBackground';
 import OpenNew from '../components/OpenNew';
 import Search from '../components/LandingSearch';
 import BlocItem from '../components/BlocItem';
+import { t } from '../theme/Utils/translation';
 
 
 const SplashContent = (props) => {
@@ -41,11 +42,10 @@ function Index() {
       <div className={styles['pages__splash']}>
         <SplashContent className={styles['pages__splash__content']} >
           <div className={styles['pages__splash__content__title']}>
-            Centre de Documentation
+            {t('landing.header.title')}
           </div>
           <div className={styles['pages__splash__content__description']}>
-            Trouver de la documentation concernant les différents services du CQDG incluant
-            l’accès, la soumission et l’analyse de données cliniques et moléculaires.
+            {t('landing.header.subtitle')}
           </div>
           <div className={styles['pages__splash__content__search']}>
             <Search></Search>
@@ -54,11 +54,9 @@ function Index() {
           <div className={styles['pages__splash__content__link']}>
 
             <a className={styles["pages__splash__content__link__text"]}>
-              Accès au portail
+              {t('landing.header.to_portal')}
 
-              <div className={styles["pages__splash__content__link__text__underline"]}>
-
-              </div>
+              <div className={styles["pages__splash__content__link__text__underline"]} />
             </a>
 
             <OpenNew />
@@ -72,10 +70,10 @@ function Index() {
           <div className={styles["pages__blocs__item"]}>
             <img src="/img/body/cloud_base.svg"></img>
             <div className={styles["pages__blocs__item__title"]}>
-              Soumettre des données
+              {t("landing.content.items.submit.title")}
             </div>
             <div className={styles["pages__blocs__item__description"]}>
-              Guide pour la soumission de données génomiques
+              {t("landing.content.items.submit.subtitle")}
             </div>
           </div>
         </BlocItem>
@@ -84,10 +82,10 @@ function Index() {
           <div className={styles["pages__blocs__item"]}>
             <img src="/img/body/genetic_engineering.svg"></img>
             <div className={styles["pages__blocs__item__title"]}>
-              Accès aux données
+              {t("landing.content.items.access.title")}
             </div>
             <div className={styles["pages__blocs__item__description"]}>
-              Apprenez à accéder et télécharger des données
+              {t("landing.content.items.access.subtitle")}
             </div>
           </div>
         </BlocItem>
@@ -96,10 +94,10 @@ function Index() {
           <div className={styles["pages__blocs__item"]}>
             <img src="/img/body/scientific_literature.svg"></img>
             <div className={styles["pages__blocs__item__title"]}>
-              Dictionnaire des données
+              {t("landing.content.items.dictionary.title")}
             </div>
             <div className={styles["pages__blocs__item__description"]}>
-              Normes pour le formatage des fichiers de données cliniques
+              {t("landing.content.items.dictionary.subtitle")}
             </div>
           </div>
         </BlocItem>
