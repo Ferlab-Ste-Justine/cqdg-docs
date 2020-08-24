@@ -41,22 +41,20 @@ function Index() {
     <Layout permalink="/" title="ICGC ARGO Docs">
       <div className={styles['pages__splash']}>
         <SplashContent className={styles['pages__splash__content']} >
-          <div className={styles['pages__splash__content__title']}>
+          <p className={styles['pages__splash__content__title']}>
             {t('landing.header.title')}
-          </div>
-          <div className={styles['pages__splash__content__description']}>
+          </p>
+          <p className={styles['pages__splash__content__description']}>
             {t('landing.header.subtitle')}
-          </div>
-          <div className={styles['pages__splash__content__search']}>
+          </p>
+          <p className={styles['pages__splash__content__search']}>
             <Search></Search>
             <button className={styles['pages__splash__content__search__button']} onClick={() => { }}>Rechercher</button>
-          </div>
+          </p>
           <div className={styles['pages__splash__content__link']}>
 
-            <a className={styles["pages__splash__content__link__text"]}>
+            <a href="" className={styles["pages__splash__content__link__text"]}>
               {t('landing.header.to_portal')}
-
-              <div className={styles["pages__splash__content__link__text__underline"]} />
             </a>
 
             <OpenNew />
@@ -69,36 +67,36 @@ function Index() {
         <BlocItem onClick={() => { }}>
           <div className={styles["pages__blocs__item"]}>
             <img src="/img/body/cloud_base.svg"></img>
-            <div className={styles["pages__blocs__item__title"]}>
+            <h2 className={styles["pages__blocs__item__title"]}>
               {t("landing.content.items.submit.title")}
-            </div>
-            <div className={styles["pages__blocs__item__description"]}>
+            </h2>
+            <p className={styles["pages__blocs__item__description"]}>
               {t("landing.content.items.submit.subtitle")}
-            </div>
+            </p>
           </div>
         </BlocItem>
 
         <BlocItem>
           <div className={styles["pages__blocs__item"]}>
             <img src="/img/body/genetic_engineering.svg"></img>
-            <div className={styles["pages__blocs__item__title"]}>
+            <h2 className={styles["pages__blocs__item__title"]}>
               {t("landing.content.items.access.title")}
-            </div>
-            <div className={styles["pages__blocs__item__description"]}>
+            </h2>
+            <p className={styles["pages__blocs__item__description"]}>
               {t("landing.content.items.access.subtitle")}
-            </div>
+            </p>
           </div>
         </BlocItem>
 
         <BlocItem>
           <div className={styles["pages__blocs__item"]}>
             <img src="/img/body/scientific_literature.svg"></img>
-            <div className={styles["pages__blocs__item__title"]}>
+            <h2 className={styles["pages__blocs__item__title"]}>
               {t("landing.content.items.dictionary.title")}
-            </div>
-            <div className={styles["pages__blocs__item__description"]}>
+            </h2>
+            <p className={styles["pages__blocs__item__description"]}>
               {t("landing.content.items.dictionary.subtitle")}
-            </div>
+            </p>
           </div>
         </BlocItem>
       </div>

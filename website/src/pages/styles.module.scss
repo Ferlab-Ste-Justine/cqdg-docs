@@ -59,39 +59,32 @@
             a:link {
                 color: white;
             }
-
-            /* visited link */
             a:visited {
                 color: white;
             }
-
-            /* mouse over link */
             a:hover {
                 color: white;
                 text-decoration: none;
             }
-
-            /* selected link */
             a:active {
                 color: white;
             }
 
             &__link {
                 @include font-regular-14-px-20-px;
-                cursor: pointer;
                 display: flex;
                 color: white;
                 margin-top: 24px;
                 height: 20px;
 
-                &__text {
+                & > a {
+                    text-decoration: none;
                     display: flex;
                     flex-direction: column;
+                    border-bottom: 1px dotted;
 
-                    &__underline {
-                        height: 1px;
-                        border: 1px dashed #ffffff;
-                        width: 100%;
+                    &:hover {
+                        border-bottom: 1px solid;
                     }
                 }
 
@@ -122,6 +115,16 @@
             justify-content: center;
             align-items: center;
 
+            .spot {
+                opacity: 0;
+            }
+
+            &:hover {
+                .pages__blocs__item__description {
+                    color: #90a9c1;
+                }
+            }
+
             &__title {
                 @include font-semibold-16-px-24-px;
                 margin-top: 24px;
@@ -132,7 +135,7 @@
 
             &__description {
                 @include font-regular-14-px-20-px;
-                color: #90a9c1;
+                color: #486f90;
                 margin-top: 8px;
                 width: 212px;
                 text-align: center;
