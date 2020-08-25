@@ -41,9 +41,9 @@ function Index() {
     <Layout permalink="/" title="ICGC ARGO Docs">
       <div className={styles['pages__splash']}>
         <SplashContent className={styles['pages__splash__content']} >
-          <p className={styles['pages__splash__content__title']}>
+          <h2 className={styles['pages__splash__content__title']}>
             {t('landing.header.title')}
-          </p>
+          </h2>
           <p className={styles['pages__splash__content__description']}>
             {t('landing.header.subtitle')}
           </p>
