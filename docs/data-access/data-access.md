@@ -25,4 +25,3 @@ Si vous souhaitez accéder à ces données à des fins de recherche, vous devez 
 2.	Les droits d’accès aux fichiers sont accordés aux chercheurs identifiés dans la demande d'accès.  
 3.	Vous pouvez ensuite vous rendre sur le portail pour visualiser les fichiers qui sont disponibles et les télécharger au besoin.
 
-![Procédure d'accès](https://user-images.githubusercontent.com/67468171/88277335-8ec6f200-ccae-11ea-8a77-19b9e414f63c.jpg) 
