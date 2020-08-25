@@ -1,14 +1,24 @@
 
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
 import useAlgolia from '../../hooks/useAlgolia';
 import { isSearchAvailable } from '../../utils';
 import { translate } from '../../theme/Utils/translation';
 import TranslationContext from '../../theme/TranslationContext';
 
+export const SearchButton = ({ children }) => {
+    return (
+        <button className={styles['landing-search__button']} onClick={() => { }}>
+            {children}
+        </button>
+    )
+}
 
 
-const Search = (props) => {
+
+
+export const Search = (props) => {
     if (!isSearchAvailable) return null;
 
     const { state } = useContext(TranslationContext);
@@ -27,4 +37,3 @@ const Search = (props) => {
         />
     );
 };
-export default Search;

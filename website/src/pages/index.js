@@ -24,7 +24,7 @@ import Layout from '@theme/Layout';
 import styles from './styles.module.scss';
 import PillsBackground from '../components/PillsBackground';
 import OpenNew from '../components/OpenNew';
-import Search from '../components/LandingSearch';
+import { Search, SearchButton } from '../components/LandingSearch';
 import BlocItem from '../components/BlocItem';
 import { t } from '../theme/Utils/translation';
 
@@ -41,15 +41,17 @@ function Index() {
     <Layout permalink="/" title="ICGC ARGO Docs">
       <div className={styles['pages__splash']}>
         <SplashContent className={styles['pages__splash__content']} >
-          <p className={styles['pages__splash__content__title']}>
+          <h2 className={styles['pages__splash__content__title']}>
             {t('landing.header.title')}
-          </p>
+          </h2>
           <p className={styles['pages__splash__content__description']}>
             {t('landing.header.subtitle')}
           </p>
           <p className={styles['pages__splash__content__search']}>
             <Search></Search>
-            <button className={styles['pages__splash__content__search__button']} onClick={() => { }}>Rechercher</button>
+            <SearchButton >
+              {t('landing.header.search.button')}
+            </SearchButton>
           </p>
           <div className={styles['pages__splash__content__link']}>
 
@@ -64,9 +66,8 @@ function Index() {
       </div>
       <div className={styles['pages__blocs']}>
 
-        <BlocItem onClick={() => { }}>
+        <BlocItem onClick={() => { }} icon="Cloud">
           <div className={styles["pages__blocs__item"]}>
-            <img src="/img/body/cloud_base.svg"></img>
             <h2 className={styles["pages__blocs__item__title"]}>
               {t("landing.content.items.submit.title")}
             </h2>
@@ -76,9 +77,8 @@ function Index() {
           </div>
         </BlocItem>
 
-        <BlocItem>
+        <BlocItem icon="Genetic">
           <div className={styles["pages__blocs__item"]}>
-            <img src="/img/body/genetic_engineering.svg"></img>
             <h2 className={styles["pages__blocs__item__title"]}>
               {t("landing.content.items.access.title")}
             </h2>
@@ -88,9 +88,8 @@ function Index() {
           </div>
         </BlocItem>
 
-        <BlocItem>
+        <BlocItem icon="Literature">
           <div className={styles["pages__blocs__item"]}>
-            <img src="/img/body/scientific_literature.svg"></img>
             <h2 className={styles["pages__blocs__item__title"]}>
               {t("landing.content.items.dictionary.title")}
             </h2>

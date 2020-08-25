@@ -1,14 +1,39 @@
+$transition-duration: 100ms;
+
 .landing-search {
   &__input {
+    @include font-regular-16-px-24-px;
     padding: 8px 16px;
     width: 365px;
+    color: #18486b;
     min-height: 40px;
-    border: 1px solid #ffffff;
+    border: 1px solid $color-white;
     border-radius: 100px 0px 0px 100px;
 
+    transition: border $transition-duration linear;
+
+    &:focus {
+      border: 1px solid $color-brand-yellow-yellow-5;
+    }
+
     &::placeholder {
-      @include font-regular-16-px-24-px;
       color: $color-neutrals-neutral-7;
+    }
+  }
+
+  &__button {
+    @include font-regular-16-px-24-px;
+    cursor: pointer;
+    width: 115px;
+    border: none;
+    background: $color-brand-yellow-yellow-5;
+    color: $color-neutrals-neutral-9;
+    padding: 8px 16px;
+    border-radius: 0px 100px 100px 0px;
+    transition: background-color $transition-duration linear;
+
+    &:hover {
+      background: #ffb600;
     }
   }
 }

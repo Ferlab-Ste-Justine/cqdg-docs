@@ -33,7 +33,9 @@ function Navbar() {
 
     return (
         <nav className={styles["theme-navbar"]}>
-            <img src={"/img/navbar/logo.svg"} alt="CQDG"></img>
+            <a href="/">
+                <img src={"/img/navbar/logo.svg"} alt="CQDG"></img>
+            </a>
             <div className={styles["theme-navbar__links"]}>
                 {links.map((link, index) =>
                     (
