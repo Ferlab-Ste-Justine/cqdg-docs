@@ -15,7 +15,7 @@ spec:
         app: docs
     spec:
       containers:
-      - image: chusj/cqdg-docs:77e6d82ff55d5dfd828c0f7d9f04869e783b18f0
+      - image: chusj/cqdg-docs:361327741c708de94815e7d27c8b4ab5ed2cb4b3
         name: docs
         resources:
           requests:
