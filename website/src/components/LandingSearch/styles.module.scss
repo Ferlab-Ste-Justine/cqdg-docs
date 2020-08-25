@@ -7,6 +7,7 @@ $transition-duration: 100ms;
     width: 365px;
     color: #18486b;
     min-height: 40px;
+    max-height: 40px;
     border: 1px solid $color-white;
     border-radius: 100px 0px 0px 100px;
 
@@ -25,6 +26,8 @@ $transition-duration: 100ms;
     @include font-regular-16-px-24-px;
     cursor: pointer;
     width: 115px;
+    min-height: 40px;
+    max-height: 40px;
     border: none;
     background: $color-brand-yellow-yellow-5;
     color: $color-neutrals-neutral-9;
