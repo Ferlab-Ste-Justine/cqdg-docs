@@ -24,7 +24,7 @@ import Layout from '@theme/Layout';
 import styles from './styles.module.scss';
 import PillsBackground from '../components/PillsBackground';
 import OpenNew from '../components/OpenNew';
-import Search from '../components/LandingSearch';
+import { Search, SearchButton } from '../components/LandingSearch';
 import BlocItem from '../components/BlocItem';
 import { t } from '../theme/Utils/translation';
 
@@ -49,7 +49,9 @@ function Index() {
           </p>
           <p className={styles['pages__splash__content__search']}>
             <Search></Search>
-            <button className={styles['pages__splash__content__search__button']} onClick={() => { }}>Rechercher</button>
+            <SearchButton >
+              {t('landing.header.search.button')}
+            </SearchButton>
           </p>
           <div className={styles['pages__splash__content__link']}>
 

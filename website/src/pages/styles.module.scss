@@ -32,28 +32,6 @@
                 display: flex;
                 width: 480px;
                 height: 40px;
-
-                &__input {
-                    padding: 8px 16px;
-                    width: 365px;
-                    border: 1px solid #ffffff;
-                    border-radius: 100px 0px 0px 100px;
-
-                    &::placeholder {
-                        @include font-regular-16-px-24-px;
-                        color: $color-neutrals-neutral-7;
-                    }
-                }
-
-                &__button {
-                    @include font-regular-16-px-24-px;
-                    cursor: pointer;
-                    width: 115px;
-                    border: none;
-                    background: #ffc431;
-                    padding: 8px 16px;
-                    border-radius: 0px 100px 100px 0px;
-                }
             }
 
             a:link {
