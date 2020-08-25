@@ -64,9 +64,8 @@ function Index() {
       </div>
       <div className={styles['pages__blocs']}>
 
-        <BlocItem onClick={() => { }}>
+        <BlocItem onClick={() => { }} icon="Cloud">
           <div className={styles["pages__blocs__item"]}>
-            <img src="/img/body/cloud_base.svg"></img>
             <h2 className={styles["pages__blocs__item__title"]}>
               {t("landing.content.items.submit.title")}
             </h2>
@@ -76,9 +75,8 @@ function Index() {
           </div>
         </BlocItem>
 
-        <BlocItem>
+        <BlocItem icon="Genetic">
           <div className={styles["pages__blocs__item"]}>
-            <img src="/img/body/genetic_engineering.svg"></img>
             <h2 className={styles["pages__blocs__item__title"]}>
               {t("landing.content.items.access.title")}
             </h2>
@@ -88,9 +86,8 @@ function Index() {
           </div>
         </BlocItem>
 
-        <BlocItem>
+        <BlocItem icon="Literature">
           <div className={styles["pages__blocs__item"]}>
-            <img src="/img/body/scientific_literature.svg"></img>
             <h2 className={styles["pages__blocs__item__title"]}>
               {t("landing.content.items.dictionary.title")}
             </h2>
