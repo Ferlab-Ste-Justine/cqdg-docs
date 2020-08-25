@@ -17,10 +17,6 @@ export const DOCS_DNA_PIPELINE_PAGE = urljoin(
 );
 export const DOCS_DATA_ACCESS_PAGE = urljoin(DOCS_URL_ROOT, '/docs/data-access/data-access');
 export const DOCS_DATA_DOWNLOAD_PAGE = urljoin(DOCS_URL_ROOT, '/docs/data-access/data-download');
-export const DOCS_PROGRAMMATIC_APIS_PAGE = urljoin(
-  DOCS_URL_ROOT,
-  '/docs/data-access/programmatic-apis',
-);
 export const DOCS_PUBLICATION_GUIDELINE_PAGE = urljoin(
   DOCS_URL_ROOT,
   '/docs/data-access/publication-guidelines',
