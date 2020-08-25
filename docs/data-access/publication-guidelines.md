@@ -1,6 +1,6 @@
 ---
 id: publication-guidelines
-title: Lignes directrices pour la publication
+title: Citation des sources de données
 platform_key: DOCS_PUBLICATION_GUIDELINE
 ---
 
