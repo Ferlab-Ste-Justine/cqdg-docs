@@ -1,65 +1,50 @@
 ---
 id: submitting-clinical-data
-title: Submitting Clinical Data
+title: Soumettre des données 
 platform_key: DOCS_SUBMITTING_CLINICAL_DATA
 ---
 
-This guide will describe how to submit clinical data using the ARGO Data Platform. Clinical data consists of all supporting data about your program's donors, including their health data.
 
-> Note: Before you can submit clinical data, your donors must be assigned ARGO IDs through the sample registration process. See [Registering Samples](/docs/submission/registering-samples) for instructions on how to register samples.
+> L'équipe du CQDG est à développer un système de soumission pour la validation en ligne de vos données. En temps, veuillez suivre la procédure décrite dans ce guide. 
 
-## Multiple Data Submitters
 
-There is only one Clinical Submission workspace for each program. All program data submitters will be using the same workspace, and you will see which member has been working in this space by looking at the file upload info above the preview table. Please communicate with your team if you see a clinical submission in progress.
 
-![Multiple Data Submitters](/assets/submission/clinical-multiple-submitters.png)
+## Comment soumettre vos données cliniques
 
-## How to Submit Clinical Data
 
-### Step 1: Download Templates and Format Clinical Files
+### Étape 1: Télécharger un client SFTP
 
-![Download and Format Files](/assets/submission/clinical-1-dowload-templates.png)
+[Contactez-nous](https://plateforme.cqdg.ca/contact) pour créer un compte SFTP pour vous permettre de téléverser vos fichiers en toute sécurité 
 
-1. When logged in, navigate to the **Program Services** area in the top menu.
-1. Click on the **Submit Clinical Data** section in the left menu for your program.
-1. Download a **TSV Template** for each data type that you are submitting. Format your file(s) according to the current [Data Dictionary](/scripts/dictionary) specifications for each clinical data type.
+### Étape 2: Inscription de vos échantillons
 
-### Tips for Formatting TSV files
+1. Accédez à votre compte à partir de la page principale du portail.
+2. Téléchargez le **gabarit TSV** pour l'inscription de vos échantillons et formatter ce fichier en fonction de la version actuelle du [Dictionnaire de données](/scripts/dictionary).
+3. Veuillez nommer votre fichier en débutant par _inscription_ et sauvegardez-le en format TSV. 
 
-- To simplify editing the TSV files, open them in Excel:
-  - BEFORE pasting your data into the Excel spreadsheet, reformat the cells as text. To do so, select the empty cells where you will paste your data, right click and select "Format cells". Choose the "Text" option and click "Ok".
-  - The first row of the file is reserved for the field headers. DO NOT DELETE THESE, as the headers act as important keys for data validation.
-  - Paste your data under the correct header fields.
-  - When you save the Excel spreadsheet, make sure it remains a TSV file. Upon saving, you may need to confirm "do you want to keep using that format?", click "Yes".
-- If you are using a text editor, make sure you have invisible characters turned on. This way you can be sure that tabs are correctly separating each field value.
-- You do not need to remove any columns from the TSV file. For example, if the field is labeled "extended" in the dictionary and you do not have a value for that field, simply leave it blank.
-- Each file template name references the corresponding version of the dictionary (e.g argo_submission_templates_v0.7 is referencing version 0.7 of the data dictionary). Please make sure you are using the latest version of these files by referencing the latest [Data Dictionary](/scripts/dictionary).
-- Check out [Clinical Data Validation Rules](/docs/submission/clinical-data-validation-rules) for the clinical file validation rules.
 
-### Step 2: Upload Clinical TSV Files
+### Étape 3: Soumettre vos données cliniques
 
-![Upload Files](/assets/submission/clinical-2-upload.png)
+1. Téléchargez les **gabarits TSV** pour la soumission de vos données et formatter ces fichiers en fonction de la version actuel du [Dictionnaire de données](/scripts/dictionary). Il existe un gabarit par table du dictionnaire de données. Il n'est pas nécessaire de compléter tous ces gabarits pour que vos données soit considérées recevables. 
+2. Ouvrez les fichiers dans Excel et copier vos données en format TEXT dans les champs appropriés (indiqués à la première ligne dans le fichier). L'information de base qui doit être inscrite pour chaque échantillon moléculaire est présentée dans la section inscription des échantillons du dictionnaire [Data Dictionary](/scripts/dictionary).
+3. Veuillez nommer vos fichiers en débutant par le nom de la table de données cliniques (ex. _donneur_, _biospecimen_, etc.) et sauvegardez-les en format TSV. 
+4.  Téléversez vos fichiers (incluant votre fichier _inscription_) en utilisant votre compte SFTP.  
 
-1. Once your file(s) are formatted, click the **Upload Files** button and select your file(s) from the browser. Only TSV file types are supported, and the file names must begin with the data type that is being submitted. For example, _donor_v.07-[anything].tsv_ would be a correctly formatted name for the donor file.
-1. Upon uploading, if there are any errors in your file they will be displayed within the Clinical Submission workspace. The error report will also be available for download. You must fix all of the errors that are listed within your file(s) and then reupload them.
-1. Valid files will be available for review within the file preview tables. You can review the file data for each data type by using the tabs on the left of the preview area.
 
-### Step 3: Validate Clinical Workspace
+[Contactez-nous](https://plateforme.cqdg.ca/contact) si vous avez besoin d'assistance pour l'inscription de vos échantillons ou pour la soumssion de vos données cliniques.
 
-Uploaded data must be checked for accuracy against the data in the current submission, as well as any data that has previously been submitted for your donors. Check out the [Clinical Data Validation Rules](/docs/submission/clinical-data-validation-rules#cross-file-validations) for a list of the cross-file validations that are performed.
+## Comment soumettre vos données moléculaires
 
-![Validate Files](/assets/submission/clinical-3-validate.png)
+> Veuillez noter que les outils pour la soumission des données moléculaires sont en développement. 
 
-1. Once you are ready, click the **Validate Submission** button to check your entire submission workspace for data consistency.
-1. Upon validation, if there are any errors in your submission they will be displayed within the Clinical Submission workspace. The error report will also be available for download. You must fix all of the errors that are listed within your file(s) and then reupload them.
-1. If there are no errors in your submission, then it will be marked as _Valid_.
 
-### Step 4: Sign Off Submission
+## Traitement des données moléculaires soumises
 
-![Sign off Submission](/assets/submission/clinical-4-signoff.png)
+Une fois que vos données moléculaires auront été soumises, elles seront analysées en utilisant des pipelines uniformes pour tous les échantillons. 
 
-1. Once you have reviewed the files in the file preview area and your submission is valid, click the **Sign Off Submission** button to submit your clinical data.
-1. If you have made any updates to already submitted data, your clinical workspace will be locked in a Pending Approval state. A DCC member will review your updates and approve them for submission. If there are any issues, your submission will be reopened and the DCC will notify you, via email, of the required changes.
-1. If your data does not require approval by DCC, it will be submitted automatically.
+## Contrôle de la qualité et libération des données 
 
-Once submitted, you will see the clinical data reflected on your [Program Dashboard](/docs/submission/submitted-data).
+
+Les données ne seront rendues publiques qu'une fois le processus de contrôle de la qualité terminé. 
+
+> Veuillez noter qu'une période d'embargo peut être exigée, durant laquelle uniquement les chercheurs de l'étude peuvent avoir accès aux données. Aprés cette période d'embargo, les données peuvent être rendues accessibles aux chercheurs non rattachés à l'étude. 

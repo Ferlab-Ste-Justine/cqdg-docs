@@ -28,6 +28,24 @@ import { Search, SearchButton } from '../components/LandingSearch';
 import BlocItem from '../components/BlocItem';
 import { t } from '../theme/Utils/translation';
 
+<<<<<<< HEAD
+=======
+function HomeSplash() {
+  const SplashContainer = props => (
+    <div className={styles.homeContainer}>
+      <div className={styles.homeSplashFade}>
+        <div className={styles.homeWrapper}>{props.children}</div>
+      </div>
+    </div>
+  );
+
+  const SearchBanner = props => (
+    <section className={styles.searchBanner}>
+      <span className={styles.bannerText}>Informez-vous!</span>
+      <AlgoliaSearch />
+    </section>
+  );
+>>>>>>> feature/dictionary
 
 const SplashContent = (props) => {
   return (
@@ -39,6 +57,7 @@ const SplashContent = (props) => {
 function Index() {
   return (
     <Layout permalink="/" title="ICGC ARGO Docs">
+<<<<<<< HEAD
       <div className={styles['pages__splash']}>
         <SplashContent className={styles['pages__splash__content']} >
           <h2 className={styles['pages__splash__content__title']}>
@@ -96,6 +115,76 @@ function Index() {
             <p className={styles["pages__blocs__item__description"]}>
               {t("landing.content.items.dictionary.subtitle")}
             </p>
+=======
+      <div>
+        <HomeSplash />
+        <div className={styles.mainContainer}>
+          <div className={styles.row}>
+            <ContentBlock
+              title="Dictionnaire de données"
+              color="#4bcee5"
+              icon="img/icons/home/data-dictionary.svg"
+            >
+              <span className={styles.contentDescription}>
+                Le dictionaire de données décrit les normes pour le formatage des données cliniques soumises au CQDG.
+              </span>
+              <a className={styles.contentAction} href="/dictionary">
+                Visionneur du dictionnaire
+                <img src="img/icons/chevron-right.svg" height={8} width={8} />
+              </a>
+            </ContentBlock>
+            <ContentBlock
+              title="Soumission des données"
+              color="#24dbb4"
+              icon="img/icons/home/testtube.svg"
+            >
+              <span className={styles.contentDescription}>
+                Guide pour la soumission de données cliniques et génomiques.
+              </span>
+              <a className={styles.contentAction} href="/docs/submission/submitting-clinical-data">
+                Comment soumettre vos données
+                <img src="img/icons/chevron-right.svg" height={8} width={8} />
+              </a>
+            </ContentBlock>
+          </div>
+          <div className={styles.row}>
+            <ContentBlock
+              title="Accès et téléchargement des données"
+              color="#f95d31"
+              icon="img/icons/home/download.svg"
+            >
+              <span className={styles.contentDescription}>
+                Guide pour l'accès aux données contrôlées du CQDG
+              </span>
+              <li>
+                <a className={styles.contentAction} href="/docs/data-access/data-access">
+                  Comment accéder aux données
+                <img src="img/icons/chevron-right.svg" height={8} width={8} />
+                </a>
+              </li>
+              <li>
+                <a className={styles.contentAction} href="/docs/data-access/data-download">
+                  Comment télécharger des données
+                <img src="img/icons/chevron-right.svg" height={8} width={8} />
+                </a>
+              </li>
+              <li>
+              </li>
+            </ContentBlock>
+            <ContentBlock
+              title="Citation des sources de données"
+              color="#E75471"
+              icon="img/icons/home/publication-guidelines.svg"
+            >
+              <span className={styles.contentDescription}>
+                Comment citer la plateformne CQDG et les données utilisées dans vos publications.
+              </span>
+              <a className={styles.contentAction} href="/docs/data-access/publication-guidelines">
+                Lire
+                <img src="img/icons/chevron-right.svg" height={8} width={8} />
+              </a>
+            </ContentBlock>
+>>>>>>> feature/dictionary
           </div>
         </BlocItem>
       </div>

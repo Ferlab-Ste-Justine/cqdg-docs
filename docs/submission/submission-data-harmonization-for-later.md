@@ -1,6 +1,6 @@
 ---
 id: submission-data-harmonization
-title: Data Harmonization
+title: Harmonisation des données
 platform_key: DOCS_SUBMISSION_HARMONIZATION
 ---
 

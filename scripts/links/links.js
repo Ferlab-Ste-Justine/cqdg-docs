@@ -17,10 +17,6 @@ export const DOCS_DNA_PIPELINE_PAGE = urljoin(
 );
 export const DOCS_DATA_ACCESS_PAGE = urljoin(DOCS_URL_ROOT, '/docs/data-access/data-access');
 export const DOCS_DATA_DOWNLOAD_PAGE = urljoin(DOCS_URL_ROOT, '/docs/data-access/data-download');
-export const DOCS_PROGRAMMATIC_APIS_PAGE = urljoin(
-  DOCS_URL_ROOT,
-  '/docs/data-access/programmatic-apis',
-);
 export const DOCS_PUBLICATION_GUIDELINE_PAGE = urljoin(
   DOCS_URL_ROOT,
   '/docs/data-access/publication-guidelines',
@@ -43,24 +39,12 @@ export const DOCS_MANAGING_PROGRAM_ACCESS_PAGE = urljoin(
   DOCS_URL_ROOT,
   '/docs/submission/managing-program-access',
 );
-export const DOCS_REGISTERING_SAMPLES_PAGE = urljoin(
-  DOCS_URL_ROOT,
-  '/docs/submission/registering-samples',
-);
 export const DOCS_SUBMISSION_HARMONIZATION_PAGE = urljoin(
   DOCS_URL_ROOT,
   '/docs/submission/submission-data-harmonization',
-);
-export const DOCS_SUBMISSION_OVERVIEW_PAGE = urljoin(
-  DOCS_URL_ROOT,
-  '/docs/submission/submission-overview',
 );
 export const DOCS_SUBMITTED_DATA_PAGE = urljoin(DOCS_URL_ROOT, '/docs/submission/submitted-data');
 export const DOCS_SUBMITTING_CLINICAL_DATA_PAGE = urljoin(
   DOCS_URL_ROOT,
   '/docs/submission/submitting-clinical-data',
-);
-export const DOCS_SUBMITTING_MOLECULAR_DATA_PAGE = urljoin(
-  DOCS_URL_ROOT,
-  '/docs/submission/submitting-molecular-data',
 );

@@ -52,7 +52,8 @@
       "valueType": "string",
       "description": "Keywords associated with the Study",
       "meta": {
-        "displayName": "Keywords for the Study"
+        "displayName": "Keywords for the Study",
+        "notes": "Provide a semicolon (;) delimited list of keywords"
       }
     },
     {
@@ -113,19 +114,6 @@
       }
     },
     {
-      "name": "submitter_access_requirement_id",
-      "description": "Unique identifier associated with the data use requirements",
-      "valueType": "string",
-      "restrictions": {
-        "required": true
-      },
-      "meta": {
-        "displayName": "Submitter Data Requirement ID",
-        "validationDependency": true,
-        "primaryId": true
-      }
-    },
-    {
       "name": "access_requirements",
       "description": "Data use requirements as defined in the GA4GH Data Use Ontology (DUO)",
       "valueType": "string",
@@ -135,7 +123,8 @@
       "meta": {
         "core": true,
         "displayName": "Data Use Requirements",
-        "notes": "Refer to the Data Use Ontology code https://github.com/EBISPOT/DUO "
+        "notes": "Refer to the Data Use Ontology code https://github.com/EBISPOT/DUO and provide a semicolon (;) delimited list of requirements",
+        "examples": "Ethics approval required (DUO:0000021); Time limit on use (DUO:0000025)"
       }
     }
   ]

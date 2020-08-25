@@ -1,6 +1,6 @@
 {
-  "name": "primary_diagnosis",
-  "description": "The collection of data elements related to a donor's primary diagnosis. The primary diagnosis is the first diagnosed case of cancer in a donor. To submit multiple primary diagnoses for a single donor, submit multiple rows in the primary diagnosis file for this donor.",
+  "name": "Diagnosis",
+  "description": "The collection of data elements related to a donor's diagnosis. To submit multiple diagnoses for a single donor, submit multiple rows in the diagnosis file for this donor.",
   "meta": {
     "parent": "donor"
   },
@@ -12,6 +12,7 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
+        "foreignKey": "study.study_id",
         "displayName": "Study ID"
       },
       "restrictions": {
@@ -25,7 +26,7 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "sample_registration.submitter_donor_id",
+        "foreignKey": "donor.submitter_donor_id",
         "displayName": "Submitter Donor ID",
         "notes": "#/notes/submitter_id"
       },
@@ -35,12 +36,14 @@
       }
     },
     {
-      "name": "submitter_primary_diagnosis_id",
+      "name": "submitter_diagnosis_id",
       "valueType": "string",
-      "description": "Unique identifier of the primary diagnosis event, assigned by the data provider.",
+      "description": "Unique identifier of the diagnosis event, assigned by the data provider.",
       "meta": {
         "primaryId": true,
-        "displayName": "Submitter Primary Diagnosis ID",
+        "validationDependency": true,
+        "foreignKey": "diagnosis.submitter_diagnosis_id",
+        "displayName": "Submitter Diagnosis ID",
         "notes": "#/notes/submitter_id"
       },
       "restrictions": {
@@ -57,7 +60,20 @@
       },
       "meta": {
         "core": true,
-        "displayName": "Diagnosis ICD term"
+        "displayName": "Diagnosis ICD-10 term"
+      }
+    },
+    {
+      "name": "diagnosis_ICD_category",
+      "valueType": "string",
+      "description": "Disease caregory as defined in the ICD-10",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "notes": "This refers to the body systems chapters of the WHO ICD-10",
+        "displayName": "ICD-10 Disease category"
       }
     },
     {
@@ -129,7 +145,7 @@
       },
       "valueType": "string",
       "meta": {
-        "dependsOn": "primary_diagnosis.is_cancer",
+        "dependsOn": "diagnosis.is_cancer",
         "notes": "Basis of diagnosis is only required to be submitted if the donor's diagnosis is cancer",
         "core": true,
         "displayName": "Basis of Diagnosis"
@@ -155,7 +171,7 @@
         ]
       },
       "meta": {
-        "dependsOn": "primary_diagnosis.is_cancer",
+        "dependsOn": "diagnosis.is_cancer",
         "core": true,
         "displayName": "Tumour Staging System"
       }
@@ -166,10 +182,10 @@
       "valueType": "string",
       "restrictions": {
         "codeList": "#/list/stage_groups",
-        "script": "#/script/primary_diagnosis/stageGroup"
+        "script": "#/script/diagnosis/stageGroup"
       },
       "meta": {
-        "dependsOn": "primary_diagnosis.tumour_staging_system",
+        "dependsOn": "diagnosis.tumour_staging_system",
         "notes": "This field is dependent on the selected tumour_staging_system",
         "displayName": "Stage Group"
       }
@@ -179,7 +195,7 @@
       "description": "The code to represent the extent of the primary tumour (T) based on evidence obtained from clinical assessment parameters determined at time of primary diagnosis and prior to treatment, according to criteria based on multiple editions of the AJCC's Cancer Staging Manual.",
       "valueType": "string",
       "meta": {
-        "dependsOn": "primary_diagnosis.tumour_staging_system",
+        "dependsOn": "diagnosis.tumour_staging_system",
         "notes": "This field is required only if the selected tumour_staging_system is any edition of the AJCC cancer staging system.",
         "displayName": "T Category"
       },
@@ -192,7 +208,7 @@
       "description": "The code to represent the stage of cancer defined by the extent of the regional lymph node (N) involvement for the cancer based on evidence obtained from clinical assessment parameters determined at time of primary diagnosis and prior to treatment, according to criteria based on multiple editions of the AJCC's Cancer Staging Manual.",
       "valueType": "string",
       "meta": {
-        "dependsOn": "primary_diagnosis.tumour_staging_system",
+        "dependsOn": "diagnosis.tumour_staging_system",
         "notes": "This field is required only if the selected tumour_staging_system is any edition of the AJCC cancer staging system.",
         "displayName": "N Category"
       },
@@ -205,7 +221,7 @@
       "description": "The code to represent the stage of cancer defined by the extent of the distant metastasis (M) for the cancer based on evidence obtained from clinical assessment parameters determined at time of primary diagnosis and prior to treatment, according to criteria based on multiple editions of the AJCC's Cancer Staging Manual. MX is NOT a valid category and cannot be assigned.",
       "valueType": "string",
       "meta": {
-        "dependsOn": "primary_diagnosis.tumour_staging_system",
+        "dependsOn": "diagnosis.tumour_staging_system",
         "notes": "This field is required only if the selected tumour_staging_system is any edition of the AJCC cancer staging system.",
         "displayName": "M Category"
       },

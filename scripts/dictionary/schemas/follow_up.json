@@ -12,6 +12,7 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
+        "foreignKey": "study.study_id",
         "displayName": "Study ID"
       },
       "restrictions": {
@@ -25,8 +26,24 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "sample_registration.submitter_donor_id",
+        "foreignKey": "donor.submitter_donor_id",
         "displayName": "Submitter Donor ID",
+        "notes": "#/notes/submitter_id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/submitter_id"
+      }
+    },
+    {
+      "name": "submitter_diagnosis_id",
+      "valueType": "string",
+      "description": "Indicate the diagnosis event in the clinical timeline that this biospecimen acquisition was related to.",
+      "meta": {
+        "primaryId": true,
+        "validationDependency": true,
+        "foreignKey": "diagnosis.submitter_diagnosis_id",
+        "displayName": "Submitter Diagnosis ID",
         "notes": "#/notes/submitter_id"
       },
       "restrictions": {
