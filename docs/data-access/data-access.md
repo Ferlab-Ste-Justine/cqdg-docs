@@ -23,5 +23,4 @@ Si vous souhaitez accéder à ces données à des fins de recherche, vous devez 
 
 1.	Une fois que l'approbation d'accès aux données a été octroyée par le bureau d'accès aux données d'une étude partenaire, celui-ci transmet l'information nécessaire au [portail de données ](https://plateforme.cqdg.ca).  
 2.	Les droits d’accès aux fichiers sont accordés aux chercheurs identifiés dans la demande d'accès.  
-3.	Vous pouvez ensuite vous rendre sur le portail pour visualiser les fichiers qui sont disponibles et les télécharger au besoin.
-
+3.	Vous pouvez ensuite vous rendre sur le portail pour visualiser les fichiers qui sont disponibles et les télécharger au besoin. 
