@@ -64,31 +64,6 @@ module.exports = {
     },
 
     disableDarkMode: true,
-<<<<<<< HEAD
-=======
-    navbar: {
-      title: '',
-      logo: {
-        alt: 'CQDG',
-        src: 'img/logos/icgc_argo_name.svg',
-      },
-      links: [
-        { to: 'dictionary', label: 'Data Dictionary', position: 'right' },
-        { to: 'docs/data-access/data-access', label: 'Data Access', position: 'right' },
-        {
-          to: 'docs/analysis-workflows/analysis-overview',
-          label: 'Analysis Pipelines',
-          position: 'right',
-        },
-
-        // {
-        //   href: 'https://platform.icgc-argo.org/contact',
-        //   label: 'Contact',
-        //   position: 'right',
-        // },
-      ],
-    },
->>>>>>> feature/dictionary
     footer: {
       logo: null,
       copyright: `© ${new Date().getFullYear()} CQDG. All Rights reserved.`,
