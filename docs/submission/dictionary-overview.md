@@ -5,21 +5,20 @@ platform_key: DOCS_DICTIONARY_OVERVIEW
 ---
 
 
-Le [dictionnaire de données](/scripts/dictionary) représente les détails du modèle de données et les formats et restrictions auxquels adhére ce modèle pour assurer l'harmonisation et la qualité des données. Chacune des tables du dictionnaire est reliée à un concept clinique. Les études partenaires doivent soumettre au CQDG des données pour un minumum de tables pour que l'ensemble de données soit considérées recevables.  
+Le [dictionnaire de données](/scripts/dictionary) présente les détails du modèle de données et les formats et restrictions auxquels adhére ce modèle pour assurer l'harmonisation et la qualité des données. Chacune des tables du dictionnaire est reliée à un concept clinique. Les études partenaires doivent soumettre au CQDG des données pour un minumum de tables pour que le jeu de données soit considérées recevables.  
 
 
 ## Comprendre le dictionnaire de données
 
-Le [visionneur du dictionnaire](/scripts/dictionary) présente l'ensemble de données cliniques qui peut accompagner les données moléculaires hébergées au CQDG.
+Le [visionneur du dictionnaire](/scripts/dictionary) présente l'ensemble des variables cliniques qui peut accompagner les données moléculaires hébergées au CQDG.
 
 La liste des champs peut être filtée de manière à identifier les [champs nécessaires pour la soumission](/docs/submission/clinical-data-validation-rules).
-
 
 Les anciennes versions du dictionnaire peuvent être consultées en utilisant le menu déroulant au dessus du dictionnaire. Cependant, la dernière version du dictionnaire doit être utilisée lors de la soumission de données.
 
 ### Descripteurs des chamnps
 
-Chacun des champs est classé en fonction de l'exigence des données et de ses attributs. Ces information permettent d'identifier les champs qui sont considérés nécesaires pour qu'une soumission soit jugée recevable. Les champs peuvent être classés ainsi:  
+Chacun des champs est classé en fonction de l'exigence des données et de ses attributs. Ces informations permettent d'identifier les champs qui sont considérés nécessaires pour qu'une soumission soit jugée recevable. Les champs peuvent être classés ainsi:  
 
 ![ID](/assets/submission/dictionary-id.svg) 
 
@@ -37,7 +36,7 @@ Chacun des champs est classé en fonction de l'exigence des données et de ses a
 
 ![Essentiel](/assets/submission/dictionary-core.svg)
 
-- Ces champs font partie de l'ensemble de données cliniques essentiel à être soumis.  
+- Ces champs font partie de l'ensemble des données cliniques essentiel à être soumis.  
 - Lorsqu'un champs `Essentiel`,est aussi considéré `Conditionnel`, ce dernier doit être soumis uniquement si les condtions sont rencontrées.
 
 ![Supplémentaire](/assets/submission/dictionary-extended.svg)
