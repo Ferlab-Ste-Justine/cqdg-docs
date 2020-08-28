@@ -7,13 +7,15 @@ platform_key: DOCS_SUBMITTING_CLINICAL_DATA
 
 > L'équipe du CQDG est à développer un système de soumission pour la validation en ligne de vos données. 
 
-Entre temps, [Contactez-nous](https://plateforme.cqdg.ca/contact) pour créer un compte SFTP pour vous permettre de téléverser vos fichiers en toute sécurité 
+Entre temps, [Contactez-nous](https://plateforme.cqdg.ca/contact) pour créer un compte SFTP qui vous permettra de téléverser vos fichiers en toute sécurité 
 
 ## Comment soumettre vos données cliniques
 
 L'information de base qui doit être inscrite pour chaque échantillon moléculaire est présentée dans la section inscription des échantillons du dictionnaire [Data Dictionary](/scripts/dictionary).
 
 ### Étape 1: Télécharger un client SFTP
+
+Recommandation: le logiciel gratuit [Filezilla](https://filezilla-project.org/index.php)
 
 ### Étape 1: Inscription de vos échantillons
 
