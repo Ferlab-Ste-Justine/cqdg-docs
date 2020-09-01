@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import styles from './header.module.scss';
 import OpenNew from '../../components/OpenNew';
-import { FormattedMessage } from 'react-intl';
+import { Helmet } from 'react-helmet';
 import { t } from '../Utils/translation'
 import TranslationContext from '../TranslationContext';
 
@@ -33,6 +33,7 @@ function Navbar() {
 
     return (
         <nav className={styles["theme-navbar"]}>
+            <Helmet htmlAttributes={{lang: state.locale}}></Helmet>
             <a href="/">
                 <img src={"/img/navbar/logo.svg"} alt="CQDG"></img>
             </a>
