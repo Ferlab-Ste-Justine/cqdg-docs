@@ -38,12 +38,12 @@ const SplashContent = (props) => {
 
 function Index() {
   return (
-    <Layout permalink="/" title="ICGC ARGO Docs">
+    <Layout permalink="/" title="CQDG Docs">
       <div className={styles['pages__splash']}>
         <SplashContent className={styles['pages__splash__content']} >
-          <h2 className={styles['pages__splash__content__title']}>
+          <h1 className={styles['pages__splash__content__title']}>
             {t('landing.header.title')}
-          </h2>
+          </h1>
           <p className={styles['pages__splash__content__description']}>
             {t('landing.header.subtitle')}
           </p>
