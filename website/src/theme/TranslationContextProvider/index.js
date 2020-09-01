@@ -6,6 +6,8 @@ import { COOKIE_LOCALE } from '../Utils/cookies-constants';
 const supportedLanguages = ["en", "fr"];
 const isValidLocale = (locale) => supportedLanguages.find(l => l === locale) != null;
 
+const setHtmlLang = (lang) => document.documentElement.lang = lang;
+
 const reducer = (state, action) => {
     switch (action.type) {
         case 'CHANGE_LOCALE':
@@ -13,6 +15,7 @@ const reducer = (state, action) => {
                 throw new Error(`Locale ${action.locale} not supported.`);
             }
             Cookies.set(COOKIE_LOCALE, action.locale);
+            setHtmlLang(action.locale);
             return { ...state, locale: action.locale }
         default:
             throw Error();
@@ -27,6 +30,7 @@ function TranslationProvider({ children }) {
         Cookies.set(COOKIE_LOCALE, defaultLocale)
     }
     const [state, dispatch] = useReducer(reducer, { locale: defaultLocale });
+    setHtmlLang(defaultLocale);
 
     return (
         <TranslationContext.Provider value={{ state, dispatch }}>
