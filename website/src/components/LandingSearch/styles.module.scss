@@ -15,10 +15,11 @@ $transition-duration: 100ms;
 
     &:focus {
       border: 1px solid $color-brand-yellow-yellow-5;
+      box-shadow: 0 0 3px 0 $color-brand-yellow-yellow-5, 0 0px 3px 0 transparent;
     }
 
     &::placeholder {
-      color: $color-neutrals-neutral-7;
+      color: $color-neutrals-neutral-4;
     }
   }
 

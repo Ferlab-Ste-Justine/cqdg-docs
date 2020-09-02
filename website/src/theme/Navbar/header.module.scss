@@ -18,11 +18,12 @@
             color: $color-neutrals-neutral-9;
             padding-left: 8px;
             padding-right: 8px;
+            border-radius: 2px;
             display: flex;
             transition: background-color 50ms linear;
 
             & > a {
-                @include font-regular-16-px-24-px;
+                @include font-regular-14-px-20-px;
                 padding: 0 !important;
                 margin: 0 !important;
                 color: $color-neutrals-neutral-9 !important;

@@ -8610,7 +8610,7 @@ react-grid-system@^4.4.6:
   dependencies:
     prop-types "^15.7.2"
 
-react-helmet@^6.0.0-beta:
+react-helmet@^6.0.0-beta, react-helmet@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-6.1.0.tgz#a750d5165cb13cf213e44747502652e794468726"
   integrity sha512-4uMzEY9nlDlgxr61NL3XbKRy1hEkXmKNXhjbAIOVw5vcFrsdYbH2FEwcNyWvWinl103nXgzYNlns9ca+8kFiWw==

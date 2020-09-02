@@ -77,7 +77,7 @@ function Layout(props) {
           <meta name="twitter:card" content="summary" />
         </Head>
         <Navbar />
-        <div className="main-wrapper">{children}</div>
+        <main className="main-wrapper">{children}</main>
         {!noFooter && <Footer />}
       </Providers>
     </>
