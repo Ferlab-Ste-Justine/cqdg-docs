@@ -13,14 +13,17 @@ function Navbar() {
 
     const links = [{
         title: t('access'),
+        href: "/docs/data-access/data-access",
         action: () => { setSelectedIndex(0); }
     },
     {
         title: t('submit'),
+        href: '/docs/submission/submitting-clinical-data',
         action: () => { setSelectedIndex(1); }
     },
     {
         title: t('dictionary'),
+        href: "/dictionary",
         action: () => { setSelectedIndex(2); }
     }];
 
@@ -42,11 +45,11 @@ function Navbar() {
                     (
                         (index + 1 < links.length) ?
                             <div key={index} onClick={link.action} className={`${styles["theme-navbar__links__item"]} ${(selectedIndex === index) ? styles['theme-navbar__links__item--active'] : ''}`}>
-                                <a>{link.title}</a>
+                                <a href={link.href}>{link.title}</a>
                             </div>
                             :
                             <div key={index} onClick={link.action} className={`${styles["theme-navbar__links__item"]} ${styles["theme-navbar__links__item--last"]} ${(selectedIndex === index) ? styles['theme-navbar__links__item--active'] : ''}`}>
-                                <a>{link.title}</a>
+                                <a href={link.href}>{link.title}</a>
                             </div>
                     )
                 )}
