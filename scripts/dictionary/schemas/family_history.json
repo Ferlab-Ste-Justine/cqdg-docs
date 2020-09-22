@@ -5,7 +5,7 @@
     {
       "name": "study_id",
       "valueType": "string",
-      "description": "Unique identifier for the Study.",
+      "description": "Unique identifier for the Study",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
@@ -17,7 +17,7 @@
       }
     },
     {
-      "description": "Unique identifier of the donor, assigned by the data provider.",
+      "description": "Unique identifier of the donor, assigned by the data provider",
       "name": "submitter_donor_id",
       "valueType": "string",
       "meta": {
@@ -35,7 +35,7 @@
     {
       "name": "submitter_family_condition_id",
       "valueType": "string",
-      "description": "Unique identifier of the condition observed in the family, assigned by the data provider (within a study).",
+      "description": "Unique identifier of the condition observed in the family, assigned by the data provider (within a study)",
       "restrictions": {
         "required": true,
         "regex": "#/regex/submitter_id"
@@ -48,7 +48,7 @@
     },
     {
       "name": "family_condition_name",
-      "description": "Name of the condition observed in a family member.",
+      "description": "Name of the condition observed in a family member",
       "valueType": "string",
       "restrictions": {
         "required": true
@@ -60,7 +60,7 @@
     },
     {
       "name": "family_condition_age",
-      "description": "Age when condition was observed in family member.",
+      "description": "Age when condition was observed in family member",
       "valueType": "integer",
       "meta": {
         "units": "years",

@@ -43,7 +43,7 @@ Ces codes d'identification permettent de faire des liens entre différents évè
 
 Pour prévenir l'identification des donneurs, il est possible de soumettre des dates partielles, incluant minimalement l'année. Ceci est le cas pour la date de naissance. Pour ce type de données, comme pour tout autre type de données soumis au CQDG, l'étude partenaire est resonsable d'en assurer la qualité. Par conséquent, s'attend à voir une concordance entre les dates des évènements d'un parcours-patient (naissance, diagnostic, suivi, décès, etc.).
 
-Le CQDG peut mettre en place une procédure de vérification de la concordance des données et signaler ou rejetter toute données ne rencontrant pas certaines exigence en matière de qualité  
+Le CQDG peut mettre en place une procédure de vérification de la concordance des données et signaler ou rejetter toute données ne rencontrant pas certaines exigences en matière de qualité  
 
 
 ## Contrôle de qualité
