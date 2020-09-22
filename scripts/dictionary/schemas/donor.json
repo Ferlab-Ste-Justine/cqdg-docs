@@ -5,7 +5,7 @@
     {
       "name": "study_id",
       "valueType": "string",
-      "description": "Unique identifier for the Study.",
+      "description": "Unique identifier for the Study",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
@@ -17,7 +17,7 @@
       }
     },
     {
-      "description": "Unique identifier of the donor, assigned by the data provider.",
+      "description": "Unique identifier of the donor, assigned by the data provider",
       "name": "submitter_donor_id",
       "valueType": "string",
       "meta": {
@@ -38,7 +38,7 @@
       "valueType": "string",
       "meta": {
         "core": true,
-        "notes": "partial date of birth may be provided minimum of year of birth",
+        "notes": "Partial date of birth may be provided minimum of year of birth",
         "displayName": "dob"
       },
       "restrictions": {
@@ -82,11 +82,12 @@
       "restrictions": {
         "codeList": [
           "French Canadian",
+          "English Canadian",
           "Aboriginal",
           "European",
           "Arab",
           "Latin American",
-          "African or Carabean",
+          "African or Caribbean",
           "East and Southeast Asian",
           "South Asian",
           "Mixted descent",
@@ -98,7 +99,7 @@
       }
     },
     {
-      "description": "Donor's last known state of living or deceased.",
+      "description": "Donor's last known state of living or deceased",
       "name": "vital_status",
       "restrictions": {
         "codeList": [
@@ -126,7 +127,7 @@
           "Accidental death",
           "Chronic lower respiratory diseases",
           "Influenza and pneumonia",
-          "Other reasons",
+          "Other reason",
           "Unknown"
         ],
         "script": "#/script/donor/ensureDeceased"
@@ -135,12 +136,12 @@
       "meta": {
         "core": true,
         "dependsOn": "donor.vital_status",
-        "notes": "Cause of death is only required to be submitted if the donor's vital_status is Deceased.",
+        "notes": "Cause of death is only required to be submitted if the donor's vital_status is 'Deceased'.",
         "displayName": "Cause of Death"
       }
     },
     {
-      "description": "Numeric value to represent the age of the donor at the time of death, in days.",
+      "description": "Numeric value to represent the age of the donor at the time of death, in days",
       "name": "age_of_death",
       "valueType": "integer",
       "meta": {
@@ -156,7 +157,7 @@
       }
     },
     {
-      "description": "Indicates the donor's height, in centimeters (cm).",
+      "description": "Indicate the donor's height, in centimeters (cm)",
       "name": "height",
       "valueType": "integer",
       "meta": {
@@ -165,7 +166,7 @@
       }
     },
     {
-      "description": "Indicates the donor's weight, in kilograms (kg).",
+      "description": "Indicate the donor's weight, in kilograms (kg)",
       "name": "body_weight",
       "valueType": "integer",
       "meta": {
@@ -174,7 +175,7 @@
       }
     },
     {
-      "description": "Indicates the donor's Body Mass Index (BMI) in kg/m².",
+      "description": "Indicate the donor's Body Mass Index (BMI) in kg/m²",
       "name": "bmi",
       "valueType": "integer",
       "meta": {
@@ -183,7 +184,7 @@
       }
     },
     {
-      "description": "Indicates the donor's availability of genealogical data",
+      "description": "Indicate the donor's availability of genealogical data",
       "name": "genealogy_available",
       "restrictions": {
         "codeList": [
@@ -197,7 +198,7 @@
       }
     },
     {
-      "description": "Indicates if the donor is a proband or a family member",
+      "description": "Indicate if the donor is a proband or a family member",
       "name": "is_a_proband",
       "restrictions": {
         "codeList": [
@@ -212,7 +213,7 @@
       }
     },
     {
-      "description": "Indicates if the donor is affected by the conditionr",
+      "description": "Indicate if the donor is affected by the condition",
       "name": "is_affected",
       "restrictions": {
         "codeList": [

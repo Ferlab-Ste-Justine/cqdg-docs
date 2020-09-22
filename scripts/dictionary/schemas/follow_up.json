@@ -8,7 +8,7 @@
     {
       "name": "study_id",
       "valueType": "string",
-      "description": "Unique identifier for the Study.",
+      "description": "Unique identifier for the Study",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
@@ -20,7 +20,7 @@
       }
     },
     {
-      "description": "Unique identifier of the donor, assigned by the data provider.",
+      "description": "Unique identifier of the donor, assigned by the data provider",
       "name": "submitter_donor_id",
       "valueType": "string",
       "meta": {
@@ -52,7 +52,7 @@
       }
     },
     {
-      "description": "Unique identifier for a follow-up event in a donor's clinical record, assigned by the data provider.",
+      "description": "Unique identifier for a follow-up event in a donor's clinical record, assigned by the data provider",
       "name": "submitter_follow_up_id",
       "valueType": "string",
       "meta": {
@@ -67,7 +67,7 @@
       }
     },
     {
-      "description": "Time interval between primary diagnosis and follow-up event.",
+      "description": "Time interval between primary diagnosis and follow-up event",
       "name": "days_to_follow_up",
       "valueType": "integer",
       "restrictions": {
@@ -80,7 +80,7 @@
       }
     },
     {
-      "description": "Indicate the donor's disease status at time of follow-up.",
+      "description": "Indicate the donor's disease status at time of follow-up",
       "name": "disease_status_at_followup",
       "valueType": "string",
       "restrictions": {

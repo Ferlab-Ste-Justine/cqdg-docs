@@ -5,7 +5,7 @@
   {
     "name": "study_id",
     "valueType": "string",
-    "description": "Unique identifier for the Study.",
+    "description": "Unique identifier for the Study",
     "meta": {
       "validationDependency": true,
       "primaryId": true,
@@ -19,7 +19,7 @@
     {
       "name": "submitter_family_id",
       "valueType": "string",
-      "description": "Unique identifier of the family, assigned by the data provider.",
+      "description": "Unique identifier of the family, assigned by the data provider",
       "restrictions": {
         "required": true,
         "regex": "#/regex/submitter_id"
@@ -32,7 +32,7 @@
     },
     {
       "name": "family_type",
-      "description": "Type of family-based study design.",
+      "description": "Type of family-based study design",
       "valueType": "string",
       "restrictions": {
         "required": true,

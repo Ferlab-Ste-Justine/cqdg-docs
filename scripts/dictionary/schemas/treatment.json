@@ -8,7 +8,7 @@
     {
       "name": "study_id",
       "valueType": "string",
-      "description": "Unique identifier for the Study.",
+      "description": "Unique identifier for the Study",
       "meta": {
         "validationDependency": true,
         "foreignKey": "study.study_id",
@@ -21,7 +21,7 @@
     },
     {
       "name": "submitter_donor_id",
-      "description": "Unique identifier of the donor, assigned by the data provider.",
+      "description": "Unique identifier of the donor, assigned by the data provider",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
@@ -37,7 +37,7 @@
     },
     {
       "name": "submitter_treatment_id",
-      "description": "Unique identifier of the treatment, assigned by the data provider.",
+      "description": "Unique identifier of the treatment, assigned by the data provider",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
@@ -53,7 +53,7 @@
     {
       "name": "submitter_diagnosis_id",
       "valueType": "string",
-      "description": "Indicate the diagnosis event in the clinical timeline that this treatment was related to.",
+      "description": "Indicate the diagnosis event in the clinical timeline that this treatment was related to",
       "meta": {
         "primaryId": true,
         "foreignKey": "diagnosis.submitter_diagnosis_id",
@@ -67,7 +67,7 @@
     },
     {
       "name": "treatment_type",
-      "description": "Indicate the type of treatment the donor received.",
+      "description": "Indicate the type of treatment the donor received",
       "valueType": "string",
       "isArray": true,
       "restrictions": {
@@ -98,7 +98,7 @@
     },
     {
       "name": "treatment_is_primary",
-      "description": "Indicate if the treatment is the primary treatment following the initial diagnosis.",
+      "description": "Indicate if the treatment is the primary treatment following the initial diagnosis",
       "valueType": "string",
       "restrictions": {
         "codeList": [
@@ -181,25 +181,27 @@
       "description": "Drug class based on ATC (Anatomical Therapeutic Class)",
       "meta": {
         "core": true,
-        "notes": "The DIN uniquely identifies the manufacturer, product name, active ingredient(s), strength(s) of active ingredient(s);pharmaceutical form and route of administration.",
+        "notes": "Refer to the WHO ATC https://www.whocc.no/atc_ddd_index/ to classify the active ingredients of drug according to the organ or system on which it acts and its therapeutic, pharmacological and chemical properties. Drugs should be coded at the 5th level of the ATC.",
         "dependsOn": "treatment.treatment_type",
         "displayName": "Medication class"
       }
     },
     {
-      "description": "Date when medication was prescribed (MM-YYY)",
+      "description": "Date of the first prescription dispensation (MM-YYYY)",
       "name": "medication_start_date",
       "valueType": "string",
       "meta": {
+        "notes": "For self-reported information provide date when stopped taking the Rx.",
         "dependsOn": "treatment.treatment_type",
         "displayName": "Medication start date"
       }
     },
     {
-      "description": "Date when medication was stopped (MM-YYYY)",
+      "description": "Date of the last prescription dispensation (MM-YYYY)",
       "name": "medication_end_date",
       "valueType": "string",
       "meta": {
+        "notes": "For self-reported information provide date when stopped taking the Rx.",
         "dependsOn": "treatment.treatment_type",
         "displayName": "Medication end date"
       }

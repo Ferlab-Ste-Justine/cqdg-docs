@@ -5,7 +5,7 @@
     {
       "name": "study_id",
       "valueType": "string",
-      "description": "Unique identifier for the Study.",
+      "description": "Unique identifier for the Study",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
@@ -19,7 +19,7 @@
     {
       "name": "submitter_donor_id",
       "valueType": "string",
-      "description": "Unique identifier of the donor, assigned by the data provider.",
+      "description": "Unique identifier of the donor, assigned by the data provider",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
@@ -34,7 +34,7 @@
     },
     {
       "name": "smoking_status",
-      "description": "Smoking status of a patient at the time of the data collection.",
+      "description": "Smoking status of a patient at the time of the data collection",
       "valueType": "string",
       "restrictions": {
         "codeList": [
@@ -54,7 +54,7 @@
     },
     {
       "name": "smoking_pack_years",
-      "description": "Number of packs of cigarette multiplied by the number of cigarettes smoked",
+      "description": "Number of packs of cigarettes per day multiplied by the number of years donor smoked",
       "valueType": "string",
       "meta": {
         "dependsOn": "exposure.smoking_status",
@@ -71,7 +71,7 @@
           "No alcohol consumtion",
           "Alcohol intake within recommended daily limit",
           "Alcohol intake exceeds recommended daily limit",
-          "Alcohol consumption unknownr"
+          "Alcohol consumption unknown"
         ]
       },
       "meta": {
@@ -81,7 +81,7 @@
     },
     {
       "name": "alcohol_consumption_duration",
-      "description": "Indicate the duration of time, in years, that the donor has consumed alcohol.",
+      "description": "Indicate the duration, in years, that the donor has consumed alcohol",
       "valueType": "integer",
       "meta": {
         "displayName": "Alcolohol Consumption Duration"

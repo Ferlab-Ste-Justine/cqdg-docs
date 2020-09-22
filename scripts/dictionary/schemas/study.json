@@ -5,7 +5,7 @@
     {
       "name": "study_id",
       "valueType": "string",
-      "description": "Unique identifier for the Study.",
+      "description": "Unique identifier for the Study",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
@@ -85,7 +85,7 @@
     },
     {
       "name": "population",
-      "description": "Describes the population that is the focus of the study",
+      "description": "Describe the population that is the focus of the study",
       "valueType": "string",
       "restrictions": {
         "required": true,
@@ -110,7 +110,7 @@
       "meta": {
         "core": true,
         "displayName": "Data Access Limitations",
-        "notes": "Refer to the Data Use Ontology code https://github.com/EBISPOT/DUO "
+        "notes": "Refer to the Data Use Ontology code https://github.com/EBISPOT/DUO and provide a semicolon (;) delimited list of requirements "
       }
     },
     {
