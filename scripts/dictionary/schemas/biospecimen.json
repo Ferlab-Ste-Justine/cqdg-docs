@@ -50,7 +50,7 @@
     {
       "name": "submitter_diagnosis_id",
       "valueType": "string",
-      "description": "Indicate the diagnosis event in the clinical timeline that this biospecimen acquisition was related to.",
+      "description": "Indicate the diagnosis event in the clinical timeline that this biospecimen acquisition was related to",
       "meta": {
         "primaryId": true,
         "validationDependency": true,
