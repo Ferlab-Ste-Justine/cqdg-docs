@@ -57,7 +57,7 @@
       "description": "Condition as reported in the study's dataset",
       "restrictions": {
         "required": true
-             },
+      },
       "meta": {
         "examples": "breast cancer, stroke",
         "notes": "Provide exact information as per the dataset if coding to ICD-10 or MONDO ontologies is not possible",
