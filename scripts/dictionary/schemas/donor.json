@@ -211,7 +211,7 @@
       "meta": {
         "displayName": "Availability of medication data"
       }
-    }, 
+    },
     {
       "description": "Indicate if information about environmental exposure is available for this donor",
       "name": "environment_exposure_available",
@@ -225,7 +225,7 @@
       "meta": {
         "displayName": "Availability of environmental exposure data"
       }
-    }, 
+    },
     {
       "description": "Indicate if information about the donor's family health history is available",
       "name": "family_history_available",
@@ -239,7 +239,7 @@
       "meta": {
         "displayName": "Availability of family history data"
       }
-    },  
+    },
     {
       "description": "Indicate the donor's availability of genealogical data",
       "name": "genealogy_available",
