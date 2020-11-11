@@ -14,12 +14,12 @@ function Navbar() {
     const links = [{
         title: t('submit'),
         href: '/docs/submission/submitting-clinical-data',
-        action: () => { setSelectedIndex(1); }
+        action: () => { setSelectedIndex(0); }
     },
     {
         title: t('access'),
         href: "/docs/data-access/data-access",
-        action: () => { setSelectedIndex(0); }
+        action: () => { setSelectedIndex(1); }
     },
     
     {
