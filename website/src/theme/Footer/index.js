@@ -18,67 +18,30 @@
  *
  */
 
-import React from 'react';
+import React, {useContext} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import styles from './styles.module.css';
+import TranslationContext from '../TranslationContext';
+import { t, translate } from '../Utils/translation'
+
+import styles from './styles.module.scss';
 
 function Footer() {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
-
-  const Slash = () => (
-    <img src={useBaseUrl(`img/icons/slash.svg`)} alt="Divider" width="12" height="12" />
-  );
+  const { state } = useContext(TranslationContext);
 
   return (
     <footer className={styles['nav-footer']} id="footer">
       <div className={styles.footerWrapper}>
-        <div className={styles.footerLogo}>
-          <a href="https://platform.icgc-argo.org/">
-            <img
-              src={useBaseUrl(`img/logos/icgc_argo_full.svg`)}
-              alt="ICGC Accelerating Research in Genomic Oncology"
-              width="240px"
-            />
+        <div className={styles.footerTextWrapper}>
+          <h3 className={styles.footerTitle}>{t('landing.footer.title')}</h3>
+          <p className={styles.footerMoreInfo}>{t('landing.footer.info')}<a className={styles.footerMoreInfoLink} href="mailto:support@cqdg.ca">support@cqdg.ca</a></p>
+        </div>
+        <div>
+          <a href={translate(state.locale, 'landing.footer.logo.genome.link')} target="_blank">
+            <img src={`img/icons/genome_qc_logo_RS.svg`} alt="genome" />
           </a>
-        </div>
-        <div className={styles.footerContent}>
-          <section className={styles.footerLinks}>
-            <a href="https://platform.icgc-argo.org/contact" target="_blank">
-              Contact
-            </a>
-            <Slash />
-            <a href="https://www.icgc-argo.org/page/2/privacy" target="_blank">
-              Privacy Policy
-            </a>
-            <Slash />
-            <a href="https://www.icgc-argo.org/page/1/terms-and-conditions" target="_blank">
-              Terms & Conditions
-            </a>
-            <Slash />
-            <a href="https://www.icgc-argo.org/page/77/e3-publication-policy" target="_blank">
-              Publication Policy
-            </a>
-          </section>
-          <section className={styles['legal-text']}>
-            {siteConfig.themeConfig.footer.copyright}
-          </section>
-          <section className={styles['legal-text']}>
-            <a href="https://platform.icgc-argo.org/" target="_blank">
-              ARGO Data Platform
-            </a>{' '}
-            {/*1.0.0 - API v1 - 8e37309*/}
-          </section>
-        </div>
-        <div className={styles.footerLogo}>
-          <a href="https://www.oicr.on.ca/">
-            <img
-              src={useBaseUrl(`img/logos/oicr_logo.svg`)}
-              alt="Ontario Institute for Cancer Research"
-              height="52px"
-            />
+          <a href={translate(state.locale, 'landing.footer.logo.chusj.link')} target="_blank" className={styles.footerChuJSLogoLink}>
+            <img src={`img/icons/chujs-logo-color.svg`} alt="chu" />
           </a>
         </div>
       </div>
