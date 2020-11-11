@@ -66,7 +66,7 @@ function Index() {
       </div>
       <div className={styles['pages__blocs']}>
 
-        <BlocItem onClick={() => { }} icon="Cloud">
+        <BlocItem href="/docs/submission/submitting-clinical-data" icon="Cloud">
           <div className={styles["pages__blocs__item"]}>
             <h2 className={styles["pages__blocs__item__title"]}>
               {t("landing.content.items.submit.title")}
@@ -77,7 +77,7 @@ function Index() {
           </div>
         </BlocItem>
 
-        <BlocItem icon="Genetic">
+        <BlocItem href="/docs/data-access/data-access" icon="Genetic">
           <div className={styles["pages__blocs__item"]}>
             <h2 className={styles["pages__blocs__item__title"]}>
               {t("landing.content.items.access.title")}
@@ -88,7 +88,7 @@ function Index() {
           </div>
         </BlocItem>
 
-        <BlocItem icon="Literature">
+        <BlocItem href="/dictionary" icon="Literature">
           <div className={styles["pages__blocs__item"]}>
             <h2 className={styles["pages__blocs__item__title"]}>
               {t("landing.content.items.dictionary.title")}
