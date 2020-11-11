@@ -137,20 +137,25 @@ const getIcon = (icon) => {
     }
 }
 
-const BlocItem = (props) => {
+const BlocItem = ({icon, children, href}) => {
     return (
-        <a href="#" className={`${styles["bloc-item"]}`}>
+        <a href={href} className={`${styles["bloc-item"]}`}>
             <svg className={styles["bloc-item__bg"]} width="260" height="224" viewBox="0 0 260 224" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.5 24.2071L24.2071 0.5H259.5V199.793L235.793 223.5H0.5V24.2071Z" fill="white" stroke="#B5C6D8" />
             </svg>
-            <div>{getIcon(props.icon)}</div>
-            <div>{props.children}</div>
+            <div>{getIcon(icon)}</div>
+            <div>{children}</div>
         </a >
     )
 }
 
 BlocItem.propTypes = {
     icon: PropTypes.oneOf(["Cloud", "Genetic", "Literature"]).isRequired,
+    href: PropTypes.string
+}
+
+BlocItem.defaultProps = {
+    href: '#'
 }
 
 export default BlocItem;
