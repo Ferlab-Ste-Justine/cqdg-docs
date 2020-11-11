@@ -1136,7 +1136,7 @@ Algolia
   overflow: hidden;
   text-indent: -9000px;
   width: 110px;
-  height: 100% !important;
+  height: 100%;
   display: block;
   margin-left: auto;
   margin-right: 5px;
