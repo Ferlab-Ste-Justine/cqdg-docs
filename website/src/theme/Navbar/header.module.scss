@@ -4,7 +4,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 24px 0 24px;
-
+  box-shadow: 0px 2px 4px rgba(13, 78, 115, 0.1);
+  
   &__links {
       display: flex;
       flex-direction: row;
