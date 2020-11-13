@@ -1,21 +1,7 @@
 {
   "name": "biospecimen",
-  "description": "The collection of data elements related to a donor's biospecimen. A biospecimen is any material sample taken for testing, diagnostic or research purposes.",
+  "description": "The collection of data elements related to a donor's biospecimen. A biospecimen is any material sample taken for testing, diagnostic or research purposes. To submit multiple biospecimens for a single donor, submit multiple rows in the biospecimens file for this donor.",
   "fields": [
-    {
-      "name": "study_id",
-      "valueType": "string",
-      "description": "Unique identifier for the Study",
-      "meta": {
-        "validationDependency": true,
-        "primaryId": true,
-        "foreignKey": "study.study_id",
-        "displayName": "Study ID"
-      },
-      "restrictions": {
-        "required": true
-      }
-    },
     {
       "name": "submitter_donor_id",
       "description": "Unique identifier of the donor, assigned by the data provider",
@@ -56,25 +42,9 @@
         "validationDependency": true,
         "foreignKey": "diagnosis.submitter_diagnosis_id",
         "displayName": "Submitter Diagnosis ID",
-        "notes": "#/notes/submitter_id"
+        "notes": "not required if the biospecimen was not collected for a diagnostic purpose #/notes/submitter_id"
       },
       "restrictions": {
-        "required": true,
-        "regex": "#/regex/submitter_id"
-      }
-    },
-    {
-      "name": "submitter_sample_id",
-      "valueType": "string",
-      "description": "Unique identifier of the molecular sample, assigned by the data provider",
-      "meta": {
-        "primaryId": true,
-        "validationDependency": true,
-        "displayName": "Submitter Sample ID",
-        "notes": "#/notes/submitter_id"
-      },
-      "restrictions": {
-        "required": true,
         "regex": "#/regex/submitter_id"
       }
     },
@@ -89,29 +59,6 @@
       },
       "restrictions": {
         "required": true
-      }
-    },
-    {
-      "description": "Type of molecular sample used for analysis testing",
-      "name": "sample_type",
-      "valueType": "string",
-      "restrictions": {
-        "required": true,
-        "codeList": [
-          "Amplified DNA",
-          "ctDNA",
-          "Other DNA enrichments",
-          "Other RNA fractions",
-          "polyA+ RNA",
-          "Ribo-Zero RNA",
-          "Total DNA",
-          "Total RNA",
-          "Other"
-        ]
-      },
-      "meta": {
-        "core": true,
-        "displayName": "Sample type"
       }
     },
     {

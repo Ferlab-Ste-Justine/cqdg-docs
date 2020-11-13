@@ -6,20 +6,6 @@
   },
   "fields": [
     {
-      "name": "study_id",
-      "valueType": "string",
-      "description": "Unique identifier for the Study",
-      "meta": {
-        "validationDependency": true,
-        "primaryId": true,
-        "foreignKey": "study.study_id",
-        "displayName": "Study ID"
-      },
-      "restrictions": {
-        "required": true
-      }
-    },
-    {
       "description": "Unique identifier of the donor, assigned by the data provider",
       "name": "submitter_donor_id",
       "valueType": "string",
@@ -104,9 +90,6 @@
       "name": "relapse_interval",
       "description": "Time interval between end of primary treatment and disease progression (in days)",
       "valueType": "integer",
-      "restrictions": {
-        "script": "#/script/follow_up/relapse_interval"
-      },
       "meta": {
         "units": "days",
         "dependsOn": "follow_up.disease_status_at_followup",

@@ -6,20 +6,6 @@
   },
   "fields": [
     {
-      "name": "study_id",
-      "valueType": "string",
-      "description": "Unique identifier for the Study",
-      "meta": {
-        "validationDependency": true,
-        "foreignKey": "study.study_id",
-        "primaryId": true,
-        "displayName": "Study ID"
-      },
-      "restrictions": {
-        "required": true
-      }
-    },
-    {
       "name": "submitter_donor_id",
       "description": "Unique identifier of the donor, assigned by the data provider",
       "valueType": "string",
