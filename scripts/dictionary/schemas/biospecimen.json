@@ -1,6 +1,6 @@
 {
   "name": "biospecimen",
-  "description": "The collection of data elements related to a donor's biospecimen. A biospecimen is any material sample taken for testing, diagnostic or research purposes.",
+  "description": "The collection of data elements related to a donor's biospecimen. A biospecimen is any material sample taken for testing, diagnostic or research purposes. To submit multiple biospecimens for a single donor, submit multiple rows in the biospecimens file for this donor.",
   "fields": [
     {
       "name": "submitter_donor_id",

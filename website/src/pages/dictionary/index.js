@@ -316,11 +316,12 @@ function DataDictionary() {
                   Data Dictionary
                 </Typography>
                 <Typography variant="paragraph" color="#000">
-                  The ICGC ARGO Data Dictionary expresses the details of the data model, which
-                  adheres to specific formats and restrictions to ensure a standard of data quality.
+                  The CQDG Data Dictionary provides information about the structure and content of the data. The metadata included in the 
+                  dictionary defines the specific formats and restrictions for each data field. Data from studies participating in the 
+                  CQDG must be entirely compatible with the latest version of the CQDG Data Dictionary to ensure a standard of data quality.
                   The following views describes the attributes and permissible values for all of the
                   fields within the clinical tsv files for the{' '}
-                  <Link to={PLATFORM_UI_ROOT}>ARGO Data Platform.</Link>
+                  <Link to={PLATFORM_UI_ROOT}>CQDG Data Platform.</Link>
                 </Typography>
               </div>
               <div className={styles.infobar}>

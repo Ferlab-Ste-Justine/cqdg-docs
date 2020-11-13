@@ -35,31 +35,10 @@ function Footer() {
   return (
     <footer className={styles['nav-footer']} id="footer">
       <div className={styles.footerWrapper}>
-        <div className={styles.footerLogo}>
-          <a href="https://platform.icgc-argo.org/">
-            <img
-              src={useBaseUrl(`img/logos/icgc_argo_full.svg`)}
-              alt="ICGC Accelerating Research in Genomic Oncology"
-              width="240px"
-            />
-          </a>
-        </div>
         <div className={styles.footerContent}>
           <section className={styles.footerLinks}>
             <a href="https://platform.icgc-argo.org/contact" target="_blank">
-              Contact
-            </a>
-            <Slash />
-            <a href="https://www.icgc-argo.org/page/2/privacy" target="_blank">
-              Privacy Policy
-            </a>
-            <Slash />
-            <a href="https://www.icgc-argo.org/page/1/terms-and-conditions" target="_blank">
-              Terms & Conditions
-            </a>
-            <Slash />
-            <a href="https://www.icgc-argo.org/page/77/e3-publication-policy" target="_blank">
-              Publication Policy
+              Contact us
             </a>
           </section>
           <section className={styles['legal-text']}>
@@ -67,19 +46,10 @@ function Footer() {
           </section>
           <section className={styles['legal-text']}>
             <a href="https://platform.icgc-argo.org/" target="_blank">
-              ARGO Data Platform
+              CQDG Data Platform
             </a>{' '}
             {/*1.0.0 - API v1 - 8e37309*/}
           </section>
-        </div>
-        <div className={styles.footerLogo}>
-          <a href="https://www.oicr.on.ca/">
-            <img
-              src={useBaseUrl(`img/logos/oicr_logo.svg`)}
-              alt="Ontario Institute for Cancer Research"
-              height="52px"
-            />
-          </a>
         </div>
       </div>
     </footer>
