@@ -32,6 +32,7 @@
       "valueType": "string",
       "description": "Accronym or short name of the Study",
       "meta": {
+        "core": true,
         "displayName": "Short name of the Study"
       }
     },
