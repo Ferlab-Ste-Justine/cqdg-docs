@@ -18,38 +18,31 @@
  *
  */
 
-import React from 'react';
+import React, {useContext} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import styles from './styles.module.css';
+import TranslationContext from '../TranslationContext';
+import { t, translate } from '../Utils/translation'
+
+import styles from './styles.module.scss';
 
 function Footer() {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
-
-  const Slash = () => (
-    <img src={useBaseUrl(`img/icons/slash.svg`)} alt="Divider" width="12" height="12" />
-  );
+  const { state } = useContext(TranslationContext);
 
   return (
     <footer className={styles['nav-footer']} id="footer">
       <div className={styles.footerWrapper}>
-        <div className={styles.footerContent}>
-          <section className={styles.footerLinks}>
-            <a href="https://platform.icgc-argo.org/contact" target="_blank">
-              Contact us
-            </a>
-          </section>
-          <section className={styles['legal-text']}>
-            {siteConfig.themeConfig.footer.copyright}
-          </section>
-          <section className={styles['legal-text']}>
-            <a href="https://platform.icgc-argo.org/" target="_blank">
-              CQDG Data Platform
-            </a>{' '}
-            {/*1.0.0 - API v1 - 8e37309*/}
-          </section>
+        <div className={styles.footerTextWrapper}>
+          <h3 className={styles.footerTitle}>{t('landing.footer.title')}</h3>
+          <p className={styles.footerMoreInfo}>{t('landing.footer.info')}<a className={styles.footerMoreInfoLink} href="mailto:support@cqdg.ca">support@cqdg.ca</a></p>
+        </div>
+        <div>
+          <a href={translate(state.locale, 'landing.footer.logo.genome.link')} target="_blank">
+            <img src={`img/icons/genome_qc_logo_RS.svg`} alt="genome" />
+          </a>
+          <a href={translate(state.locale, 'landing.footer.logo.chusj.link')} target="_blank" className={styles.footerChuJSLogoLink}>
+            <img src={`img/icons/chujs-logo-color.svg`} alt="chu" />
+          </a>
         </div>
       </div>
     </footer>

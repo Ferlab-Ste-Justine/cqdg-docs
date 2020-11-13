@@ -15,5 +15,9 @@
     "landing.content.items.access.title": "Accès aux données",
     "landing.content.items.access.subtitle": "Guide pour l'accès et le téléchargement des données",
     "landing.content.items.dictionary.title": "Dictionnaire des données",
-    "landing.content.items.dictionary.subtitle": "Modèle de données et normes pour le formatage des données cliniques"
+    "landing.content.items.dictionary.subtitle": "Modèle de données et normes pour le formatage des données cliniques",
+    "landing.footer.title": "Vous ne trouvez pas ce que vous chercher?",
+    "landing.footer.info": "Pour plus d'informations contactez:",
+    "landing.footer.logo.genome.link": "http://www.genomequebec.com/accueil/",
+    "landing.footer.logo.chusj.link": "https://recherche.chusj.org/fr/accueil"
 }

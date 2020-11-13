@@ -12,15 +12,16 @@ function Navbar() {
     const { state, dispatch } = useContext(TranslationContext);
 
     const links = [{
-        title: t('access'),
-        href: "/docs/data-access/data-access",
+        title: t('submit'),
+        href: '/docs/submission/submitting-clinical-data',
         action: () => { setSelectedIndex(0); }
     },
     {
-        title: t('submit'),
-        href: '/docs/submission/submitting-clinical-data',
+        title: t('access'),
+        href: "/docs/data-access/data-access",
         action: () => { setSelectedIndex(1); }
     },
+    
     {
         title: t('dictionary'),
         href: "/dictionary",
@@ -64,7 +65,7 @@ function Navbar() {
                 </div>
                 <div className={styles["theme-navbar__links__right-item"]}>
                     <div className={styles["theme-navbar__links__right-item__text"]}>
-                        <a>{t('website')}</a>
+                        <a className={styles["theme-navbar__links__right-item__text"]}>{t('website')}</a>
                     </div>
                     <OpenNew></OpenNew>
                 </div>

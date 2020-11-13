@@ -15,5 +15,9 @@
     "landing.content.items.access.title": "Data Access",
     "landing.content.items.access.subtitle": "Read our Guide to Data Access and Dowload",
     "landing.content.items.dictionary.title": "Data Dictionary",
-    "landing.content.items.dictionary.subtitle": "Data Model and norms for clinical data formats"
+    "landing.content.items.dictionary.subtitle": "Data Model and norms for clinical data formats",
+    "landing.footer.title": "Can't find what you are looking for?",
+    "landing.footer.info": "For more informations contact:",
+    "landing.footer.logo.genome.link": "http://www.genomequebec.com/en/home/",
+    "landing.footer.logo.chusj.link": "https://research.chusj.org/en/Home"
 }
