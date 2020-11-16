@@ -40,7 +40,7 @@ function Footer() {
             <img src={`/img/icons/genome_qc_logo_RS.svg`} alt="genome" />
           </a>
           <a href={translate(state.locale, 'landing.footer.logo.chusj.link')} target="_blank" className={styles.footerChuJSLogoLink}>
-            <img src={`/img/icons/chujs-logo-color.svg`} alt="chu" />
+            <img src={`/img/icons/chusj-logo-color.svg`} alt="chusj" />
           </a>
         </div>
       </div>
