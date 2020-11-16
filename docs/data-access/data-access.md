@@ -17,6 +17,7 @@ Si vous souhaitez accéder à ces données à des fins de recherche, vous devez 
 4. Télécharger les listes de fichiers retenues pour votre recherche et les instructions qui s'y rattachent. Une liste de fichiers est générée par étude. 
 5. Envoyer vos listes de fichiers aux bureaux d'accès des études respectives pour débuter la procédure d'accès. Les listes de fichiers peuvent aussi être sauvegardées et soumises à un autre moment. 
 
+
    > **IMPORTANT: Vous devrez suivre les procédures mises en place par les études partenaires pour obtenir l'accès aux données. Ces procédures peuvent varier d'une étude à l'autre; il est donc nécessaire de prendre connaissance des politiques d'accès et d'utilisation des données ainsi que des documents requis pour faire une demande d'accès aux données de ces études.** 
 
 ## Étapes suivant l'approbation d’accès aux données par une étude partenaire

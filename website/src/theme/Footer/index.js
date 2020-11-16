@@ -19,7 +19,6 @@
  */
 
 import React, {useContext} from 'react';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import TranslationContext from '../TranslationContext';
 import { t, translate } from '../Utils/translation'
@@ -34,14 +33,14 @@ function Footer() {
       <div className={styles.footerWrapper}>
         <div className={styles.footerTextWrapper}>
           <h3 className={styles.footerTitle}>{t('landing.footer.title')}</h3>
-          <p className={styles.footerMoreInfo}>{t('landing.footer.info')}<a className={styles.footerMoreInfoLink} href="mailto:support@cqdg.ca">support@cqdg.ca</a></p>
+          <p className={styles.footerMoreInfo}>{t('landing.footer.info')} <a className={styles.footerMoreInfoLink} href="mailto:support@cqdg.ca">support@cqdg.ca</a></p>
         </div>
         <div>
           <a href={translate(state.locale, 'landing.footer.logo.genome.link')} target="_blank">
-            <img src={`img/icons/genome_qc_logo_RS.svg`} alt="genome" />
+            <img src={`/img/icons/genome_qc_logo_RS.svg`} alt="genome" />
           </a>
           <a href={translate(state.locale, 'landing.footer.logo.chusj.link')} target="_blank" className={styles.footerChuJSLogoLink}>
-            <img src={`img/icons/chujs-logo-color.svg`} alt="chu" />
+            <img src={`/img/icons/chusj-logo-color.svg`} alt="chusj" />
           </a>
         </div>
       </div>
