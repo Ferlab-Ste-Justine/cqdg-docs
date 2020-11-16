@@ -3,20 +3,6 @@
   "description": "The collection of data elements related to a donor's exposure to specific risk factors.",
   "fields": [
     {
-      "name": "study_id",
-      "valueType": "string",
-      "description": "Unique identifier for the Study",
-      "meta": {
-        "validationDependency": true,
-        "primaryId": true,
-        "foreignKey": "study.study_id",
-        "displayName": "Study ID"
-      },
-      "restrictions": {
-        "required": true
-      }
-    },
-    {
       "name": "submitter_donor_id",
       "valueType": "string",
       "description": "Unique identifier of the donor, assigned by the data provider",
@@ -58,17 +44,17 @@
       "valueType": "string",
       "meta": {
         "dependsOn": "exposure.smoking_status",
-        "notes": "Pack-years is calculated by multiplying the number of packs of cigarettes (20 cigarettes per pack) smoked per day by the number of years the person has smoked. For example, 1 pack year is equal to smoking 1 pack per day for 1 year",
+        "notes": "Not required if smoking history is unknown or if the donor never smoked. Pack-years is calculated by multiplying the number of packs of cigarettes (20 cigarettes per pack) smoked per day by the number of years the person has smoked. For example, 1 pack year is equal to smoking 1 pack per day for 1 year",
         "displayName": "smoking_pack_years"
       }
     },
     {
       "name": "alcohol_status",
-      "description": "Alcohol consumtion based on recommended daily limit",
+      "description": "Current alcohol consumtion based on recommended daily limit",
       "valueType": "string",
       "restrictions": {
         "codeList": [
-          "No alcohol consumtion",
+          "No alcohol consumption",
           "Alcohol intake within recommended daily limit",
           "Alcohol intake exceeds recommended daily limit",
           "Alcohol consumption unknown"
@@ -77,14 +63,6 @@
       "meta": {
         "notes": "Refer to the Canadian Centre on Substance Abuse, for men, no more than 15 drinks a week, with no more than 3 drinks a day most days. No more than 4 drinks on any single occasion. For women, no more than 10 drinks a week, with no more than 2 drinks a day most days. No more than 3 drinks on any single occasion.",
         "displayName": "Alcohol status"
-      }
-    },
-    {
-      "name": "alcohol_consumption_duration",
-      "description": "Indicate the duration, in years, that the donor has consumed alcohol",
-      "valueType": "integer",
-      "meta": {
-        "displayName": "Alcolohol Consumption Duration"
       }
     },
     {

@@ -27,7 +27,6 @@ const treatment = require('./treatment.json');
 const follow_up = require('./follow_up.json');
 const exposure = require('./exposure.json');
 const phenotype = require('./phenotype.json');
-const family = require('./family.json');
 const family_relationship = require('./family_relationship.json');
 const family_history = require('./family_history.json');
 
@@ -41,7 +40,6 @@ module.exports = [
   follow_up,
   exposure,
   phenotype, 
-  family, 
   family_relationship, 
   family_history
 ];

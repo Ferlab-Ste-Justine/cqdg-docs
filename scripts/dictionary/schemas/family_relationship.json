@@ -1,21 +1,7 @@
 {
   "name": "family_relationship",
-  "description": "The collection of data elements that describe the relationship between donors from the same family.  This table should be completed only if the Study is contributing data from groups of donors who share family ties (ex: twins, trios, sib-pairs).",
+  "description": "The collection of data elements related to a family and relationships within this family. This table should be completed only if the Study is contributing data from groups of donors who share family ties (ex: twins, trios, sib-pairs).",
   "fields": [
-  {
-    "name": "study_id",
-    "valueType": "string",
-    "description": "Unique identifier for the Study",
-    "meta": {
-      "validationDependency": true,
-      "primaryId": true,
-      "foreignKey": "study.study_id",
-      "displayName": "Study ID"
-    },
-    "restrictions": {
-      "required": true
-    }
-  },
     {
       "name": "submitter_family_id",
       "valueType": "string",
@@ -45,7 +31,7 @@
         "required": true,
         "regex": "#/regex/submitter_id"
       }
-    }, 
+    },
     {
       "description": "Unique identifier of the donor 2, assigned by the data provider",
       "name": "submitter_donor_id_2",
@@ -62,6 +48,25 @@
       }
     },
     {
+      "name": "family_type",
+      "description": "Type of family-based study design",
+      "valueType": "string",
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "Case-parent trio",
+          "Case-sibling",
+          "Twins",
+          "Case - affected relative",
+          "Other"
+        ]
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Family Type"
+      }
+    },
+    {
       "name": "family_1_2_relationship",
       "description": "Relationship of donor 1 to donor 2",
       "valueType": "string",
@@ -75,17 +80,17 @@
       }
     },
     {
-    "name": "family_2_1_relationship",
-    "description": "Relationship of donor 2 to donor 1",
-    "valueType": "string",
-    "restrictions": {
-      "required": true
-    },
-    "meta": {
-      "core": true,
-      "displayName": "Relationship of donor 2 to donor 1",
-      "notes": "Refer to HL7 CodeSystem to identify relationship between donors http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+      "name": "family_2_1_relationship",
+      "description": "Relationship of donor 2 to donor 1",
+      "valueType": "string",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Relationship of donor 2 to donor 1",
+        "notes": "Refer to HL7 CodeSystem to identify relationship between donors http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+      }
     }
-  }
   ]
 }
