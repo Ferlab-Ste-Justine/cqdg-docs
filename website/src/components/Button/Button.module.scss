@@ -1,0 +1,76 @@
+
+@mixin default {
+    border-radius: 2px;
+    padding: 2px 8px;
+    font-size: 14px;
+    font-family: "IBM Plex Sans";
+}
+
+
+.primaryButton {
+    @include default();
+    border: 1px #008FC7 solid;
+    background: #008FC7;
+    color: #fff;
+  
+    &:hover {
+        background: #0075A2;
+        border: 1px #0075A2 solid;
+        cursor: pointer;
+
+        svg {
+            fill: #0075A2;
+        }
+    }
+    &:focus {
+        background: #005673;
+        border: 1px #005673 solid;
+
+        svg {
+            fill: #005673;
+        }
+    }
+}
+
+.primaryButton--disabled, .secondaryButton--disabled {
+    @include default();
+    background: #F0F3F8;
+    border: 1px #B5C6D8 solid;
+    color: #90A9C1;
+}
+
+
+.secondaryButton {
+    @include default();
+    color: #18486B;
+    border: 1px #B5C6D8 solid;
+    background: #fff;
+  
+    &:hover {
+        color: #0075A2;
+        border: 1px #0075A2 solid;
+        cursor: pointer;
+
+        svg {
+            fill: #0075A2;
+        }
+    }
+    &:focus {
+        border: 1px #005673 solid;
+        color: #005673;
+
+        svg {
+            fill: #005673;
+        }
+    }
+}
+
+.resetIcon {
+    fill: #18486B;
+    margin-right: 6px;
+}
+
+.resetIcon--disabled {
+    fill: #90A9C1;
+    margin-right: 6px;
+}

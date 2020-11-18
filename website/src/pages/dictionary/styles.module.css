@@ -28,6 +28,24 @@
   margin: 0 30px;
 }
 
+.mainTilte {
+  flex-shrink: 0;
+  margin-right: 55px;
+}
+
+.link, .codeList_src-components-Schema- .toggleMore_src-components-Schema- {
+  color: var(--ifm-color-primary-lighter);
+  border-bottom: 1px var(--ifm-color-primary-lighter) dotted;
+  text-decoration: none;
+}
+
+.link:hover, .codeList_src-components-Schema- .toggleMore_src-components-Schema- {
+  color: var(--ifm-color-primary-lighter);
+  border-bottom: 1px var(--ifm-color-primary-lighter) solid;
+  text-decoration: none;
+}
+
+
 .menu {
   width: 190px;
   margin: 0 15px 0 20px;
@@ -48,7 +66,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #dcdde1;
+  height: 24px;
 }
 
 .infobar .downloads button:not(:last-child) {
@@ -68,3 +86,18 @@
   left: 0;
   z-index: 999; /* docusaurus theme header has an index of 200 */
 }
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 13px;
+  background: var(--ifm-color-primary-lightest);
+  margin-top: 8px;
+  margin-bottom: 30px;
+}
+
+.compareButton {
+  margin-right: 12px;
+}
+
