@@ -162,6 +162,10 @@ html a:hover {
   text-decoration: underline;
 }
 
+body {
+  color: var(--ifm-color-primary);
+}
+
 input:focus,
 select:focus,
 textarea:focus,
