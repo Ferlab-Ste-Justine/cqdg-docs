@@ -34,7 +34,6 @@ const FileFilters = ({
 }) => {
   // update search params
   const onSelect = filterName => ({value}) => onSearch({ ...searchParams, ...{ [filterName]: value } })
-console.log(searchParams.attribute)
   return (
     <Typography variant="data" color="#151c3d">
       <div className={styles.fileFilters}>
