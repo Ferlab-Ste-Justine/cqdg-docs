@@ -51,7 +51,7 @@ import { Button, ResetButton } from '../../components/Button';
 import Select from '../../components/Select';
 
 import styles from './styles.module.css';
-import theme from './theme';
+import theme from '../../theme/theme';
 
 import './custom.css';
 
@@ -276,7 +276,6 @@ function DataDictionary() {
   };
 
   const mergedTheme = merge(defaultTheme, theme);
-  console.log(mergedTheme)
   return (
     <ThemeProvider theme={mergedTheme}>
       <div id="modalCont" className={styles.modalCont} ref={modalPortalRef} />
@@ -304,7 +303,6 @@ function DataDictionary() {
                   <Button
                     className={styles.compareButton}
                     onClick={() => {
-                      console.log(diffVersions[0])
                       setDiffVersion(diffVersions[0]);
                     }}
                   >
