@@ -53,9 +53,6 @@ import Select from '../../components/Select';
 import styles from './styles.module.css';
 import theme from '../../theme/theme';
 
-import './custom.css';
-
-
 export const useModalState = () => {
   const [visibility, setVisibility] = useState(false);
 

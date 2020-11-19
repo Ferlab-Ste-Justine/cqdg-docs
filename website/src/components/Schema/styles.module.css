@@ -45,8 +45,12 @@
 
 /* Fields Tag */
 .tag.fields {
+  border-radius: 2px;
+  background: #486F90;
+  font-size: 12px;
+  line-height: 20px;
+  color: #FFFFFF;
   margin-left: 8px;
-  background-color: #4f546d;
 }
 
 .fileExampleHighlight {
@@ -71,14 +75,17 @@
 }
 
 .codeList .toggleMore {
-  color: #523785;
-  text-decoration: underline;
-  display: flex;
-  align-content: center;
+  display: inline;
+  color: var(--ifm-color-primary-lighter);
+  border-bottom: 1px var(--ifm-color-primary-lighter) dotted;
+  text-decoration: none;
 }
 
 .codeList .toggleMore:hover {
   cursor: pointer;
+  color: var(--ifm-color-primary-lighter);
+  border-bottom: 1px var(--ifm-color-primary-lighter) solid;
+  text-decoration: none;
 }
 
 .codeList .toggleMore svg {
