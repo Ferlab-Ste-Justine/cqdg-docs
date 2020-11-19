@@ -6,6 +6,8 @@
 
 User documentation for the ICGC-ARGO platform.
 
+test
+
 ## Visit Site
 
 [ICGC-ARGO Platform - User Documentation](https://docs.icgc-argo.org)
