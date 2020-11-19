@@ -18,39 +18,43 @@
  *
  */
 
-import React, { useState, createRef, useEffect } from 'react';
+import React, { useState, createRef } from 'react';
 import ReactDOM from 'react-dom';
-import Layout from '@theme/Layout';
 import axios from 'axios';
-import { ThemeProvider } from '@icgc-argo/uikit';
+import startCase from 'lodash/startCase';
+import get from 'lodash/get';
+import find from 'lodash/find';
+import uniq from 'lodash/uniq';
+import merge from 'lodash/merge';
+import { css } from 'emotion';
+import flattenDeep from 'lodash/flattenDeep';
+
+import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import styles from './styles.module.css';
+
+import { ThemeProvider } from 'emotion-theming'
+import defaultTheme from '@icgc-argo/uikit/theme/defaultTheme';
 import Typography from '@icgc-argo/uikit/Typography';
-import Select from '@icgc-argo/uikit/form/Select';
+import Modal from '@icgc-argo/uikit/Modal';
+
 import StyleWrapper from '../../components/StyleWrapper';
 import Schema from '../../components/Schema';
 import FileFilters, { NO_ACTIVE_FILTER, DEFAULT_FILTER } from '../../components/FileFilters';
 import TreeView from '../../components/TreeView';
-import startCase from 'lodash/startCase';
-import get from 'lodash/get';
 import { TAG_TYPES } from '../../components/Tag';
-import { format as formatDate } from 'date-fns';
-import Modal from '@icgc-argo/uikit/Modal';
 import SchemaMenu from '../../components/ContentMenu';
-import find from 'lodash/find';
-import { Display, DownloadTooltip, DownloadButtonContent } from '../../components/common';
+import { Display, DownloadButtonContent } from '../../components/common';
 import { getLatestVersion } from '../../utils';
-import uniq from 'lodash/uniq';
-import Tabs, { Tab } from '@icgc-argo/uikit/Tabs';
-import { styled } from '@icgc-argo/uikit';
-import flattenDeep from 'lodash/flattenDeep';
 import Meta from '../../components/Meta';
-import { css } from 'emotion';
-import DropdownButton from '@icgc-argo/uikit/DropdownButton';
-import Icon from '@icgc-argo/uikit/Icon';
-import Button from '@icgc-argo/uikit/Button';
-import { ResetButton } from '../../components/Button';
+import { Button, ResetButton } from '../../components/Button';
+import Select from '../../components/Select';
+
+import styles from './styles.module.css';
+import theme from '../../theme/theme';
+
+import './custom.css';
+
 
 export const useModalState = () => {
   const [visibility, setVisibility] = useState(false);
@@ -94,6 +98,7 @@ async function fetchDictionary(version) {
   }
 }
 
+// TODO use this
 async function fetchDiff(version, diffVersion) {
   const response = await axios.get(
     `/data/schemas/diffs/${version}/${version}-diff-${diffVersion}.json`,
@@ -124,9 +129,10 @@ function DataDictionary() {
   const [diffVersion, setDiffVersion] = useState(null);
 
   const updateVersion = async (newVersion) => {
+    const version = newVersion.value;
     try {
-      const { dict, tree } = await fetchDictionary(newVersion);
-      setVersion(newVersion);
+      const { dict, tree } = await fetchDictionary(version);
+      setVersion(version);
       setDictionary(dict);
       setTreeData(tree);
     } catch (err) {
@@ -242,31 +248,7 @@ function DataDictionary() {
     OVERVIEW: 'OVERVIEW',
     DETAILS: 'DETAILS',
   });
-  const [selectedTab, setSelectedTab] = React.useState(TAB_STATE.DETAILS);
-  const onTabChange = (e, newValue) => {
-    setSelectedTab(newValue);
-  };
-
-  const StyledTab = styled(Tab)`
-    border: 0 none;
-    position: relative;
-    color: black;
-    font-size: 15px;
-
-    &.active {
-      border: 0 none;
-
-      ::after {
-        content: '';
-        border-bottom: 2px solid #00c79d;
-        position: absolute;
-        bottom: -2px;
-        left: 50%;
-        width: 80%;
-        margin-left: -40%;
-      }
-    }
-  `;
+  const [selectedTab] = React.useState(TAB_STATE.DETAILS);
 
   // versions
   const versions = data.versions;
@@ -278,8 +260,7 @@ function DataDictionary() {
    * @param {string} value
    */
   const VersionSelect = ({ value, onChange, versions }) => {
-    const options = versions.map((d) => ({ content: `Version ${d}`, value: d }));
-
+    const options = versions.map((d) => ({ label: `Version ${d}`, value: d }));
     return (
       <form>
         <div style={{ width: '150px', marginRight: '10px' }}>
@@ -294,8 +275,9 @@ function DataDictionary() {
     );
   };
 
+  const mergedTheme = merge(defaultTheme, theme);
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={mergedTheme}>
       <div id="modalCont" className={styles.modalCont} ref={modalPortalRef} />
 
       <Layout permalink="dictionary">
@@ -303,92 +285,50 @@ function DataDictionary() {
           <div className={styles.mainContainer}>
             <div className={styles.dict}>
               <div className={styles.heading}>
-                <Typography
-                  color="#151c3d"
-                  css={{
-                    fontSize: '28px',
-                    display: 'inline-block',
-                    marginRight: '55px',
-                    flexShrink: 0,
-                  }}
-                  as="h1"
-                >
+                <Typography as="h1" variant="title" color="primary" bold className={styles.mainTilte}>
                   Data Dictionary
                 </Typography>
-                <Typography variant="paragraph" color="#000">
+                <Typography variant="paragraph" color="primary">
                   The CQDG Data Dictionary provides information about the structure and content of the data. The metadata included in the 
                   dictionary defines the specific formats and restrictions for each data field. Data from studies participating in the 
                   CQDG must be entirely compatible with the latest version of the CQDG Data Dictionary to ensure a standard of data quality.
                   The following views describes the attributes and permissible values for all of the
                   fields within the clinical tsv files for the{' '}
-                  <Link to={PLATFORM_UI_ROOT}>CQDG Data Platform.</Link>
+                  <Link className={styles.link} to={PLATFORM_UI_ROOT}>CQDG Data Platform.</Link>
                 </Typography>
               </div>
               <div className={styles.infobar}>
                 <div>
                   <VersionSelect value={version} versions={versions} onChange={updateVersion} />
                   <Button
-                    size="sm"
+                    className={styles.compareButton}
                     onClick={() => {
                       setDiffVersion(diffVersions[0]);
                     }}
                   >
-                    Compare with...
+                    Compare ...
                   </Button>
                   {diffVersion ? (
-                    <div style={{ display: 'inline' }}>
-                      <VersionSelect
-                        value={diffVersion}
-                        versions={diffVersions}
-                        onChange={setDiffVersion}
-                      />
-                    </div>
+                    <VersionSelect
+                      value={diffVersion}
+                      versions={diffVersions}
+                      onChange={(data) => setDiffVersion(data.value)}
+                    />
                   ) : null}
                 </div>
                 <div className={styles.downloads}>
                   <Button
-                    variant="secondary"
-                    size="sm"
-                    onClick={(item) => downloadTsvFileTemplate(`all`)}
+                    type="secondary"
+                    onClick={() => downloadTsvFileTemplate(`all`)}
                   >
                     <DownloadButtonContent>File Templates</DownloadButtonContent>
                   </Button>
-
-                  {/*<Button variant="secondary" size="sm" onClick={() => console.log('pdf')}>
-                    <DownloadButtonContent>PDF</DownloadButtonContent>
-                  </Button>*/}
                 </div>
               </div>
 
-              {/*     
-              <div className={styles.infobar} style={{ justifyContent: 'center' }}>
-                {
-                  <Tabs
-                    value={selectedTab}
-                    onChange={onTabChange}
-                    styles={{
-                      marginBottom: '-2px',
-                    }}
-                  >
-                    <StyledTab value={TAB_STATE.OVERVIEW} label="Overview" />
-                    <StyledTab value={TAB_STATE.DETAILS} label="Details" />
-                  </Tabs>
-                }
-              </div>
-               */}
-
               <Display visible={selectedTab === TAB_STATE.DETAILS}>
                 <div
-                  className={css`
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    padding: 8px 15px;
-                    background: var(--argo-grey-4);
-                    border: solid 1px var(--argo-grey-2);
-                    margin-top: 8px;
-                    margin-bottom: 30px;
-                  `}
+                  className={styles.filter}
                 >
                   <Meta files={fileCount} fields={fieldCount} />
                   <div
@@ -399,11 +339,11 @@ function DataDictionary() {
                   >
                     <FileFilters
                       dataTiers={DEFAULT_FILTER.concat(
-                        filters.tiers.map((d) => ({ content: startCase(d), value: d })),
+                        filters.tiers.map((d) => ({ label: startCase(d), value: d })),
                       )}
                       dataAttributes={DEFAULT_FILTER.concat(
                         filters.attributes.map((d) => ({
-                          content: startCase(d),
+                          label: startCase(d),
                           value: d,
                         })),
                       )}
@@ -444,7 +384,6 @@ function DataDictionary() {
                 <SchemaMenu
                   title="Clinical Files"
                   contents={menuContents}
-                  color="#0774d3"
                   scrollYOffset="70"
                   dataTiers={filters.tiers.map((d) => ({ content: startCase(d), value: d }))}
                   dataAttributes={filters.attributes.map((d) => ({

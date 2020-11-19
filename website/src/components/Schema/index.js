@@ -26,10 +26,9 @@ import DefaultTag from '@icgc-argo/uikit/Tag';
 import CodeList from './CodeList';
 import Regex from './Regex';
 import startCase from 'lodash/startCase';
-import { DownloadButtonContent, DownloadTooltip } from '../../components/common';
 import Button from '@icgc-argo/uikit/Button';
 import { DataTypography, SchemaTitle } from '../Typography';
-import { ModalPortal, useModalState } from '../../pages/dictionary';
+import { ModalPortal } from '../../pages/dictionary';
 import ScriptModal from '../ScriptModal';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
@@ -275,21 +274,6 @@ const Schema = ({ schema, menuItem, isLatestSchema }) => {
             [-optional-extension]<span className={styles.fileExampleHighlight}>.tsv</span>
           </div>
         </DataTypography>
-
-        {/* <DownloadTooltip disabled={isLatestSchema}>
-          <div style={{ marginLeft: '50px', alignSelf: 'flex-start' }}>
-            <Button
-              disabled={!isLatestSchema}
-              variant="secondary"
-              size="sm"
-              onClick={() => downloadTsvFileTemplate(`${schema.name}.tsv`)}
-            >
-              <DownloadButtonContent disabled={!isLatestSchema}>
-                File Template
-              </DownloadButtonContent>
-            </Button>
-          </div>
-        </DownloadTooltip> */}
       </div>
 
       <div ref={containerRef}>

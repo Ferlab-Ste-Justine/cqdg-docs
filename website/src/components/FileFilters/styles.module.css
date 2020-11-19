@@ -37,3 +37,7 @@
   display: flex;
   align-items: center;
 }
+
+.select {
+  min-width: 190px;
+}
