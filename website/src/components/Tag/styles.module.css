@@ -19,21 +19,41 @@
  */
 
 .tag.required {
-  background-color: #e75471;
+  border-radius: 2px;
+  background: #F1D4CF;
+  font-size: 12px;
+  line-height: 20px;
+  color: #3D0F08;
 }
 
 .tag.conditional {
-  background-color: #ec8f17;
+  border-radius: 2px;
+  background: #FFEEC2;
+  font-size: 12px;
+  line-height: 20px;
+  color: #453700;
 }
 
 .tag.id {
-  background-color: #00b3d3;
+  border-radius: 2px;
+  background: #C2ECFB;
+  font-size: 12px;
+  line-height: 20px;
+  color: #363800;
 }
 
 .tag.core {
-  background-color: #00c79d;
+  border-radius: 2px;
+  background: #EAEBC2;
+  font-size: 12px;
+  line-height: 20px;
+  color: #003545;
 }
 
 .tag.extended {
-  background-color: #a1a4b1;
+  border-radius: 2px;
+  background: #F0F3F8;
+  font-size: 12px;
+  line-height: 20px;
+  color: #00253D;
 }
