@@ -19,16 +19,40 @@
  */
 
 module.exports = {
-  docs: {
-    Submission: [
-      'submission/dictionary-overview',
-      'submission/submitting-clinical-data',
+  en: {
+      Submission: [
+        'en/submission/dictionary-overview',
+        'en/submission/submitting-clinical-data',
+      ],
+      'Data Access Request': [
+        'en/data-access/data-access-request',
+        'en/data-access/data-download',
+        'en/data-access/user-profile',
+        'en/data-access/publication-guidelines',
+      ],
+    },
+  soumission: {
+    Soumission: [
+      'soumission/apercu-dictionnaire',
+      'soumission/soumettre-donnees-cliniques',
     ],
-    'Data Access': [
-      'data-access/data-access',
-      'data-access/data-download',
-      'data-access/user-profile-and-api-token',
-      'data-access/publication-guidelines',
+    'Demande  D\'accès Au  Données': [
+      'acces-donnees/demande-acces-donnees',
+      'acces-donnees/telechargement-donnees',
+      'acces-donnees/profil-utilisateur',
+      'acces-donnees/processus-publication',
     ],
   },
+  'acces-donnees': {
+    Soumission: [
+      'soumission/apercu-dictionnaire',
+      'soumission/soumettre-donnees-cliniques',
+    ],
+    'Demande  D\'accès Au  Données': [
+      'acces-donnees/demande-acces-donnees',
+      'acces-donnees/telechargement-donnees',
+      'acces-donnees/profil-utilisateur',
+      'acces-donnees/processus-publication',
+    ],
+  }
 };

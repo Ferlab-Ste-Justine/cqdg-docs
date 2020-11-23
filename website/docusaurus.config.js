@@ -48,6 +48,7 @@ module.exports = {
         docs: {
           // docs folder path relative to website dir.
           path: '../docs',
+          routeBasePath: '/',
           // sidebars file relative to website dir.
           sidebarPath: require.resolve('./sidebars.js'),
         },
@@ -70,7 +71,7 @@ module.exports = {
     },
   },
   customFields: {
-    PLATFORM_UI_ROOT: 'https://platform.icgc-argo.org/',
-    GATEWAY_API_ROOT: 'https://api.platform.icgc-argo.org/',
+    PLATFORM_UI_ROOT: '',
+    GATEWAY_API_ROOT: '',
   },
 };

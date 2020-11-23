@@ -1,5 +1,5 @@
 ---
-id: data-access
+id: demande-acces-donnees
 title: Faire une demande d'accès aux données du CQDG
 sidebar_label: Faire une demande d'accès aux données du CQDG
 platform_key: DOCS_DATA_ACCESS

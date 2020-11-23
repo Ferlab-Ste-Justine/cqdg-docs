@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import styles from './header.module.scss';
 import OpenNew from '../../components/OpenNew';
 import { Helmet } from 'react-helmet';
-import { t } from '../Utils/translation'
+import { t, translate } from '../Utils/translation'
 import TranslationContext from '../TranslationContext';
 
 function Navbar() {
@@ -13,18 +13,18 @@ function Navbar() {
 
     const links = [{
         title: t('submit'),
-        href: '/docs/submission/submitting-clinical-data',
+        href: translate(state.locale, 'navbar.submit.link'),
         action: () => { setSelectedIndex(0); }
     },
     {
         title: t('access'),
-        href: "/docs/data-access/data-access",
+        href: translate(state.locale, 'navbar.access.link'),
         action: () => { setSelectedIndex(1); }
     },
     
     {
         title: t('dictionary'),
-        href: "/dictionary",
+        href: translate(state.locale, 'navbar.dictionary.link'),
         action: () => { setSelectedIndex(2); }
     }];
 

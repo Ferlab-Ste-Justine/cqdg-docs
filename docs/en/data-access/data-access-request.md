@@ -1,5 +1,5 @@
 ---
-id: data-access
+id: data-access-request
 title: Faire une demande d'accès aux données du CQDG
 sidebar_label: Faire une demande d'accès aux données du CQDG
 platform_key: DOCS_DATA_ACCESS
@@ -15,12 +15,13 @@ Si vous souhaitez accéder à ces données à des fins de recherche, vous devez 
 2. Utiliser les filtres pour sélectionner les jeux de données nécessaires pour votre recherche à partir du répertoire des fichiers du portail de données. 
 3. Déposer les fichiers choisis pour votre recherche dans votre panier.
 4. Télécharger les listes de fichiers retenues pour votre recherche et les instructions qui s'y rattachent. Une liste de fichiers est générée par étude. 
-5. Envoyer vos listes de fichiers aux bureaux d'accès des études respectives pour débuter la précdure d'accès. Les listes de fichiers peuvent aussi être sauvegardées et soumises à un autre moment. 
+5. Envoyer vos listes de fichiers aux bureaux d'accès des études respectives pour débuter la procédure d'accès. Les listes de fichiers peuvent aussi être sauvegardées et soumises à un autre moment. 
+
 
    > **IMPORTANT: Vous devrez suivre les procédures mises en place par les études partenaires pour obtenir l'accès aux données. Ces procédures peuvent varier d'une étude à l'autre; il est donc nécessaire de prendre connaissance des politiques d'accès et d'utilisation des données ainsi que des documents requis pour faire une demande d'accès aux données de ces études.** 
 
 ## Étapes suivant l'approbation d’accès aux données par une étude partenaire
 
-1.	Une fois que l'approbation d'accès aux données a été octroyée par le bureau d'accès aux données d'une étude partenaire, celui-ci transmet l'information nécessaire au [portail de données ](https://plateforme.cqdg.ca).  
+1.	Une fois que l'approbation d'accès aux données a été octroyée par le bureau d'accès aux données d'une étude partenaire, celui-ci transmet l'information nécessaire au CQDG.  
 2.	Les droits d’accès aux fichiers sont accordés aux chercheurs identifiés dans la demande d'accès.  
-3.	Vous pouvez ensuite vous rendre sur le portail pour visualiser les fichiers qui sont disponibles et les télécharger au besoin. 
+3.	Vous pouvez ensuite vous rendre sur le portail du cqdg pour visualiser les fichiers qui sont disponibles et les télécharger au besoin. 
