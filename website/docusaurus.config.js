@@ -71,7 +71,7 @@ module.exports = {
     },
   },
   customFields: {
-    PLATFORM_UI_ROOT: '',
+    PLATFORM_UI_ROOT: 'https://portal.qa.cqdg.ferlab.bio/',
     GATEWAY_API_ROOT: '',
   },
 };
