@@ -58,6 +58,7 @@
           justify-content: flex-end;
           align-items: center;
           cursor: pointer;
+          color: $color-neutrals-neutral-7;
 
           & > a {
               @include font-regular-16-px-24-px;
@@ -81,6 +82,11 @@
           &__text {
               color: $color-neutrals-neutral-7 !important;
               @include font-regular-12-px-16-px;
+              text-decoration: none !important;
+            &:hover {
+                text-decoration: underline;
+                color: $color-neutrals-neutral-9;
+            }
           }
 
           & > :first-child {
