@@ -8,6 +8,7 @@
     "navbar.submit.link": "/soumission/soumettre-donnees-cliniques",
     "navbar.access.link": "/acces-donnees/demande-acces-donnees",
     "navbar.dictionary.link": "/dictionary",
+    "navbar.website.link": "https://cqdg.ca/",
     "landing.header.title": "CQDG | Centre de Documentation",
     "landing.header.subtitle": "Trouver de la documentation concernant les différents services du CQDG incluant l’accès et la soumission de données cliniques et moléculaires.",
     "landing.header.search.placeholder": "Commencer une recherche...",

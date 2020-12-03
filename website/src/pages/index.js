@@ -55,7 +55,7 @@ function Index() {
           </p>
           <div className={styles['pages__splash__content__link']}>
 
-            <a href="" className={styles["pages__splash__content__link__text"]}>
+            <a target="_blank" href="https://portal.qa.cqdg.ferlab.bio/" className={styles["pages__splash__content__link__text"]}>
               {t('landing.header.to_portal')}
             </a>
 

@@ -57,17 +57,17 @@ function Navbar() {
                 <div className={styles["theme-navbar__links__divider"]}></div>
                 <div className={styles["theme-navbar__links__right-item"]}>
                     <div className={styles["theme-navbar__links__right-item__text"]}>
-                        <a className={styles["theme-navbar__links__right-item__text"]}>
+                        <a target="_blank" href="https://portal.qa.cqdg.ferlab.bio/" className={styles["theme-navbar__links__right-item__text"]}>
                             {t('portal')}
                         </a>
                     </div>
-                    <OpenNew></OpenNew>
+                    <OpenNew />
                 </div>
                 <div className={styles["theme-navbar__links__right-item"]}>
                     <div className={styles["theme-navbar__links__right-item__text"]}>
-                        <a className={styles["theme-navbar__links__right-item__text"]}>{t('website')}</a>
+                        <a target="_blank" href={translate(state.locale, 'navbar.website.link')} className={styles["theme-navbar__links__right-item__text"]}>{t('website')}</a>
                     </div>
-                    <OpenNew></OpenNew>
+                    <OpenNew />
                 </div>
                 <div className={styles["theme-navbar__links__lang"]}>
                     <div onClick={switchLanguage} className={styles["theme-navbar__links__lang__content"]}>
