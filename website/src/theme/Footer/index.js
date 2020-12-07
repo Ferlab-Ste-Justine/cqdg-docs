@@ -18,16 +18,13 @@
  *
  */
 
-import React, {useContext} from 'react';
+import React from 'react';
 
-import TranslationContext from '../TranslationContext';
 import { t, translate } from '../Utils/translation'
 
 import styles from './styles.module.scss';
 
 function Footer() {
-  const { state } = useContext(TranslationContext);
-
   return (
     <footer className={styles['nav-footer']} id="footer">
       <div className={styles.footerWrapper}>
@@ -36,10 +33,10 @@ function Footer() {
           <p className={styles.footerMoreInfo}>{t('landing.footer.info')} <a className={styles.footerMoreInfoLink} href="mailto:support@cqdg.ca">support@cqdg.ca</a></p>
         </div>
         <div>
-          <a href={translate(state.locale, 'landing.footer.logo.genome.link')} target="_blank">
+          <a href={translate('landing.footer.logo.genome.link')} target="_blank">
             <img src={`/img/icons/genome_qc_logo_RS.svg`} alt="genome" />
           </a>
-          <a href={translate(state.locale, 'landing.footer.logo.chusj.link')} target="_blank" className={styles.footerChuJSLogoLink}>
+          <a href={translate('landing.footer.logo.chusj.link')} target="_blank" className={styles.footerChuJSLogoLink}>
             <img src={`/img/icons/chusj-logo-color.svg`} alt="chusj" />
           </a>
         </div>

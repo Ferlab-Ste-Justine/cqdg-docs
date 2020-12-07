@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { IntlProvider } from 'react-intl';
 import config from './translations/'
 import TranslationContext from '../TranslationContext';
-let a = true;
 
 function I18NProvider({ children }) {
     const { state } = useContext(TranslationContext);
