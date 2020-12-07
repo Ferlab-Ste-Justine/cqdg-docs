@@ -13,18 +13,18 @@ function Navbar() {
 
     const links = [{
         title: t('submit'),
-        href: translate(state.locale, 'navbar.submit.link'),
+        href: translate('navbar.submit.link'),
         action: () => { setSelectedIndex(0); }
     },
     {
         title: t('access'),
-        href: translate(state.locale, 'navbar.access.link'),
+        href: translate('navbar.access.link'),
         action: () => { setSelectedIndex(1); }
     },
     
     {
         title: t('dictionary'),
-        href: translate(state.locale, 'navbar.dictionary.link'),
+        href: translate('navbar.dictionary.link'),
         action: () => { setSelectedIndex(2); }
     }];
 
@@ -65,7 +65,7 @@ function Navbar() {
                 </div>
                 <div className={styles["theme-navbar__links__right-item"]}>
                     <div className={styles["theme-navbar__links__right-item__text"]}>
-                        <a target="_blank" href={translate(state.locale, 'navbar.website.link')} className={styles["theme-navbar__links__right-item__text"]}>{t('website')}</a>
+                        <a target="_blank" href={translate('navbar.website.link')} className={styles["theme-navbar__links__right-item__text"]}>{t('website')}</a>
                     </div>
                     <OpenNew />
                 </div>

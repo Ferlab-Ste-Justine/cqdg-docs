@@ -1,11 +1,9 @@
 
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import styles from './styles.module.scss';
 import useAlgolia from '../../hooks/useAlgolia';
 import { isSearchAvailable } from '../../utils';
 import { translate } from '../../theme/Utils/translation';
-import TranslationContext from '../../theme/TranslationContext';
 
 export const SearchButton = ({ children }) => {
     return (
@@ -15,14 +13,10 @@ export const SearchButton = ({ children }) => {
     )
 }
 
-
-
-
 export const Search = (props) => {
     if (!isSearchAvailable) return null;
 
-    const { state } = useContext(TranslationContext);
-    const placeholder = translate(state.locale, 'landing.header.search.placeholder');
+    const placeholder = translate('landing.header.search.placeholder');
 
     const inputRef = React.useRef();
     useAlgolia(inputRef);
