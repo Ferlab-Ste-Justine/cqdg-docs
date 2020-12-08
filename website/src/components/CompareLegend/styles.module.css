@@ -1,0 +1,13 @@
+.compareLegend {
+  display: flex;
+}
+
+.compareLegend > div:not(:last-child) {
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+}
+
+.icons {
+  margin-right: 8px;
+}

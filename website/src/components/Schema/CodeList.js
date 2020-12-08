@@ -20,6 +20,8 @@
 
 import React from 'react';
 import Icon from '@icgc-argo/uikit/Icon';
+
+import { DiffTextSegment } from './DiffText';
 import styles from './styles.module.css';
 
 const ToggleMore = ({ children, onToggle }) => (
@@ -30,6 +32,12 @@ const ToggleMore = ({ children, onToggle }) => (
     }}
   >
     {children}
+  </div>
+);
+
+export const Code = ({ code, format }) => (
+  <div key={code}>
+    <strong>{format ? <DiffTextSegment type={format}>{code}</DiffTextSegment> : code}</strong>
   </div>
 );
 

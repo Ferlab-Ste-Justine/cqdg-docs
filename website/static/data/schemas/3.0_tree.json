@@ -1,1 +1,0 @@
-{"name":"family","fields":[{"name":"program_id","required":true},{"name":"submitter_family_id","required":true},{"name":"family_type","required":true}],"required":false,"parentName":"","children":[]}

@@ -23,22 +23,15 @@ import Highlight, { defaultProps } from 'prism-react-renderer';
 import defaultTheme from 'prism-react-renderer/themes/palenight';
 import styles from './styles.module.css';
 
-const exampleCode = `function validate() {\r\n  var result = { valid: true, message: \"only required if on post_therapy_tumour_staging_system is AJCC\" };
-\r\n  return result;\r\n}\r\n\r\nvalidate()`;
-
 /**
  * Based off @theme/Codeblock
  */
 
-const CodeBlock = ({ codes }) => {
+const CodeBlock = ({ codes, className }) => {
   return (
-    <div>
-      {codes.map(code => (
-        <div
-          style={{
-            marginBottom: '10px',
-          }}
-        >
+    <div className={className}>
+      {codes ? codes.map(code => (
+        <div className={styles.highlightContainer}>
           <Highlight {...defaultProps} code={code} language="js" theme={defaultTheme}>
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
               <pre className={`${className} ${styles.code}`} style={style}>
@@ -53,9 +46,19 @@ const CodeBlock = ({ codes }) => {
             )}
           </Highlight>
         </div>
-      ))}
+      )) : <div>No code!</div>}
     </div>
   );
 };
+
+export const CompareCodeBlock = ({ left, right }) => (
+  <div className={styles.compareBlockContainer}>
+    <CodeBlock
+      codes={left}
+      className={styles.compareBlock}
+    />
+    <CodeBlock codes={right} prismTheme={defaultTheme} />
+  </div>
+);
 
 export default CodeBlock;

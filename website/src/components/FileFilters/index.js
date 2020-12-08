@@ -19,17 +19,27 @@
  */
 
 import React from 'react';
-import Select from '../Select';
-import styles from './styles.module.css';
+import get from 'lodash/get';
+import uniq from 'lodash/uniq';
+import flattenDeep from 'lodash/flattenDeep'
+import startCase from 'lodash/startCase'
+
 import Typography from '@icgc-argo/uikit/Typography';
 
+import {ChangeType} from '../../types';
+import { TAG_TYPES } from '../Tag';
+import Select from '../Select';
+import styles from './styles.module.css';
+
 export const NO_ACTIVE_FILTER = 'no_active_filter';
-export const DEFAULT_FILTER = [{ label: 'All', value: NO_ACTIVE_FILTER }];
+export const DEFAULT_FILTER = { label: 'All', value: NO_ACTIVE_FILTER };
 
 const FileFilters = ({
-  dataTiers = [],
-  dataAttributes = [],
+  tiers = [],
+  attributes = [],
+  comparisons = [],
   searchParams = {},
+  isDiffShowing = false,
   onSearch = e => console.log(e.target.val),
 }) => {
   // update search params
@@ -38,17 +48,28 @@ const FileFilters = ({
     <Typography variant="data" color="#151c3d">
       <div className={styles.fileFilters}>
         <div className={styles.dataSelectors}>
+        {isDiffShowing && (
+          <>
+            Comparison:{' '}
+            <Select
+              className={styles.select}
+              options={[DEFAULT_FILTER, ...comparisons]}
+              value={searchParams.comparison}
+              onChange={onSelect('comparison')}
+            />
+          </>
+        )}
           Data Tier:{' '}
           <Select
             className={styles.select}
-            options={dataTiers}
+            options={[DEFAULT_FILTER, ...tiers]}
             value={searchParams.tier}
             onChange={onSelect('tier')}
           />
           Attribute:{' '}
           <Select
             className={styles.select}
-            options={dataAttributes}
+            options={[DEFAULT_FILTER, ...attributes]}
             value={searchParams.attribute}
             onChange={onSelect('attribute')}
           />
@@ -56,6 +77,108 @@ const FileFilters = ({
       </div>
     </Typography>
   );
+};
+
+const comparisonFilterDisplay = {
+  updated: 'Updated fields',
+  deleted: 'Deleted fields',
+  created: 'Added fields',
+};
+
+export const generateComparisonFilter = (key) => ({
+  label: comparisonFilterDisplay[key],
+  value: key,
+});
+
+export const generateFilter = (item) => ({
+  label: startCase(item),
+  value: item,
+});
+
+export const createFilters = (schemas) => {
+  const fields = schemas.map((schema) => schema.fields);
+
+  const filters = flattenDeep(fields).reduce(
+    (filters, field) => {
+      const primaryId = get(field, 'meta.primaryId');
+      const core = get(field, 'meta.core');
+      const dependsOn = get(field, 'meta.dependsOn');
+      const restrictions = get(field, 'restrictions', false);
+      const changeType = field.changeType;
+
+      if (primaryId) {
+        filters.tiers.push(TAG_TYPES.ID);
+      }
+
+      if (!!restrictions) {
+        filters.attributes.push(TAG_TYPES.REQUIRED);
+      }
+
+      if (dependsOn) {
+        filters.attributes.push(TAG_TYPES.CONDITIONAL);
+      }
+
+      if (core) {
+        filters.tiers.push(TAG_TYPES.CORE);
+      }
+
+      if (!core && !primaryId) {
+        filters.tiers.push(TAG_TYPES.EXTENDED);
+      }
+
+      filters.comparison.push(changeType);
+
+      return filters;
+    },
+    { tiers: [], attributes: [], comparison: [] },
+  );
+  return {
+    tiers: uniq(filters.tiers),
+    attributes: uniq(filters.attributes),
+    // comparison type NONE already accounted for in default filter
+    comparison: uniq(filters.comparison)
+      .filter((f) => f !== ChangeType.NONE)
+      // filter out undefined comparison value
+      .filter(Boolean),
+  };
+};
+
+export const comparisonFilter = (comparison) => (field) => {
+  if (comparison === NO_ACTIVE_FILTER) return true;
+
+  return field.changeType === comparison;
+};
+
+export const attributeFilter = (attribute) => (field) => {
+  if (attribute === NO_ACTIVE_FILTER) return true;
+  const required = get(field, 'restrictions.required', false);
+  const dependsOn = get(field, 'meta.dependsOn', false);
+
+  return (
+    (attribute === TAG_TYPES.CONDITIONAL && Boolean(dependsOn)) ||
+    (attribute === TAG_TYPES.REQUIRED && required) ||
+    false
+  );
+};
+
+export const tierFilter = (tier) => (field) => {
+  if (tier === NO_ACTIVE_FILTER) return true;
+
+  const primaryId = get(field, 'meta.primaryId', false);
+  const core = get(field, 'meta.core', false);
+
+  return (
+    (tier === TAG_TYPES.ID && primaryId) ||
+    (tier === TAG_TYPES.CORE && core) ||
+    (tier === TAG_TYPES.EXTENDED && !core && !primaryId) ||
+    false
+  );
+};
+
+export const defaultSearchParams = {
+  tier: DEFAULT_FILTER.value,
+  attribute: DEFAULT_FILTER.value,
+  comparison: DEFAULT_FILTER.value,
 };
 
 export default FileFilters;

@@ -23,26 +23,34 @@ import TagComponent from '@icgc-argo/uikit/Tag';
 import styles from './styles.module.css';
 
 export const TAG_TYPES = Object.freeze({
-  required: 'required',
-  conditional: 'conditional',
-  core: 'core',
-  id: 'id',
-  extended: 'extended',
+  REQUIRED: 'required',
+  CONDITIONAL: 'conditional',
+  CORE: 'core',
+  ID: 'id',
+  EXTENDED: 'extended',
+});
+
+export const TAG_DISPLAY_NAME = Object.freeze({
+  required: 'Required',
+  conditional: 'Conditional',
+  core: 'Core',
+  id: 'ID',
+  extended: 'Extended',
 });
 
 const Tag = ({ type }) => {
   switch (type) {
-    case TAG_TYPES.required:
+    case TAG_TYPES.REQUIRED:
       return <TagComponent className={`${styles.tag} ${styles.required}`}>Required</TagComponent>;
-    case TAG_TYPES.conditional:
+    case TAG_TYPES.CONDITIONAL:
       return (
         <TagComponent className={`${styles.tag} ${styles.conditional}`}>Conditional</TagComponent>
       );
-    case TAG_TYPES.core:
+    case TAG_TYPES.CORE:
       return <TagComponent className={`${styles.tag} ${styles.core}`}>Core</TagComponent>;
-    case TAG_TYPES.id:
+    case TAG_TYPES.ID:
       return <TagComponent className={`${styles.tag} ${styles.id}`}>ID</TagComponent>;
-    case TAG_TYPES.extended:
+    case TAG_TYPES.EXTENDED:
       return <TagComponent className={`${styles.tag} ${styles.extended}`}>Extended</TagComponent>;
     default:
       return null;

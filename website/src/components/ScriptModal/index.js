@@ -20,9 +20,8 @@
 
 import React from 'react';
 import Modal from '@icgc-argo/uikit/Modal';
-import CodeBlock from '../CodeBlock';
 import Typography from '@icgc-argo/uikit/Typography';
-const ScriptModal = ({ field, scripts, onCloseClick }) => (
+const ScriptModal = ({ field, onCloseClick, children }) => (
   <Modal
     title={
       <Typography variant="subtitle">
@@ -34,7 +33,7 @@ const ScriptModal = ({ field, scripts, onCloseClick }) => (
     actionVisible={false}
     buttonSize="sm"
   >
-    <CodeBlock codes={scripts} />
+    {children}
   </Modal>
 );
 
