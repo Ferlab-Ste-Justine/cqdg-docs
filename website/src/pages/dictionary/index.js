@@ -18,37 +18,42 @@
  *
  */
 
-import React, { useState, createRef } from 'react';
+import React, { useState, createRef, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';
 import startCase from 'lodash/startCase';
-import get from 'lodash/get';
-import find from 'lodash/find';
-import uniq from 'lodash/uniq';
 import merge from 'lodash/merge';
-import { css } from 'emotion';
-import flattenDeep from 'lodash/flattenDeep';
-
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-
 import { ThemeProvider } from 'emotion-theming'
+
 import defaultTheme from '@icgc-argo/uikit/theme/defaultTheme';
 import Typography from '@icgc-argo/uikit/Typography';
 import Modal from '@icgc-argo/uikit/Modal';
 
 import StyleWrapper from '../../components/StyleWrapper';
-import Schema from '../../components/Schema';
-import FileFilters, { NO_ACTIVE_FILTER, DEFAULT_FILTER } from '../../components/FileFilters';
-import TreeView from '../../components/TreeView';
-import { TAG_TYPES } from '../../components/Tag';
+import FileFilters, { 
+  NO_ACTIVE_FILTER,  
+  generateFilter,
+  generateComparisonFilter,
+  createFilters,
+  attributeFilter,
+  tierFilter,
+  comparisonFilter,
+  defaultSearchParams, 
+  DEFAULT_FILTER  
+} from '../../components/FileFilters';
 import SchemaMenu from '../../components/ContentMenu';
 import { Display, DownloadButtonContent } from '../../components/common';
 import { getLatestVersion } from '../../utils';
 import Meta from '../../components/Meta';
 import { Button, ResetButton } from '../../components/Button';
-import Select from '../../components/Select';
+import Dictionary from '../../components/Dictionary';
+import CompareLegend, { generateComparisonCounts } from '../../components/CompareLegend';
+import {ChangeType} from '../../types';
+import VersionSelect from '../../components/VersionSelect';
+import { getDictionary, getDictionaryDiff, createSchemasWithDiffs } from '../../helpers/schema';
+import Close from '../../components/Icons/Close';
 
 import styles from './styles.module.css';
 import theme from '../../theme/theme';
@@ -70,6 +75,7 @@ export const useModalState = () => {
 };
 
 const modalPortalRef = React.createRef();
+
 export const ModalPortal = ({ children }) => {
   const ref = modalPortalRef.current;
   return ref
@@ -83,154 +89,89 @@ export const ModalPortal = ({ children }) => {
 };
 
 const data = require('./data.json');
-const dictionaryTreeData = require('./tree.json');
+const preloadedData = {data: data.dictionary, version: data.currentVersion};
 
-async function fetchDictionary(version) {
-  try {
-    const dict = await axios.get(`/data/schemas/${version}.json`);
-    const tree = await axios.get(`/data/schemas/${version}_tree.json`);
-    return { dict: dict.data, tree: tree.data };
-  } catch (e) {
-    throw e;
-  }
-}
-
-// TODO use this
-async function fetchDiff(version, diffVersion) {
-  const response = await axios.get(
-    `/data/schemas/diffs/${version}/${version}-diff-${diffVersion}.json`,
-  );
-  return response.data;
-}
-
-const RenderDictionary = ({ schemas, menuContents, isLatestSchema }) =>
-  schemas.length > 0 ? (
-    schemas.map((schema) => {
-      const menuItem = find(menuContents, { name: startCase(schema.name) });
-      return <Schema schema={schema} menuItem={menuItem} isLatestSchema={isLatestSchema} />;
-    })
-  ) : (
-    <div>No schemas found</div>
-  );
-
-function DataDictionary() {
-  const [version, setVersion] = useState(data.currentVersion);
-  const [dictionary, setDictionary] = useState(data.dictionary);
-  const [treeData, setTreeData] = useState(dictionaryTreeData);
-
-  const defaultSearchParams = { tier: '', attribute: '' };
-  const [searchParams, setSearchParams] = useState(defaultSearchParams);
-  const [searchValue, setSearchValue] = useState('');
-
-  //
-  const [diffVersion, setDiffVersion] = useState(null);
-
-  const updateVersion = async (newVersion) => {
-    const version = newVersion.value;
-    try {
-      const { dict, tree } = await fetchDictionary(version);
-      setVersion(version);
-      setDictionary(dict);
-      setTreeData(tree);
-    } catch (err) {
-      alert('DICTIONARY FETCHING ERROR - TODO: MAKE THIS A TOASTER');
-    }
-  };
-
+const DataDictionary = () => {
   const context = useDocusaurusContext();
   const {
     siteConfig: {
       customFields: { PLATFORM_UI_ROOT = '', GATEWAY_API_ROOT = '' },
     },
   } = context;
+  const [searchParams, setSearchParams] = useState(defaultSearchParams);
+
+  const versions = data.versions;
+  const [version, setVersion] = useState(data.currentVersion);
+  const [activeSchemas, setActiveSchemas] = useState(preloadedData.data.schemas);
+
+  const [diffVersion, setDiffVersion] = useState(versions[1]);
+  const [isDiffShowing, setIsDiffShowing] = useState(false);
+
+  const TAB_STATE = Object.freeze({
+    OVERVIEW: 'OVERVIEW',
+    DETAILS: 'DETAILS',
+  });
+  const [selectedTab] = React.useState(TAB_STATE.DETAILS);
+  
+  const isLatestSchema = getLatestVersion() === version ? true : false;
+
+  useEffect(() => {
+    const resolveSchemas = async () => {
+      try {
+        const dict = await getDictionary(version);
+        const diff = await getDictionaryDiff(version, diffVersion);
+        const schemas = diff && isDiffShowing ? createSchemasWithDiffs(dict.schemas, diff.schemas) : dict.schemas;
+
+        setActiveSchemas(schemas);
+      } catch (e) {
+        console.error('Cannot resolve schemas', e);
+        setActiveSchemas([]);
+      }
+    }
+    resolveSchemas();
+  }, [version, diffVersion, isDiffShowing]);
 
   const downloadTsvFileTemplate = (fileName) =>
     window.location.assign(`${GATEWAY_API_ROOT}clinical/template/${fileName}`);
 
-  const filters = React.useMemo(() => {
-    const schemas = get(dictionary, 'schemas', []);
-
-    const fields = schemas.map((schema) => schema.fields);
-
-    const filters = flattenDeep(fields).reduce(
-      (acc, field) => {
-        const meta = get(field, 'meta', {});
-        const { primaryId = false, core = false, dependsOn = false } = meta;
-        const restrictions = get(field, 'restrictions', false);
-        if (primaryId) {
-          acc.tiers.push(TAG_TYPES.id);
-        }
-
-        if (!!restrictions) {
-          acc.attributes.push(TAG_TYPES.required);
-        }
-
-        if (dependsOn) {
-          acc.attributes.push(TAG_TYPES.conditional);
-        }
-
-        if (core) {
-          acc.tiers.push(TAG_TYPES.core);
-        }
-
-        if (!core && !primaryId) {
-          acc.tiers.push(TAG_TYPES.extended);
-        }
-        return acc;
-      },
-      { tiers: [], attributes: [] },
-    );
-    return { tiers: uniq(filters.tiers), attributes: uniq(filters.attributes) };
-  }, [dictionary]);
-
+  // filter schemas
   const filteredSchemas = React.useMemo(
     () =>
-      dictionary.schemas
+      //  filter DELETED schemas out if not showing diff
+      activeSchemas
+        .filter((schema) => (isDiffShowing ? Boolean : schema.changeType !== ChangeType.DELETED))
+        .map((schema) => ({
+          ...schema,
+          fields: schema.fields.filter((field) =>
+            isDiffShowing ? Boolean : field.changeType !== ChangeType.DELETED,
+          ),
+        }))
+        // filter schemas based on active/search
         .map((schema) => {
-          const { tier, attribute } = searchParams;
-          const filteredFields = schema.fields.filter((field) => {
-            const meta = get(field, 'meta', {});
-            const { primaryId = false, core = false, dependsOn = false } = meta;
-            const required = get(field, 'restrictions.required', false);
+          const { tier, attribute, comparison } = searchParams;
+          const filteredFields = schema.fields
+            .filter(tierFilter(tier))
+            .filter(attributeFilter(attribute))
+            .filter(comparisonFilter(comparison));
 
-            let tierBool = false;
-            let attributeBool = false;
-
-            if (tier === NO_ACTIVE_FILTER && attribute === NO_ACTIVE_FILTER) return true;
-
-            if (
-              (tier === TAG_TYPES.id && primaryId) ||
-              (tier === TAG_TYPES.core && core) ||
-              (tier === TAG_TYPES.extended && !core && !primaryId) ||
-              tier === '' ||
-              tier === NO_ACTIVE_FILTER
-            ) {
-              tierBool = true;
-            }
-
-            if (
-              (attribute === TAG_TYPES.conditional && Boolean(dependsOn)) ||
-              (attribute === TAG_TYPES.required && required) ||
-              attribute === '' ||
-              attribute === NO_ACTIVE_FILTER
-            ) {
-              attributeBool = true;
-            }
-
-            return tierBool && attributeBool;
-          });
-          return { ...schema, fields: filteredFields };
+          return {
+            ...schema,
+            fields: filteredFields,
+          };
         })
         .filter((schema) => schema.fields.length > 0),
-    [searchParams, dictionary],
+    [activeSchemas, isDiffShowing, searchParams],
   );
 
+  const comparisonCounts = generateComparisonCounts(filteredSchemas);
   const fileCount = filteredSchemas.length;
   const fieldCount = filteredSchemas.reduce((acc, schema) => acc + schema.fields.length, 0);
 
+  const filters = React.useMemo(() => createFilters(activeSchemas), [activeSchemas]);
+
   const generateMenuContents = (activeSchemas) => {
     const activeSchemaNames = activeSchemas.map((s) => s.name);
-    return dictionary.schemas.map((schema) => ({
+    return activeSchemas.map((schema) => ({
       key: schema.name,
       name: startCase(schema.name),
       contentRef: createRef(),
@@ -238,45 +179,13 @@ function DataDictionary() {
       disabled: !activeSchemaNames.includes(schema.name),
     }));
   };
+
   const menuContents = generateMenuContents(filteredSchemas);
-
-  const isLatestSchema = getLatestVersion() === version ? true : false;
-  const TAB_STATE = Object.freeze({
-    OVERVIEW: 'OVERVIEW',
-    DETAILS: 'DETAILS',
-  });
-  const [selectedTab] = React.useState(TAB_STATE.DETAILS);
-
-  // versions
-  const versions = data.versions;
-  const diffVersions = versions.filter((v) => v !== version);
-
-  /**
-   * @param {function} onChange
-   * @param {string[]} versions
-   * @param {string} value
-   */
-  const VersionSelect = ({ value, onChange, versions }) => {
-    const options = versions.map((d) => ({ label: `Version ${d}`, value: d }));
-    return (
-      <form>
-        <div style={{ width: '150px', marginRight: '10px' }}>
-          <Select
-            aria-label="version-select"
-            onChange={(val) => onChange(val)}
-            value={value}
-            options={options}
-          />
-        </div>
-      </form>
-    );
-  };
-
   const mergedTheme = merge(defaultTheme, theme);
+
   return (
     <ThemeProvider theme={mergedTheme}>
       <div id="modalCont" className={styles.modalCont} ref={modalPortalRef} />
-
       <Layout permalink="dictionary">
         <StyleWrapper>
           <div className={styles.mainContainer}>
@@ -296,22 +205,36 @@ function DataDictionary() {
               </div>
               <div className={styles.infobar}>
                 <div>
-                  <VersionSelect value={version} versions={versions} onChange={updateVersion} />
+                  <VersionSelect value={version} versions={versions} onChange={(e) => setVersion(e.value)} />
                   <Button
                     className={styles.compareButton}
-                    onClick={() => {
-                      setDiffVersion(diffVersions[0]);
-                    }}
+                    onClick={() => setIsDiffShowing(true)}
                   >
                     Compare ...
                   </Button>
-                  {diffVersion ? (
-                    <VersionSelect
-                      value={diffVersion}
-                      versions={diffVersions}
-                      onChange={(data) => setDiffVersion(data.value)}
-                    />
-                  ) : null}
+                  {isDiffShowing && (
+                    <div className={styles.compareSection}>
+                      <VersionSelect
+                        value={diffVersion}
+                        versions={versions.filter((v) => v !== version)}
+                        onChange={(data) => setDiffVersion(data.value)}
+                      />
+                      <CompareLegend
+                        comparison={comparisonCounts}
+                      />
+                      <Button
+                        className={styles.clear}
+                        type="secondary"
+                        onClick={() => {
+                          setIsDiffShowing(false);
+                          setSearchParams({ ...searchParams, comparison: DEFAULT_FILTER.value });
+                        }}
+                      >
+                        <Close className={styles.closeIcon} />
+                        CLEAR
+                      </Button>
+                    </div>
+                  )}
                 </div>
                 <div className={styles.downloads}>
                   <Button
@@ -329,26 +252,26 @@ function DataDictionary() {
                 >
                   <Meta files={fileCount} fields={fieldCount} />
                   <div
-                    className={css`
-                      display: flex;
-                      flex-direction: row;
-                    `}
+                    className={styles.searchContainer}
                   >
                     <FileFilters
-                      dataTiers={DEFAULT_FILTER.concat(
-                        filters.tiers.map((d) => ({ label: startCase(d), value: d })),
-                      )}
-                      dataAttributes={DEFAULT_FILTER.concat(
-                        filters.attributes.map((d) => ({
-                          label: startCase(d),
-                          value: d,
-                        })),
-                      )}
+                      tiers={filters.tiers.map(generateFilter)}
+                      attributes={filters.attributes.map(generateFilter)}
+                      comparisons={
+                        version === diffVersion
+                          ? []
+                          : filters.comparison.map(generateComparisonFilter)
+                      }
                       searchParams={searchParams}
                       onSearch={(search) => setSearchParams(search)}
+                      isDiffShowing={isDiffShowing}
                     />
                     <ResetButton
-                      disabled={searchParams.tier === '' && searchParams.attribute === ''}
+                      disabled={
+                        searchParams.tier === NO_ACTIVE_FILTER &&
+                        searchParams.attribute === NO_ACTIVE_FILTER &&
+                        searchParams.comparison === NO_ACTIVE_FILTER
+                      }                      
                       onClick={() => setSearchParams(defaultSearchParams)}
                     >
                       Reset
@@ -359,20 +282,15 @@ function DataDictionary() {
 
               <Display visible={selectedTab === TAB_STATE.DETAILS}>
                 <div
-                  className={css`
-                    margin-top: 30px;
-                  `}
+                  className={styles.dictionary}
                 >
-                  <RenderDictionary
+                  <Dictionary
                     schemas={filteredSchemas}
                     menuContents={menuContents}
                     isLatestSchema={isLatestSchema}
+                    isDiffShowing={isDiffShowing}
                   />
                 </div>
-              </Display>
-
-              <Display visible={false}>
-                <TreeView searchValue={searchValue} data={treeData} />
               </Display>
             </div>
 

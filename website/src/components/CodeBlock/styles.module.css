@@ -32,3 +32,16 @@
   overflow-wrap: break-word;
   white-space: pre-wrap;
 }
+.compareBlockContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.compareBlock {
+  margin-right: 8px;
+}
+
+.highlightContainer {
+  margin-bottom: 10px;
+}

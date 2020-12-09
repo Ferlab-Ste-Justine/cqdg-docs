@@ -26,6 +26,7 @@ const fs = require('fs');
 const argv = require('yargs').argv;
 const fse = require('fs-extra');
 const generateTreeData = require('./generateData');
+const generateDiffChanges = require('./generateDiffData');
 
 const constants = require('./constants');
 
@@ -96,18 +97,33 @@ async function fetchAndSaveDiffsForVersion(version) {
         const high = parseFloat(version) > parseFloat(otherVersion) ? version : otherVersion;
         const low = parseFloat(version) < parseFloat(otherVersion) ? version : otherVersion;
 
-        const path = `${schemaPath}/diffs/${high}`;
-        const filename = `${path}/${high}-diff-${low}.json`;
-
+        const pathHigh = `${schemaPath}/diffs/${high}`;
+        const pathLow = `${schemaPath}/diffs/${low}`;
+        const filenameHL = `${pathHigh}/${high}-diff-${low}.json`;
+        const filenameLH = `${pathLow}/${low}-diff-${high}.json`;
+        
         try {
-            ensureDirectoryExistence(path);
-            const response = await fetchDiffForVersions(high, low);
+            ensureDirectoryExistence(pathHigh);
+            ensureDirectoryExistence(pathLow);
+            const schemaDiffHL = await fetchDiffForVersions(high, low);
+            const schemaDiffLH = await fetchDiffForVersions(low, high);
+            const diffHL = generateDiffChanges(schemaDiffHL);
+            const diffsLH = generateDiffChanges(schemaDiffLH);
+
             console.log(
                 `${chalk.cyan('saving diff for versions')} ${high} ${chalk.cyan('and')} ${low} ${chalk.cyan(
                     '...',
                 )}`,
             );
-            fs.writeFileSync(filename, JSON.stringify(response));
+            fse.writeJSONSync(filenameHL, diffHL);
+
+            console.log(
+                `${chalk.cyan('saving diff for versions')} ${low} ${chalk.cyan('and')} ${high} ${chalk.cyan(
+                    '...',
+                )}`,
+            );
+            fse.writeJSONSync(filenameLH, diffsLH);
+
         } catch (e) {
             console.log(chalk.red(`Error fetching or saving diff!`), e);
         }
@@ -265,6 +281,25 @@ async function runValidation() {
     console.log(chalk.green('\n\nYour dictionary is valid :D'));
 }
 
+async function runDiff() {
+    console.log(chalk.green(`Lets create diff version base on a specific version`));
+    await setLecternCredentials();
+
+    // Fetch the dictionary for this version and save data and tree files
+    const version = await promptVersion();
+
+    // Fetch all Diffs and save
+    console.log(chalk.cyan('fetching diffs vs stored versions...'));
+    if (version === 'all') {
+        await Promise.all(currentVersions.map( async version => {
+            await fetchAndSaveDiffsForVersion(version);
+        }));
+    } else {
+        await fetchAndSaveDiffsForVersion(version);
+    }
+    console.log(chalk.green('\n\nALL CHANGES COMPLETE :D'));
+}
+
 async function runAdd() {
     console.log(chalk.green(`Lets add a new dictionary version!`));
     printConfig();
@@ -324,6 +359,9 @@ function run() {
     if (argv.l || argv.list) {
         // LIST ALL VERSIONS
         runList();
+    } else if (argv.d || argv.diff) {
+        // CREATE DIFF BETWEEN VERSION FOR ALL OR PRECISE VERSION
+        runDiff();
     } else if (argv.a || argv.add) {
         // ADD A NEW VERSION (first list all to show, then query the add)
         runAdd();

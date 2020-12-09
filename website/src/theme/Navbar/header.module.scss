@@ -89,7 +89,7 @@
             }
           }
 
-          & > :first-child {
+          & > :first-of-type(1) {
               margin-right: 6px;
           }
       }

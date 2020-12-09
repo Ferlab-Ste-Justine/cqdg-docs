@@ -23,7 +23,7 @@ import Typography from '@icgc-argo/uikit/Typography';
 
 const Meta = ({ files, fields }) => (
   <Typography variant="data" color="#151c3d">
-    {`${files} files > ${fields} fields`}
+    {`${files} files with ${fields} fields`}
   </Typography>
 );
 

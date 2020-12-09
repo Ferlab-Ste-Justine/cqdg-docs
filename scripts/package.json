@@ -2,6 +2,7 @@
   "scripts": {
     "help": "node manage-versions.js -h --npm",
     "list": "node manage-versions.js -l --npm",
+    "diff": "node manage-versions.js -d --npm",
     "add": "node manage-versions.js -a --npm --silent",
     "validate": "node manage-versions.js -v --npm --silent",
     "clean": "node clean-data.js",

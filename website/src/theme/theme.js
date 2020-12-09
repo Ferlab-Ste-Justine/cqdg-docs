@@ -5,6 +5,18 @@ export default {
     secondary_4: "transparent",
     secondary_dark: "#0774d3",
   },
+  diffColors: {
+    schemaField: {
+      created: "green",
+      updated: "yellow",
+      deleted:"red",
+    },
+    dot: {
+      created: "#7CB305",
+      updated: "#FA8C16",
+      deleted:"#C54B38",
+    }
+  },
   button: {
     borderColors: {
       primary: {
