@@ -373,8 +373,8 @@ const Schema = ({ schema, menuItem, isDiffShowing }) => {
   const highlightRowDiff = (changeType) => ({
     style: {
       background: rowColors[changeType],
-      textDecoration: changeType === ChangeType.DELETED ? 'line-through' : null,
     },
+    className: styles[`row-${changeType}`],
   });
 
   const tableData = getTableData(isDiffShowing, schema.fields);
