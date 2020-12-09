@@ -100,7 +100,6 @@ const generateDiffChanges = (schemaDiff) =>
       const [name, changes] = schemaFieldDiff;
 
       const { schemaName, fieldName } = parseDiffFieldName(name);
-      // console.log(schemaName, fieldName, acc);
       const fieldChanges = changes.diff;
 
       schemaName in schemas ||

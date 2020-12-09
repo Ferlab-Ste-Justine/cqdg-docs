@@ -132,34 +132,13 @@ async function fetchDiff(version, diffVersion) {
   }
 }
 
-export const parseDiff = (diff) => {
-  return diff
-    .map((schemaFieldArray) => {
-      const [schema, field] = schemaFieldArray[0].split('.');
-      const { left, right, diff } = schemaFieldArray[1];
-      return {
-        schema,
-        field,
-        left,
-        right,
-        diff,
-      };
-    })
-    .reduce((acc, { schema, field: fieldName, ...rest }) => {
-      const fields = get(acc, [schema], {});
-      fields[fieldName] = rest;
-      acc[schema] = fields;
-      return acc;
-    }, {});
-};
-
 /**
  *
  * @param {string} version
  * @param {{data: Dictionary, version: string}} preloadedDictionary
  */
 export const getDictionary = async (version) => {
-  const { dict, tree } = await fetchDictionary(version);
+  const { dict } = await fetchDictionary(version);
   return dict ? dict : [];
 };
 
@@ -168,7 +147,5 @@ export const getDictionary = async (version) => {
  * @param {string} diffVersion
  */
 export const getDictionaryDiff = async (version, diffVersion) => {
-  const diff = await fetchDiff(version, diffVersion);
-  return diff;
-  //return parseDiff(diff);
+  return await fetchDiff(version, diffVersion);
 };
