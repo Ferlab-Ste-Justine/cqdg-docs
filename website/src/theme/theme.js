@@ -7,9 +7,9 @@ export default {
   },
   diffColors: {
     schemaField: {
-      created: "green",
-      updated: "yellow",
-      deleted:"red",
+      created: "#EAFF8F",
+      updated: "#FFFB8F",
+      deleted: "#FFD6E7",
     },
     dot: {
       created: "#7CB305",

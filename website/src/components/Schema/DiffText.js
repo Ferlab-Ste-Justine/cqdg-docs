@@ -4,11 +4,11 @@ import React from 'react';
 import { ChangeType } from '../../types';
 
 const padding = css`
-  padding: 0 2px;
+  padding: 4px;
 `;
 
 export const deletedStyle = css`
-  background: #f6c5cf;
+  background: #FFADD2;
   text-decoration: line-through;
   ${padding}
 `;
@@ -19,7 +19,7 @@ export const updatedStyle = css`
 `;
 
 export const createdStyle = css`
-  background: #d3f7f0;
+  background: #BAE637;
   ${padding}
 `;
 

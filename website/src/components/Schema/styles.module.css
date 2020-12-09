@@ -98,6 +98,19 @@
   align-items: center;
   position: relative;
   top: 8px;
+  text-decoration: none;
+}
+
+.row-deleted > div:not(:last-child){
+  border-right:1px #ebc2d3 solid!important;
+}
+
+.row-updated > div:not(:last-child){
+  border-right:1px #e6e270 solid!important;
+}
+
+.row-created > div:not(:last-child){
+  border-right:1px #dbe8a1 solid!important;
 }
 
 .comparisonCell > svg {
