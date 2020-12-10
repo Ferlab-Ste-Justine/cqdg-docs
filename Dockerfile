@@ -5,9 +5,6 @@ WORKDIR /app
 COPY . .
 
 # Set env variables here (none to worry about today)
-RUN apt-get update
-RUN apt-get install zip
-RUN zip -j all.zip /app/scripts/dictionary/schemas/example_files/*
 RUN cd website && yarn && yarn build
 
 FROM nginx:alpine
@@ -19,7 +16,6 @@ RUN usermod -u 9999 nginx
 RUN groupmod -g 9999 nginx
 
 COPY --from=0 /app/website/build /usr/share/nginx/html
-COPY --from=0 /app/all.zip /usr/share/nginx/html/dictionary/clinical/template/all.zip
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 RUN chown -R nginx:nginx /var/cache/nginx

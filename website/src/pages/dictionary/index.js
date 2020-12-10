@@ -27,6 +27,8 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { ThemeProvider } from 'emotion-theming'
 
+import JSZip from 'jszip';
+import { saveAs } from 'file-saver';
 import defaultTheme from '@icgc-argo/uikit/theme/defaultTheme';
 import Typography from '@icgc-argo/uikit/Typography';
 import Modal from '@icgc-argo/uikit/Modal';
@@ -131,8 +133,28 @@ const DataDictionary = () => {
     resolveSchemas();
   }, [version, diffVersion, isDiffShowing]);
 
-  const downloadTsvFileTemplate = (fileName) =>
-    window.location.assign(`${GATEWAY_API_ROOT}clinical/template/${fileName}`);
+
+  const downloadTsvFileTemplate = async (fileName) => {
+    const zip = new JSZip();
+    const dict = await getDictionary(version);
+
+    dict.schemas.forEach(schema => {
+      const template = createTsvTemplate(schema);
+      zip.file(`${schema.name}_v${version}.tsv`, template);
+    });
+
+    const archive = await zip.generateAsync({type:"blob"});
+    saveAs(archive, "file-templates.zip");
+  }
+  const createTsvTemplate = (schema) => {
+    const header =
+      schema.fields
+        .map((f) => {
+          return f.name;
+        })
+        .join('\t') + '\n';
+    return header;
+  }
 
   // filter schemas
   const filteredSchemas = React.useMemo(
