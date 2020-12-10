@@ -18,23 +18,28 @@
  *
  */
 
-const dictionaryNames = {en: 'CQDG Data Dictionary', fr: 'CQDG Data Dictionary FR'};
-const schemaPath = '../website/static/data/schemas';
-const versionsFilename = `${schemaPath}/schema-versions.json`;
-const dataFilename = '../website/src/pages/dictionary/data-{language}.json';
-const dataFileTreeName = '../website/src/pages/dictionary/tree-{language}.json';
-const dataDirPath = '../website/static/data/schemas';
-const languages = {
-  list: ['en', 'fr'], 
-  default: 'en'
-};
+const sample_registration = require('./sample_registration.json');
+const study = require('./study.json');
+const donor = require('./donor.json');
+const biospecimen = require('./biospecimen.json');
+const diagnosis = require('./diagnosis.json');
+const treatment = require('./treatment.json');
+const follow_up = require('./follow_up.json');
+const exposure = require('./exposure.json');
+const phenotype = require('./phenotype.json');
+const family_relationship = require('./family_relationship.json');
+const family_history = require('./family_history.json');
 
-module.exports = {
-  dictionaryNames,
-  schemaPath,
-  versionsFilename,
-  dataFilename,
-  dataDirPath,
-  dataFileTreeName,
-  languages,
-};
+module.exports = [
+  sample_registration, 
+  study, 
+  donor,
+  biospecimen,
+  diagnosis,
+  treatment,
+  follow_up,
+  exposure,
+  phenotype, 
+  family_relationship, 
+  family_history
+];

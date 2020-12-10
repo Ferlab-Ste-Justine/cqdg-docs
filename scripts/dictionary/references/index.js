@@ -19,8 +19,25 @@
  */
 
 const script = require('./script.js');
-const list = require('./list.json');
 const regex = require('./regex.json');
-const notes = require('./notes.json');
 
-module.exports = { script, list, regex, notes };
+const listEN = require('./en/list.json');
+const listFR = require('./fr/list.json');
+
+const notesEN = require('./en/notes.json');
+const notesFR = require('./fr/notes.json');
+
+module.exports = { 
+  en:{
+    script,
+    list: listEN,
+    regex,
+    notes: notesEN
+  }, 
+  fr:{
+    script,
+    list: listFR,
+    regex,
+    notes: notesFR
+  } 
+};

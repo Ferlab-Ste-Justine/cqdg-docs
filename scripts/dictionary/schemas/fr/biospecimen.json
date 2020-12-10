@@ -1,0 +1,246 @@
+{
+  "name": "biospecimen",
+  "description": "The collection of data elements related to a donor's biospecimen. A biospecimen is any material sample taken for testing, diagnostic or research purposes. To submit multiple biospecimens for a single donor, submit multiple rows in the biospecimens file for this donor.",
+  "fields": [
+    {
+      "name": "submitter_donor_id",
+      "description": "Unique identifier of the donor, assigned by the data provider",
+      "valueType": "string",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "foreignKey": "donor.submitter_donor_id",
+        "displayName": "Submitter Donor ID",
+        "notes": "#/notes/submitter_id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/submitter_id"
+      }
+    },
+    {
+      "name": "submitter_biospecimen_id",
+      "description": "Unique identifier of the biospecimen, assigned by the data provider",
+      "valueType": "string",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "Submitter Biospecimen ID",
+        "notes": "#/notes/submitter_id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/submitter_id"
+      }
+    },
+    {
+      "name": "submitter_diagnosis_id",
+      "valueType": "string",
+      "description": "Indicate the diagnosis event in the clinical timeline that this biospecimen acquisition was related to",
+      "meta": {
+        "primaryId": true,
+        "validationDependency": true,
+        "foreignKey": "diagnosis.submitter_diagnosis_id",
+        "displayName": "Submitter Diagnosis ID",
+        "notes": "not required if the biospecimen was not collected for a diagnostic purpose #/notes/submitter_id"
+      },
+      "restrictions": {
+        "regex": "#/regex/submitter_id"
+      }
+    },
+    {
+      "description": "Date when biospecimen was collected",
+      "name": "date_biospecimen_collection",
+      "valueType": "string",
+      "meta": {
+        "core": true,
+        "notes": "Collected DateTime",
+        "displayName": "Date of biospecimen collection"
+      },
+      "restrictions": {
+        "required": true
+      }
+    },
+    {
+      "name": "tumor_normal_designation",
+      "valueType": "string",
+      "description": "Description of specimen tumor/normal status for data processing",
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "Normal",
+          "Tumor"
+        ]
+      },
+      "meta": {
+        "validationDependency": true,
+        "core": true,
+        "displayName": "Tumor Normal Designation"
+      }
+    },
+    {
+      "description": "Tissue source of the biospecimen",
+      "name": "biospecimen_tissue_source",
+      "valueType": "string",
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "Blood derived - bone marrow",
+          "Blood derived - peripheral blood",
+          "Blood derived",
+          "Bone marrow",
+          "Bone",
+          "Buccal cell",
+          "Buffy coat",
+          "Cerebellum",
+          "Cerebrospinal fluid",
+          "Endometrium",
+          "Esophagus",
+          "Intestine",
+          "Lymph node",
+          "Mononuclear cells from bone marrow",
+          "Other",
+          "Plasma",
+          "Pleural effusion",
+          "Saliva",
+          "Serum",
+          "Skin",
+          "Solid tissue",
+          "Spleen",
+          "Sputum",
+          "Stomach",
+          "Tonsil",
+          "Urine"
+        ]
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Biospecimen_tissue_source"
+      }
+    },
+    {
+      "name": "biospecimen_type",
+      "valueType": "string",
+      "description": "Description of the kind of biospecimen that was collected",
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "Cell line - derived from normal",
+          "Cell line - derived from tumour",
+          "Cell line - derived from xenograft tumour",
+          "Metastatic tumour - additional metastatic",
+          "Metastatic tumour - metastasis local to lymph node",
+          "Metastatic tumour - metastasis to distant location",
+          "Metastatic tumour",
+          "Normal - tissue adjacent to primary tumour",
+          "Normal",
+          "Primary tumour - additional new primary",
+          "Primary tumour - adjacent to normal",
+          "Primary tumour",
+          "Recurrent tumour",
+          "Xenograft - derived from primary tumour",
+          "Xenograft - derived from tumour cell line",
+          "Derived from allogenic bone marrow transplant",
+          "Derived from autologous bone marrow transplant"
+        ]
+      },
+      "meta": {
+        "validationDependency": true,
+        "core": true,
+        "displayName": "Biospecimen Type"
+      }
+    },
+    {
+      "name": "biospecimen_anatomic_location",
+      "valueType": "string",
+      "description": "Indicate the ICD-O-3 topography code for the anatomic location of a biospecimen when it was collected",
+      "restrictions": {
+        "required": true,
+        "regex": "^[C][0-9]{2}(.[0-9]{1})?$"
+      },
+      "meta": {
+        "validationDependency": true,
+        "core": true,
+        "notes": "Refer to guidelines in the ICD-O-3 manual: ICD-O-3 manual at https://apps.who.int/iris/handle/10665/42344",
+        "displayName": "Biospecimen anatonmic location",
+        "examples": "C50.1,C18"
+      }
+    },
+    {
+      "name": "tumor_histological_type",
+      "description": "The code to represent the histology (morphology) of neoplasms that is usually obtained from a pathology report, according to the International Classification of Diseases for Oncology, 3rd Edition (WHO ICD-O-3)", 
+      "valueType": "string",
+      "meta": {
+        "validationDependency": true,
+        "core": true,
+        "dependsOn": "sample_registration.tumor_normal_designation",
+        "notes": "If biospecimen is a tumor, Refer to the ICD-O-3 manual for guidelines at https://apps.who.int/iris/handle/10665/42344",
+        "valueType": "string",
+        "examples": "8260/3,9691/36",
+        "displayName": "Tumor Histological Type"
+      },
+      "restrictions": {
+        "regex": "^[8,9]{1}[0-9]{3}/[0,1,2,3,6,9]{1}[1-9]{0,1}$"
+      }
+    },
+    {
+      "name": "biospecimen_processing",
+      "valueType": "string",
+      "description": "Processing method of biospecimen",
+      "restrictions": {
+        "codeList": [
+          "Cryopreservation in liquid nitrogen (dead tissue)",
+          "Cryopreservation in dry ice (dead tissue)",
+          "Cryopreservation of live cells in liquid nitrogen",
+          "Cryopreservation - other",
+          "Formalin fixed & paraffin embedded",
+          "Formalin fixed - buffered",
+          "Formalin fixed - unbuffered",
+          "Fresh",
+          "Other"
+        ]
+      },
+      "meta": {
+        "displayName": "Biospecimen processing"
+      }
+    },
+    {
+      "name": "biospecimen_storage",
+      "valueType": "string",
+      "description": "Storage method of biospecimen",
+      "restrictions": {
+        "codeList": [
+          "Cut slide",
+          "Frozen in -70 freezer",
+          "Frozen in liquid nitrogen",
+          "Frozen in vapour phase",
+          "Not Applicable",
+          "Other",
+          "Paraffin block",
+          "RNA later frozen"
+        ]
+      },
+      "meta": {
+        "notes": "For biospecimens that were freshly extracted or immediately cultured, select Not Applicable.",
+        "displayName": "Biospecimen storage"
+      }
+    },
+    {
+      "name": "biospecimen_access",
+      "valueType": "string",
+      "description": "Biospecimen may be accessed (consent type)",
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "Yes",
+          "No"
+        ]
+      },
+      "meta": {
+        "validationDependency": true,
+        "core": true,
+        "displayName": "Biospecimen access"
+      }
+    }
+  ]
+}

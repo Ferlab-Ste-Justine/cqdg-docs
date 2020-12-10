@@ -1,0 +1,196 @@
+{
+  "name": "treatment",
+  "description": "The collection of data elements related to a donor's treatment at a specific point in the clinical record. To submit multiple treatments for a single donor, please submit treatment rows in the treatment file for this donor.",
+  "meta": {
+    "parent": "donor"
+  },
+  "fields": [
+    {
+      "name": "submitter_donor_id",
+      "description": "Unique identifier of the donor, assigned by the data provider",
+      "valueType": "string",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "foreignKey": "donor.submitter_donor_id",
+        "displayName": "Submitter Donor ID",
+        "notes": "#/notes/submitter_id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/submitter_id"
+      }
+    },
+    {
+      "name": "submitter_treatment_id",
+      "description": "Unique identifier of the treatment, assigned by the data provider",
+      "valueType": "string",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "Submitter Treatment ID",
+        "notes": "#/notes/submitter_id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/submitter_id"
+      }
+    },
+    {
+      "name": "submitter_diagnosis_id",
+      "valueType": "string",
+      "description": "Indicate the diagnosis event in the clinical timeline that this treatment was related to",
+      "meta": {
+        "primaryId": true,
+        "foreignKey": "diagnosis.submitter_diagnosis_id",
+        "displayName": "Submitter Diagnosis ID",
+        "notes": "#/notes/submitter_id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/submitter_id"
+      }
+    },
+    {
+      "name": "treatment_type",
+      "description": "Indicate the type of treatment the donor received",
+      "valueType": "string",
+      "isArray": true,
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "Ablation",
+          "Bone marrow transplant",
+          "Chemotherapy",
+          "Endoscopic therapy",
+          "Hormonal therapy",
+          "Immunotherapy",
+          "Other targeting molecular therapy",
+          "Other pharmarcotherapy",
+          "Other cell-based therapy",
+          "Photodynamic therapy",
+          "Radiation therapy",
+          "Stem cell transplant",
+          "Surgery", 
+          "Other"
+        ]
+      },
+      "meta": {
+        "validationDependency": true,
+        "core": true,
+        "displayName": "Treatment Type",
+        "examples": "Chemotherapy|Hormonal therapy"
+      }
+    },
+    {
+      "name": "treatment_is_primary",
+      "description": "Indicate if the treatment is the primary treatment following the initial diagnosis",
+      "valueType": "string",
+      "restrictions": {
+        "codeList": [
+          "Yes",
+          "No",
+          "Unknown"
+        ]
+      },
+      "meta": {
+        "displayName": "Is Primary Treatment"
+      }
+    },
+    {
+      "name": "treatment_intent",
+      "description": "The purpose of the treatment",
+      "valueType": "string",
+      "restrictions": {
+        "codeList": [
+          "Adjuvant",
+          "Concurrent",
+          "Curative",
+          "Life extending",
+          "Neoadjuvant",
+          "Not applicable",
+          "Palliative",
+          "Preventative",
+          "Symptoms management",
+          "Unknown"
+        ]
+      },
+      "meta": {
+        "displayName": "Treatment Intent"
+      }
+    },
+    {
+      "name": "treatment_response",
+      "description": "The donor's response to the treatment",
+      "valueType": "string",
+      "restrictions": {
+        "codeList": [
+          "Clinical remission",
+          "Disease Progression",
+          "Partial Response",
+          "Stable Disease",
+          "Treatement cessation due to toxicity",
+          "Impovement of symptoms",
+          "Not applicable",
+          "No sign of disease",
+          "Worsening of symptoms",
+          "No improvement of symptoms"
+        ]
+      },
+      "meta": {
+        "displayName": "Response to treatment"
+      }
+    },
+    {
+      "name": "medication_name",
+      "valueType": "string",
+      "description": "medication name (common term)",
+      "meta": {
+        "core": true,
+        "dependsOn": "treatment.treatment_type",
+        "displayName": "Medication name"
+      }
+    },
+    {
+      "name": "medication_code",
+      "valueType": "string",
+      "description": "Drug identification number (DIN code)",
+      "meta": {
+        "notes": "The DIN uniquely identifies the manufacturer, product name, active ingredient(s), strength(s) of active ingredient(s);pharmaceutical form and route of administration.",
+        "dependsOn": "treatment.treatment_type",
+        "displayName": "Drug Identification Number"
+      }
+    },
+    {
+      "name": "medication_class",
+      "valueType": "string",
+      "description": "Drug class based on ATC (Anatomical Therapeutic Class)",
+      "meta": {
+        "core": true,
+        "notes": "Refer to the WHO ATC https://www.whocc.no/atc_ddd_index/ to classify the active ingredients of drug according to the organ or system on which it acts and its therapeutic, pharmacological and chemical properties. Drugs should be coded at the 5th level of the ATC.",
+        "dependsOn": "treatment.treatment_type",
+        "displayName": "Medication class"
+      }
+    },
+    {
+      "description": "Date of the first prescription dispensation (MM-YYYY)",
+      "name": "medication_start_date",
+      "valueType": "string",
+      "meta": {
+        "notes": "For self-reported information provide date when stopped taking the Rx.",
+        "dependsOn": "treatment.treatment_type",
+        "displayName": "Medication start date"
+      }
+    },
+    {
+      "description": "Date of the last prescription dispensation (MM-YYYY)",
+      "name": "medication_end_date",
+      "valueType": "string",
+      "meta": {
+        "notes": "For self-reported information provide date when stopped taking the Rx.",
+        "dependsOn": "treatment.treatment_type",
+        "displayName": "Medication end date"
+      }
+    }
+  ]
+}

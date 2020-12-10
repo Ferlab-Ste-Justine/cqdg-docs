@@ -1,0 +1,83 @@
+{
+  "name": "family_history",
+  "description": "The collection of data elements related to the donor's family health history. To submit multiple conditions for a single donor' family, submit multiple rows in the family history file for this donor.",
+  "fields": [
+    {
+      "description": "Unique identifier of the donor, assigned by the data provider",
+      "name": "submitter_donor_id",
+      "valueType": "string",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "foreignKey": "donor.submitter_donor_id",
+        "displayName": "Submitter Donor ID",
+        "notes": "#/notes/submitter_id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/submitter_id"
+      }
+    },
+    {
+      "name": "submitter_family_condition_id",
+      "valueType": "string",
+      "description": "Unique identifier of the condition observed in the family, assigned by the data provider (within a study)",
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/submitter_id"
+      },
+      "meta": {
+        "displayName": "Submitter Family Condition ID",
+        "validationDependency": true,
+        "primaryId": true
+      }
+    },
+    {
+      "name": "family_condition_name",
+      "description": "Name of the condition observed in a family member",
+      "valueType": "string",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Family condition name"
+      }
+    },
+    {
+      "name": "family_condition_age",
+      "description": "Age when condition was observed in family member",
+      "valueType": "integer",
+      "meta": {
+        "units": "years",
+        "displayName": "Family condition age"
+      }
+    },
+    {
+      "name": "family_condition_relationship",
+      "description": "What is the relationship of the family member to the donor.",
+      "valueType": "string",
+      "meta": {
+        "displayName": "Family condition relationship",
+        "notes": "Refer to HL7 CodeSystem to identify relationship between donor and family member http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+      }
+    },
+    {
+      "name": "family_cancer_history",
+      "description": "Donor has a history of cancer in the family",
+      "restrictions": {
+        "codeList": [
+          "Yes",
+          "No",
+          "unknow"
+        ],
+        "required": true
+      },
+      "valueType": "string",
+      "meta": {
+        "core": true,
+        "displayName": "Family cancer history"
+      }
+    }
+  ]
+}

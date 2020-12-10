@@ -2,7 +2,7 @@
 .vscode
 .idea
 *.iml
-*/node_modules
+node_modules
 
 lib/core/metadata.js
 lib/core/MetadataBlog.js
