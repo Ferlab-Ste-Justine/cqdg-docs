@@ -27,6 +27,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { ThemeProvider } from 'emotion-theming'
 
+import { saveAs } from 'file-saver';
 import defaultTheme from '@icgc-argo/uikit/theme/defaultTheme';
 import Typography from '@icgc-argo/uikit/Typography';
 import Modal from '@icgc-argo/uikit/Modal';
@@ -57,6 +58,7 @@ import Close from '../../components/Icons/Close';
 
 import styles from './styles.module.css';
 import theme from '../../theme/theme';
+import JSZip from "jszip";
 
 export const useModalState = () => {
   const [visibility, setVisibility] = useState(false);
@@ -131,8 +133,29 @@ const DataDictionary = () => {
     resolveSchemas();
   }, [version, diffVersion, isDiffShowing]);
 
-  const downloadTsvFileTemplate = (fileName) =>
-    window.location.assign(`${GATEWAY_API_ROOT}clinical/template/${fileName}`);
+
+  const downloadTsvFileTemplate = (fileName) => {
+    const zip = require('jszip')();
+
+    activeSchemas.forEach(schema => {
+      const template = createTsvTemplate(schema);
+      zip.file(`${schema.name}_v${version}.tsv`, template);
+    });
+
+    zip.generateAsync({type:"blob"})
+      .then(function(content) {
+        saveAs(content, "file-templates.zip");
+      });
+  }
+  const createTsvTemplate = (schema) => {
+    const header =
+      schema.fields
+        .map((f) => {
+          return f.name;
+        })
+        .join('\t') + '\n';
+    return header;
+  }
 
   // filter schemas
   const filteredSchemas = React.useMemo(
