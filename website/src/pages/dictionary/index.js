@@ -58,7 +58,6 @@ import Close from '../../components/Icons/Close';
 
 import styles from './styles.module.css';
 import theme from '../../theme/theme';
-import JSZip from "jszip";
 
 export const useModalState = () => {
   const [visibility, setVisibility] = useState(false);
