@@ -1,21 +1,21 @@
 ---
 id: user-profile
-title: Compte d'utilisateur du portail de données CQDG
+title: CQDG User Account 
 platform_key: DOCS_API_TOKEN
 ---
 
-Il est nécessaire de s’inscrire comme utilisateur du CQDG pour avoir accès à l’ensemble des outils de la plateforme. Ceci inclut: 
+Having a CQDG User Account is required to have access to its tools and applications. These include:  
 
--	Le répertoire des fichiers de données génomiques 
--	L'outil d'exploration et d'analyse du catalogue des variants génomiques présents dans les jeux de données du CQDG (à venir) 
--	Un environnement de calcul infonuagique (à venir) 
--	Le portail de soumission de données (à venir) 
+-	The Genomic File Repository 
+-	The Exploration and Variant Analysis Tool (upcoming)  
+-	The Cloud Computing Environment (upcoming) 
+-	The Data Submission Portal (upcoming) 
 
 
- > **IMPORTANT: En créant votre compte d’utilisateur, vous adhérez aux conditions d’utilisation des outils de la plateforme CQDG et aux exigences relatives au respect de la confidentialité.** 
+ > **IMPORTANT: By creating your user account, you agree to the CQDG Plaform's Terms of Use, including its requirements with regards to the protection of confidentiality.** 
 
-## Comment créer un compte d’utilisateur
+## How to create your User Account
 
-Vous pouvez créer votre compte d'utilisateur du CQDG en cliquant sur **connexion** sur la page principale [portail de données](https://plateforme.cqdg.ca). 
+Create your CQGG User Account at **connexion** on the [portal's homepage](https://plateforme.cqdg.ca). 
 
-Vous recevrez un courriel afin d'activer votre compte.
+You will reveive an email in order to activate your account. 

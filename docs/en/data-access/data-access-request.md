@@ -1,27 +1,27 @@
 ---
 id: data-access-request
-title: Faire une demande d'accès aux données du CQDG
-sidebar_label: Faire une demande d'accès aux données du CQDG
+title: Applying for Access to CQDG data
+sidebar_label: Applying for Access to CQDG data
 platform_key: DOCS_DATA_ACCESS
 ---
 
-Le CQDG héberge les données cliniques et génomiques de différentes études partenaires. Vous pouvez explorer ces données sur le portail de données et sélectionner les fichiers qui sont pertinents pour votre recherche. Certains fichiers sont libres d'accès et peuvent être téléchargés directement, alors que d'autres fichiers requièrent une autorisation de la part des études partenaires afin d'être consultés ou utilisés pour le recherche. Cette page décrit le processus d'accès aux données du CQDG.
+The CQDG hosts clinical and genomic data from various partner studies. You can explore this data on the CQDG portal and select files that are relevant for your research study. Some files are made openly accessible and can be directly downloaded from the portal, whereas other files are under a controlled access mecanism and can only released after having received the approval from the study from which the data originate. The following describes how to apply for access to CQDG data.
 
-## Comment accéder aux données du CQDG
+## How to Access CQDG Data
 
-Si vous souhaitez accéder à ces données à des fins de recherche, vous devez :
+If you wish to acces this data for research purposes, you must: 
 
-1. Créer un compte d’utilisateur sur le portail de données. Si vous avez déjà un compte d'utilisateur, vous pouvez accéder au portail de données pour débuter le processus de demande d'accès. 
-2. Utiliser les filtres pour sélectionner les jeux de données nécessaires pour votre recherche à partir du répertoire des fichiers du portail de données. 
-3. Déposer les fichiers choisis pour votre recherche dans votre panier.
-4. Télécharger les listes de fichiers retenues pour votre recherche et les instructions qui s'y rattachent. Une liste de fichiers est générée par étude. 
-5. Envoyer vos listes de fichiers aux bureaux d'accès des études respectives pour débuter la procédure d'accès. Les listes de fichiers peuvent aussi être sauvegardées et soumises à un autre moment. 
+1. Create a user account on the CQDG portal. If you already have a user account, you can access the portal and begin the access process.  
+2. In the File Reposiroty, use filters to select datasets that are required for you study. 
+3. Add the selected files to your cart.
+4. Download the file manifest and instructions on how to apply for access. One liste of files is generated for each study from which the data originate. 
+5. The list of files may be sent to the Data Access Office or Access Authority of orignating studies to beging the access process. These lists may also be saved and submitted at a later time. 
 
 
-   > **IMPORTANT: Vous devrez suivre les procédures mises en place par les études partenaires pour obtenir l'accès aux données. Ces procédures peuvent varier d'une étude à l'autre; il est donc nécessaire de prendre connaissance des politiques d'accès et d'utilisation des données ainsi que des documents requis pour faire une demande d'accès aux données de ces études.** 
+   > **IMPORTANT: You must follow the procedures put in place by the partner studies to obtain access to the data; as these may vary. It is therefore necessary to familiarize yourself with the data access and use policies as well as the documents required to request access to the data from these studies.** 
 
-## Étapes suivant l'approbation d’accès aux données par une étude partenaire
+## Steps following approval for access to data by a partner study 
 
-1.	Une fois que l'approbation d'accès aux données a été octroyée par le bureau d'accès aux données d'une étude partenaire, celui-ci transmet l'information nécessaire au CQDG.  
-2.	Les droits d’accès aux fichiers sont accordés aux chercheurs identifiés dans la demande d'accès.  
-3.	Vous pouvez ensuite vous rendre sur le portail du cqdg pour visualiser les fichiers qui sont disponibles et les télécharger au besoin. 
+1.	Once you have been granted access to data by the Data Access Office or Access Authority of a partner study, the information will be relayed to the CQDG.    
+2.	Access rights are granted to researchers identified in the access request. 
+3.	You can now go the CQDG portal to see which files are available for download.
