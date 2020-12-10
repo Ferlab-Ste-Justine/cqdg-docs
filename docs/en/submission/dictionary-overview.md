@@ -1,57 +1,58 @@
 ---
 id: dictionary-overview
-title: Dictionnaire de données
+title: Dicitonary Overview
 platform_key: DOCS_DICTIONARY_OVERVIEW
 ---
 
 
-Le [dictionnaire de données](/scripts/dictionary) présente les détails du modèle de données et les formats et restrictions auxquels adhére ce modèle pour assurer l'harmonisation et la qualité des données. Chacune des tables du dictionnaire est reliée à un concept clinique. Les études partenaires doivent soumettre au CQDG des données pour un minumum de tables pour que le jeu de données soit considérées recevables.  
+Le [Data Dictionary](/scripts/dictionary) outines the details of the data model which adheres to specific formats and restrictions to ensure data quality and harmonization. Each table in the Data Dictionary is related to a clinical concept. Partner studies must submit data for a minimum number of tables for the dataset to be considered admissible. 
 
 
-## Comprendre le dictionnaire de données
+## Understanding the Data Dictionary
 
-Le [visionneur du dictionnaire](/scripts/dictionary) présente l'ensemble des variables cliniques qui peut accompagner les données moléculaires hébergées au CQDG.
+Le [Dictionary viewer](/scripts/dictionary) lists all clinical variables that can be submitted along with the genomic data hosted by the CQDG.
 
-La liste des champs peut être filtée de manière à identifier les [champs nécessaires pour la soumission](/docs/submission/clinical-data-validation-rules).
+Field listings can be filtered in order to identify all [the data elements that are required for the submission](/docs/submission/clinical-data-validation-rules).
 
-Les anciennes versions du dictionnaire peuvent être consultées en utilisant le menu déroulant au dessus du dictionnaire. Cependant, la dernière version du dictionnaire doit être utilisée lors de la soumission de données.
+You can explore previous dictionary versions using the dropdown at the top of the dictionary. Using the latest version of the dictionary is required during data submission.
 
-### Descripteurs des chamnps
+### Field Descriptors
 
-Chacun des champs est classé en fonction de l'exigence des données et de ses attributs. Ces informations permettent d'identifier les champs qui sont considérés nécessaires pour qu'une soumission soit jugée recevable. Les champs peuvent être classés ainsi:  
+Each field has a data tier and an attribute classification. This information may be used to identify fields that are required for the submission to be considered admissible. Field can be classified as such:   
 
 ![ID](/assets/submission/dictionary-id.svg) 
 
-- Ces champs représentent des codes d'indentification uniques qui sont utilisés pour créer les liens entre les différentes tables de données.
-- Ces champs peuvent être une clé primaire ou externe à une table du dictionnaire. 
+- These fields are unique identifiers used for cross file validation.
+- These fields may be primary of foreign keys. 
 
-![Conditionnel](/assets/submission/dictionary-conditional.svg)
+![Conditional](/assets/submission/dictionary-conditional.svg)
 
-- Ces champs doivent rencontrer certaines conditions et dépendent de la valeur d'un autre champs. Par exemple, l'âge du décès ne peut être soumis que lorsque le status du doneur est "décédé". 
-- Les règles entourant les champs conditionnels sont décrites dans les notes et scripts du dictionnaire de données.
+- These fields must meet certain conditions and depend on the value of another field. For example, age of death can only be submitted when the donor's status is "deceased".
+- The rules surrounding conditional fields are described in the data dictionary notes and scripts.
 
-![Requis](/assets/submission/dictionary-required.svg)
+![Required](/assets/submission/dictionary-required.svg)
 
-- Ces champs doivent être soumis sans condition.
+- These fields must be provided without any condition.
 
-![Essentiel](/assets/submission/dictionary-core.svg)
+![Core](/assets/submission/dictionary-core.svg)
 
-- Ces champs font partie de l'ensemble des données cliniques essentiel à être soumis.  
-- Lorsqu'un champs `Essentiel`,est aussi considéré `Conditionnel`, ce dernier doit être soumis uniquement si les condtions sont rencontrées.
-
-![Supplémentaire](/assets/submission/dictionary-extended.svg)
-
-- Ces champs sont considérés d'intérêt mais sont optionnels.
-- Afin d'augmenter la valeur des données du CQDG, il est fortement encouragé de soumettre des données pour un maximum de champs `Supplémentaire`. 
-
-### Valeurs permissibles
-
-- Afin de favoriser la standardisation des données, certains champs n'acceptent que les valeurs provenant d'une terminologie reconnue (WHO ICD-10, ICD-O-3, HPO, DUO), ou certaines valeurs d'une énumération prédéfinie. Les valeurs permissibles sont présentées dans le dictionnaire de données ou, si cette liste est trop longue, celles-ci sont décrites dans les notes du dictionnaire. Prenez note que l'orthographe des mots doit être respectée.   
+- These fields are part of the mandatory minimum set of clinical data that must be submitted.
+- When paired with the `Conditional` attribute, this field is only required if `Conditional` requirements are met.
 
 
-### Terminologie 
+![Extended](/assets/submission/dictionary-extended.svg)
 
-Le CQDG préconise l'utilisation de termiologies standards. Celles-ci incluent, notamment: 
+- These fields are considered of scientific interest but are optional.
+- In order to enhance the value of the CQDG data, it is strongly suggested to submit as many  `Extended` fields as possible. 
+
+### Permissibles values
+
+- In order to facilitate data standardization, some fields only accept values that are compatible with certaines terminologies such as (WHO ICD-10, ICD-O-3, HPO, DUO), or certain predefined values. Permissible values are presented in the Data Dictionary, or, if the list is too long, it is described in the notes. Please note that spelling must be exact in order for the data to be admissible. 
+
+
+### Terminology 
+
+The CQDG recommends the use of standard termiologies. These include, in particular:
 
 - [World Health Organization International Classification of Diseases, 10th Revision (ICD-10)](https://icd.who.int/browse10/2019/en)
 - [International Classification of Diseases for Oncology (ICD-O)](http://www.iacr.com.fr/index.php?option=com_content&view=category&layout=blog&id=100&Itemid=577)
