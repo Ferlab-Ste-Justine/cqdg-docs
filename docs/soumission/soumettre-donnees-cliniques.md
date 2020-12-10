@@ -26,7 +26,7 @@ platform_key: DOCS_SUBMITTING_CLINICAL_DATA
 ### Étape 3: Soumettre vos données cliniques
 
 1. Téléchargez les **gabarits TSV** pour la soumission de vos données et formatter ces fichiers en fonction de la version actuel du [Dictionnaire de données](/scripts/dictionary). Il existe un gabarit par table du dictionnaire de données. Il n'est pas nécessaire de compléter tous ces gabarits pour que vos données soit considérées recevables. 
-2. Ouvrez les fichiers dans Excel et copier vos données en format TEXT dans les champs appropriés (indiqués à la première ligne dans le fichier). L'information de base qui doit être inscrite pour chaque échantillon moléculaire est présentée dans la section inscription des échantillons du dictionnaire [Data Dictionary](/scripts/dictionary).
+2. Ouvrez les fichiers dans Excel et copier vos données en format TEXT dans les champs appropriés (indiqués à la première ligne dans le fichier). 
 3. Veuillez nommer vos fichiers en débutant par le nom de la table de données cliniques (ex. _donneur_, _biospecimen_, etc.) et sauvegardez-les en format TSV. 
 4.  Téléversez vos fichiers (incluant votre fichier _inscription_) en utilisant votre compte SFTP.  
 

@@ -1,7 +1,7 @@
 ---
 id: data-download
-title: Téléchargement des données
+title: Data Download
 platform_key: DOCS_DATA_DOWNLOAD
 ---
 
-Les fichiers peuvent présentement être téléchargés individuellement à partir du [portail du CQDG](https://plateforme.cqdg.ca). Cependant, étant donné leur taille, le téléchargement des fichiers de séquençage peut être long. Afin d'y remédier, le CQDG s'affaire à mettre en place des outils de téléchargement à haut débit permettant de télécharger des ensemble des fichiers ainsi qu'un environnement infonuagique de calcul permettant aux chercheurs d'effectuer leurs analyses des données du CQDG sans avoir à les télécharger.   
+Files can currently be downloaded individually from the [CQDG portal](https://plateforme.cqdg.ca). However, due to their size, downloading sequencing files can take a long time. In order to facilitate data access, the CQDG will soon set-up high-speed tools allowing the simultaneous download of bulk files as well as a cloud computing environment allowing researchers to perform their analyzes of CQDG data without have to download them.

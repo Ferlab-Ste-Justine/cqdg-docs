@@ -1,50 +1,51 @@
 ---
 id: submitting-clinical-data
-title: Soumettre des données 
+title: Submitting Clinical Data
 platform_key: DOCS_SUBMITTING_CLINICAL_DATA
 ---
 
 
-> L'équipe du CQDG est à développer un système de soumission pour la validation en ligne de vos données. En temps, veuillez suivre la procédure décrite dans ce guide. 
+> The CQDG team is developing a submission system for online validation of your data. In the meantime, please follow the procedure described in this guide.
 
 
 
-## Comment soumettre vos données cliniques
+## How to Submit your Clinical Data
 
 
-### Étape 1: Télécharger un client SFTP
+### Step 1: Download a SFTP Client
 
-[Contactez-nous](https://plateforme.cqdg.ca/contact) pour créer un compte SFTP pour vous permettre de téléverser vos fichiers en toute sécurité 
+[Contact-us](https://plateforme.cqdg.ca/contact) to create your SFTP account allowing you to securely transfer your data 
 
-### Étape 2: Inscription de vos échantillons
+### Step 2: Register your Samples
 
-1. Accédez à votre compte à partir de la page principale du portail.
-2. Téléchargez le **gabarit TSV** pour l'inscription de vos échantillons et formatter ce fichier en fonction de la version actuelle du [Dictionnaire de données](/scripts/dictionary).
-3. Veuillez nommer votre fichier en débutant par _inscription_ et sauvegardez-le en format TSV. 
-
-
-### Étape 3: Soumettre vos données cliniques
-
-1. Téléchargez les **gabarits TSV** pour la soumission de vos données et formatter ces fichiers en fonction de la version actuel du [Dictionnaire de données](/scripts/dictionary). Il existe un gabarit par table du dictionnaire de données. Il n'est pas nécessaire de compléter tous ces gabarits pour que vos données soit considérées recevables. 
-2. Ouvrez les fichiers dans Excel et copier vos données en format TEXT dans les champs appropriés (indiqués à la première ligne dans le fichier). L'information de base qui doit être inscrite pour chaque échantillon moléculaire est présentée dans la section inscription des échantillons du dictionnaire [Data Dictionary](/scripts/dictionary).
-3. Veuillez nommer vos fichiers en débutant par le nom de la table de données cliniques (ex. _donneur_, _biospecimen_, etc.) et sauvegardez-les en format TSV. 
-4.  Téléversez vos fichiers (incluant votre fichier _inscription_) en utilisant votre compte SFTP.  
+1. Log in to your account on the portal's homepage. 
+2. Download the **TSV Templates** to register your samples and foormat this file based on the latest version od the Data Dictionary [Data Dictionary](/scripts/dictionary).
+3. Name your files staring with _regsitration_ and save them in a TSV format.  
 
 
-[Contactez-nous](https://plateforme.cqdg.ca/contact) si vous avez besoin d'assistance pour l'inscription de vos échantillons ou pour la soumssion de vos données cliniques.
+### Step 3: Submit your Clinical Data
 
-## Comment soumettre vos données moléculaires
-
-> Veuillez noter que les outils pour la soumission des données moléculaires sont en développement. 
-
-
-## Traitement des données moléculaires soumises
-
-Une fois que vos données moléculaires auront été soumises, elles seront analysées en utilisant des pipelines uniformes pour tous les échantillons. 
-
-## Contrôle de la qualité et libération des données 
+1. Download the **TSV Templates** to submit your clinical data and format these files based on the latest version of the Data Dictionary [Data Dictionary](/scripts/dictionary). There is one template for each table of the Data Dictionary. You do not have to complete all of these templates in order to submit data the CQDG.
+2. Open the TSV templates using Excel and copy-paste your data in TEXT format in the appropriate fields (field names are indicated in the first row). 
+3. Please name your files starting with the name of the clinical data table (eg _donor_, _biospecimen_, etc.) and save them in TSV format.
+4. Upload your files (including your _registration_ file) using your SFTP account. 
 
 
-Les données ne seront rendues publiques qu'une fois le processus de contrôle de la qualité terminé. 
+[Contact-us](https://plateforme.cqdg.ca/contact) if you need assistance in registering your samples or submitting your clinical data.
 
-> Veuillez noter qu'une période d'embargo peut être exigée, durant laquelle uniquement les chercheurs de l'étude peuvent avoir accès aux données. Aprés cette période d'embargo, les données peuvent être rendues accessibles aux chercheurs non rattachés à l'étude. 
+## How to Submit your Molecular Data
+
+> Please note that the tools for submitting molecular data are under development.
+
+
+## Processing of Submitted Molecular Data
+
+Once your molecular data has been submitted, it will be analyzed using uniform pipelines for all samples.
+
+
+## Quality Control and Data Release
+
+
+The data will not be made public until the quality control process is complete.
+
+> Please note that an embargo period may be required, during which only study researchers can access the data. After this embargo period, the data can be made accessible to researchers not affiliated with the study.
