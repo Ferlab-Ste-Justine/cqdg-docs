@@ -51,7 +51,6 @@ function ensureDirectoryExistence(path) {
 
 function printConfig() {
     console.log(`${chalk.yellow('Lectern Root')}: ${apiRoot}`);
-    // TODO dictionary Name
     Object.keys(dictionaryNames).map(language => {
         console.log(`${chalk.yellow('Dictionary Name')}: ${dictionaryNames[language]}`);
     })
@@ -70,7 +69,6 @@ async function printVersionsLists() {
 
 function saveFiles(version, data, language) {
     console.log('version=', version)
-    // TODO language
     const dataFile = `${schemaPath}/${language}/${version}.json`;
     const treeFile = `${schemaPath}/${language}/${version}_tree.json`;
     fse.writeJSONSync(dataFile, data);
@@ -104,7 +102,6 @@ async function fetchAndSaveDiffsForVersion(version, language) {
         const high = parseFloat(version) > parseFloat(otherVersion) ? version : otherVersion;
         const low = parseFloat(version) < parseFloat(otherVersion) ? version : otherVersion;
 
-        // TODO language
         const pathHigh = `${schemaPath}/${language}/diffs/${high}`;
         const pathLow = `${schemaPath}/${language}/diffs/${low}`;
         const filenameHL = `${pathHigh}/${high}-diff-${low}.json`;
