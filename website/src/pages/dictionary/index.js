@@ -27,6 +27,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { ThemeProvider } from 'emotion-theming'
 
+import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 import defaultTheme from '@icgc-argo/uikit/theme/defaultTheme';
 import Typography from '@icgc-argo/uikit/Typography';
@@ -133,18 +134,17 @@ const DataDictionary = () => {
   }, [version, diffVersion, isDiffShowing]);
 
 
-  const downloadTsvFileTemplate = (fileName) => {
-    const zip = require('jszip')();
+  const downloadTsvFileTemplate = async (fileName) => {
+    const zip = new JSZip();
+    const dict = await getDictionary(version);
 
-    activeSchemas.forEach(schema => {
+    dict.schemas.forEach(schema => {
       const template = createTsvTemplate(schema);
       zip.file(`${schema.name}_v${version}.tsv`, template);
     });
 
-    zip.generateAsync({type:"blob"})
-      .then(function(content) {
-        saveAs(content, "file-templates.zip");
-      });
+    const archive = await zip.generateAsync({type:"blob"});
+    saveAs(archive, "file-templates.zip");
   }
   const createTsvTemplate = (schema) => {
     const header =
