@@ -36,8 +36,9 @@ const defaultVersion = '0.0';
 
 const schemas = require('./dictionary/schemas');
 const references = require('./dictionary/references');
+const { replace } = require('lodash');
 
-const {dictionaryName, schemaPath, versionsFilename, dataFilename, dataFileTreeName} = constants;
+const {dictionaryNames, schemaPath, versionsFilename, dataFilename, dataFileTreeName, languages} = constants;
 const currentVersions = require(versionsFilename);
 
 /* Util Functions */
@@ -50,7 +51,9 @@ function ensureDirectoryExistence(path) {
 
 function printConfig() {
     console.log(`${chalk.yellow('Lectern Root')}: ${apiRoot}`);
-    console.log(`${chalk.yellow('Dictionary Name')}: ${dictionaryName}`);
+    Object.keys(dictionaryNames).map(language => {
+        console.log(`${chalk.yellow('Dictionary Name')}: ${dictionaryNames[language]}`);
+    })
 }
 
 async function printVersionsLists() {
@@ -64,10 +67,10 @@ async function printVersionsLists() {
     return newVersions;
 }
 
-function saveFiles(version, data) {
+function saveFiles(version, data, language) {
     console.log('version=', version)
-    const dataFile = `${schemaPath}/${version}.json`;
-    const treeFile = `${schemaPath}/${version}_tree.json`;
+    const dataFile = `${schemaPath}/${language}/${version}.json`;
+    const treeFile = `${schemaPath}/${language}/${version}_tree.json`;
     fse.writeJSONSync(dataFile, data);
     const treeData = generateTreeData(data);
     fse.writeJSONSync(treeFile, treeData);
@@ -78,18 +81,20 @@ function saveVersionsFile(data) {
 }
 
 // The data file is the file used on load in the data dictionary.
-function saveDataFiles(dictionary, versions) {
+function saveDataFiles(dictionary, versions, language) {
     const content = {
         dictionary,
         versions,
         currentVersion: versions[0],
     };
-    fs.writeFileSync(dataFilename, JSON.stringify(content));
+    const fileName = replace(dataFilename, '{language}', language);
+    const treeFileName = replace(dataFileTreeName, '{language}', language);
+    fs.writeFileSync(fileName, JSON.stringify(content));
     const treeData = generateTreeData(content.dictionary);
-    fse.writeJSONSync(dataFileTreeName, treeData);
+    fse.writeJSONSync(treeFileName, treeData);
 }
 
-async function fetchAndSaveDiffsForVersion(version) {
+async function fetchAndSaveDiffsForVersion(version, language) {
     for (let i = 0; i < currentVersions.length; i++) {
         const otherVersion = currentVersions[i];
 
@@ -97,16 +102,16 @@ async function fetchAndSaveDiffsForVersion(version) {
         const high = parseFloat(version) > parseFloat(otherVersion) ? version : otherVersion;
         const low = parseFloat(version) < parseFloat(otherVersion) ? version : otherVersion;
 
-        const pathHigh = `${schemaPath}/diffs/${high}`;
-        const pathLow = `${schemaPath}/diffs/${low}`;
+        const pathHigh = `${schemaPath}/${language}/diffs/${high}`;
+        const pathLow = `${schemaPath}/${language}/diffs/${low}`;
         const filenameHL = `${pathHigh}/${high}-diff-${low}.json`;
         const filenameLH = `${pathLow}/${low}-diff-${high}.json`;
         
         try {
             ensureDirectoryExistence(pathHigh);
             ensureDirectoryExistence(pathLow);
-            const schemaDiffHL = await fetchDiffForVersions(high, low);
-            const schemaDiffLH = await fetchDiffForVersions(low, high);
+            const schemaDiffHL = await fetchDiffForVersions(dictionaryNames[language], high, low);
+            const schemaDiffLH = await fetchDiffForVersions(dictionaryNames[language], low, high);
             const diffHL = generateDiffChanges(schemaDiffHL);
             const diffsLH = generateDiffChanges(schemaDiffLH);
 
@@ -125,7 +130,7 @@ async function fetchAndSaveDiffsForVersion(version) {
             fse.writeJSONSync(filenameLH, diffsLH);
 
         } catch (e) {
-            console.log(chalk.red(`Error fetching or saving diff!`), e);
+            console.log(chalk.red(`Error fetching or saving diff! for dictionary: ${dictionaryNames[language]} and versions ${high} ${low}`), e.response.data.error, e.response.data.message);
         }
     }
 }
@@ -135,14 +140,16 @@ async function fetchAndSaveDiffsForVersion(version) {
 async function fetchDictionaryVersionsList() {
     console.log(chalk.cyan('\nfetching dictionary versions list...'));
     const response = await axios.get(`${apiRoot}/dictionaries`);
+
     return response.data
-        .filter(item => item.name === dictionaryName)
+        .filter(item => item.name === dictionaryNames.en)
         .map(item => item.version)
         .sort((a, b) => (a.version > b.version ? 1 : -1));
 }
 
-async function fetchDictionaryForVersion(version) {
+async function fetchDictionaryForVersion(version, dictionaryName) {
     console.log(`${chalk.cyan('\nfetching dictionary for version')} ${version} ${chalk.cyan('...')}`);
+
     let url = `${apiRoot}/dictionaries?${querystring.stringify({name: dictionaryName, version})}`;
     try {
         const response = await axios.get(
@@ -155,15 +162,25 @@ async function fetchDictionaryForVersion(version) {
     }
 }
 
-async function fetchDiffForVersions(left, right) {
+async function fetchDiffForVersions(dictionaryName, left, right) {
     console.log(
-        `${chalk.cyan('\nfetching diff for versions')} ${left} ${chalk.cyan(
+        `${chalk.cyan(`\nfetching dictionary: ${dictionaryName} diff for versions`)} ${left} ${chalk.cyan(
             'vs',
         )} ${right} ${chalk.cyan('...')}`,
     );
-    const response = await axios.get(
-        `${apiRoot}/diff?${querystring.stringify({name: dictionaryName, left, right})}`,
-    );
+    let response = { data: [] };
+    try {
+        response = await axios.get(
+            `${apiRoot}/diff?${querystring.stringify({name: dictionaryName, left, right})}`,
+        );
+    } catch {
+        response = await axios.get(
+            `${apiRoot}/diff?${querystring.stringify({name: dictionaryNames[languages.default], left, right})}`,
+        );
+
+        console.log(`${chalk.red(`\n ---- Fall back to english dictionary - ${dictionaryName} - ${left} - ${right} ---`)}`);
+    }
+
     return response.data;
 }
 
@@ -224,13 +241,12 @@ async function runList() {
     printVersionsLists();
 }
 
-async function postNewDictionary(version) {
+async function postNewDictionary(version, dictionaryName, references, schemas) {
     const dictionary = {name: dictionaryName, version, references, schemas};
-    console.log(`${chalk.cyan('\nPosting dictionary for version')} ${version} ${chalk.cyan('...')}`);
-    let url = `${apiRoot}/dictionaries`;
+    console.log(`${chalk.cyan(`\nPosting dictionary : ${dictionaryName} for version`)} ${version} ${chalk.cyan('...')}`);
     try {
         const response = await axios.post(
-            url,
+            `${apiRoot}/dictionaries`,
             dictionary
         );
         return response.data;
@@ -240,14 +256,13 @@ async function postNewDictionary(version) {
     }
 }
 
-async function validateNewDictionary(version) {
+async function validateNewDictionary(version, dictionaryName, references, schemas) {
     const dictionary = {name: dictionaryName, version, references, schemas};
-    console.log(`${chalk.cyan('\nValidating dictionary for version')} ${version} ${chalk.cyan('...')}`);
-    let url = `${apiRoot}/validate`;
+    console.log(`${chalk.cyan(`\nValidating dictionary : ${dictionaryName} for version`)} ${version} ${chalk.cyan('...')}`);
     try {
         const response = await axios.post(
-          url,
-          dictionary
+            `${apiRoot}/validate`,
+            dictionary
         );
         return response.data;
     } catch (e) {
@@ -276,7 +291,12 @@ async function runValidation() {
     await setLecternCredentials();
     // Fetch the dictionary for this version and save data and tree files
     const version = await promptVersion();
-    await validateNewDictionary(version);
+    await Promise.all(languages.list.map( async language => {
+        const dictionaryName = dictionaryNames[language];
+        const selectedSchemas = schemas[language];
+        const selectedReferences = references[language];
+        await validateNewDictionary(version, dictionaryName, selectedReferences, selectedSchemas );
+    }));
 
     console.log(chalk.green('\n\nYour dictionary is valid :D'));
 }
@@ -292,11 +312,16 @@ async function runDiff() {
     console.log(chalk.cyan('fetching diffs vs stored versions...'));
     if (version === 'all') {
         await Promise.all(currentVersions.map( async version => {
-            await fetchAndSaveDiffsForVersion(version);
+            await Promise.all(languages.list.map( async language => {
+                await fetchAndSaveDiffsForVersion(version, language);
+            }));
         }));
     } else {
-        await fetchAndSaveDiffsForVersion(version);
+        await Promise.all(languages.list.map( async language => {
+            await fetchAndSaveDiffsForVersion(version, language);
+        }));
     }
+
     console.log(chalk.green('\n\nALL CHANGES COMPLETE :D'));
 }
 
@@ -306,15 +331,12 @@ async function runAdd() {
     await setLecternCredentials();
     // Fetch the dictionary for this version and save data and tree files
     const version = await promptVersion();
-    await postNewDictionary(version);
-    const dictionary = await fetchDictionaryForVersion(version);
-    saveFiles(version, dictionary);
-
-    console.log(chalk.cyan('dictionary saved...'));
-
-    // Fetch all Diffs and save
-    console.log(chalk.cyan('fetching diffs vs stored versions...'));
-    await fetchAndSaveDiffsForVersion(version);
+    await Promise.all(languages.list.map( async language => {
+        const dictionaryName = dictionaryNames[language];
+        const selectedSchemas = schemas[language];
+        const selectedReferences = references[language];
+        await postNewDictionary(version, dictionaryName, selectedReferences, selectedSchemas );
+    }));
 
     // Update versions file
     const updatedVersions = currentVersions.concat(version).sort((v1, v2) => {
@@ -326,11 +348,24 @@ async function runAdd() {
             return v2Major - v1Major;
         }
     });
+
+    await Promise.all(languages.list.map( async language => {
+        const dictionaryName = dictionaryNames[language];
+        const dictionary = await fetchDictionaryForVersion(version, dictionaryName);
+        saveFiles(version, dictionary, language);
+
+        console.log(chalk.cyan('dictionary saved...'));
+
+        // Fetch all Diffs and save
+        console.log(chalk.cyan('fetching diffs vs stored versions...'));
+        await fetchAndSaveDiffsForVersion(version, language);
+
+        console.log(chalk.cyan('\nupdating data dictionary input file...'));
+        saveDataFiles(dictionary, updatedVersions, language);
+    }));
+
     console.log(chalk.cyan('\nupdating list of data dictionary versions...'));
     saveVersionsFile(updatedVersions);
-
-    console.log(chalk.cyan('\nupdating data dictionary input file...'));
-    saveDataFiles(dictionary, updatedVersions);
 
     console.log(chalk.green('\n\nALL CHANGES COMPLETE :D'));
 }
@@ -347,6 +382,16 @@ function runHelp() {
             `${chalk.green(
                 'npm run add',
             )} \t- Select a dictionary version to add to the data dictionary.`,
+        );
+        console.log(
+            `${chalk.green(
+                'npm run validate',
+            )} \t- Validate a dictionary version to make sure it can be added to the data dictionary.`,
+        );
+        console.log(
+            `${chalk.green(
+                'npm run diff',
+            )} \t- Recreate all the diff files with a specific version or with all the versions (pass 'all' to the version number)`,
         );
         console.log('\n');
     } else {

@@ -1,0 +1,101 @@
+{
+  "name": "follow_up",
+  "description": "The collection of data elements related to a specific follow-up visit by a donor with a cancer diagnosis. A follow-up is defined as any point of contact with a patient after primary cancer diagnosis. To submit multiple follow-ups for a single donor, submit multiple rows in the follow-up file for this donor.",
+  "meta": {
+    "parent": "donor"
+  },
+  "fields": [
+    {
+      "description": "Unique identifier of the donor, assigned by the data provider",
+      "name": "submitter_donor_id",
+      "valueType": "string",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "foreignKey": "donor.submitter_donor_id",
+        "displayName": "Submitter Donor ID",
+        "notes": "#/notes/submitter_id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/submitter_id"
+      }
+    },
+    {
+      "name": "submitter_diagnosis_id",
+      "valueType": "string",
+      "description": "Indicate the diagnosis event in the clinical timeline that this biospecimen acquisition was related to.",
+      "meta": {
+        "primaryId": true,
+        "validationDependency": true,
+        "foreignKey": "diagnosis.submitter_diagnosis_id",
+        "displayName": "Submitter Diagnosis ID",
+        "notes": "#/notes/submitter_id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/submitter_id"
+      }
+    },
+    {
+      "description": "Unique identifier for a follow-up event in a donor's clinical record, assigned by the data provider",
+      "name": "submitter_follow_up_id",
+      "valueType": "string",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "Submitter Follow-Up ID",
+        "notes": "#/notes/submitter_id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/submitter_id"
+      }
+    },
+    {
+      "description": "Time interval between primary diagnosis and follow-up event",
+      "name": "days_to_follow_up",
+      "valueType": "integer",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "units": "days",
+        "displayName": "Days to follow-up"
+      }
+    },
+    {
+      "description": "Indicate the donor's disease status at time of follow-up",
+      "name": "disease_status_at_followup",
+      "valueType": "string",
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "Clinical remission",
+          "Distant progression",
+          "Loco-regional progression",
+          "No evidence of disease",
+          "Partial remission",
+          "Relapse or recurrence",
+          "Stable"
+        ]
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Disease Status at Follow-Up"
+      }
+    },
+    {
+      "name": "relapse_interval",
+      "description": "Time interval between end of primary treatment and disease progression (in days)",
+      "valueType": "integer",
+      "meta": {
+        "units": "days",
+        "dependsOn": "follow_up.disease_status_at_followup",
+        "notes": "If the donor was clinically disease free following primary treatment and then relapse or recurrence or progression (for liquid tumours) occurred afterwards, then this field will indicate the length of disease free interval, in days.",
+        "displayName": "Relapse Interval"
+      }
+    }
+  ]
+}

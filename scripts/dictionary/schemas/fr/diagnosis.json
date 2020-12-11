@@ -1,0 +1,249 @@
+{
+  "name": "Diagnosis",
+  "description": "The collection of data elements related to a donor's diagnosis. To submit multiple diagnoses for a single donor, submit multiple rows in the diagnosis file for this donor.",
+  "meta": {
+    "parent": "donor"
+  },
+  "fields": [
+    {
+      "name": "submitter_donor_id",
+      "valueType": "string",
+      "description": "Unique identifier of the donor, assigned by the data provider",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "foreignKey": "donor.submitter_donor_id",
+        "displayName": "Submitter Donor ID",
+        "notes": "#/notes/submitter_id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/submitter_id"
+      }
+    },
+    {
+      "name": "submitter_diagnosis_id",
+      "valueType": "string",
+      "description": "Unique identifier of the diagnosis event, assigned by the data provider",
+      "meta": {
+        "primaryId": true,
+        "validationDependency": true,
+        "foreignKey": "diagnosis.submitter_diagnosis_id",
+        "displayName": "Submitter Diagnosis ID",
+        "notes": "#/notes/submitter_id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/submitter_id"
+      }
+    },
+    {
+      "name": "diagnosis_source_text",
+      "valueType": "string",
+      "description": "Condition as reported in the study's dataset",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "examples": "breast cancer, stroke",
+        "notes": "Provide exact information as per the dataset if coding to ICD-10 or MONDO ontologies is not possible",
+        "displayName": "Name of the condition"
+      }
+    },
+    {
+      "name": "diagnosis_ICD_category",
+      "valueType": "string",
+      "description": "Disease category as defined in the WHO ICD-10",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "examples": "Neoplasms, Diseases of the nervous system",
+        "notes": "This refers to the body systems chapters of the WHO ICD-10, https://apps.who.int/classifications/apps/icd/ClassificationDownload/DLArea/Download.aspx",
+        "displayName": "ICD-10 Disease category"
+      }
+    },
+    {
+      "name": "diagnosis_ICD_term",
+      "valueType": "string",
+      "description": "ICD-10 code and term used to define a condtion",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "examples": "C41.1: Malignant neoplasms of mandible, C16.9: Malignant neoplasm of stomach, unspecified",
+        "notes": "Write code and full term used in ICD-10 separated by a (:). For WHO ICD-10 codes, refer to https://apps.who.int/classifications/apps/icd/ClassificationDownload/DLArea/Download.aspx",
+        "displayName": "Diagnosis ICD-10 code and term"
+      }
+    },
+    {
+      "name": "diagnosis_mondo_term",
+      "valueType": "string",
+      "description": "Mondo code and term used to define a condtion",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "examples": "MONDO_0002131: jaw cancer, MONDO_0001056: gastric cancer",
+        "notes": "Write code and full term used in MONDO separated by a (:). For MONDO codes, refer to https://www.ebi.ac.uk/ols/ontologies/mondo",
+        "displayName": "Diagnosis Mondo code and term"
+      }
+    },
+    {
+      "name": "age_at_diagnosis",
+      "valueType": "integer",
+      "description": "Age at diagnosis of condition",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "units": "years",
+        "core": true,
+        "displayName": "Age at Diagnosis"
+      }
+    },
+    {
+      "name": "is_self_reported",
+      "description": "Indicates whether the information is reported by donor or extracted from (administrative) health records",
+      "restrictions": {
+        "codeList": [
+          "Yes",
+          "No"
+        ]
+      },
+      "valueType": "string",
+      "meta": {
+        "displayName": "Is self-reported"
+      }
+    },
+    {
+      "name": "is_cancer",
+      "description": "The diagnosis is a cancer diagnosis",
+      "restrictions": {
+        "codeList": [
+          "Yes",
+          "No"
+        ],
+        "required": true
+      },
+      "valueType": "string",
+      "meta": {
+        "core": true,
+        "displayName": "Is cancer diagnosis"
+      }
+    },
+    {
+      "name": "diagnosis_type",
+      "description": "Basis of diagnosis",
+      "restrictions": {
+        "codeList": [
+          "Clinical",
+          "Histological"
+        ]
+      },
+      "valueType": "string",
+      "meta": {
+        "dependsOn": "diagnosis.is_cancer",
+        "notes": "Basis of diagnosis is only required to be submitted if the donor's diagnosis is cancer",
+        "core": true,
+        "displayName": "Basis of Diagnosis"
+      }
+    },
+    {
+      "name": "is_cancer_primary",
+      "description": "Diagnosis is a primary cancer diagnosis",
+      "restrictions": {
+        "codeList": [
+          "Yes",
+          "No"
+        ]
+      },
+      "valueType": "string",
+      "meta": {
+        "dependsOn": "diagnosis.is_cancer",
+        "notes": "This field is only required to be submitted if the donor's diagnosis is cancer",
+        "core": true,
+        "displayName": "Is primary cancer"
+      }
+    },
+    {
+      "name": "tumour_staging_system",
+      "valueType": "string",
+      "description": "Indicate the tumour staging system used to stage the cancer at the time of the diagnosis, prior to treatment",
+      "restrictions": {
+        "codeList": [
+          "AJCC 8th edition",
+          "AJCC 7th edition",
+          "Ann Arbor staging system",
+          "Binet staging system",
+          "Durie-Salmon staging system",
+          "FIGO staging system",
+          "Lugano staging system",
+          "Rai staging system",
+          "Revised International staging system (RISS)",
+          "St Jude staging system"
+        ]
+      },
+      "meta": {
+        "dependsOn": "diagnosis.is_cancer",
+        "core": true,
+        "displayName": "Tumour Staging System"
+      }
+    },
+    {
+      "name": "clinical_stage_group",
+      "description": "Stage group of the tumour, as assigned by the reporting clinical_tumour_staging_system, that indicates the overall prognostic tumour stage (ie. Stage I, Stage II, Stage III etc.)",
+      "valueType": "string",
+      "restrictions": {
+        "codeList": "#/list/stage_groups"
+      },
+      "meta": {
+        "dependsOn": "diagnosis.tumour_staging_system",
+        "notes": "This field is dependent on the selected tumour_staging_system",
+        "displayName": "Stage Group"
+      }
+    },
+    {
+      "name": "t_category",
+      "description": "The code to represent the extent of the primary tumour (T) based on evidence obtained from clinical assessment parameters determined at time of primary diagnosis and prior to treatment, according to criteria based on multiple editions of the AJCC's Cancer Staging Manual",
+      "valueType": "string",
+      "meta": {
+        "dependsOn": "diagnosis.tumour_staging_system",
+        "notes": "This field is required only if the selected tumour_staging_system is any edition of the AJCC cancer staging system.",
+        "displayName": "T Category"
+      },
+      "restrictions": {
+        "codeList": "#/list/t_categories"
+      }
+    },
+    {
+      "name": "n_category",
+      "description": "The code to represent the stage of cancer defined by the extent of the regional lymph node (N) involvement for the cancer based on evidence obtained from clinical assessment parameters determined at time of primary diagnosis and prior to treatment, according to criteria based on multiple editions of the AJCC's Cancer Staging Manual",
+      "valueType": "string",
+      "meta": {
+        "dependsOn": "diagnosis.tumour_staging_system",
+        "notes": "This field is required only if the selected tumour_staging_system is any edition of the AJCC cancer staging system.",
+        "displayName": "N Category"
+      },
+      "restrictions": {
+        "codeList": "#/list/n_categories"
+      }
+    },
+    {
+      "name": "m_category",
+      "description": "The code to represent the stage of cancer defined by the extent of the distant metastasis (M) for the cancer based on evidence obtained from clinical assessment parameters determined at time of primary diagnosis and prior to treatment, according to criteria based on multiple editions of the AJCC's Cancer Staging Manual",
+      "valueType": "string",
+      "meta": {
+        "dependsOn": "diagnosis.tumour_staging_system",
+        "notes": "This field is required only if the selected tumour_staging_system is any edition of the AJCC cancer staging system.",
+        "displayName": "M Category"
+      },
+      "restrictions": {
+        "codeList": "#/list/m_categories"
+      }
+    }
+  ]
+}

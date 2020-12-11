@@ -1,0 +1,79 @@
+{
+  "name": "exposure",
+  "description": "The collection of data elements related to a donor's exposure to specific risk factors.",
+  "fields": [
+    {
+      "name": "submitter_donor_id",
+      "valueType": "string",
+      "description": "Unique identifier of the donor, assigned by the data provider",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "foreignKey": "donor.submitter_donor_id",
+        "displayName": "Submitter Donor ID",
+        "notes": "#/notes/submitter_id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/submitter_id"
+      }
+    },
+    {
+      "name": "smoking_status",
+      "description": "Smoking status of a patient at the time of the data collection",
+      "valueType": "string",
+      "restrictions": {
+        "codeList": [
+          "Current every day smoker",
+          "Current some day smoker",
+          "Former smoker",
+          "Never smoker",
+          "Smoker, current status unknown",
+          "Unknown if ever smoked",
+          "Current Heavy tobacco smoker (more than 20)",
+          "Current Light tobacco smoker"
+        ]
+      },
+      "meta": {
+        "displayName": "Smoking status"
+      }
+    },
+    {
+      "name": "smoking_pack_years",
+      "description": "Number of packs of cigarettes per day multiplied by the number of years donor smoked",
+      "valueType": "string",
+      "meta": {
+        "dependsOn": "exposure.smoking_status",
+        "notes": "Not required if smoking history is unknown or if the donor never smoked. Pack-years is calculated by multiplying the number of packs of cigarettes (20 cigarettes per pack) smoked per day by the number of years the person has smoked. For example, 1 pack year is equal to smoking 1 pack per day for 1 year",
+        "displayName": "smoking_pack_years"
+      }
+    },
+    {
+      "name": "alcohol_status",
+      "description": "Current alcohol consumtion based on recommended daily limit",
+      "valueType": "string",
+      "restrictions": {
+        "codeList": [
+          "No alcohol consumption",
+          "Alcohol intake within recommended daily limit",
+          "Alcohol intake exceeds recommended daily limit",
+          "Alcohol consumption unknown"
+        ]
+      },
+      "meta": {
+        "notes": "Refer to the Canadian Centre on Substance Abuse, for men, no more than 15 drinks a week, with no more than 3 drinks a day most days. No more than 4 drinks on any single occasion. For women, no more than 10 drinks a week, with no more than 2 drinks a day most days. No more than 3 drinks on any single occasion.",
+        "displayName": "Alcohol status"
+      }
+    },
+    {
+      "name": "FSA",
+      "description": "Forward Sortation Area (3-digit postal code)",
+      "valueType": "string",
+      "meta": {
+        "notes": "Forward Sortaion Area (FSA) is the 3 first digits of the postal code",
+        "displayName": "Forward Sortation Area",
+        "examples": "H3W"
+      }
+    }
+  ]
+}
