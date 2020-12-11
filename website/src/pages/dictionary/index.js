@@ -90,7 +90,7 @@ export const ModalPortal = ({ children }) => {
     : null;
 };
 
-const data = require('./data.json');
+const data = require('./data-en.json');
 const preloadedData = {data: data.dictionary, version: data.currentVersion};
 
 const DataDictionary = () => {
@@ -253,7 +253,7 @@ const DataDictionary = () => {
                         }}
                       >
                         <Close className={styles.closeIcon} />
-                        CLEAR
+                        Clear
                       </Button>
                     </div>
                   )}

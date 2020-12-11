@@ -101,19 +101,13 @@ export const createSchemasWithDiffs = (schemas, diffs) => {
   });
 
   const modifiedSchemas = [...schemasWithUpdates, ...schemasToAdd];
-  /*const allSchemas = schemas.map((schema) => {
-    const modifiedSchema = modifiedSchemas.find((ms) => ms.name === schema.name);
-    return modifiedSchema ? modifiedSchema : schema;
-  });*/
-
   return modifiedSchemas;
 };
 
 async function fetchDictionary(version) {
   try {
-    const dict = await axios.get(`/data/schemas/${version}.json`);
+    const dict = await axios.get(`/data/schemas/en/${version}.json`);
 
-    //const tree = await axios.get(`/data/schemas/${version}_tree.writeFile`);
     return { dict: dict.data, tree: null };
   } catch (e) {
     throw e;
@@ -123,7 +117,7 @@ async function fetchDictionary(version) {
 async function fetchDiff(version, diffVersion) {
   try {
     const response = await axios.get(
-      `/data/schemas/diffs/${diffVersion}/${diffVersion}-diff-${version}.json`,
+      `/data/schemas/en/diffs/${diffVersion}/${diffVersion}-diff-${version}.json`,
     );
     return response.data;
   } catch (e) {
