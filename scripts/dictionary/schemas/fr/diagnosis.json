@@ -74,7 +74,7 @@
       "meta": {
         "core": true,
         "examples": "C41.1: Malignant neoplasms of mandible, C16.9: Malignant neoplasm of stomach, unspecified",
-        "notes": "Write code and full term used in ICD-10 separated by a (:). For WHO ICD-10 codes, refer to https://apps.who.int/classifications/apps/icd/ClassificationDownload/DLArea/Download.aspx",
+        "notes": "Write the full term used in ICD-10 followed by the code in parenthesis, for instance: malignant neoplasm of the breast (C50). For WHO ICD-10 codes, refer to https://apps.who.int/classifications/apps/icd/ClassificationDownload/DLArea/Download.aspx",
         "displayName": "Diagnosis ICD-10 code and term"
       }
     },
@@ -88,7 +88,7 @@
       "meta": {
         "core": true,
         "examples": "MONDO_0002131: jaw cancer, MONDO_0001056: gastric cancer",
-        "notes": "Write code and full term used in MONDO separated by a (:). For MONDO codes, refer to https://www.ebi.ac.uk/ols/ontologies/mondo",
+        "notes": "Write the full term used in MONDO followed by the code in parenthesis, for instance: breast cancer (0007254). For MONDO codes, refer to https://www.ebi.ac.uk/ols/ontologies/mondo",
         "displayName": "Diagnosis Mondo code and term"
       }
     },
@@ -108,13 +108,7 @@
     {
       "name": "is_self_reported",
       "description": "Indicates whether the information is reported by donor or extracted from (administrative) health records",
-      "restrictions": {
-        "codeList": [
-          "Yes",
-          "No"
-        ]
-      },
-      "valueType": "string",
+      "valueType": "boolean",
       "meta": {
         "displayName": "Is self-reported"
       }
@@ -123,13 +117,9 @@
       "name": "is_cancer",
       "description": "The diagnosis is a cancer diagnosis",
       "restrictions": {
-        "codeList": [
-          "Yes",
-          "No"
-        ],
         "required": true
       },
-      "valueType": "string",
+      "valueType": "boolean",
       "meta": {
         "core": true,
         "displayName": "Is cancer diagnosis"
@@ -155,13 +145,7 @@
     {
       "name": "is_cancer_primary",
       "description": "Diagnosis is a primary cancer diagnosis",
-      "restrictions": {
-        "codeList": [
-          "Yes",
-          "No"
-        ]
-      },
-      "valueType": "string",
+      "valueType": "boolean",
       "meta": {
         "dependsOn": "diagnosis.is_cancer",
         "notes": "This field is only required to be submitted if the donor's diagnosis is cancer",
@@ -247,3 +231,4 @@
     }
   ]
 }
+

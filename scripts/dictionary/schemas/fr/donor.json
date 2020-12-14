@@ -70,18 +70,22 @@
           "French Canadian",
           "English Canadian",
           "Aboriginal",
-          "European",
+          "White",
           "Arab",
           "Latin American",
-          "African or Caribbean",
-          "East and Southeast Asian",
+          "Black",
+          "East Asian",
+          "West Asian",
+          "Southeast Asian",
           "South Asian",
-          "Mixted descent",
+          "Filipino",
+          "Unknown",
           "Other"
         ]
       },
       "meta": {
-        "displayName": "Ethnicity"
+        "displayName": "Ethnicity",
+        "notes": "French Canadian trace their ancestry to French colonists who settled in Canada, English Canadians are of English ethnic origin and heritage, Aboriginal (First Nations, Metis, Inuit), White (European descent), Arab (e.g. Egypt, Iraq, Jordan, Lebanon), Latin American (Hispanic), Black (African/Caribbean), East Asian (e.g. China, Japan, Korea, Taiwan), West Asian (e.g. Turkey, Iran, Afghanistan), Southeast Asian (e.g. Malaysia, Indonesia, Viet Nam), South Asian (e.g. India, Sri Lanka, Pakistan, Bangladesh), Filipino, Unknown, Other"
       }
     },
     {
@@ -145,13 +149,7 @@
     {
       "description": "Indicate if physical measures are available for this donor",
       "name": "physical_measures_available",
-      "restrictions": {
-        "codeList": [
-          "Yes",
-          "No"
-        ]
-      },
-      "valueType": "string",
+      "valueType": "boolean",
       "meta": {
         "displayName": "Availability of physical measures"
       }
@@ -159,13 +157,7 @@
     {
       "description": "Indicate if laboratory meausres are available for this donor",
       "name": "laboratory_measures_available",
-      "restrictions": {
-        "codeList": [
-          "Yes",
-          "No"
-        ]
-      },
-      "valueType": "string",
+      "valueType": "boolean",
       "meta": {
         "displayName": "Availability of laboratory measures"
       }
@@ -173,13 +165,7 @@
     {
       "description": "Indicate if lifestyle and behavior data is available for this donor",
       "name": "lifestyle_available",
-      "restrictions": {
-        "codeList": [
-          "Yes",
-          "No"
-        ]
-      },
-      "valueType": "string",
+      "valueType": "boolean",
       "meta": {
         "displayName": "Availability of lifestyle data"
       }
@@ -187,13 +173,7 @@
     {
       "description": "Indicate if information about medication use is available for this donor",
       "name": "medication_available",
-      "restrictions": {
-        "codeList": [
-          "Yes",
-          "No"
-        ]
-      },
-      "valueType": "string",
+      "valueType": "boolean",
       "meta": {
         "displayName": "Availability of medication data"
       }
@@ -201,13 +181,7 @@
     {
       "description": "Indicate if information about environmental exposure is available for this donor",
       "name": "environment_exposure_available",
-      "restrictions": {
-        "codeList": [
-          "Yes",
-          "No"
-        ]
-      },
-      "valueType": "string",
+      "valueType": "boolean",
       "meta": {
         "displayName": "Availability of environmental exposure data"
       }
@@ -215,13 +189,7 @@
     {
       "description": "Indicate if information about the donor's family health history is available",
       "name": "family_history_available",
-      "restrictions": {
-        "codeList": [
-          "Yes",
-          "No"
-        ]
-      },
-      "valueType": "string",
+      "valueType": "boolean",
       "meta": {
         "displayName": "Availability of family history data"
       }
@@ -229,13 +197,7 @@
     {
       "description": "Indicate the donor's availability of genealogical data",
       "name": "genealogy_available",
-      "restrictions": {
-        "codeList": [
-          "Yes",
-          "No"
-        ]
-      },
-      "valueType": "string",
+      "valueType": "boolean",
       "meta": {
         "displayName": "Availability of genealogical data"
       }
