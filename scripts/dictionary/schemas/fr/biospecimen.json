@@ -168,7 +168,7 @@
     },
     {
       "name": "tumor_histological_type",
-      "description": "The code to represent the histology (morphology) of neoplasms that is usually obtained from a pathology report, according to the International Classification of Diseases for Oncology, 3rd Edition (WHO ICD-O-3)", 
+      "description": "The code to represent the histology (morphology) of neoplasms that is usually obtained from a pathology report, according to the International Classification of Diseases for Oncology, 3rd Edition (WHO ICD-O-3)",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
@@ -227,14 +227,10 @@
     },
     {
       "name": "biospecimen_access",
-      "valueType": "string",
+      "valueType": "boolean",
       "description": "Biospecimen may be accessed (consent type)",
       "restrictions": {
-        "required": true,
-        "codeList": [
-          "Yes",
-          "No"
-        ]
+        "required": true
       },
       "meta": {
         "validationDependency": true,
@@ -244,3 +240,4 @@
     }
   ]
 }
+
