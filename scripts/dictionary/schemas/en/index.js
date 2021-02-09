@@ -20,6 +20,7 @@
 
 const sample_registration = require('./sample_registration.json');
 const study = require('./study.json');
+const data_access = require('./data_access.json');
 const donor = require('./donor.json');
 const biospecimen = require('./biospecimen.json');
 const diagnosis = require('./diagnosis.json');

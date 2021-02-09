@@ -1,16 +1,16 @@
 {
   "name": "family_history",
-  "description": "The collection of data elements related to the donor's family health history. To submit multiple conditions for a single donor' family, submit multiple rows in the family history file for this donor.",
+  "description": "L'ensemble de champs reliés à l'histoire de santé familiale.  Pour soumettre plusieurs conditions de santé pour la famille d'un donneur, veuillez ajouter des lignes dans la table histoire familiale.",
   "fields": [
     {
-      "description": "Unique identifier of the donor, assigned by the data provider",
+      "description": "Identifiant unique pour le donneur, soumis par l'étude",
       "name": "submitter_donor_id",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
         "foreignKey": "donor.submitter_donor_id",
-        "displayName": "Submitter Donor ID",
+        "displayName": "ID du donneur soumis par l'étude",
         "notes": "#/notes/submitter_id"
       },
       "restrictions": {
@@ -21,62 +21,62 @@
     {
       "name": "submitter_family_condition_id",
       "valueType": "string",
-      "description": "Unique identifier of the condition observed in the family, assigned by the data provider (within a study)",
+      "description": "Identifiant unique pour la condition médicale observée dans la famille du donneur, soumis par l'étude ",
       "restrictions": {
         "required": true,
         "regex": "#/regex/submitter_id"
       },
       "meta": {
-        "displayName": "Submitter Family Condition ID",
+        "displayName": "ID de la condition médicale d'un membre de la famille",
         "validationDependency": true,
         "primaryId": true
       }
     },
     {
       "name": "family_condition_name",
-      "description": "Name of the condition observed in a family member",
+      "description": "Nom de la condition médicale observée dans la famille du donneur",
       "valueType": "string",
       "restrictions": {
         "required": true
       },
       "meta": {
         "core": true,
-        "displayName": "Family condition name"
+        "displayName": "Nom de la condition médicale d'un membre de la famille"
       }
     },
     {
       "name": "family_condition_age",
-      "description": "Age when condition was observed in family member",
+      "description": "Age du membre de la famille affecté lorsque la condition a été observée",
       "valueType": "integer",
       "meta": {
         "units": "years",
-        "displayName": "Family condition age"
+        "displayName": "Age du membre de la famille lorsque la condition a été observée"
       }
     },
     {
       "name": "family_condition_relationship",
-      "description": "What is the relationship of the family member to the donor.",
+      "description": "Quelle est la relation de ce membre de la famille envers le donneur.",
       "valueType": "string",
       "meta": {
-        "displayName": "Family condition relationship",
-        "notes": "Refer to HL7 CodeSystem to identify relationship between donor and family member http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+        "displayName": "Relation avec le membre de la famille affecté",
+        "notes": "Référez-vous au système de code HL7 pour identifier un type de relation entre le donneur et le membre affecté de sa famille http://terminology.hl7.org/CodeSystem/v3-RoleCode"
       }
     },
     {
       "name": "family_cancer_history",
-      "description": "Donor has a history of cancer in the family",
+      "description": "Indiquer si le donneur a une histoire familiale de cancer",
       "restrictions": {
         "codeList": [
           "Yes",
           "No",
-          "unknow"
+          "Unknown"
         ],
         "required": true
       },
       "valueType": "string",
       "meta": {
         "core": true,
-        "displayName": "Family cancer history"
+        "displayName": "Histoire familiale de cancer"
       }
     }
   ]

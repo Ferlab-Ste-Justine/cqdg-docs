@@ -37,16 +37,16 @@
       }
     },
     {
-      "name": "phenotype_HPO_term",
+      "name": "phenotype_HPO_code",
       "valueType": "string",
-      "description": "Term and code used for the phenotype in the Human Phenotype Ontology terminology",
+      "description": "Code used for the phenotype in the Human Phenotype Ontology terminology",
       "restrictions": {
         "required": true
       },
       "meta": {
         "core": true,
-        "notes": "Write the full term used in HPO followed by the code in parenthesis, for instance: Hand polydactyly (HP:0001161). Refer to the Human Phenotype Ontology at https://hpo.jax.org/app/ for code identification.",
-        "displayName": "Human Phenotype Ontology term"
+        "notes": "Write the exact code used in the HPO, for instance: HP:0001161. Please refer to the Human Phenotype Ontology at https://hpo.jax.org/app/ for code identification.",
+        "displayName": "Human Phenotype Ontology code"
       }
     },
     {

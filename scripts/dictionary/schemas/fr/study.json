@@ -1,15 +1,15 @@
 {
   "name": "study",
-  "description": "The collection of data elements related to a specific study in the CQDG program.",
+  "description": "Ensemble de champs reliés à l'étude contribuant des données au CQDG",
   "fields": [
     {
       "name": "study_id",
       "valueType": "string",
-      "description": "Unique identifier for the Study",
+      "description": "Identifant unique pour l'étude",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "Study ID"
+        "displayName": "ID étude"
       },
       "restrictions": {
         "required": true
@@ -18,56 +18,57 @@
     {
       "name": "name",
       "valueType": "string",
-      "description": "Name of the Study",
+      "description": "Nom de l'étude",
       "restrictions": {
         "required": true
       },
       "meta": {
         "core": true,
-        "displayName": "Name of the Study"
+        "displayName": "Nom de l'étude"
       }
     },
     {
       "name": "short_name",
       "valueType": "string",
-      "description": "Accronym or short name of the Study",
+      "description": "Accronyme ou nom abrégé de l'étude",
       "meta": {
         "core": true,
-        "displayName": "Short name of the Study"
+        "displayName": "Accronyme ou nom abrégé de l'étude"
       }
     },
     {
       "name": "description",
       "valueType": "string",
-      "description": "Description of the Study",
+      "description": "Brève description de l'étude",
       "restrictions": {
         "required": true
       },
       "meta": {
         "core": true,
-        "displayName": "Description of the Study"
+        "displayName": "Description de l'étude"
       }
     },
     {
       "name": "keyword",
       "valueType": "string",
-      "description": "Keywords associated with the Study",
+      "description": "Mots-clés associés à l'étude",
       "meta": {
-        "displayName": "Keywords for the Study",
-        "notes": "Provide a semicolon (;) delimited list of keywords"
+        "displayName": "Mots-clés associés à l'étude",
+        "notes": "liste de mots-clés délimitée avec des points-virgules (;)"
       }
     },
     {
-      "name": "website",
+      "name": "access_authority",
       "valueType": "string",
-      "description": "Website of the Study",
+      "description": "Contact du responsable de l'accès",
       "meta": {
-        "displayName": "Website of the Study"
+        "displayName": "Responsable de l'accès",
+        "notes": "Veuillez fournir le site Web ou courriel du responsable de l'accès"
       }
     },
     {
       "name": "domain",
-      "description": "Research domain of the Study",
+      "description": "Domaine de recherche de l'étude",
       "valueType": "string",
       "restrictions": {
         "required": true,
@@ -81,12 +82,12 @@
       },
       "meta": {
         "core": true,
-        "displayName": "Research domain"
+        "displayName": "Domaine de recherche de l'étude"
       }
     },
     {
       "name": "population",
-      "description": "Describe the population that is the focus of the study",
+      "description": "Population cible de l'étude",
       "valueType": "string",
       "restrictions": {
         "required": true,
@@ -98,34 +99,7 @@
       },
       "meta": {
         "core": true,
-        "displayName": "Study population"
-      }
-    },
-    {
-      "name": "access_limitations",
-      "description": "Data access limitations as defined in the GA4GH Data Use Ontology (DUO)",
-      "valueType": "string",
-      "restrictions": {
-        "required": true
-      },
-      "meta": {
-        "core": true,
-        "displayName": "Data Access Limitations",
-        "notes": "Refer to the Data Use Ontology code https://github.com/EBISPOT/DUO and provide a semicolon (;) delimited list of requirements "
-      }
-    },
-    {
-      "name": "access_requirements",
-      "description": "Data use requirements as defined in the GA4GH Data Use Ontology (DUO)",
-      "valueType": "string",
-      "restrictions": {
-        "required": true
-      },
-      "meta": {
-        "core": true,
-        "displayName": "Data Use Requirements",
-        "notes": "Refer to the Data Use Ontology code https://github.com/EBISPOT/DUO and provide a semicolon (;) delimited list of requirements",
-        "examples": "Ethics approval required (DUO:0000021); Time limit on use (DUO:0000025)"
+        "displayName": "Population cible de l'étude"
       }
     }
   ]

@@ -177,7 +177,7 @@
       "name": "medication_start_date",
       "valueType": "string",
       "meta": {
-        "notes": "For self-reported information provide date when stopped taking the Rx.",
+        "notes": "For self-reported information provide date when started taking the Rx.",
         "dependsOn": "treatment.treatment_type",
         "displayName": "Medication start date"
       }

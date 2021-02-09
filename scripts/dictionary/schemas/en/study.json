@@ -58,11 +58,12 @@
       }
     },
     {
-      "name": "website",
+      "name": "access_authority",
       "valueType": "string",
-      "description": "Website of the Study",
+      "description": "Contact information for the Stuy's access authority",
       "meta": {
-        "displayName": "Website of the Study"
+        "displayName": "Access authority",
+        "notes": "Provide website or email information"
       }
     },
     {
@@ -99,33 +100,6 @@
       "meta": {
         "core": true,
         "displayName": "Study population"
-      }
-    },
-    {
-      "name": "access_limitations",
-      "description": "Data access limitations as defined in the GA4GH Data Use Ontology (DUO)",
-      "valueType": "string",
-      "restrictions": {
-        "required": true
-      },
-      "meta": {
-        "core": true,
-        "displayName": "Data Access Limitations",
-        "notes": "Refer to the Data Use Ontology code https://github.com/EBISPOT/DUO and provide a semicolon (;) delimited list of requirements "
-      }
-    },
-    {
-      "name": "access_requirements",
-      "description": "Data use requirements as defined in the GA4GH Data Use Ontology (DUO)",
-      "valueType": "string",
-      "restrictions": {
-        "required": true
-      },
-      "meta": {
-        "core": true,
-        "displayName": "Data Use Requirements",
-        "notes": "Refer to the Data Use Ontology code https://github.com/EBISPOT/DUO and provide a semicolon (;) delimited list of requirements",
-        "examples": "Ethics approval required (DUO:0000021); Time limit on use (DUO:0000025)"
       }
     }
   ]
