@@ -1,16 +1,16 @@
 {
     "name": "sample_registration",
-    "description": "The collection of data elements required to register a sample in the CQDG program. Registration of samples is required before molecular and clinical data submission can proceed.",
+    "description": "L'ensemble des champs requis pour inscrire vos échantillons dans le CQDG. Il est nécessaire de procéder à l''inscription de vos échantillons avant de soumettre des données cliniques et fichiers de données moléculaires.",
     "fields": [
         {
             "name": "study_id",
             "valueType": "string",
-            "description": "Unique identifier for the Study.",
+            "description": "Identifant unique pour l'étude.",
             "meta": {
                 "validationDependency": true,
                 "primaryId": true,
                 "foreignKey": "study.study_id",
-                "displayName": "Study ID"
+                "displayName": "ID de l'étude"
             },
             "restrictions": {
                 "required": true
@@ -18,13 +18,13 @@
         },
         {
             "name": "submitter_donor_id",
-            "description": "Unique identifier of the donor, assigned by the data provider.",
+            "description": "Identifiant unique pour le donneur, soumis par l'étude.",
             "valueType": "string",
             "meta": {
                 "validationDependency": true,
                 "primaryId": true,
                 "foreignKey": "donor.submitter_donor_id",
-                "displayName": "Submitter Donor ID",
+                "displayName": "ID du donneur soumis par l'étude",
                 "notes": "#/notes/submitter_id"
             },
             "restrictions": {
@@ -34,12 +34,12 @@
         },
         {
             "name": "submitter_biospecimen_id",
-            "description": "Unique identifier of the biospecimen, assigned by the data provider.",
+            "description": "Identifiant unique pour le spécimen biologique soumis par l'étude.",
             "valueType": "string",
             "meta": {
                 "validationDependency": true,
                 "primaryId": true,
-                "displayName": "Submitter Biospecimen ID",
+                "displayName": "ID du spécimen biologique soumis par l'étude",
                 "notes": "#/notes/submitter_id"
             },
             "restrictions": {
@@ -50,11 +50,11 @@
         {
             "name": "submitter_sample_id",
             "valueType": "string",
-            "description": "Unique identifier of the molecular sample, assigned by the data provider",
+            "description": "Identifiant unique pour l'échantillon moléculaire soumis par l'étude",
             "meta": {
                 "primaryId": true,
                 "validationDependency": true,
-                "displayName": "Submitter Sample ID",
+                "displayName": "ID de l'échantillon moléculaire soumis par l'étude",
                 "notes": "#/notes/submitter_id"
             },
             "restrictions": {
@@ -63,7 +63,7 @@
             }
         },
         {
-            "description": "Type of molecular sample used for analysis testing",
+            "description": "Type d'échantillon moléculaire utilisé pour l'analyse",
             "name": "sample_type",
             "valueType": "string",
             "restrictions": {
@@ -82,7 +82,7 @@
             },
             "meta": {
                 "core": true,
-                "displayName": "Sample type"
+                "displayName": "Type d'échantillon"
             }
         }
     ]

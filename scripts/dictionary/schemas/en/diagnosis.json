@@ -6,6 +6,19 @@
   },
   "fields": [
     {
+      "name": "study_id",
+      "valueType": "string",
+      "description": "Unique identifier for the Study",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "Study ID"
+      },
+      "restrictions": {
+        "required": true
+      }
+    },
+    {
       "name": "submitter_donor_id",
       "valueType": "string",
       "description": "Unique identifier of the donor, assigned by the data provider",
@@ -51,45 +64,31 @@
       }
     },
     {
-      "name": "diagnosis_ICD_category",
+      "name": "diagnosis_ICD_code",
       "valueType": "string",
-      "description": "Disease category as defined in the WHO ICD-10",
+      "description": "ICD-10 code used to define a condtion",
       "restrictions": {
         "required": true
       },
       "meta": {
         "core": true,
-        "examples": "Neoplasms, Diseases of the nervous system",
-        "notes": "This refers to the body systems chapters of the WHO ICD-10, https://apps.who.int/classifications/apps/icd/ClassificationDownload/DLArea/Download.aspx",
-        "displayName": "ICD-10 Disease category"
+        "examples": "C41.1, C16.9",
+        "notes": "Write the exact ICD-10 code - refer to https://apps.who.int/classifications/apps/icd/ClassificationDownload/DLArea/Download.aspx",
+        "displayName": "Diagnosis ICD-10 code"
       }
     },
     {
-      "name": "diagnosis_ICD_term",
+      "name": "diagnosis_mondo_code",
       "valueType": "string",
-      "description": "ICD-10 code and term used to define a condtion",
+      "description": "Mondo code used to define a condtion",
       "restrictions": {
         "required": true
       },
       "meta": {
         "core": true,
-        "examples": "C41.1: Malignant neoplasms of mandible, C16.9: Malignant neoplasm of stomach, unspecified",
-        "notes": "Write the full term used in ICD-10 followed by the code in parenthesis, for instance: malignant neoplasm of the breast (C50). For WHO ICD-10 codes, refer to https://apps.who.int/classifications/apps/icd/ClassificationDownload/DLArea/Download.aspx",
-        "displayName": "Diagnosis ICD-10 code and term"
-      }
-    },
-    {
-      "name": "diagnosis_mondo_term",
-      "valueType": "string",
-      "description": "Mondo code and term used to define a condtion",
-      "restrictions": {
-        "required": true
-      },
-      "meta": {
-        "core": true,
-        "examples": "MONDO_0002131: jaw cancer, MONDO_0001056: gastric cancer",
-        "notes": "Write the full term used in MONDO followed by the code in parenthesis, for instance: breast cancer (0007254). For MONDO codes, refer to https://www.ebi.ac.uk/ols/ontologies/mondo",
-        "displayName": "Diagnosis Mondo code and term"
+        "examples": "MONDO_0002131, MONDO_0001056",
+        "notes": "Write the exact MONDO code. For MONDO codes, refer to https://www.ebi.ac.uk/ols/ontologies/mondo",
+        "displayName": "Diagnosis Mondo code"
       }
     },
     {
@@ -127,7 +126,7 @@
     },
     {
       "name": "diagnosis_type",
-      "description": "Basis of diagnosis",
+      "description": "Indicate if the diagnosis is based on clinical or histological (histo-pathological) criteria",
       "restrictions": {
         "codeList": [
           "Clinical",

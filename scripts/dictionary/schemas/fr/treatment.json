@@ -1,19 +1,32 @@
 {
   "name": "treatment",
-  "description": "The collection of data elements related to a donor's treatment at a specific point in the clinical record. To submit multiple treatments for a single donor, please submit treatment rows in the treatment file for this donor.",
+  "description": "L'ensemble de champs reliés au traitement d'un donneur. Pour soumettre plus d'un traitement pour un donneur, veuillez ajouter des lignes dans la table traitement pour ce donneur.",
   "meta": {
     "parent": "donor"
   },
   "fields": [
     {
+      "name": "study_id",
+      "valueType": "string",
+      "description": "Identifant unique pour l'étude",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "ID étude"
+      },
+      "restrictions": {
+        "required": true
+      }
+    },
+    {
       "name": "submitter_donor_id",
-      "description": "Unique identifier of the donor, assigned by the data provider",
+      "description": "Identifiant unique pour le donneur, soumis par l'étude",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
         "foreignKey": "donor.submitter_donor_id",
-        "displayName": "Submitter Donor ID",
+        "displayName": "ID du donneur soumis par l'étude",
         "notes": "#/notes/submitter_id"
       },
       "restrictions": {
@@ -23,12 +36,12 @@
     },
     {
       "name": "submitter_treatment_id",
-      "description": "Unique identifier of the treatment, assigned by the data provider",
+      "description": "Identifiant unique pour le traitement du donneur, soumis par l'étude",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "Submitter Treatment ID",
+        "displayName": "ID du traitement soumis par l'étude",
         "notes": "#/notes/submitter_id"
       },
       "restrictions": {
@@ -39,11 +52,11 @@
     {
       "name": "submitter_diagnosis_id",
       "valueType": "string",
-      "description": "Indicate the diagnosis event in the clinical timeline that this treatment was related to",
+      "description": "Identifiant unique du diagnostic qui est relié à ce traitement",
       "meta": {
         "primaryId": true,
         "foreignKey": "diagnosis.submitter_diagnosis_id",
-        "displayName": "Submitter Diagnosis ID",
+        "displayName": "ID du diagnostic soumis par l'étude",
         "notes": "#/notes/submitter_id"
       },
       "restrictions": {
@@ -53,7 +66,7 @@
     },
     {
       "name": "treatment_type",
-      "description": "Indicate the type of treatment the donor received",
+      "description": "Type de traitement reçu par le donneur",
       "valueType": "string",
       "isArray": true,
       "restrictions": {
@@ -71,20 +84,20 @@
           "Photodynamic therapy",
           "Radiation therapy",
           "Stem cell transplant",
-          "Surgery", 
+          "Surgery",
           "Other"
         ]
       },
       "meta": {
         "validationDependency": true,
         "core": true,
-        "displayName": "Treatment Type",
+        "displayName": "Type de traitement",
         "examples": "Chemotherapy|Hormonal therapy"
       }
     },
     {
       "name": "treatment_is_primary",
-      "description": "Indicate if the treatment is the primary treatment following the initial diagnosis",
+      "description": "Indiquer si ce traitement est le traitement de première intention reçu par le donneur après son diagnostic",
       "valueType": "string",
       "restrictions": {
         "codeList": [
@@ -94,12 +107,12 @@
         ]
       },
       "meta": {
-        "displayName": "Is Primary Treatment"
+        "displayName": "Traitement de première intention"
       }
     },
     {
       "name": "treatment_intent",
-      "description": "The purpose of the treatment",
+      "description": "Indiquer l'intention du traitement",
       "valueType": "string",
       "restrictions": {
         "codeList": [
@@ -116,12 +129,12 @@
         ]
       },
       "meta": {
-        "displayName": "Treatment Intent"
+        "displayName": "Intention du traitement"
       }
     },
     {
       "name": "treatment_response",
-      "description": "The donor's response to the treatment",
+      "description": "Indiquer la réponse du donneur à ce traitement",
       "valueType": "string",
       "restrictions": {
         "codeList": [
@@ -138,58 +151,58 @@
         ]
       },
       "meta": {
-        "displayName": "Response to treatment"
+        "displayName": "Réponse au traitement"
       }
     },
     {
       "name": "medication_name",
       "valueType": "string",
-      "description": "medication name (common term)",
+      "description": "Nom du médicament (dénomination commune)",
       "meta": {
         "core": true,
         "dependsOn": "treatment.treatment_type",
-        "displayName": "Medication name"
+        "displayName": "Nom du médicament"
       }
     },
     {
       "name": "medication_code",
       "valueType": "string",
-      "description": "Drug identification number (DIN code)",
+      "description": "Numéro d'identification du médicament (code DIN)",
       "meta": {
-        "notes": "The DIN uniquely identifies the manufacturer, product name, active ingredient(s), strength(s) of active ingredient(s);pharmaceutical form and route of administration.",
+        "notes": "Au Canada - Le DIN identifie de manière unique le fabricant, le nom du produit, les ingrédients actifs), la teneur du ou des ingrédients actifs, la forme pharmaceutique et la voie d'administration.",
         "dependsOn": "treatment.treatment_type",
-        "displayName": "Drug Identification Number"
+        "displayName": "Numéro d'identification du médicament "
       }
     },
     {
       "name": "medication_class",
       "valueType": "string",
-      "description": "Drug class based on ATC (Anatomical Therapeutic Class)",
+      "description": "Classe de médicaments basée sur l'ATC (Classe Thérapeutique Anatomique)",
       "meta": {
         "core": true,
-        "notes": "Refer to the WHO ATC https://www.whocc.no/atc_ddd_index/ to classify the active ingredients of drug according to the organ or system on which it acts and its therapeutic, pharmacological and chemical properties. Drugs should be coded at the 5th level of the ATC.",
+        "notes": "Référez-vous à https://www.whocc.no/atc_ddd_index/ pour classer les principes actifs du médicament selon l'organe ou le système sur lequel il agit et ses propriétés thérapeutiques, pharmacologiques et chimiques. Les médicaments doivent être codés au 5e niveau de l'ATC.",
         "dependsOn": "treatment.treatment_type",
-        "displayName": "Medication class"
+        "displayName": "Classe de médicament"
       }
     },
     {
-      "description": "Date of the first prescription dispensation (MM-YYYY)",
+      "description": "Date de début de l'ordonnance de ce médicament (MM-YYY)",
       "name": "medication_start_date",
       "valueType": "string",
       "meta": {
-        "notes": "For self-reported information provide date when stopped taking the Rx.",
+        "notes": "Pour l'information auto-déclarée, utiliser la date lorsque le médicament a commencé a être pris.",
         "dependsOn": "treatment.treatment_type",
-        "displayName": "Medication start date"
+        "displayName": "Date du début de l'ordonnance"
       }
     },
     {
-      "description": "Date of the last prescription dispensation (MM-YYYY)",
+      "description": "Date de fin de l'ordonnance de ce médicament (MM-YYYY)",
       "name": "medication_end_date",
       "valueType": "string",
       "meta": {
-        "notes": "For self-reported information provide date when stopped taking the Rx.",
+        "notes": "Pour l'information auto-déclarée, utiliser la date lorsque le médicament a cessé d'être pris.",
         "dependsOn": "treatment.treatment_type",
-        "displayName": "Medication end date"
+        "displayName": "Date de fin de l'ordonnance"
       }
     }
   ]

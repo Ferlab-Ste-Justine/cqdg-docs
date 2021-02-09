@@ -6,6 +6,19 @@
   },
   "fields": [
     {
+      "name": "study_id",
+      "valueType": "string",
+      "description": "Unique identifier for the Study",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "Study ID"
+      },
+      "restrictions": {
+        "required": true
+      }
+    },
+    {
       "name": "submitter_donor_id",
       "description": "Unique identifier of the donor, assigned by the data provider",
       "valueType": "string",
@@ -177,7 +190,7 @@
       "name": "medication_start_date",
       "valueType": "string",
       "meta": {
-        "notes": "For self-reported information provide date when stopped taking the Rx.",
+        "notes": "For self-reported information provide date when started taking the Rx.",
         "dependsOn": "treatment.treatment_type",
         "displayName": "Medication start date"
       }

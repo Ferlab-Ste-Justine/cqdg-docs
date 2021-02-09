@@ -3,6 +3,19 @@
   "description": "The collection of data elements related to a donor's biospecimen. A biospecimen is any material sample taken for testing, diagnostic or research purposes. To submit multiple biospecimens for a single donor, submit multiple rows in the biospecimens file for this donor.",
   "fields": [
     {
+      "name": "study_id",
+      "valueType": "string",
+      "description": "Unique identifier for the Study",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "Study ID"
+      },
+      "restrictions": {
+        "required": true
+      }
+    },
+    {
       "name": "submitter_donor_id",
       "description": "Unique identifier of the donor, assigned by the data provider",
       "valueType": "string",
@@ -240,4 +253,3 @@
     }
   ]
 }
-

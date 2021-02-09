@@ -1,30 +1,43 @@
 {
   "name": "family_relationship",
-  "description": "The collection of data elements related to a family and relationships within this family. This table should be completed only if the Study is contributing data from groups of donors who share family ties (ex: twins, trios, sib-pairs).",
+  "description": "L'ensemble de champs reliés aux relation entre les donneurs d'un même groupe familiale. Cette table de données doit être soumise uniquemement si l'étude détient des données sur des groupes de donneurs qui partagent des liens de parentés (ex: jumeaux, trios).",
   "fields": [
+    {
+      "name": "study_id",
+      "valueType": "string",
+      "description": "Identifant unique pour l'étude",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "ID étude"
+      },
+      "restrictions": {
+        "required": true
+      }
+    },
     {
       "name": "submitter_family_id",
       "valueType": "string",
-      "description": "Unique identifier of the family, assigned by the data provider",
+      "description": "Identifant unique pour la famille du donneur, soumis par l'étude",
       "restrictions": {
         "required": true,
         "regex": "#/regex/submitter_id"
       },
       "meta": {
-        "displayName": "Submitter Family ID",
+        "displayName": "ID de la famille soumis par l'étude",
         "foreignKey": "family.submitter_family_id",
         "validationDependency": true,
         "primaryId": true
       }
     },
     {
-      "description": "Unique identifier of the donor 1, assigned by the data provider",
+      "description": "Identifiant unique du donneur 1, soumis par l'étude",
       "name": "submitter_donor_id_1",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "Submitter Donor 1 ID",
+        "displayName": "ID du donneur 1 soumis par l'étude",
         "notes": "#/notes/submitter_id"
       },
       "restrictions": {
@@ -33,13 +46,13 @@
       }
     },
     {
-      "description": "Unique identifier of the donor 2, assigned by the data provider",
+      "description": "Identifiant unique du donneur 2, soumis par l'étude ",
       "name": "submitter_donor_id_2",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "Submitter Donor 2 ID",
+        "displayName": "ID du donneur 2 soumis par l'étude",
         "notes": "#/notes/submitter_id"
       },
       "restrictions": {
@@ -49,7 +62,7 @@
     },
     {
       "name": "family_type",
-      "description": "Type of family-based study design",
+      "description": "Type de groupe familiale auquel fait partie de le donneur",
       "valueType": "string",
       "restrictions": {
         "required": true,
@@ -63,33 +76,33 @@
       },
       "meta": {
         "core": true,
-        "displayName": "Family Type"
+        "displayName": "Type de groupe familiale"
       }
     },
     {
       "name": "family_1_2_relationship",
-      "description": "Relationship of donor 1 to donor 2",
+      "description": "Relation du donneur 1 envers le donneur 2",
       "valueType": "string",
       "restrictions": {
         "required": true
       },
       "meta": {
         "core": true,
-        "displayName": "Relationship of donor 1 to donor 2",
-        "notes": "Refer to HL7 CodeSystem to identify relationship between donors http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+        "displayName": "Relation du donneur 1 envers le donneur 2",
+        "notes": "Référez-vous au système de code HL7 pour identifier la relation entre les donneurs http://terminology.hl7.org/CodeSystem/v3-RoleCode"
       }
     },
     {
       "name": "family_2_1_relationship",
-      "description": "Relationship of donor 2 to donor 1",
+      "description": "Relation du donneur 2 envers le donneur 1",
       "valueType": "string",
       "restrictions": {
         "required": true
       },
       "meta": {
         "core": true,
-        "displayName": "Relationship of donor 2 to donor 1",
-        "notes": "Refer to HL7 CodeSystem to identify relationship between donors http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+        "displayName": "Relation du donneur 2 envers le donneur 1",
+        "notes": "Référez-vous au système de code HL7 pour identifier la relation entre les donneurs http://terminology.hl7.org/CodeSystem/v3-RoleCode"
       }
     }
   ]
