@@ -34,6 +34,7 @@ const family_history = require('./family_history.json');
 module.exports = [
   sample_registration, 
   study, 
+  data_access,
   donor,
   biospecimen,
   diagnosis,
