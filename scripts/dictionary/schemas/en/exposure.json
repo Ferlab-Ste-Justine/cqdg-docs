@@ -3,6 +3,19 @@
   "description": "The collection of data elements related to a donor's exposure to specific risk factors.",
   "fields": [
     {
+      "name": "study_id",
+      "valueType": "string",
+      "description": "Unique identifier for the Study",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "Study ID"
+      },
+      "restrictions": {
+        "required": true
+      }
+    },
+    {
       "name": "submitter_donor_id",
       "valueType": "string",
       "description": "Unique identifier of the donor, assigned by the data provider",

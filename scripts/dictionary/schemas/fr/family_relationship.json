@@ -3,6 +3,19 @@
   "description": "L'ensemble de champs reliés aux relation entre les donneurs d'un même groupe familiale. Cette table de données doit être soumise uniquemement si l'étude détient des données sur des groupes de donneurs qui partagent des liens de parentés (ex: jumeaux, trios).",
   "fields": [
     {
+      "name": "study_id",
+      "valueType": "string",
+      "description": "Identifant unique pour l'étude",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "ID étude"
+      },
+      "restrictions": {
+        "required": true
+      }
+    },
+    {
       "name": "submitter_family_id",
       "valueType": "string",
       "description": "Identifant unique pour la famille du donneur, soumis par l'étude",

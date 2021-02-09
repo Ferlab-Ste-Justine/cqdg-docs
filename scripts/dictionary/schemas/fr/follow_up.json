@@ -6,6 +6,19 @@
   },
   "fields": [
     {
+      "name": "study_id",
+      "valueType": "string",
+      "description": "Identifant unique pour l'étude",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "ID étude"
+      },
+      "restrictions": {
+        "required": true
+      }
+    },
+    {
       "description": "Identifiant unique pour le donneur, soumis par l'étude",
       "name": "submitter_donor_id",
       "valueType": "string",

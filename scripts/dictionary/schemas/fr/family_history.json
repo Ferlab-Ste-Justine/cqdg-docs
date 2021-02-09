@@ -3,6 +3,19 @@
   "description": "L'ensemble de champs reliés à l'histoire de santé familiale.  Pour soumettre plusieurs conditions de santé pour la famille d'un donneur, veuillez ajouter des lignes dans la table histoire familiale.",
   "fields": [
     {
+      "name": "study_id",
+      "valueType": "string",
+      "description": "Identifant unique pour l'étude",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "ID étude"
+      },
+      "restrictions": {
+        "required": true
+      }
+    },
+    {
       "description": "Identifiant unique pour le donneur, soumis par l'étude",
       "name": "submitter_donor_id",
       "valueType": "string",

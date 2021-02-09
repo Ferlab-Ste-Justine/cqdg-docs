@@ -3,6 +3,19 @@
   "description": "L'ensemble de champs reliés à l'exposition à des facteurs de risque pour la santé pour le donneur.",
   "fields": [
     {
+      "name": "study_id",
+      "valueType": "string",
+      "description": "Identifant unique pour l'étude",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "ID étude"
+      },
+      "restrictions": {
+        "required": true
+      }
+    },
+    {
       "name": "submitter_donor_id",
       "valueType": "string",
       "description": "Identifiant unique pour le donneur, soumis par l'étude",

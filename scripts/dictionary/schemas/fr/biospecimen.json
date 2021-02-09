@@ -3,6 +3,19 @@
   "description": "Ensemble de champs reliés au spécimen biologique du donneur. Un spécimen biologique est tout type d'échantillon biologique collecté pour analyse, pour des fins de diagnostic ou pour la recherche. Pour soumettre plus d'un diagnostic pour un donneur, veuillez ajouter des lignes dans la table biospecimen pour ce donneur. .",
   "fields": [
     {
+      "name": "study_id",
+      "valueType": "string",
+      "description": "Identifant unique pour l'étude",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "ID étude"
+      },
+      "restrictions": {
+        "required": true
+      }
+    },
+    {
       "name": "submitter_donor_id",
       "description": "Identifiant unique pour le donneur, soumis par l'étude",
       "valueType": "string",
