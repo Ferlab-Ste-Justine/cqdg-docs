@@ -68,7 +68,6 @@
       "name": "treatment_type",
       "description": "Indicate the type of treatment the donor received",
       "valueType": "string",
-      "isArray": true,
       "restrictions": {
         "required": true,
         "codeList": [
@@ -84,15 +83,14 @@
           "Photodynamic therapy",
           "Radiation therapy",
           "Stem cell transplant",
-          "Surgery", 
+          "Surgery",
           "Other"
         ]
       },
       "meta": {
         "validationDependency": true,
         "core": true,
-        "displayName": "Treatment Type",
-        "examples": "Chemotherapy|Hormonal therapy"
+        "displayName": "Treatment Type"
       }
     },
     {
@@ -186,23 +184,21 @@
       }
     },
     {
-      "description": "Date of the first prescription dispensation (MM-YYYY)",
-      "name": "medication_start_date",
+      "description": "Date when treatment started (DD-MM-YYYY)",
+      "name": "treatment_start_date",
       "valueType": "string",
       "meta": {
-        "notes": "For self-reported information provide date when started taking the Rx.",
-        "dependsOn": "treatment.treatment_type",
-        "displayName": "Medication start date"
+        "notes": "For medication, provide date of first prescription dispensation (MM-YYYY). For one-time treatments, such as surgeries, provide the date of the intervention.",
+        "displayName": "Treatment start date"
       }
     },
     {
-      "description": "Date of the last prescription dispensation (MM-YYYY)",
-      "name": "medication_end_date",
+      "description": "Date when treatment ended (DD-MM-YYYY)",
+      "name": "treatment_end_date",
       "valueType": "string",
       "meta": {
-        "notes": "For self-reported information provide date when stopped taking the Rx.",
-        "dependsOn": "treatment.treatment_type",
-        "displayName": "Medication end date"
+        "notes": "For medication, provide date of last prescription dispensation (DD-MM-YYYY). Leave blank for one-time treatments such as sugeries.",
+        "displayName": "Treatment end date"
       }
     }
   ]

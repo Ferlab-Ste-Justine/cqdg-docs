@@ -58,8 +58,8 @@
         "required": true
       },
       "meta": {
-        "examples": "cancer du seine, AVC",
-        "notes": "Veuillez fournir l'information telle qu'elle est rapportée dans l'étude si l'utilisation des codes ICD-10 ou MONDO n'est pas possible",
+        "examples": "cancer du sein, AVC",
+        "notes": "Veuillez fournir l'information telle qu'elle est rapportée dans l'étude",
         "displayName": "Terme diagnostique rapporté dans l'étude"
       }
     },

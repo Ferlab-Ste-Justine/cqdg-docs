@@ -59,7 +59,7 @@
       },
       "meta": {
         "examples": "breast cancer, stroke",
-        "notes": "Provide exact information as per the dataset if coding to ICD-10 or MONDO ontologies is not possible",
+        "notes": "Provide exact information as per the dataset",
         "displayName": "Name of the condition"
       }
     },

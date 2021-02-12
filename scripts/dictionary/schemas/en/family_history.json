@@ -70,9 +70,41 @@
       "name": "family_condition_relationship",
       "description": "What is the relationship of the family member to the donor.",
       "valueType": "string",
+      "restrictions": {
+        "codeList": [
+          "Mother",
+          "Father",
+          "Brother",
+          "Sister",
+          "Half-brother",
+          "Half-sister",
+          "Identical twin",
+          "Fraternal twin brother",
+          "Fraternal twin sister",
+          "Son",
+          "Daughter",
+          "Maternal grand-mother",
+          "Maternal grand-father",
+          "Paternal grand-mother",
+          "Paternal grand-father",
+          "Maternal aunt",
+          "Maternal uncle",
+          "Paternal aunt",
+          "Paternal uncle",
+          "Maternal cousin",
+          "Paternal cousin",
+          "Granddaughter",
+          "Grandson",
+          "Nephew",
+          "Niece", 
+          "Spouse", 
+          "Former spouse", 
+          "Husband", 
+          "Wife"
+        ]
+      },
       "meta": {
-        "displayName": "Family condition relationship",
-        "notes": "Refer to HL7 CodeSystem to identify relationship between donor and family member http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+        "displayName": "Family condition relationship"
       }
     },
     {

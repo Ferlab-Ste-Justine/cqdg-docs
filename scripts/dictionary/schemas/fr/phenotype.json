@@ -50,6 +50,19 @@
       }
     },
     {
+      "name": "phenotype_source_text",
+      "valueType": "string",
+      "description": "Le phenotype (ou anomalie) du donneur tel que rapporté par l'étude",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "examples": "trigonocéphalie, angiome",
+        "notes": "Veuillez fournir l'information telle qu'elle est rapportée dans l'étude",
+        "displayName": "Phénotype rapporté dans l'étude"
+      }
+    },
+    {
       "name": "phenotype_HPO_code",
       "valueType": "string",
       "description": "Code du phénoype du donneur selon le système de classification Human Phenoytpe Ontology (HPO)",
@@ -60,20 +73,6 @@
         "core": true,
         "notes": "Fournissez le code exact tels qu'il apparait dans HPO (par example: HP:0001161. Veuillez-vous référer à https://hpo.jax.org/app/.",
         "displayName": "Code HPO"
-      }
-    },
-    {
-      "name": "phenotype_HPO_category",
-      "valueType": "string",
-      "description": "Terme utilisé dans HPO pour le définir la catégorie du phénotype du donneur",
-      "restrictions": {
-        "required": true
-      },
-      "meta": {
-        "core": true,
-        "displayName": "Catégorie d'anomalie phénotypique",
-        "notes": "Référez-vous aux catégories d'anomalies phénotypiques dans HPO (HP:000018) https://hpo.jax.org/app/browse/term/HP:0000118",
-        "examples": "Abnormality of the eye"
       }
     },
     {

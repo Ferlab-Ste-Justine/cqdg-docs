@@ -50,6 +50,19 @@
       }
     },
     {
+      "name": "phenotype_source_text",
+      "valueType": "string",
+      "description": "Phenotype (or abnormality) as reported in the study's dataset",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "examples": "microcephaly, angioma",
+        "notes": "Provide exact information as per the dataset",
+        "displayName": "Name of the phenotype"
+      }
+    },
+    {
       "name": "phenotype_HPO_code",
       "valueType": "string",
       "description": "Code used for the phenotype in the Human Phenotype Ontology terminology",
@@ -60,20 +73,6 @@
         "core": true,
         "notes": "Write the exact code used in the HPO, for instance: HP:0001161. Please refer to the Human Phenotype Ontology at https://hpo.jax.org/app/ for code identification.",
         "displayName": "Human Phenotype Ontology code"
-      }
-    },
-    {
-      "name": "phenotype_HPO_category",
-      "valueType": "string",
-      "description": "Term used for the phenotypic abnormality category in the Human Phenotype Ontology terminology",
-      "restrictions": {
-        "required": true
-      },
-      "meta": {
-        "core": true,
-        "displayName": "Category of phenotypic abnormality",
-        "notes": "Refer to the categories of the Phenotypic Abnormality Subontology of the HPO (HP:000018) https://hpo.jax.org/app/browse/term/HP:0000118",
-        "examples": "Abnormality of the eye"
       }
     },
     {
