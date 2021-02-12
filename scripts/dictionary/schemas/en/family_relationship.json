@@ -84,12 +84,42 @@
       "description": "Relationship of donor 1 to donor 2",
       "valueType": "string",
       "restrictions": {
-        "required": true
+        "required": true,
+        "codeList": [
+          "Mother",
+          "Father",
+          "Brother",
+          "Sister",
+          "Half-brother",
+          "Half-sister",
+          "Identical twin",
+          "Fraternal twin brother",
+          "Fraternal twin sister",
+          "Son",
+          "Daughter",
+          "Maternal grand-mother",
+          "Maternal grand-father",
+          "Paternal grand-mother",
+          "Paternal grand-father",
+          "Maternal aunt",
+          "Maternal uncle",
+          "Paternal aunt",
+          "Paternal uncle",
+          "Maternal cousin",
+          "Paternal cousin",
+          "Granddaughter",
+          "Grandson",
+          "Nephew",
+          "Niece", 
+          "Spouse", 
+          "Former spouse", 
+          "Husband", 
+          "Wife"
+        ]
       },
       "meta": {
         "core": true,
-        "displayName": "Relationship of donor 1 to donor 2",
-        "notes": "Refer to HL7 CodeSystem to identify relationship between donors http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+        "displayName": "Relationship of donor 1 to donor 2"
       }
     },
     {
@@ -97,12 +127,42 @@
       "description": "Relationship of donor 2 to donor 1",
       "valueType": "string",
       "restrictions": {
-        "required": true
+        "required": true,
+        "codeList": [
+          "Mother",
+          "Father",
+          "Brother",
+          "Sister",
+          "Half-brother",
+          "Half-sister",
+          "Identical twin",
+          "Fraternal twin brother",
+          "Fraternal twin sister",
+          "Son",
+          "Daughter",
+          "Maternal grand-mother",
+          "Maternal grand-father",
+          "Paternal grand-mother",
+          "Paternal grand-father",
+          "Maternal aunt",
+          "Maternal uncle",
+          "Paternal aunt",
+          "Paternal uncle",
+          "Maternal cousin",
+          "Paternal cousin",
+          "Granddaughter",
+          "Grandson",
+          "Nephew",
+          "Niece", 
+          "Spouse", 
+          "Former spouse", 
+          "Husband", 
+          "Wife"
+        ]
       },
       "meta": {
         "core": true,
-        "displayName": "Relationship of donor 2 to donor 1",
-        "notes": "Refer to HL7 CodeSystem to identify relationship between donors http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+        "displayName": "Relationship of donor 2 to donor 1"
       }
     }
   ]

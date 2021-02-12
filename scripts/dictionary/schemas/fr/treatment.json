@@ -68,7 +68,6 @@
       "name": "treatment_type",
       "description": "Type de traitement reçu par le donneur",
       "valueType": "string",
-      "isArray": true,
       "restrictions": {
         "required": true,
         "codeList": [
@@ -91,8 +90,7 @@
       "meta": {
         "validationDependency": true,
         "core": true,
-        "displayName": "Type de traitement",
-        "examples": "Chemotherapy|Hormonal therapy"
+        "displayName": "Type de traitement"
       }
     },
     {
@@ -186,22 +184,20 @@
       }
     },
     {
-      "description": "Date de début de l'ordonnance de ce médicament (MM-YYY)",
-      "name": "medication_start_date",
+      "description": "Date de début du traitement",
+      "name": "treatment_start_date",
       "valueType": "string",
       "meta": {
-        "notes": "Pour l'information auto-déclarée, utiliser la date lorsque le médicament a commencé a être pris.",
-        "dependsOn": "treatment.treatment_type",
-        "displayName": "Date du début de l'ordonnance"
+        "notes": "Pour les médicaments, veuillez fournir la date du début de l'ordonnance (DD-MM-YYY). Pour les traitements uniques, comme les chirurgies, veuillez fournir la date de l'intervention.",
+        "displayName": "Date du début du traitement"
       }
     },
     {
-      "description": "Date de fin de l'ordonnance de ce médicament (MM-YYYY)",
-      "name": "medication_end_date",
+      "description": "Date de fin du traitement",
+      "name": "treatment_end_date",
       "valueType": "string",
       "meta": {
-        "notes": "Pour l'information auto-déclarée, utiliser la date lorsque le médicament a cessé d'être pris.",
-        "dependsOn": "treatment.treatment_type",
+        "notes": "Pour les médicaments, veuillez fournir la date de fin de l'ordonnance (DD-MM-YYYY). Pour les traitement uniques, comme les chirurgies, veuillez laisser vide",
         "displayName": "Date de fin de l'ordonnance"
       }
     }
