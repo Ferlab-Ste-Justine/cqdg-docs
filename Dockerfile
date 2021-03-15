@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . .
 
 # Set env variables here (none to worry about today)
-RUN cd website && yarn && yarn build
+RUN cd website && npm install && npm run build
 
 FROM nginx:alpine
 
