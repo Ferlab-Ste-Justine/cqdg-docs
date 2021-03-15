@@ -47,16 +47,10 @@ cd cqdg-docs/website
 yarn
 ```
 
-or NPM
-```
-npm install
-```
-
 3. Run the development server to see your edits live in the browser:
 
 ```
 yarn start
-npm start
 ```
 
 The site should open in a new page in your browser at the address: [localhost:3000](http://localhost:3000)

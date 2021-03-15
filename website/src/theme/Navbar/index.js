@@ -47,7 +47,6 @@ function Navbar() {
                 <div className={styles["theme-navbar__links"]}>
                     {links.map((link, index) =>
                         {
-                            console.log('link generation', link.href)
                             return <div key={index} onClick={link.action} className={`${styles["theme-navbar__links__item"]} ${(selectedIndex === index) ? styles['theme-navbar__links__item--active'] : ''}`}>
                                     <a href={link.href}>{link.title}</a>
                                 </div>

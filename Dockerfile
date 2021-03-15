@@ -1,11 +1,11 @@
-FROM node:11
+FROM node:14.16
 
 WORKDIR /app
 
 COPY . .
 
 # Set env variables here (none to worry about today)
-RUN cd website && npm install && npm run build
+RUN cd website && yarn && yarn build
 
 FROM nginx:alpine
 

@@ -12,9 +12,9 @@ module.exports = {
   onBrokenMarkdownLinks: 'warn',
 
   plugins: [
-    'docusaurus-plugin-sass',
+    require.resolve('docusaurus-plugin-sass'),
     [
-      'docusaurus2-dotenv',
+      require.resolve('docusaurus2-dotenv'),
       {
         systemvars: true,
       }
