@@ -13,17 +13,17 @@ const sidebarFR = {
 
 module.exports = {
   en: {
-      Submission: [
-        'en/submission/dictionary-overview',
-        'en/submission/submitting-clinical-data',
-      ],
-      'Data Access Request': [
-        'en/data-access/data-access-request',
-        'en/data-access/data-download',
-        'en/data-access/user-profile',
-        'en/data-access/publication-guidelines',
-      ],
-    },
+    Submission: [
+      'en/submission/dictionary-overview',
+      'en/submission/submitting-clinical-data',
+    ],
+    'Data Access Request': [
+      'en/data-access/data-access-request',
+      'en/data-access/data-download',
+      'en/data-access/user-profile',
+      'en/data-access/publication-guidelines',
+    ],
+  },
   soumission: {
     ...sidebarFR
   },

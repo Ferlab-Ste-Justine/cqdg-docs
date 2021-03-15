@@ -1,3 +1,5 @@
+@import "./static/scss/_app.scss";
+
 .theme-navbar {
   display: flex;
   min-height: 72px;
@@ -36,7 +38,7 @@
               background: $color-neutrals-neutral-1;
           }
 
-          &--last {
+          &:last-child {
               margin-right: 8px;
           }
 

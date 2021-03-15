@@ -5,14 +5,14 @@ platform_key: DOCS_DICTIONARY_OVERVIEW
 ---
 
 
-Le [Data Dictionary](/scripts/dictionary) outines the details of the data model which adheres to specific formats and restrictions to ensure data quality and harmonization. Each table in the Data Dictionary is related to a clinical concept. Partner studies must submit data for a minimum number of tables for the dataset to be considered admissible. 
+Le [Data Dictionary](/dictionary) outines the details of the data model which adheres to specific formats and restrictions to ensure data quality and harmonization. Each table in the Data Dictionary is related to a clinical concept. Partner studies must submit data for a minimum number of tables for the dataset to be considered admissible. 
 
 
 ## Understanding the Data Dictionary
 
-Le [Dictionary viewer](/scripts/dictionary) lists all clinical variables that can be submitted along with the genomic data hosted by the CQDG.
+Le [Dictionary viewer](/dictionary) lists all clinical variables that can be submitted along with the genomic data hosted by the CQDG.
 
-Field listings can be filtered in order to identify all [the data elements that are required for the submission](/docs/submission/clinical-data-validation-rules).
+Field listings can be filtered in order to identify all [the data elements that are required for the submission](/en/submission/submitting-clinical-data).
 
 You can explore previous dictionary versions using the dropdown at the top of the dictionary. Using the latest version of the dictionary is required during data submission.
 

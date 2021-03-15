@@ -1,41 +1,24 @@
-/*
- * Copyright (c) 2020 The Ontario Institute for Cancer Research. All rights reserved
- *
- * This program and the accompanying materials are made available under the terms of the GNU Affero General Public License v3.0.
- * You should have received a copy of the GNU Affero General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
- * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
- * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
- * SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
- * TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
- * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
- * IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- *
- */
-
+/** @type {import('@docusaurus/types').DocusaurusConfig} */
 const path = require('path');
-
 module.exports = {
   title: 'CQDG Docs',
   url: 'https://docs.qa.cqdg.ferlab.bio',
   baseUrl: '/',
   organizationName: 'CQDG',
   projectName: 'cqdg-documentation',
-
   favicon: 'favicon.ico',
   tagline: 'CQDG Docs',
-
   stylesheets: ['https://fonts.googleapis.com/css?family=Source+Code+Pro|Work+Sans&display=swap'],
+  onBrokenMarkdownLinks: 'warn',
 
   plugins: [
-    path.resolve(__dirname, './svg-plugin'),
-    path.resolve(__dirname, './dotenv-plugin'),
-    path.resolve(__dirname, './sass-loader-plugin')
+    'docusaurus-plugin-sass',
+    [
+      'docusaurus2-dotenv',
+      {
+        systemvars: true,
+      }
+    ]
   ],
 
   presets: [
@@ -46,10 +29,7 @@ module.exports = {
           customCss: require.resolve('./src/css/custom.css'), // Don't use Array, put more CSS in 'stylesheets' above
         },
         docs: {
-          // docs folder path relative to website dir.
-          path: '../docs',
           routeBasePath: '/',
-          // sidebars file relative to website dir.
           sidebarPath: require.resolve('./sidebars.js'),
         },
       },
@@ -63,10 +43,12 @@ module.exports = {
        * default theme is Palenight*/
       // theme: require('prism-react-renderer/themes/dracula'),
     },
+    colorMode: {
+      disableSwitch: true,
+    },
 
-    disableDarkMode: true,
     footer: {
-      logo: null,
+      logo: {},
       copyright: `© ${new Date().getFullYear()} CQDG. All Rights reserved.`,
     },
   },

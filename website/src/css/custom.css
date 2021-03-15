@@ -359,35 +359,34 @@ div.padding-vert--lg {
   padding-top: 24px!important;
 }
 
-.contents.contents__left-border {
+.table-of-contents.table-of-contents__left-border {
   color: #045093;
   border-left: 2px solid var(--ifm-color-border);
   padding: 0px;
   font-size: 12px;
-  color: #717171;
   line-height: 16px;
 }
-.contents.contents__left-border li {
+.table-of-contents.table-of-contents__left-border li {
   margin: 0px;
 }
-.contents.contents__left-border ul {
+.table-of-contents.table-of-contents__left-border ul {
   padding: 0px;
 }
-.contents.contents__left-border li ul a.contents__link {
+.table-of-contents.table-of-contents__left-border li ul a.table-of-contents__link {
   padding-left: 32px;
 }
 
-.contents.contents__left-border .contents__link {
+.table-of-contents.table-of-contents__left-border .table-of-contents__link {
   color: var(--ifm-color-primary-lighter);
   text-decoration: none;
   display: block;
   padding: 8px 12px 8px 18px;
   max-width: 200px;
 }
-.contents.contents__left-border .contents__link--active {
+.table-of-contents.table-of-contents__left-border .table-of-contents__link--active {
   color: var(--ifm-color-primary-light);
 }
-.contents.contents__left-border .contents__link:hover {
+.table-of-contents.table-of-contents__left-border .table-of-contents__link:hover {
   color: var(--ifm-color-primary);
 }
 

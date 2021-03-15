@@ -4,15 +4,15 @@
 
 # ICGC-ARGO Doc Site
 
-User documentation for the ICGC-ARGO platform.
+User documentation for the CQDG Portal.
 
 ## Visit Site
 
-[ICGC-ARGO Platform - User Documentation](https://docs.icgc-argo.org)
+[CQDG Portal - User Documentation](https://docs.qa.cqdg.ferlab.bio/)
 
 ## Contents
 
-This docs site has been generated using [Docusaurus](https://docusaurus.io/).
+This docs site has been generated using [Docusaurus](https://v2.docusaurus.io/).
 
 Documentation is written in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and can be found in [/docs](docs).
 
@@ -32,13 +32,13 @@ To contribute to the docs:
 1. Clone the repository to your machine:
 
 ```
-git clone git@github.com:icgc-argo/argo-docs.git
+git clone git@github.com:Ferlab-Ste-Justine/cqdg-docs.git
 ```
 
 2. Move into the website directory ...
 
 ```
-cd argo-docs/website
+cd cqdg-docs/website
 ```
 
 ...and install dependencies via yarn:
@@ -47,10 +47,16 @@ cd argo-docs/website
 yarn
 ```
 
+or NPM
+```
+npm install
+```
+
 3. Run the development server to see your edits live in the browser:
 
 ```
 yarn start
+npm start
 ```
 
 The site should open in a new page in your browser at the address: [localhost:3000](http://localhost:3000)
@@ -71,7 +77,7 @@ To simplify updating the dictonary content, the process has been scripted so it 
 
 **Note: By default this connects with the production version of Lectern.**
 
-1. From the argo-docs root directory:
+1. From the cqdg-docs root directory:
 
 ```
 cd scripts
@@ -110,5 +116,3 @@ yarn run add
 
    git commit
    ```
-
-6. Open a PR in the Argo Docs github using `develop` as the base branch.
