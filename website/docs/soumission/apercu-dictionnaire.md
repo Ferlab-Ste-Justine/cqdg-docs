@@ -12,7 +12,7 @@ Le [dictionnaire de données](/dictionary) présente les détails du modèle de 
 
 Le [visionneur du dictionnaire](/dictionary) présente l'ensemble des variables cliniques qui peut accompagner les données moléculaires hébergées au CQDG.
 
-La liste des champs peut être filtée de manière à identifier les [champs nécessaires pour la soumission](/docs/submission/clinical-data-validation-rules).
+La liste des champs peut être filtée de manière à identifier les [champs nécessaires pour la soumission](/soumission/soumettre-donnees-cliniques).
 
 Les anciennes versions du dictionnaire peuvent être consultées en utilisant le menu déroulant au dessus du dictionnaire. Cependant, la dernière version du dictionnaire doit être utilisée lors de la soumission de données.
 

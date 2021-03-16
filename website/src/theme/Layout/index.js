@@ -8,6 +8,7 @@
 import React from 'react';
 import Head from '@docusaurus/Head';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import LayoutProviders from '@theme/LayoutProviders';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Navbar from '@theme/Navbar';
 import Footer from '@theme/Footer';
@@ -21,11 +22,13 @@ import './styles.css';
 
 function Providers({ children }) {
   return (
-    <TranslationProvider>
-      <I18NProvider>
-        {children}
-      </I18NProvider>
-    </TranslationProvider>
+    <LayoutProviders>
+      <TranslationProvider>
+        <I18NProvider>
+          {children}
+        </I18NProvider>
+      </TranslationProvider>
+    </LayoutProviders>
   )
 }
 
@@ -53,7 +56,6 @@ function Layout(props) {
   const metaImageUrl = siteUrl + useBaseUrl(metaImage);
   const faviconUrl = useBaseUrl(favicon);
   return (
-    <>
       <Providers>
         <Head>
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -80,7 +82,6 @@ function Layout(props) {
         <main className="main-wrapper">{children}</main>
         {!noFooter && <Footer />}
       </Providers>
-    </>
   );
 }
 

@@ -16,7 +16,7 @@ export const translate = (key, locale = '') => {
     } else {
         currentLocale = 'en';
     }
-    
+
     return config[currentLocale][key];
 }
 
