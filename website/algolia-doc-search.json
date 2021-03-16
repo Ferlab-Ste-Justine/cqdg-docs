@@ -1,21 +1,23 @@
 {
-  "index_name": "dev_CQDG",
-  "start_urls": [
-    "https://docs.qa.cqdg.ferlab.bio/en/submission/submitting-clinical-data/"
-  ],
-  "stop_urls": [],
-  "selectors": {
-    "lvl0": {
-      "selector": ".menu__link--sublist.menu__link--active",
-      "global": true,
-      "default_value": "Documentation"
+    "index_name": "dev_CQDG",
+    "start_urls": [
+      "https://docs.qa.cqdg.ferlab.bio/en/submission/submitting-clinical-data/"
+    ],
+    "stop_urls": [],
+    "selectors": {
+      "lvl0": {
+        "selector": ".menu__link--sublist.menu__link--active",
+        "global": true,
+        "default_value": "Documentation"
+      },
+      "lvl1": "[class^='docItemContainer_'] h1",
+      "lvl2": "[class^='docItemContainer_'] h2",
+      "lvl3": "[class^='docItemContainer_'] h3",
+      "lvl4": "[class^='docItemContainer_'] h4",
+      "lvl5": "[class^='docItemContainer_'] h5",
+      "text": "[class^='docItemContainer_'] p, [class^='docItemContainer_'] li"
     },
-    "lvl1": "[class^='docItemContainer_'] h1",
-    "lvl2": "[class^='docItemContainer_'] h2",
-    "lvl3": "[class^='docItemContainer_'] h3",
-    "lvl4": "[class^='docItemContainer_'] h4",
-    "lvl5": "[class^='docItemContainer_'] h5",
-    "text": "[class^='docItemContainer_'] p, [class^='docItemContainer_'] li"
-  },
-  "js_render": true
-}
+    "selectors_exclude": [
+      ".hash-link"
+    ]
+  }
