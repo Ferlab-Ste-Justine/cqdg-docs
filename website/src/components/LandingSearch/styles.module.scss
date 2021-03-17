@@ -23,6 +23,10 @@ $transition-duration: 100ms;
     &::placeholder {
       color: $color-neutrals-neutral-4;
     }
+
+    &--hide {
+        display: none;
+    }
   }
 
   &__button {
