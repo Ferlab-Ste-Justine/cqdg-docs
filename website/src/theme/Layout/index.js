@@ -8,7 +8,7 @@ import Navbar from '@theme/Navbar';
 
 import I18NProvider from '../../components/IntlProvider';
 // Providers
-import TranslationProvider from '../../components/TranslationContextProvider';
+import TranslationProvider from '../../components/IntlProvider/TranslationContextProvider';
 
 import './styles.css';
 

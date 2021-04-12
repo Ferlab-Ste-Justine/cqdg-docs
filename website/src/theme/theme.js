@@ -1,166 +1,166 @@
 export default {
-  colors: {
-    primary: "#18486B",
-    secondary: "#D8E1EB",
-    secondary_4: "transparent",
-    secondary_dark: "#0774d3",
-  },
-  diffColors: {
-    schemaField: {
-      created: "#EAFF8F",
-      updated: "#FFFB8F",
-      deleted: "#FFD6E7",
-    },
-    dot: {
-      created: "#7CB305",
-      updated: "#FA8C16",
-      deleted:"#C54B38",
-    }
-  },
-  button: {
-    borderColors: {
-      primary: {
-        default: "#008FC7",
-        hover: "#0075A2",
-        active: "#005673",
-        focus: "#005673",
-        disabled: "#B5C6D8"
-      },
-      secondary: {
-        default: "#B5C6D8",
-        hover: "#0075A2",
-        active: "#005673",
-        focus: "#005673",
-        disabled: "#B5C6D8"
-      },
-    },
-    borderWeights: {
-      sm: "1px",
-      md: "1px"
+    button: {
+        borderColors: {
+            primary: {
+                active: '#005673',
+                default: '#008FC7',
+                disabled: '#B5C6D8',
+                focus: '#005673',
+                hover: '#0075A2',
+            },
+            secondary: {
+                active: '#005673',
+                default: '#B5C6D8',
+                disabled: '#B5C6D8',
+                focus: '#005673',
+                hover: '#0075A2',
+            },
+        },
+        borderWeights: {
+            md: '1px',
+            sm: '1px',
+        },
+        colors: {
+            fontSizes: {
+                md: '13px',
+                sm: '12px',
+            },
+            primary: {
+                active: '#005673',
+                default: '#008FC7',
+                disabled: '#F0F3F8',
+                focus: '#005673',
+                hover: '#0075A2',
+            },
+            secondary: {
+                active: '#fff',
+                default: '#fff',
+                disabled: '#cecfd3',
+                focus: '#ffffff',
+                hover: '#fff',
+            },
+        },
+        paddings: {
+            md: '1px 8px',
+            sm: '1px 8px',
+        },
+        textColors: {
+            primary: {
+                default: '#ffffff',
+                disabled: '#90A9C1',
+            },
+            secondary: {
+                active: '#005673',
+                default: '#18486B',
+                disabled: '#90A9C1',
+                focus: '#005673',
+                hover: '#0075A2',
+            },
+        },
     },
     colors: {
-      primary: {
-        default: "#008FC7",
-        hover: "#0075A2",
-        active: "#005673",
-        focus: "#005673",
-        disabled: "#F0F3F8"
-      },
-      secondary: {
-        default: "#fff",
-        hover: "#fff",
-        active: "#fff",
-        focus: "#ffffff",
-        disabled: "#cecfd3"
-      },
-      fontSizes: {
-        sm: "12px",
-        md: "13px"
-      }
+        primary: '#18486B',
+        secondary: '#D8E1EB',
+        secondary_4: 'transparent',
+        secondary_dark: '#0774d3',
     },
-    paddings: {
-      sm: "1px 8px",
-      md: "1px 8px"
+    diffColors: {
+        dot: {
+            created: '#7CB305',
+            deleted: '#C54B38',
+            updated: '#FA8C16',
+        },
+        schemaField: {
+            created: '#EAFF8F',
+            deleted: '#FFD6E7',
+            updated: '#FFFB8F',
+        },
     },
-    textColors: {
-      primary: {
-        default: "#ffffff",
-        disabled: "#90A9C1"
-      },
-      secondary: {
-        default: "#18486B",
-        hover: "#0075A2",
-        active: "#005673",
-        focus: "#005673",
-        disabled: "#90A9C1"
-      },
-    }
-  },
-  typography: {
-    caption: {
-      fontFamily: "IBM Plex Sans",
-      fontSize: "11px",
-      fontWeight: "normal",
-      fontStyle: "normal",
-      fontStretch: "normal"
+    typography: {
+        caption: {
+            fontFamily: 'IBM Plex Sans',
+            fontSize: '11px',
+            fontStretch: 'normal',
+            fontStyle: 'normal',
+            fontWeight: 'normal',
+        },
+        data: {
+            fontFamily: 'IBM Plex Sans',
+            fontSize: '12px',
+            fontStretch: 'normal',
+            fontStyle: 'normal',
+            fontWeight: 'normal',
+        },
+        default: {
+            fontFamily: 'IBM Plex Sans',
+            fontSize: 'inherit',
+            fontStretch: 'inherit',
+            fontStyle: 'inherit',
+            fontWeight: 'inherit',
+        },
+        hero: {
+            fontFamily: 'IBM Plex Sans',
+            fontSize: '40px',
+            fontStretch: 'normal',
+            fontStyle: 'normal',
+            fontWeight: 'normal',
+        },
+        label: {
+            fontFamily: 'IBM Plex Sans',
+            fontSize: '14px',
+            fontStretch: 'normal',
+            fontStyle: 'normal',
+            fontWeight: 600,
+        },
+        navigation: {
+            fontFamily: 'IBM Plex Sans',
+            fontSize: '15px',
+            fontStretch: 'normal',
+            fontStyle: 'normal',
+            fontWeight: 600,
+        },
+        paragraph: {
+            fontFamily: 'IBM Plex Sans',
+            fontSize: '14px',
+            fontStretch: 'normal',
+            fontStyle: 'normal',
+            fontWeight: 'normal',
+        },
+        paragraph2: {
+            fontFamily: 'IBM Plex Sans',
+            fontSize: '14px',
+            fontStretch: 'normal',
+            fontStyle: 'normal',
+            fontWeight: 'bold',
+        },
+        sectionHeader: {
+            fontFamily: 'IBM Plex Sans',
+            fontSize: '16px',
+            fontStretch: 'normal',
+            fontStyle: 'normal',
+            fontWeight: 600,
+        },
+        subtitle: {
+            fontFamily: 'IBM Plex Sans',
+            fontSize: '20px',
+            fontStretch: 'normal',
+            fontStyle: 'normal',
+            fontWeight: 'normal',
+        },
+        subtitle2: {
+            fontFamily: 'IBM Plex Sans',
+            fontSize: '16px',
+            fontStretch: 'normal',
+            fontStyle: 'normal',
+            fontWeight: 'bold',
+        },
+        title: {
+            fontFamily: 'IBM Plex Sans',
+            fontSize: '36px',
+            fontStretch: 'normal',
+            fontStyle: 'normal',
+            fontWeight: '600',
+            lineHeight: '44px',
+        },
     },
-    data: {
-      fontFamily: "IBM Plex Sans",
-      fontSize: "12px",
-      fontWeight: "normal",
-      fontStyle: "normal",
-      fontStretch: "normal"
-    },
-    default: {
-      fontFamily: "IBM Plex Sans",
-      fontSize: "inherit",
-      fontWeight: "inherit",
-      fontStyle: "inherit",
-      fontStretch: "inherit"
-    },
-    hero: {
-      fontFamily: "IBM Plex Sans",
-      fontSize: "40px",
-      fontWeight: "normal",
-      fontStyle: "normal",
-      fontStretch: "normal"
-    },
-    label: {
-      fontFamily: "IBM Plex Sans",
-      fontSize: "14px",
-      fontWeight: 600,
-      fontStyle: "normal",
-      fontStretch: "normal"
-    },
-    navigation: {
-      fontFamily: "IBM Plex Sans",
-      fontSize: "15px",
-      fontWeight: 600,
-      fontStyle: "normal",
-      fontStretch: "normal"
-    },
-    paragraph: {
-      fontFamily: "IBM Plex Sans",
-      fontSize: "14px",
-      fontWeight: "normal",
-      fontStyle: "normal",
-      fontStretch: "normal"
-    },
-    paragraph2: {
-      fontFamily: "IBM Plex Sans",
-      fontSize: "14px",
-      fontWeight: "bold",
-      fontStyle: "normal",
-      fontStretch: "normal"
-    },
-    sectionHeader: {
-      fontFamily: "IBM Plex Sans",
-      fontSize: "16px",
-      fontWeight: 600,
-      fontStyle: "normal",
-      fontStretch: "normal"
-    },
-    subtitle: {
-      fontFamily: "IBM Plex Sans",
-      fontSize: "20px",
-      fontWeight: "normal",
-      fontStyle: "normal",
-      fontStretch: "normal"
-    },
-    subtitle2: {
-      fontFamily: "IBM Plex Sans",
-      fontSize: "16px",
-      fontWeight: "bold",
-      fontStyle: "normal",
-      fontStretch: "normal"
-    },
-    title: {
-      fontFamily: "IBM Plex Sans",
-      fontSize: "36px",
-      lineHeight: "44px",
-      fontWeight: "600",
-      fontStyle: "normal",
-      fontStretch: "normal"
-    }
-  }
 };

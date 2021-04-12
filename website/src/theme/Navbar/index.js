@@ -2,9 +2,10 @@ import React, { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
+import { setLocale } from '../../components/IntlProvider/TranslationContextProvider';
+import TranslationContext from '../../components/IntlProvider/TranslationContextProvider/TranslationContext';
 import OpenNew from '../../components/OpenNew';
-import TranslationContext from '../../components/TranslationContextProvider/TranslationContext';
-import { t, translate } from '../../components/Utils/translation';
+import { t, translate, urlTranslate } from '../../components/Utils/translation';
 
 import styles from './header.module.scss';
 
@@ -12,7 +13,7 @@ function Navbar() {
     // By default, no link is active
     let [selectedIndex, setSelectedIndex] = useState(-1);
 
-    const { dispatch, state } = useContext(TranslationContext);
+    const locale = useContext(TranslationContext);
 
     const links = [
         {
@@ -40,18 +41,17 @@ function Navbar() {
     ];
 
     const switchLanguage = () => {
-        dispatch({
-            locale: state.locale === 'fr' ? 'en' : 'fr',
-            type: 'CHANGE_LOCALE',
-        });
+        const newLang = locale === 'fr' ? 'en' : 'fr';
+        setLocale(newLang);
+        window.location.href = urlTranslate(newLang);
     };
 
     return (
         <BrowserOnly>
             {() => (
                 <nav className={styles['theme-navbar']}>
-                    <Helmet htmlAttributes={{ lang: state.locale }}></Helmet>
-                    <a href="/">
+                    <Helmet htmlAttributes={{ lang: locale }}></Helmet>
+                    <a href={translate('navbar.home.link')}>
                         <img alt="CQDG" src={'/img/navbar/logo.svg'}></img>
                     </a>
                     <div className={styles['theme-navbar__links']}>
