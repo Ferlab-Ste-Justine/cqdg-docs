@@ -1,83 +1,85 @@
-import React from 'react'
-import BaseSelect from 'react-select'
+import React from 'react';
+import BaseSelect from 'react-select';
 
-const styleObject  = {
-    control: styles => ({...styles, 
-        height: '24px',
-        minHeight: '24px',
-        fontSize: '14px',
-        lineHeight: '22px',
+const styleObject = {
+    control: (styles) => ({
+        ...styles,
         ':hover': {
-            cursor: 'pointer',
             borderColor: '#31BDF2',
+            cursor: 'pointer',
         },
+        fontSize: '14px',
+        height: '24px',
+        lineHeight: '22px',
+        minHeight: '24px',
     }),
+    dropdownIndicator: (styles) => ({
+        ...styles,
+        padding: '0 8px',
+    }),
+    indicatorSeparator: () => {},
     input: (styles) => ({
         ...styles,
         margin: 0,
-        padding: 0
+        padding: 0,
     }),
-    valueContainer: styles => ({
+    menu: (styles) => ({
         ...styles,
-        padding: '0 8px'
-    }),
-    menu: styles => ({...styles, 
-        border: 'none',
-        boxShadow: '0px 2px 8px rgba(13, 102, 159, 0.17)',
         ':hover': {
             cursor: 'pointer',
         },
+        border: 'none',
+        boxShadow: '0px 2px 8px rgba(13, 102, 159, 0.17)',
     }),
     option: (styles, { isSelected }) => ({
         ...styles,
-        fontSize: '14px',
-        lineHeight: '22px',
-        color: '#18486B',
-        fontWeight: (isSelected ?  '600': 'normal'),
-        backgroundColor: (isSelected ?  '#D8E1EB': '#fff'),
-        ':hover': {
-            cursor: 'pointer',
-            backgroundColor: isSelected ? '#D8E1EB': '#F0F3F8'
-        },
         ':active': {
             backgroundColor: '#D8E1EB',
         },
+        ':hover': {
+            backgroundColor: isSelected ? '#D8E1EB' : '#F0F3F8',
+            cursor: 'pointer',
+        },
+        backgroundColor: isSelected ? '#D8E1EB' : '#fff',
+        color: '#18486B',
+        fontSize: '14px',
+        fontWeight: isSelected ? '600' : 'normal',
+        lineHeight: '22px',
     }),
-    dropdownIndicator: styles => ({
+    valueContainer: (styles) => ({
         ...styles,
-        padding: '0 8px'
+        padding: '0 8px',
     }),
-    indicatorSeparator: () => {}
-}
+};
 
-const Select = ({options, value, onChange, ...rest}) => {
-    let objValue = options.find(option => {
+const Select = ({ onChange, options, value, ...rest }) => {
+    let objValue = options.find((option) => {
         if (option.value === value) return option;
     });
-    
+
     if (!objValue) {
         objValue = options[0];
     }
 
     return (
         <BaseSelect
-            theme={theme => ({
+            defaultValue={options[0]}
+            onChange={onChange}
+            options={options}
+            styles={styleObject}
+            theme={(theme) => ({
                 ...theme,
                 borderRadius: 2,
                 colors: {
                     ...theme.colors,
+                    neutral20: '#B5C6D8',
                     primary: '#31BDF2',
-                    neutral20: '#B5C6D8'
-                }            
-            })} 
-            styles={styleObject} 
-            options={options} 
-            defaultValue={options[0]} 
-            value={objValue} 
-            onChange={onChange} 
-            {...rest} 
-        /> 
-    )
-} 
+                },
+            })}
+            value={objValue}
+            {...rest}
+        />
+    );
+};
 
 export default Select;

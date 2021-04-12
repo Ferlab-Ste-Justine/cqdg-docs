@@ -5,12 +5,12 @@ platform_key: DOCS_DICTIONARY_OVERVIEW
 ---
 
 
-Le [dictionnaire de données](/dictionary) présente les détails du modèle de données et les formats et restrictions auxquels adhére ce modèle pour assurer l'harmonisation et la qualité des données. Chacune des tables du dictionnaire est reliée à un concept clinique. Les études partenaires doivent soumettre au CQDG des données pour un minumum de tables pour que le jeu de données soit considérées recevables.  
+Le [dictionnaire de données](/dictionnaire) présente les détails du modèle de données et les formats et restrictions auxquels adhére ce modèle pour assurer l'harmonisation et la qualité des données. Chacune des tables du dictionnaire est reliée à un concept clinique. Les études partenaires doivent soumettre au CQDG des données pour un minumum de tables pour que le jeu de données soit considérées recevables.  
 
 
 ## Comprendre le dictionnaire de données
 
-Le [visionneur du dictionnaire](/dictionary) présente l'ensemble des variables cliniques qui peut accompagner les données moléculaires hébergées au CQDG.
+Le [visionneur du dictionnaire](/dictionnaire) présente l'ensemble des variables cliniques qui peut accompagner les données moléculaires hébergées au CQDG.
 
 La liste des champs peut être filtée de manière à identifier les [champs nécessaires pour la soumission](/soumission/soumettre-donnees-cliniques).
 

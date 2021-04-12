@@ -1,5 +1,5 @@
 ---
-id: user-profile
+id: profil-utilisateur
 title: CQDG User Account 
 platform_key: DOCS_API_TOKEN
 ---

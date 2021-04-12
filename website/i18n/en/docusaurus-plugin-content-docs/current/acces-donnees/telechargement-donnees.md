@@ -1,5 +1,5 @@
 ---
-id: data-download
+id: telechargement-donnees
 title: Data Download
 platform_key: DOCS_DATA_DOWNLOAD
 ---

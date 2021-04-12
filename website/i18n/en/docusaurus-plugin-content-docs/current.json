@@ -1,0 +1,18 @@
+{
+  "sidebar.acces-donnees.category.Demande D'accès Aux Données": {
+    "message": "Data Access Request",
+    "description": "The label for category Demande D'accès Aux Données in sidebar acces-donnees"
+  },
+  "sidebar.acces-donnees.category.Soumission": {
+    "message": "Submission",
+    "description": "The label for category Soumission in sidebar acces-donnees"
+  },
+  "sidebar.soumission.category.Demande D'accès Aux Données": {
+    "message": "Data Access Request",
+    "description": "The label for category Demande D'accès Aux Données in sidebar soumission"
+  },
+  "sidebar.soumission.category.Soumission": {
+    "message": "Submission",
+    "description": "The label for category Soumission in sidebar soumission"
+  }
+}

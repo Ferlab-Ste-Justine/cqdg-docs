@@ -1,13 +1,11 @@
 import React, { useContext } from 'react';
 import { IntlProvider } from 'react-intl';
 
-import TranslationContext from '../TranslationContextProvider/TranslationContext';
-
+import TranslationContext from './TranslationContextProvider/TranslationContext';
 import config from './translations/';
 
 function I18NProvider({ children }) {
-    const { state } = useContext(TranslationContext);
-    const { locale } = state;
+    const locale = useContext(TranslationContext);
 
     return (
         <IntlProvider locale={locale} messages={config[locale]}>

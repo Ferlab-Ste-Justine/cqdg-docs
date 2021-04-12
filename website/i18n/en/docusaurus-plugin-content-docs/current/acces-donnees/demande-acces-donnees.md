@@ -1,5 +1,5 @@
 ---
-id: data-access-request
+id: demande-acces-donnees
 title: Applying for Access to CQDG data
 sidebar_label: Applying for Access to CQDG data
 platform_key: DOCS_DATA_ACCESS
