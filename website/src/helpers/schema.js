@@ -121,18 +121,9 @@ async function fetchDiff(version, diffVersion, locale = 'fr') {
     }
 }
 
-/**
- *
- * @param {string} version
- * @param {{data: Dictionary, version: string}} preloadedDictionary
- */
-export const getDictionary = async (version) => {
-    const { dict } = await fetchDictionary(version);
+export const getDictionary = async (version, locale) => {
+    const { dict } = await fetchDictionary(version, locale);
     return dict ? dict : [];
 };
 
-/**
- * @param {string} version
- * @param {string} diffVersion
- */
-export const getDictionaryDiff = async (version, diffVersion) => await fetchDiff(version, diffVersion);
+export const getDictionaryDiff = async (version, diffVersion, locale) => await fetchDiff(version, diffVersion, locale);
