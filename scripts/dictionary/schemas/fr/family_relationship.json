@@ -87,7 +87,7 @@
       "description": "Relation du donneur 1 envers le donneur 2",
       "valueType": "string",
       "restrictions": {
-        "required": true, 
+        "required": true,
         "codeList": [
           "Mother",
           "Father",
@@ -113,10 +113,10 @@
           "Granddaughter",
           "Grandson",
           "Nephew",
-          "Niece", 
-          "Spouse", 
-          "Former spouse", 
-          "Husband", 
+          "Niece",
+          "Spouse",
+          "Former spouse",
+          "Husband",
           "Wife"
         ]
       },
@@ -130,7 +130,7 @@
       "description": "Relation du donneur 2 envers le donneur 1",
       "valueType": "string",
       "restrictions": {
-        "required": true, 
+        "required": true,
         "codeList": [
           "Mother",
           "Father",
@@ -156,10 +156,10 @@
           "Granddaughter",
           "Grandson",
           "Nephew",
-          "Niece", 
-          "Spouse", 
-          "Former spouse", 
-          "Husband", 
+          "Niece",
+          "Spouse",
+          "Former spouse",
+          "Husband",
           "Wife"
         ]
       },

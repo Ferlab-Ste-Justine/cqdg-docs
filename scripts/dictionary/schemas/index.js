@@ -3,5 +3,5 @@ const schemasFR = require('./fr');
 
 module.exports = {
   en: schemasEN,
-  fr: schemasFR
-}
+  fr: schemasFR,
+};

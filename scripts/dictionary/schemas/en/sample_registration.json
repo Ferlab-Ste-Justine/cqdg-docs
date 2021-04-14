@@ -1,68 +1,68 @@
 {
-    "name": "sample_registration",
-    "description": "The collection of data elements required to register a sample in the CQDG program. Registration of samples is required before molecular and clinical data submission can proceed.",
-    "fields": [
-        {
-            "name": "study_id",
-            "valueType": "string",
-            "description": "Unique identifier for the Study.",
-            "meta": {
-                "validationDependency": true,
-                "primaryId": true,
-                "foreignKey": "study.study_id",
-                "displayName": "Study ID",
-                "notes": "#/notes/id"
-            },
-            "restrictions": {
-                "required": true,
-                "regex": "#/regex/id"
-            }
-        },
-        {
-            "name": "submitter_donor_id",
-            "description": "Unique identifier of the donor, assigned by the data provider.",
-            "valueType": "string",
-            "meta": {
-                "validationDependency": true,
-                "primaryId": true,
-                "foreignKey": "donor.submitter_donor_id",
-                "displayName": "Submitter Donor ID",
-                "notes": "#/notes/id"
-            },
-            "restrictions": {
-                "required": true,
-                "regex": "#/regex/id"
-            }
-        },
-        {
-            "name": "submitter_biospecimen_id",
-            "description": "Unique identifier of the biospecimen, assigned by the data provider.",
-            "valueType": "string",
-            "meta": {
-                "validationDependency": true,
-                "primaryId": true,
-                "displayName": "Submitter Biospecimen ID",
-                "notes": "#/notes/id"
-            },
-            "restrictions": {
-                "required": true,
-                "regex": "#/regex/id"
-            }
-        },
-        {
-            "name": "submitter_sample_id",
-            "valueType": "string",
-            "description": "Unique identifier of the molecular sample, assigned by the data provider",
-            "meta": {
-                "primaryId": true,
-                "validationDependency": true,
-                "displayName": "Submitter Sample ID",
-                "notes": "#/notes/id"
-            },
-            "restrictions": {
-                "required": true,
-                "regex": "#/regex/id"
-            }
-        }
-    ]
+  "name": "sample_registration",
+  "description": "The collection of data elements required to register a sample in the CQDG program. Registration of samples is required before molecular and clinical data submission can proceed.",
+  "fields": [
+    {
+      "name": "study_id",
+      "valueType": "string",
+      "description": "Unique identifier for the Study.",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "foreignKey": "study.study_id",
+        "displayName": "Study ID",
+        "notes": "#/notes/id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/id"
+      }
+    },
+    {
+      "name": "submitter_donor_id",
+      "description": "Unique identifier of the donor, assigned by the data provider.",
+      "valueType": "string",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "foreignKey": "donor.submitter_donor_id",
+        "displayName": "Submitter Donor ID",
+        "notes": "#/notes/id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/id"
+      }
+    },
+    {
+      "name": "submitter_biospecimen_id",
+      "description": "Unique identifier of the biospecimen, assigned by the data provider.",
+      "valueType": "string",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "Submitter Biospecimen ID",
+        "notes": "#/notes/id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/id"
+      }
+    },
+    {
+      "name": "submitter_sample_id",
+      "valueType": "string",
+      "description": "Unique identifier of the molecular sample, assigned by the data provider",
+      "meta": {
+        "primaryId": true,
+        "validationDependency": true,
+        "displayName": "Submitter Sample ID",
+        "notes": "#/notes/id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/id"
+      }
+    }
+  ]
 }

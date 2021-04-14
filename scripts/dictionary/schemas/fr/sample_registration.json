@@ -1,91 +1,91 @@
 {
-    "name": "sample_registration",
-    "description": "L'ensemble des champs requis pour inscrire vos échantillons dans le CQDG. Il est nécessaire de procéder à l''inscription de vos échantillons avant de soumettre des données cliniques et fichiers de données moléculaires.",
-    "fields": [
-        {
-            "name": "study_id",
-            "valueType": "string",
-            "description": "Identifant unique pour l'étude.",
-            "meta": {
-                "validationDependency": true,
-                "primaryId": true,
-                "foreignKey": "study.study_id",
-                "displayName": "ID de l'étude",
-                "notes": "#/notes/id"
-            },
-            "restrictions": {
-                "required": true,
-                "regex": "#/regex/id"
-            }
-        },
-        {
-            "name": "submitter_donor_id",
-            "description": "Identifiant unique pour le donneur, soumis par l'étude.",
-            "valueType": "string",
-            "meta": {
-                "validationDependency": true,
-                "primaryId": true,
-                "foreignKey": "donor.submitter_donor_id",
-                "displayName": "ID du donneur soumis par l'étude",
-                "notes": "#/notes/id"
-            },
-            "restrictions": {
-                "required": true,
-                "regex": "#/regex/id"
-            }
-        },
-        {
-            "name": "submitter_biospecimen_id",
-            "description": "Identifiant unique pour le spécimen biologique soumis par l'étude.",
-            "valueType": "string",
-            "meta": {
-                "validationDependency": true,
-                "primaryId": true,
-                "displayName": "ID du spécimen biologique soumis par l'étude",
-                "notes": "#/notes/id"
-            },
-            "restrictions": {
-                "required": true,
-                "regex": "#/regex/id"
-            }
-        },
-        {
-            "name": "submitter_sample_id",
-            "valueType": "string",
-            "description": "Identifiant unique pour l'échantillon moléculaire soumis par l'étude",
-            "meta": {
-                "primaryId": true,
-                "validationDependency": true,
-                "displayName": "ID de l'échantillon moléculaire soumis par l'étude",
-                "notes": "#/notes/id"
-            },
-            "restrictions": {
-                "required": true,
-                "regex": "#/regex/id"
-            }
-        },
-        {
-            "description": "Type d'échantillon moléculaire utilisé pour l'analyse",
-            "name": "sample_type",
-            "valueType": "string",
-            "restrictions": {
-                "required": true,
-                "codeList": [
-                    "Amplified DNA",
-                    "ctDNA",
-                    "Other DNA enrichments",
-                    "Other RNA fractions",
-                    "polyA+ RNA",
-                    "Ribo-Zero RNA",
-                    "Total DNA",
-                    "Total RNA",
-                    "Other"
-                ]
-            },
-            "meta": {
-                "core": true,
-                "displayName": "Type d'échantillon"
-            }
-        }
-    ]
+  "name": "sample_registration",
+  "description": "L'ensemble des champs requis pour inscrire vos échantillons dans le CQDG. Il est nécessaire de procéder à l''inscription de vos échantillons avant de soumettre des données cliniques et fichiers de données moléculaires.",
+  "fields": [
+    {
+      "name": "study_id",
+      "valueType": "string",
+      "description": "Identifant unique pour l'étude.",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "foreignKey": "study.study_id",
+        "displayName": "ID de l'étude",
+        "notes": "#/notes/id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/id"
+      }
+    },
+    {
+      "name": "submitter_donor_id",
+      "description": "Identifiant unique pour le donneur, soumis par l'étude.",
+      "valueType": "string",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "foreignKey": "donor.submitter_donor_id",
+        "displayName": "ID du donneur soumis par l'étude",
+        "notes": "#/notes/id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/id"
+      }
+    },
+    {
+      "name": "submitter_biospecimen_id",
+      "description": "Identifiant unique pour le spécimen biologique soumis par l'étude.",
+      "valueType": "string",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "ID du spécimen biologique soumis par l'étude",
+        "notes": "#/notes/id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/id"
+      }
+    },
+    {
+      "name": "submitter_sample_id",
+      "valueType": "string",
+      "description": "Identifiant unique pour l'échantillon moléculaire soumis par l'étude",
+      "meta": {
+        "primaryId": true,
+        "validationDependency": true,
+        "displayName": "ID de l'échantillon moléculaire soumis par l'étude",
+        "notes": "#/notes/id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/id"
+      }
+    },
+    {
+      "description": "Type d'échantillon moléculaire utilisé pour l'analyse",
+      "name": "sample_type",
+      "valueType": "string",
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "Amplified DNA",
+          "ctDNA",
+          "Other DNA enrichments",
+          "Other RNA fractions",
+          "polyA+ RNA",
+          "Ribo-Zero RNA",
+          "Total DNA",
+          "Total RNA",
+          "Other"
+        ]
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Type d'échantillon"
+      }
+    }
+  ]
 }

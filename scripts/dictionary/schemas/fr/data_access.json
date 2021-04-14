@@ -1,91 +1,91 @@
 {
-    "name": "data access",
-    "description": "Ensemble de champs qui définissent les restrictions pour l'accès et les conditions d'utilisation des données. Pour soumettre plus d'une restriction ou plus d'une condition d'utilisation, veuillez ajouter des lignes dans la table accès aux données.",
-    "fields": [
-      {
-        "name": "entity_type",
-        "valueType": "string",
-        "description": "Type d'entité auquel s'appliquent les restrictions d'accès et conditions d'utilisation",
-        "meta": {
-          "core": true,
-          "displayName": "Type d'entité"
-        },
-        "restrictions": {
-          "required": true,
-          "codeList": [
-            "Study",
-            "Donnor ",
-            "Biospecimen",
-            "File"
-          ]
-        }
+  "name": "data access",
+  "description": "Ensemble de champs qui définissent les restrictions pour l'accès et les conditions d'utilisation des données. Pour soumettre plus d'une restriction ou plus d'une condition d'utilisation, veuillez ajouter des lignes dans la table accès aux données.",
+  "fields": [
+    {
+      "name": "entity_type",
+      "valueType": "string",
+      "description": "Type d'entité auquel s'appliquent les restrictions d'accès et conditions d'utilisation",
+      "meta": {
+        "core": true,
+        "displayName": "Type d'entité"
       },
-      {
-        "name": "entity_id",
-        "valueType": "string",
-        "description": "Identifiant unique pour l'entité",
-        "meta": {
-          "validationDependency": true,
-          "primaryId": true,
-          "displayName": "ID de l'entité",
-          "notes": "#/notes/id"
-        },
-        "restrictions": {
-          "required": true,
-          "regex": "#/regex/id"
-        }
-      },
-      {
-        "name": "access_limitations",
-        "description": "Restrictions pour l'accès telles que définies dans l'ontologie DUO de GA4GH",
-        "valueType": "string",
-        "restrictions": {
-          "required": true,
-          "codeList": [
-            "DUO:0000004",
-            "DUO:0000005",
-            "DUO:0000006",
-            "DUO:0000007",
-            "DUO:0000011",
-            "DUO:0000012",
-            "DUO:0000014",
-            "DUO:0000015",
-            "DUO:0000016",
-            "DUO:0000042"
-          ]
-        },
-        "meta": {
-          "core": true,
-          "displayName": "Restrictions pour l'accès",
-          "notes": "Référez-vous au code du Data Use Ontology https://github.com/EBISPOT/DUO"
-        }
-      },
-      {
-        "name": "access_requirements",
-        "description": "Conditions d'utilisation telles que définies dans l'ontologie DUO de GA4GH",
-        "valueType": "string",
-        "restrictions": {
-          "required": true,
-          "codeList": [
-            "DUO:0000017",
-            "DUO:0000018",
-            "DUO:0000019",
-            "DUO:0000020",
-            "DUO:0000021",
-            "DUO:0000022",
-            "DUO:0000025",
-            "DUO:0000026",
-            "DUO:0000027",
-            "DUO:0000028",
-            "DUO:0000029"
-          ]
-        },
-        "meta": {
-          "core": true,
-          "displayName": "Conditions d'utilisation",
-          "notes": "Référez-vous au code du Data Use Ontology https://github.com/EBISPOT/DUO",
-          "examples": "DUO:0000021, DUO:0000025"
-        }
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "Study",
+          "Donnor ",
+          "Biospecimen",
+          "File"
+        ]
       }
-    ]
-  }
+    },
+    {
+      "name": "entity_id",
+      "valueType": "string",
+      "description": "Identifiant unique pour l'entité",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "ID de l'entité",
+        "notes": "#/notes/id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/id"
+      }
+    },
+    {
+      "name": "access_limitations",
+      "description": "Restrictions pour l'accès telles que définies dans l'ontologie DUO de GA4GH",
+      "valueType": "string",
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "DUO:0000004",
+          "DUO:0000005",
+          "DUO:0000006",
+          "DUO:0000007",
+          "DUO:0000011",
+          "DUO:0000012",
+          "DUO:0000014",
+          "DUO:0000015",
+          "DUO:0000016",
+          "DUO:0000042"
+        ]
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Restrictions pour l'accès",
+        "notes": "Référez-vous au code du Data Use Ontology https://github.com/EBISPOT/DUO"
+      }
+    },
+    {
+      "name": "access_requirements",
+      "description": "Conditions d'utilisation telles que définies dans l'ontologie DUO de GA4GH",
+      "valueType": "string",
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "DUO:0000017",
+          "DUO:0000018",
+          "DUO:0000019",
+          "DUO:0000020",
+          "DUO:0000021",
+          "DUO:0000022",
+          "DUO:0000025",
+          "DUO:0000026",
+          "DUO:0000027",
+          "DUO:0000028",
+          "DUO:0000029"
+        ]
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Conditions d'utilisation",
+        "notes": "Référez-vous au code du Data Use Ontology https://github.com/EBISPOT/DUO",
+        "examples": "DUO:0000021, DUO:0000025"
+      }
+    }
+  ]
+}
