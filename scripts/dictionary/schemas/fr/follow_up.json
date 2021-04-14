@@ -12,10 +12,12 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "ID étude"
+        "displayName": "ID étude",
+        "notes": "#/notes/id"
       },
       "restrictions": {
-        "required": true
+        "required": true,
+        "regex": "#/regex/id"
       }
     },
     {
@@ -27,11 +29,11 @@
         "primaryId": true,
         "foreignKey": "donor.submitter_donor_id",
         "displayName": "ID du donneur soumis par l'étude",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -43,11 +45,11 @@
         "validationDependency": true,
         "foreignKey": "diagnosis.submitter_diagnosis_id",
         "displayName": "ID du diagnostic soumis par l'étude",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -58,11 +60,11 @@
         "validationDependency": true,
         "primaryId": true,
         "displayName": "ID du suivi soumis par l'étude",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {

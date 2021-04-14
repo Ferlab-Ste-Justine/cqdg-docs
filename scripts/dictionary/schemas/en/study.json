@@ -9,22 +9,24 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "Study ID"
+        "displayName": "Study ID",
+        "notes": "#/notes/id"
       },
       "restrictions": {
-        "required": true
+        "required": true,
+        "regex": "#/regex/id"
       }
     },
     {
       "name": "name",
       "valueType": "string",
       "description": "Name of the Study",
-      "restrictions": {
-        "required": true
-      },
       "meta": {
         "core": true,
         "displayName": "Name of the Study"
+      },
+      "restrictions": {
+        "required": true
       }
     },
     {

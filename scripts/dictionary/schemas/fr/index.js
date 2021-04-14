@@ -32,16 +32,16 @@ const family_relationship = require('./family_relationship.json');
 const family_history = require('./family_history.json');
 
 module.exports = [
-  sample_registration, 
-  study, 
-  data_access,
-  donor,
-  biospecimen,
-  diagnosis,
-  treatment,
-  follow_up,
-  exposure,
-  phenotype, 
-  family_relationship, 
-  family_history
+    sample_registration,
+    study,
+    data_access,
+    donor,
+    biospecimen,
+    diagnosis,
+    treatment,
+    follow_up,
+    exposure,
+    phenotype,
+    family_relationship,
+    family_history,
 ];

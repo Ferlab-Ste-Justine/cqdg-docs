@@ -9,10 +9,12 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "ID étude"
+        "displayName": "ID étude",
+        "notes": "#/notes/id"
       },
       "restrictions": {
-        "required": true
+        "required": true,
+        "regex": "#/regex/id"
       }
     },
     {

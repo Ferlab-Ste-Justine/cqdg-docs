@@ -9,10 +9,12 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "Study ID"
+        "displayName": "Study ID",
+        "notes": "#/notes/id"
       },
       "restrictions": {
-        "required": true
+        "required": true,
+        "regex": "#/regex/id"
       }
     },
     {
@@ -24,11 +26,11 @@
         "primaryId": true,
         "foreignKey": "donor.submitter_donor_id",
         "displayName": "Submitter Donor ID",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -37,12 +39,13 @@
       "description": "Unique identifier of the condition observed in the family, assigned by the data provider (within a study)",
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       },
       "meta": {
         "displayName": "Submitter Family Condition ID",
         "validationDependency": true,
-        "primaryId": true
+        "primaryId": true,
+        "notes": "#/notes/id"
       }
     },
     {
@@ -96,10 +99,10 @@
           "Granddaughter",
           "Grandson",
           "Nephew",
-          "Niece", 
-          "Spouse", 
-          "Former spouse", 
-          "Husband", 
+          "Niece",
+          "Spouse",
+          "Former spouse",
+          "Husband",
           "Wife"
         ]
       },

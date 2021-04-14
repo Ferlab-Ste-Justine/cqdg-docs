@@ -9,10 +9,12 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "Study ID"
+        "displayName": "Study ID",
+        "notes": "#/notes/id"
       },
       "restrictions": {
-        "required": true
+        "required": true,
+        "regex": "#/regex/id"
       }
     },
     {
@@ -24,11 +26,11 @@
         "primaryId": true,
         "foreignKey": "donor.submitter_donor_id",
         "displayName": "Submitter Donor ID",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -86,6 +88,9 @@
         "notes": "Forward Sortaion Area (FSA) is the 3 first digits of the postal code",
         "displayName": "Forward Sortation Area",
         "examples": "H3W"
+      },
+      "restrictions": {
+        "regex": "#/regex/fsa"
       }
     }
   ]

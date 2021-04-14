@@ -12,10 +12,12 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "Study ID"
+        "displayName": "Study ID",
+        "notes": "#/notes/id"
       },
       "restrictions": {
-        "required": true
+        "required": true,
+        "regex": "#/regex/id"
       }
     },
     {
@@ -27,11 +29,11 @@
         "primaryId": true,
         "foreignKey": "donor.submitter_donor_id",
         "displayName": "Submitter Donor ID",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -42,11 +44,11 @@
         "validationDependency": true,
         "primaryId": true,
         "displayName": "Submitter Phenotype ID",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -67,7 +69,8 @@
       "valueType": "string",
       "description": "Code used for the phenotype in the Human Phenotype Ontology terminology",
       "restrictions": {
-        "required": true
+        "required": true,
+        "regex": "#/regex/hpo"
       },
       "meta": {
         "core": true,
@@ -119,4 +122,3 @@
     }
   ]
 }
-
