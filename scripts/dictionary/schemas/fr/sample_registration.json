@@ -10,10 +10,12 @@
                 "validationDependency": true,
                 "primaryId": true,
                 "foreignKey": "study.study_id",
-                "displayName": "ID de l'étude"
+                "displayName": "ID de l'étude",
+                "notes": "#/notes/id"
             },
             "restrictions": {
-                "required": true
+                "required": true,
+                "regex": "#/regex/id"
             }
         },
         {
@@ -25,11 +27,11 @@
                 "primaryId": true,
                 "foreignKey": "donor.submitter_donor_id",
                 "displayName": "ID du donneur soumis par l'étude",
-                "notes": "#/notes/submitter_id"
+                "notes": "#/notes/id"
             },
             "restrictions": {
                 "required": true,
-                "regex": "#/regex/submitter_id"
+                "regex": "#/regex/id"
             }
         },
         {
@@ -40,11 +42,11 @@
                 "validationDependency": true,
                 "primaryId": true,
                 "displayName": "ID du spécimen biologique soumis par l'étude",
-                "notes": "#/notes/submitter_id"
+                "notes": "#/notes/id"
             },
             "restrictions": {
                 "required": true,
-                "regex": "#/regex/submitter_id"
+                "regex": "#/regex/id"
             }
         },
         {
@@ -55,11 +57,11 @@
                 "primaryId": true,
                 "validationDependency": true,
                 "displayName": "ID de l'échantillon moléculaire soumis par l'étude",
-                "notes": "#/notes/submitter_id"
+                "notes": "#/notes/id"
             },
             "restrictions": {
                 "required": true,
-                "regex": "#/regex/submitter_id"
+                "regex": "#/regex/id"
             }
         },
         {

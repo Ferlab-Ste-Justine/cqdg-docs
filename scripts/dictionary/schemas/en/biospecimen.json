@@ -9,10 +9,12 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "Study ID"
+        "displayName": "Study ID",
+        "notes": "#/notes/id"
       },
       "restrictions": {
-        "required": true
+        "required": true,
+        "regex": "#/regex/id"
       }
     },
     {
@@ -24,11 +26,11 @@
         "primaryId": true,
         "foreignKey": "donor.submitter_donor_id",
         "displayName": "Submitter Donor ID",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -39,11 +41,11 @@
         "validationDependency": true,
         "primaryId": true,
         "displayName": "Submitter Biospecimen ID",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -55,10 +57,10 @@
         "validationDependency": true,
         "foreignKey": "diagnosis.submitter_diagnosis_id",
         "displayName": "Submitter Diagnosis ID",
-        "notes": "not required if the biospecimen was not collected for a diagnostic purpose #/notes/submitter_id"
+        "notes": "not required if the biospecimen was not collected for a diagnostic purpose #/notes/id"
       },
       "restrictions": {
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -106,24 +108,7 @@
           "Buccal cell",
           "Buffy coat",
           "Cerebellum",
-          "Cerebrospinal fluid",
-          "Endometrium",
-          "Esophagus",
-          "Intestine",
-          "Lymph node",
-          "Mononuclear cells from bone marrow",
-          "Other",
-          "Plasma",
-          "Pleural effusion",
-          "Saliva",
-          "Serum",
-          "Skin",
-          "Solid tissue",
-          "Spleen",
-          "Sputum",
-          "Stomach",
-          "Tonsil",
-          "Urine"
+          "Cerebrospinal fluid"
         ]
       },
       "meta": {
@@ -193,7 +178,8 @@
         "displayName": "Tumor Histological Type"
       },
       "restrictions": {
-        "regex": "^[8,9]{1}[0-9]{3}/[0,1,2,3,6,9]{1}[1-9]{0,1}$"
+        "regex": "^[8,9]{1}[0-9]{3}/[0,1,2,3,6,9]{1}[1-9]{0,1}$",
+        "script": "#/script/biospecimen/ensureTumorNormalDesignation"
       }
     },
     {

@@ -10,10 +10,12 @@
                 "validationDependency": true,
                 "primaryId": true,
                 "foreignKey": "study.study_id",
-                "displayName": "Study ID"
+                "displayName": "Study ID",
+                "notes": "#/notes/id"
             },
             "restrictions": {
-                "required": true
+                "required": true,
+                "regex": "#/regex/id"
             }
         },
         {
@@ -25,11 +27,11 @@
                 "primaryId": true,
                 "foreignKey": "donor.submitter_donor_id",
                 "displayName": "Submitter Donor ID",
-                "notes": "#/notes/submitter_id"
+                "notes": "#/notes/id"
             },
             "restrictions": {
                 "required": true,
-                "regex": "#/regex/submitter_id"
+                "regex": "#/regex/id"
             }
         },
         {
@@ -40,11 +42,11 @@
                 "validationDependency": true,
                 "primaryId": true,
                 "displayName": "Submitter Biospecimen ID",
-                "notes": "#/notes/submitter_id"
+                "notes": "#/notes/id"
             },
             "restrictions": {
                 "required": true,
-                "regex": "#/regex/submitter_id"
+                "regex": "#/regex/id"
             }
         },
         {
@@ -55,34 +57,11 @@
                 "primaryId": true,
                 "validationDependency": true,
                 "displayName": "Submitter Sample ID",
-                "notes": "#/notes/submitter_id"
+                "notes": "#/notes/id"
             },
             "restrictions": {
                 "required": true,
-                "regex": "#/regex/submitter_id"
-            }
-        },
-        {
-            "description": "Type of molecular sample used for analysis testing",
-            "name": "sample_type",
-            "valueType": "string",
-            "restrictions": {
-                "required": true,
-                "codeList": [
-                    "Amplified DNA",
-                    "ctDNA",
-                    "Other DNA enrichments",
-                    "Other RNA fractions",
-                    "polyA+ RNA",
-                    "Ribo-Zero RNA",
-                    "Total DNA",
-                    "Total RNA",
-                    "Other"
-                ]
-            },
-            "meta": {
-                "core": true,
-                "displayName": "Sample type"
+                "regex": "#/regex/id"
             }
         }
     ]

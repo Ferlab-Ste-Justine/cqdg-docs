@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 The Ontario Institute for Cancer Research. All rights reserved
+ * Copyright (c) 2021 The Ontario Institute for Cancer Research. All rights reserved
  *
  * This program and the accompanying materials are made available under the terms of the GNU Affero General Public License v3.0.
  * You should have received a copy of the GNU Affero General Public License along with
@@ -19,25 +19,21 @@
  */
 
 /**
- * If and only if a donor is deceased, then the cause of death must be provided.
+ * If and only if the tumor_normal_designation is "tumor", then the "tumor_histological_type" must be provided.
  */
 const validation = ($row, $field, $name) =>
   (function validate() {
     let result = { valid: true, message: 'Ok' };
     const currField = typeof $field === 'string' ? $field.trim().toLowerCase() : $field;
-    const vitalStatus = $row.vital_status.trim().toLowerCase();
+    const tumorNormalDesignation = $row.tumor_normal_designation.trim().toLowerCase();
 
-    if (!currField && vitalStatus.toLowerCase() === 'deceased') {
+    if (!currField && tumorNormalDesignation.toLowerCase() === 'tumor') {
       result = {
         valid: false,
-        message: `${$name} must be provided when the donor's vital_status is deceased.`,
-      };
-    } else if (currField && vitalStatus.toLowerCase() !== 'deceased') {
-      result = {
-        valid: false,
-        message: `${$name} cannot be provided if the donor's vital_status is not deceased.`,
+        message: `${$name} must be provided when the biospecimen's tumor_normal_designation is tumor.`,
       };
     }
+
     return result;
   })();
 

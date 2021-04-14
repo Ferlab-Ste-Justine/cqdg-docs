@@ -9,10 +9,12 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "Study ID"
+        "displayName": "Study ID",
+        "notes": "#/notes/id"
       },
       "restrictions": {
-        "required": true
+        "required": true,
+        "regex": "#/regex/id"
       }
     },
     {
@@ -21,13 +23,14 @@
       "description": "Unique identifier of the family, assigned by the data provider",
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       },
       "meta": {
         "displayName": "Submitter Family ID",
         "foreignKey": "family.submitter_family_id",
         "validationDependency": true,
-        "primaryId": true
+        "primaryId": true,
+        "notes": "#/notes/id"
       }
     },
     {
@@ -38,11 +41,11 @@
         "validationDependency": true,
         "primaryId": true,
         "displayName": "Submitter Donor 1 ID",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -53,11 +56,11 @@
         "validationDependency": true,
         "primaryId": true,
         "displayName": "Submitter Donor 2 ID",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {

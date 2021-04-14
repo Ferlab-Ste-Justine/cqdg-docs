@@ -12,10 +12,12 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "Study ID"
+        "displayName": "Study ID",
+        "notes": "#/notes/id"
       },
       "restrictions": {
-        "required": true
+        "required": true,
+        "regex": "#/regex/id"
       }
     },
     {
@@ -27,11 +29,11 @@
         "primaryId": true,
         "foreignKey": "donor.submitter_donor_id",
         "displayName": "Submitter Donor ID",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -42,11 +44,11 @@
         "validationDependency": true,
         "primaryId": true,
         "displayName": "Submitter Treatment ID",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -57,11 +59,11 @@
         "primaryId": true,
         "foreignKey": "diagnosis.submitter_diagnosis_id",
         "displayName": "Submitter Diagnosis ID",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -78,7 +80,7 @@
           "Hormonal therapy",
           "Immunotherapy",
           "Other targeting molecular therapy",
-          "Other pharmarcotherapy",
+          "Other pharmacotherapy",
           "Other cell-based therapy",
           "Photodynamic therapy",
           "Radiation therapy",
@@ -140,8 +142,8 @@
           "Disease Progression",
           "Partial Response",
           "Stable Disease",
-          "Treatement cessation due to toxicity",
-          "Impovement of symptoms",
+          "Treatment cessation due to toxicity",
+          "Improvement of symptoms",
           "Not applicable",
           "No sign of disease",
           "Worsening of symptoms",
@@ -160,6 +162,9 @@
         "core": true,
         "dependsOn": "treatment.treatment_type",
         "displayName": "Medication name"
+      },
+      "restrictions": {
+        "script": "#/script/treatment/treatmentType"
       }
     },
     {
@@ -170,6 +175,9 @@
         "notes": "The DIN uniquely identifies the manufacturer, product name, active ingredient(s), strength(s) of active ingredient(s);pharmaceutical form and route of administration.",
         "dependsOn": "treatment.treatment_type",
         "displayName": "Drug Identification Number"
+      },
+      "restrictions": {
+        "script": "#/script/treatment/treatmentType"
       }
     },
     {
@@ -181,6 +189,10 @@
         "notes": "Refer to the WHO ATC https://www.whocc.no/atc_ddd_index/ to classify the active ingredients of drug according to the organ or system on which it acts and its therapeutic, pharmacological and chemical properties. Drugs should be coded at the 5th level of the ATC.",
         "dependsOn": "treatment.treatment_type",
         "displayName": "Medication class"
+      },
+      "restrictions": {
+        "script": "#/script/treatment/treatmentType",
+        "regex": "#/regex/medClass"
       }
     },
     {
@@ -190,6 +202,10 @@
       "meta": {
         "notes": "For medication, provide date of first prescription dispensation (MM-YYYY). For one-time treatments, such as surgeries, provide the date of the intervention.",
         "displayName": "Treatment start date"
+      },
+      "restrictions": {
+        "script": "#/script/treatment/treatmentType",
+        "regex": "#/regex/medClass"
       }
     },
     {
@@ -199,6 +215,9 @@
       "meta": {
         "notes": "For medication, provide date of last prescription dispensation (DD-MM-YYYY). Leave blank for one-time treatments such as sugeries.",
         "displayName": "Treatment end date"
+      },
+      "restrictions": {
+        "script": "#/script/treatment/treatmentType"
       }
     }
   ]

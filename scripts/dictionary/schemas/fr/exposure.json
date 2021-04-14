@@ -9,10 +9,12 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "ID étude"
+        "displayName": "ID étude",
+        "notes": "#/notes/id"
       },
       "restrictions": {
-        "required": true
+        "required": true,
+        "regex": "#/regex/id"
       }
     },
     {
@@ -24,11 +26,11 @@
         "primaryId": true,
         "foreignKey": "donor.submitter_donor_id",
         "displayName": "ID du donneur soumis par l'étude",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -86,6 +88,9 @@
         "notes": "Région de tri d'acheminement est représenté par les 3 premiers caractères du code postal",
         "displayName": "Région de tri d'acheminement",
         "examples": "H3W"
+      },
+      "restrictions": {
+        "regex": "#/regex/fsa"
       }
     }
   ]

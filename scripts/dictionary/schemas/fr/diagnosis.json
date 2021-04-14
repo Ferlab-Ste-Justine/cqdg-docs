@@ -12,10 +12,12 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "ID étude"
+        "displayName": "ID étude",
+        "notes": "#/notes/id"
       },
       "restrictions": {
-        "required": true
+        "required": true,
+        "regex": "#/regex/id"
       }
     },
     {
@@ -27,11 +29,11 @@
         "primaryId": true,
         "foreignKey": "donor.submitter_donor_id",
         "displayName": "ID du donneur soumis par l'étude",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -43,11 +45,11 @@
         "validationDependency": true,
         "foreignKey": "diagnosis.submitter_diagnosis_id",
         "displayName": "ID du diagnostic soumis par l'étude",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -68,7 +70,8 @@
       "valueType": "string",
       "description": "Code utilisé pour définir la maladie selon la CIM-10",
       "restrictions": {
-        "required": true
+        "required": true,
+        "regex": "#/regex/icd10"
       },
       "meta": {
         "core": true,
@@ -82,7 +85,8 @@
       "valueType": "string",
       "description": "Code utilisé pour définir la maladie selon la classification MONDO",
       "restrictions": {
-        "required": true
+        "required": true,
+        "regex": "#/regex/mondo"
       },
       "meta": {
         "core": true,
@@ -96,7 +100,8 @@
       "valueType": "integer",
       "description": "Age au moment du diagnostic de la condition",
       "restrictions": {
-        "required": true
+        "required": true,
+        "script": "#/script/diagnosis/ageAtDiagnosis"
       },
       "meta": {
         "units": "years",
@@ -131,7 +136,8 @@
         "codeList": [
           "Clinical",
           "Histological"
-        ]
+        ],
+        "script": "#/script/diagnosis/ensureIsCancer"
       },
       "valueType": "string",
       "meta": {
@@ -168,7 +174,8 @@
           "Rai staging system",
           "Revised International staging system (RISS)",
           "St Jude staging system"
-        ]
+        ],
+        "script": "#/script/diagnosis/ensureIsCancer"
       },
       "meta": {
         "dependsOn": "diagnosis.is_cancer",
@@ -177,11 +184,12 @@
       }
     },
     {
-      "name": "clinical_stage_group",
+      "name": "stage_group",
       "description": "Stade de la tumeur assigné par le sytème de gradation et indiquant le pronostic (stade I, II, III etc.).",
       "valueType": "string",
       "restrictions": {
-        "codeList": "#/list/stage_groups"
+        "codeList": "#/list/stage_groups",
+        "script": "#/script/diagnosis/stageGroup"
       },
       "meta": {
         "dependsOn": "diagnosis.tumour_staging_system",
@@ -199,7 +207,8 @@
         "displayName": "Classification t"
       },
       "restrictions": {
-        "codeList": "#/list/t_categories"
+        "codeList": "#/list/t_categories",
+        "script": "#/script/diagnosis/ajccValidation"
       }
     },
     {
@@ -212,12 +221,13 @@
         "displayName": "Classification n"
       },
       "restrictions": {
-        "codeList": "#/list/n_categories"
+        "codeList": "#/list/n_categories",
+        "script": "#/script/diagnosis/ajccValidation"
       }
     },
     {
       "name": "m_category",
-      "description": "Catégorie m (métastatse) selon le système de stadification des tumeurs cancéreuses solides de l'Union internationale contre le cancer (UICC). Les métastases sont classées en fonction de leur absence ou de leur présence au moment du diagnosticet avant le traitement, et se classent de M0 à M1.",
+      "description": "Catégorie m (métastase) selon le système de stadification des tumeurs cancéreuses solides de l'Union internationale contre le cancer (UICC). Les métastases sont classées en fonction de leur absence ou de leur présence au moment du diagnosticet avant le traitement, et se classent de M0 à M1.",
       "valueType": "string",
       "meta": {
         "dependsOn": "diagnosis.tumour_staging_system",
@@ -225,7 +235,8 @@
         "displayName": "Classification m"
       },
       "restrictions": {
-        "codeList": "#/list/m_categories"
+        "codeList": "#/list/m_categories",
+        "script": "#/script/diagnosis/ajccValidation"
       }
     }
   ]

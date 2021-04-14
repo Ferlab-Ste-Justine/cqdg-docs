@@ -12,10 +12,12 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "ID étude"
+        "displayName": "ID étude",
+        "notes": "#/notes/id"
       },
       "restrictions": {
-        "required": true
+        "required": true,
+        "regex": "#/regex/id"
       }
     },
     {
@@ -27,11 +29,11 @@
         "primaryId": true,
         "foreignKey": "donor.submitter_donor_id",
         "displayName": "ID du donneur soumis par l'étude",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -42,11 +44,11 @@
         "validationDependency": true,
         "primaryId": true,
         "displayName": "ID du traitement soumis par l'étude",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -57,11 +59,11 @@
         "primaryId": true,
         "foreignKey": "diagnosis.submitter_diagnosis_id",
         "displayName": "ID du diagnostic soumis par l'étude",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -78,7 +80,7 @@
           "Hormonal therapy",
           "Immunotherapy",
           "Other targeting molecular therapy",
-          "Other pharmarcotherapy",
+          "Other pharmacotherapy",
           "Other cell-based therapy",
           "Photodynamic therapy",
           "Radiation therapy",
@@ -140,8 +142,8 @@
           "Disease Progression",
           "Partial Response",
           "Stable Disease",
-          "Treatement cessation due to toxicity",
-          "Impovement of symptoms",
+          "Treatment cessation due to toxicity",
+          "Improvement of symptoms",
           "Not applicable",
           "No sign of disease",
           "Worsening of symptoms",
@@ -160,6 +162,9 @@
         "core": true,
         "dependsOn": "treatment.treatment_type",
         "displayName": "Nom du médicament"
+      },
+      "restrictions": {
+        "script": "#/script/treatment/treatmentType"
       }
     },
     {
@@ -170,6 +175,9 @@
         "notes": "Au Canada - Le DIN identifie de manière unique le fabricant, le nom du produit, les ingrédients actifs), la teneur du ou des ingrédients actifs, la forme pharmaceutique et la voie d'administration.",
         "dependsOn": "treatment.treatment_type",
         "displayName": "Numéro d'identification du médicament "
+      },
+      "restrictions": {
+        "script": "#/script/treatment/treatmentType"
       }
     },
     {
@@ -181,6 +189,10 @@
         "notes": "Référez-vous à https://www.whocc.no/atc_ddd_index/ pour classer les principes actifs du médicament selon l'organe ou le système sur lequel il agit et ses propriétés thérapeutiques, pharmacologiques et chimiques. Les médicaments doivent être codés au 5e niveau de l'ATC.",
         "dependsOn": "treatment.treatment_type",
         "displayName": "Classe de médicament"
+      },
+      "restrictions": {
+        "script": "#/script/treatment/treatmentType",
+        "regex": "#/regex/medClass"
       }
     },
     {
@@ -190,6 +202,9 @@
       "meta": {
         "notes": "Pour les médicaments, veuillez fournir la date du début de l'ordonnance (DD-MM-YYY). Pour les traitements uniques, comme les chirurgies, veuillez fournir la date de l'intervention.",
         "displayName": "Date du début du traitement"
+      },
+      "restrictions": {
+        "script": "#/script/treatment/treatmentType"
       }
     },
     {
@@ -199,6 +214,9 @@
       "meta": {
         "notes": "Pour les médicaments, veuillez fournir la date de fin de l'ordonnance (DD-MM-YYYY). Pour les traitement uniques, comme les chirurgies, veuillez laisser vide",
         "displayName": "Date de fin de l'ordonnance"
+      },
+      "restrictions": {
+        "script": "#/script/treatment/treatmentType"
       }
     }
   ]

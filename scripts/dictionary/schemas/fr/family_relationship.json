@@ -9,10 +9,12 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "ID étude"
+        "displayName": "ID étude",
+        "notes": "#/notes/id"
       },
       "restrictions": {
-        "required": true
+        "required": true,
+        "regex": "#/regex/id"
       }
     },
     {
@@ -21,13 +23,14 @@
       "description": "Identifant unique pour la famille du donneur, soumis par l'étude",
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       },
       "meta": {
         "displayName": "ID de la famille soumis par l'étude",
         "foreignKey": "family.submitter_family_id",
         "validationDependency": true,
-        "primaryId": true
+        "primaryId": true,
+        "notes": "#/notes/id"
       }
     },
     {
@@ -38,11 +41,11 @@
         "validationDependency": true,
         "primaryId": true,
         "displayName": "ID du donneur 1 soumis par l'étude",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -53,11 +56,11 @@
         "validationDependency": true,
         "primaryId": true,
         "displayName": "ID du donneur 2 soumis par l'étude",
-        "notes": "#/notes/submitter_id"
+        "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
-        "regex": "#/regex/submitter_id"
+        "regex": "#/regex/id"
       }
     },
     {
@@ -76,7 +79,7 @@
       },
       "meta": {
         "core": true,
-        "displayName": "Type de groupe familiale"
+        "displayName": "Type de groupe familial"
       }
     },
     {
