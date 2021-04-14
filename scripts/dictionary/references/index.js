@@ -28,16 +28,16 @@ const notesEN = require('./en/notes.json');
 const notesFR = require('./fr/notes.json');
 
 module.exports = {
-  en: {
-    script,
-    list: listEN,
-    regex,
-    notes: notesEN,
-  },
-  fr: {
-    script,
-    list: listFR,
-    regex,
-    notes: notesFR,
-  },
+    en: {
+        script,
+        list: listEN,
+        regex,
+        notes: notesEN,
+    },
+    fr: {
+        script,
+        list: listFR,
+        regex,
+        notes: notesFR,
+    },
 };

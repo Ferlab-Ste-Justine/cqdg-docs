@@ -18,23 +18,23 @@
  *
  */
 
-const dictionaryNames = { en: 'CQDG Data Dictionary', fr: 'CQDG Data Dictionary FR' };
+const dictionaryNames = {en: 'CQDG Data Dictionary', fr: 'CQDG Data Dictionary FR'};
 const schemaPath = '../website/static/data/schemas';
 const versionsFilename = `${schemaPath}/schema-versions.json`;
 const dataFilename = '../website/src/pages/dictionary/data-{language}.json';
 const dataFileTreeName = '../website/src/pages/dictionary/tree-{language}.json';
 const dataDirPath = '../website/static/data/schemas';
 const languages = {
-  list: ['en', 'fr'],
-  default: 'en',
+    list: ['en', 'fr'],
+    default: 'en',
 };
 
 module.exports = {
-  dictionaryNames,
-  schemaPath,
-  versionsFilename,
-  dataFilename,
-  dataDirPath,
-  dataFileTreeName,
-  languages,
+    dictionaryNames,
+    schemaPath,
+    versionsFilename,
+    dataFilename,
+    dataDirPath,
+    dataFileTreeName,
+    languages,
 };
