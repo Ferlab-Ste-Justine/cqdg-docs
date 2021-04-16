@@ -3,6 +3,10 @@ const validation = () =>
         const {$row, $name} = inputs;
         const $field = $row[$name];
 
+        if(!$field){
+            return {valid: false, message: `Column ${$name} is missing.`};
+        }
+
         let result = {valid: true, message: 'Ok'};
         const currField = typeof $field === 'string' ? $field.trim().toLowerCase() : $field;
         const isCancer = parseInt($row.is_cancer);
