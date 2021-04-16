@@ -1,5 +1,8 @@
-const validation = ($row, $name, $field) =>
-    (function validate() {
+const validation = () =>
+    (function validate(inputs) {
+        const {$row, $name} = inputs;
+        const $field = $row[$name];
+
         let result = {valid: true, message: 'Ok'};
         const currField = typeof $field === 'string' ? $field.trim().toLowerCase() : $field;
         const tumorStagingSystem = $row.tumor_staging_system.trim();
@@ -16,6 +19,6 @@ const validation = ($row, $name, $field) =>
             };
         }
         return result;
-    })();
+    });
 
 module.exports = validation;

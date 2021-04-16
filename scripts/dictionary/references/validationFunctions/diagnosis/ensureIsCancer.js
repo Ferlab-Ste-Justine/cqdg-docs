@@ -1,5 +1,8 @@
-const validation = ($row, $field, $name) =>
-    (function validate() {
+const validation = () =>
+    (function validate(inputs) {
+        const {$row, $name} = inputs;
+        const $field = $row[$name];
+
         let result = {valid: true, message: 'Ok'};
         const currField = typeof $field === 'string' ? $field.trim().toLowerCase() : $field;
         const isCancer = parseInt($row.is_cancer);
@@ -11,6 +14,6 @@ const validation = ($row, $field, $name) =>
             };
         }
         return result;
-    })();
+    });
 
 module.exports = validation;

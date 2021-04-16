@@ -1,8 +1,11 @@
 /**
  * Age at diagnosis 0 to 100 with decimals
  */
-const validation = ($row, $field, $name) =>
-    (function validate() {
+const validation = () =>
+    (function validate(inputs) {
+        const {$row, $name} = inputs;
+        const $field = $row[$name];
+
         let result = {valid: true, message: 'Ok'};
         try {
             const currField = parseFloat($field);
@@ -20,6 +23,6 @@ const validation = ($row, $field, $name) =>
         }
 
         return result;
-    })();
+    });
 
 module.exports = validation;

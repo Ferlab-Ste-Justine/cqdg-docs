@@ -1,8 +1,11 @@
 /**
  * If and only if the tumor_normal_designation is "tumor", then the "tumor_histological_type" must be provided.
  */
-const validation = ($row, $field, $name) =>
-    (function validate() {
+const validation = () =>
+    (function validate(inputs) {
+        const {$row, $name} = inputs;
+        const $field = $row[$name];
+
         let result = {valid: true, message: 'Ok'};
         const currField = typeof $field === 'string' ? $field.trim().toLowerCase() : $field;
         const tumorNormalDesignation = $row.tumor_normal_designation.trim().toLowerCase();
@@ -15,6 +18,6 @@ const validation = ($row, $field, $name) =>
         }
 
         return result;
-    })();
+    });
 
 module.exports = validation;
