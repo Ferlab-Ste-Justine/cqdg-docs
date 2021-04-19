@@ -77,20 +77,20 @@
       }
     },
     {
-      "name": "tumor_normal_designation",
+      "name": "tumour_normal_designation",
       "valueType": "string",
-      "description": "Description of specimen tumor/normal status for data processing",
+      "description": "Description of specimen tumour/normal status for data processing",
       "restrictions": {
         "required": true,
         "codeList": [
           "Normal",
-          "Tumor"
+          "Tumour"
         ]
       },
       "meta": {
         "validationDependency": true,
         "core": true,
-        "displayName": "Tumor Normal Designation"
+        "displayName": "Tumour Normal Designation"
       }
     },
     {
@@ -165,21 +165,21 @@
       }
     },
     {
-      "name": "tumor_histological_type",
+      "name": "tumour_histological_type",
       "description": "The code to represent the histology (morphology) of neoplasms that is usually obtained from a pathology report, according to the International Classification of Diseases for Oncology, 3rd Edition (WHO ICD-O-3)",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "core": true,
-        "dependsOn": "sample_registration.tumor_normal_designation",
-        "notes": "If biospecimen is a tumor, Refer to the ICD-O-3 manual for guidelines at https://apps.who.int/iris/handle/10665/42344",
+        "dependsOn": "sample_registration.tumour_normal_designation",
+        "notes": "If biospecimen is a tumour, Refer to the ICD-O-3 manual for guidelines at https://apps.who.int/iris/handle/10665/42344",
         "valueType": "string",
         "examples": "8260/3,9691/36",
-        "displayName": "Tumor Histological Type"
+        "displayName": "Tumour Histological Type"
       },
       "restrictions": {
         "regex": "^[8,9]{1}[0-9]{3}/[0,1,2,3,6,9]{1}[1-9]{0,1}$",
-        "script": "#/script/biospecimen/ensureTumorNormalDesignation"
+        "script": "#/script/biospecimen/ensureTumourNormalDesignation"
       }
     },
     {

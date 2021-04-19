@@ -77,20 +77,20 @@
       }
     },
     {
-      "name": "tumor_normal_designation",
+      "name": "tumour_normal_designation",
       "valueType": "string",
-      "description": "Le spécimen biologique provient de tissu tumoral ou normal",
+      "description": "Le spécimen biologique provient de tissu tumoural ou normal",
       "restrictions": {
         "required": true,
         "codeList": [
           "Normal",
-          "Tumor"
+          "Tumour"
         ]
       },
       "meta": {
         "validationDependency": true,
         "core": true,
-        "displayName": "Tissu normal ou tumoral"
+        "displayName": "Tissu normal ou tumoural"
       }
     },
     {
@@ -165,13 +165,13 @@
       }
     },
     {
-      "name": "tumor_histological_type",
+      "name": "tumour_histological_type",
       "description": "Code histologique (morphologie) du néoplasme selon la classification ICD-O-3 (International Classification of Diseases for Oncology, 3rd Edition) déclaré dans le rapport de pathologie",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "core": true,
-        "dependsOn": "sample_registration.tumor_normal_designation",
+        "dependsOn": "sample_registration.tumour_normal_designation",
         "notes": "Si le spécimen biologique est une tumeur. Veuillez vous référer au manuel ICD-O-3 à l'adresse suivante https://apps.who.int/iris/handle/10665/42344",
         "valueType": "string",
         "examples": "8260/3,9691/36",
@@ -179,7 +179,7 @@
       },
       "restrictions": {
         "regex": "^[8,9]{1}[0-9]{3}/[0,1,2,3,6,9]{1}[1-9]{0,1}$",
-        "script": "#/script/biospecimen/ensureTumorNormalDesignation"
+        "script": "#/script/biospecimen/ensureTumourNormalDesignation"
       }
     },
     {
