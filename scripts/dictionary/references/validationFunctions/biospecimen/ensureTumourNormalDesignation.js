@@ -8,9 +8,9 @@ const validation = () =>
 
         let result = {valid: true, message: 'Ok'};
         const currField = typeof $field === 'string' ? $field.trim().toLowerCase() : $field;
-        const tumourNormalDesignation = $row.tumour_normal_designation.trim().toLowerCase();
+        const tumourNormalDesignation = $row.tumour_normal_designation || '';
 
-        if (!currField && tumourNormalDesignation.toLowerCase() === 'tumour') {
+        if (!currField && tumourNormalDesignation && tumourNormalDesignation.trim().toLowerCase() === 'tumour') {
             result = {
                 valid: false,
                 message: `${$name} must be provided when the biospecimen's tumour_normal_designation is Tumour.`,

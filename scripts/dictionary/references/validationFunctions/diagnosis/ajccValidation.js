@@ -1,17 +1,17 @@
 const validation = () =>
     (function validate(inputs) {
+        let result = {valid: true, message: 'Ok'};
         const {$row, $name} = inputs;
         const $field = $row[$name];
 
         if(!$field){
-            return {valid: false, message: `Column ${$name} is missing.`};
+            return result;
         }
 
-        let result = {valid: true, message: 'Ok'};
         const currField = typeof $field === 'string' ? $field.trim().toLowerCase() : $field;
-        const tumorStagingSystem = $row.tumor_staging_system.trim();
+        const tumorStagingSystem = $row.tumor_staging_system || '';
 
-        if (!currField && /^(AJCC)\b/i.test(tumorStagingSystem)) {
+        if (!currField && tumorStagingSystem && /^(AJCC)\b/i.test(tumorStagingSystem.trim())) {
             result = {
                 valid: false,
                 message: `${$name} must be provided when the tumor_staging_system is AJCC.`,

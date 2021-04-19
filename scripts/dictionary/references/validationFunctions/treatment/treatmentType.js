@@ -9,7 +9,7 @@ const validation = () =>
 
         let result = {valid: true, message: 'Ok'};
         const currField = typeof $field === 'string' ? $field.trim().toLowerCase() : $field;
-        const treatmentType = $row.treatment_type.trim().toLowerCase();
+        const treatmentType = $row.treatment_type || '';
         const treatmentTypes = [
             'chemotherapy',
             'hormonal therapy',
@@ -18,7 +18,7 @@ const validation = () =>
             'other pharmacotherapy',
         ];
 
-        if (!currField && treatmentTypes.includes(treatmentType)) {
+        if (!currField && treatmentType && treatmentTypes.includes(treatmentType.trim().toLowerCase())) {
             result = {
                 valid: false,
                 message: `${$name} must be provided when the treatment_type is one of the following: ${treatmentTypes.join(

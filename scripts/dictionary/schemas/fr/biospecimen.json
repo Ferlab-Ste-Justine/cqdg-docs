@@ -68,12 +68,8 @@
       "name": "date_biospecimen_collection",
       "valueType": "string",
       "meta": {
-        "core": true,
         "notes": "Collected DateTime",
         "displayName": "Date de collecte du spécimen biologique"
-      },
-      "restrictions": {
-        "required": true
       }
     },
     {
@@ -84,13 +80,15 @@
         "required": true,
         "codeList": [
           "Normal",
-          "Tumour"
+          "Tumour",
+          "Not applicable"
         ]
       },
       "meta": {
         "validationDependency": true,
         "core": true,
-        "displayName": "Tissu normal ou tumoural"
+        "displayName": "Tissu normal ou tumoural",
+        "notes": "Indicate `Not applicable' if the biospecimen was not analysed."
       }
     },
     {

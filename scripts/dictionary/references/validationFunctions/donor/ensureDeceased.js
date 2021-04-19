@@ -6,22 +6,13 @@ const validation = () =>
         const {$row, $name} = inputs;
         const $field = $row[$name];
 
-        if(!$field){
-            return {valid: false, message: `Column ${$name} is missing.`};
-        }
-
         let result = {valid: true, message: 'Ok'};
-        const vitalStatus = $row.vital_status.trim().toLowerCase();
+        const vitalStatus = $row.vital_status || '';
 
-        if (!$field && vitalStatus.toLowerCase() === 'deceased') {
+        if ($field && vitalStatus && vitalStatus.trim().toLowerCase() !== 'deceased') {
             result = {
                 valid: false,
-                message: `${$name} must be provided when the donor's vital_status is deceased.`,
-            };
-        } else if ($field && vitalStatus.toLowerCase() !== 'deceased') {
-            result = {
-                valid: false,
-                message: `${$name} cannot be provided if the donor's vital_status is not deceased.`,
+                message: `${$name} cannot be provided if the donor's vital_status is not Deceased.`,
             };
         }
         return result;

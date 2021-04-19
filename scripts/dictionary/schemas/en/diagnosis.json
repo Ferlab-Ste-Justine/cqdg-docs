@@ -100,7 +100,6 @@
       "valueType": "integer",
       "description": "Age at diagnosis of condition",
       "restrictions": {
-        "required": true,
         "script": "#/script/diagnosis/ageAtDiagnosis"
       },
       "meta": {
