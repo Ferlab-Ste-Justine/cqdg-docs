@@ -145,12 +145,12 @@
     {
       "description": "Numeric value to represent the age of the donor at the time of death, in days",
       "name": "age_of_death",
-      "valueType": "integer",
+      "valueType": "number",
       "meta": {
         "dependsOn": "donor.vital_status",
         "notes": "Age_of_death is only required to be submitted if the donor's vital_status is Deceased.",
         "validationDependency": true,
-        "units": "days",
+        "units": "years",
         "core": "true",
         "displayName": "Age of death"
       },

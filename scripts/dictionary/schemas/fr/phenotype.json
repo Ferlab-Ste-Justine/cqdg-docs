@@ -80,13 +80,13 @@
     },
     {
       "name": "age_at_phenotype",
-      "valueType": "integer",
+      "valueType": "number",
       "description": "Age (en jour) où le phénotype a été observé chez ce donneur",
       "restrictions": {
         "required": true
       },
       "meta": {
-        "units": "days",
+        "units": "years",
         "core": true,
         "displayName": "Age où le phénotype a été observé"
       }

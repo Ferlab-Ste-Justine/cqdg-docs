@@ -145,12 +145,12 @@
     {
       "description": "Age du donneur au moment de son décès (en jour)",
       "name": "age_of_death",
-      "valueType": "integer",
+      "valueType": "number",
       "meta": {
         "dependsOn": "donor.vital_status",
         "notes": "Requis si le donneur est décédé.",
         "validationDependency": true,
-        "units": "days",
+        "units": "years",
         "core": "true",
         "displayName": "Age de décès"
       },

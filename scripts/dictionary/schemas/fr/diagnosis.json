@@ -97,10 +97,13 @@
     },
     {
       "name": "age_at_diagnosis",
-      "valueType": "integer",
+      "valueType": "number",
       "description": "Age au moment du diagnostic de la condition",
       "restrictions": {
-        "script": "#/script/diagnosis/ageAtDiagnosis"
+        "range": {
+            "min": 0,
+            "max": 100
+        }
       },
       "meta": {
         "units": "years",
@@ -158,7 +161,7 @@
       }
     },
     {
-      "name": "tumour_staging_system",
+      "name": "tumor_staging_system",
       "valueType": "string",
       "description": "Indiquer le système de stadification du cancer utilisé pour effectué le diagnostic primaire",
       "restrictions": {
@@ -191,7 +194,7 @@
         "script": "#/script/diagnosis/stageGroup"
       },
       "meta": {
-        "dependsOn": "diagnosis.tumour_staging_system",
+        "dependsOn": "diagnosis.tumor_staging_system",
         "notes": "Ce champs dépend du système de stadification",
         "displayName": "Stade clinic de la tumeur"
       }
@@ -201,7 +204,7 @@
       "description": "Classification t (tumeur), selon le système de classification des tumeurs cancéreuses solides de l'Union internationale contre le cancer (UICC). La tumeur primitive est définie en fonction de sa taille et de son extension aux tissus avoisinants au moment du diagnostic et est classée de T0 à T4.",
       "valueType": "string",
       "meta": {
-        "dependsOn": "diagnosis.tumour_staging_system",
+        "dependsOn": "diagnosis.tumor_staging_system",
         "notes": "Ce champs est requis si le système de stadification est une des éditions du manuel AJCC.",
         "displayName": "Classification t"
       },
@@ -215,7 +218,7 @@
       "description": "Classification n (nodes = ganglions) selon le système de classification des tumeurs cancéreuses solides de l'Union internationale contre le cancer (UICC). Les ganglions sont classés en fonction de leur nombre, de la taille et de leur extension locale. Ils sont classés de N0 à N3.",
       "valueType": "string",
       "meta": {
-        "dependsOn": "diagnosis.tumour_staging_system",
+        "dependsOn": "diagnosis.tumor_staging_system",
         "notes": "Ce champs est requis si le système de stadification est une des éditions du manuel AJCC.",
         "displayName": "Classification n"
       },
@@ -229,7 +232,7 @@
       "description": "Catégorie m (métastase) selon le système de stadification des tumeurs cancéreuses solides de l'Union internationale contre le cancer (UICC). Les métastases sont classées en fonction de leur absence ou de leur présence au moment du diagnosticet avant le traitement, et se classent de M0 à M1.",
       "valueType": "string",
       "meta": {
-        "dependsOn": "diagnosis.tumour_staging_system",
+        "dependsOn": "diagnosis.tumor_staging_system",
         "notes": "Ce champs est requis si le système de stadification est une des éditions du manuel AJCC.",
         "displayName": "Classification m"
       },

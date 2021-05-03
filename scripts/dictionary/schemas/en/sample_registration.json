@@ -63,6 +63,29 @@
         "required": true,
         "regex": "#/regex/id"
       }
+    },
+    {
+        "description": "Type of molecular sample used for analysis testing",
+        "name": "sample_type",
+        "valueType": "string",
+        "restrictions": {
+            "required": true,
+            "codeList": [
+                "Amplified DNA",
+                "ctDNA",
+                "Other DNA enrichments",
+                "Other RNA fractions",
+                "polyA+ RNA",
+                "Ribo-Zero RNA",
+                "Total DNA",
+                "Total RNA",
+                "Other"
+            ]
+        },
+        "meta": {
+            "core": true,
+            "displayName": "Sample type"
+        }
     }
   ]
 }
