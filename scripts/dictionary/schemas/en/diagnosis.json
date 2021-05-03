@@ -97,10 +97,13 @@
     },
     {
       "name": "age_at_diagnosis",
-      "valueType": "integer",
+      "valueType": "number",
       "description": "Age at diagnosis of condition",
       "restrictions": {
-        "script": "#/script/diagnosis/ageAtDiagnosis"
+        "range": {
+            "min": 0,
+            "max": 100
+        }
       },
       "meta": {
         "units": "years",
@@ -158,9 +161,9 @@
       }
     },
     {
-      "name": "tumour_staging_system",
+      "name": "tumor_staging_system",
       "valueType": "string",
-      "description": "Indicate the tumour staging system used to stage the cancer at the time of the diagnosis, prior to treatment",
+      "description": "Indicate the tumor staging system used to stage the cancer at the time of the diagnosis, prior to treatment",
       "restrictions": {
         "codeList": [
           "AJCC 8th edition",
@@ -179,30 +182,30 @@
       "meta": {
         "dependsOn": "diagnosis.is_cancer",
         "core": true,
-        "displayName": "Tumour Staging System"
+        "displayName": "Tumor Staging System"
       }
     },
     {
       "name": "stage_group",
-      "description": "Stage group of the tumour, as assigned by the reporting tumour_staging_system, that indicates the overall prognostic tumour stage (ie. Stage I, Stage II, Stage III etc.)",
+      "description": "Stage group of the tumor, as assigned by the reporting tumor_staging_system, that indicates the overall prognostic tumor stage (ie. Stage I, Stage II, Stage III etc.)",
       "valueType": "string",
       "restrictions": {
         "codeList": "#/list/stage_groups",
         "script": "#/script/diagnosis/stageGroup"
       },
       "meta": {
-        "dependsOn": "diagnosis.tumour_staging_system",
-        "notes": "This field is dependent on the selected tumour_staging_system",
+        "dependsOn": "diagnosis.tumor_staging_system",
+        "notes": "This field is dependent on the selected tumor_staging_system",
         "displayName": "Stage Group"
       }
     },
     {
       "name": "t_category",
-      "description": "The code to represent the extent of the primary tumour (T) based on evidence obtained from clinical assessment parameters determined at time of primary diagnosis and prior to treatment, according to criteria based on multiple editions of the AJCC's Cancer Staging Manual",
+      "description": "The code to represent the extent of the primary tumor (T) based on evidence obtained from clinical assessment parameters determined at time of primary diagnosis and prior to treatment, according to criteria based on multiple editions of the AJCC's Cancer Staging Manual",
       "valueType": "string",
       "meta": {
-        "dependsOn": "diagnosis.tumour_staging_system",
-        "notes": "This field is required only if the selected tumour_staging_system is any edition of the AJCC cancer staging system.",
+        "dependsOn": "diagnosis.tumor_staging_system",
+        "notes": "This field is required only if the selected tumor_staging_system is any edition of the AJCC cancer staging system.",
         "displayName": "T Category"
       },
       "restrictions": {
@@ -215,8 +218,8 @@
       "description": "The code to represent the stage of cancer defined by the extent of the regional lymph node (N) involvement for the cancer based on evidence obtained from clinical assessment parameters determined at time of primary diagnosis and prior to treatment, according to criteria based on multiple editions of the AJCC's Cancer Staging Manual",
       "valueType": "string",
       "meta": {
-        "dependsOn": "diagnosis.tumour_staging_system",
-        "notes": "This field is required only if the selected tumour_staging_system is any edition of the AJCC cancer staging system.",
+        "dependsOn": "diagnosis.tumor_staging_system",
+        "notes": "This field is required only if the selected tumor_staging_system is any edition of the AJCC cancer staging system.",
         "displayName": "N Category"
       },
       "restrictions": {
@@ -229,8 +232,8 @@
       "description": "The code to represent the stage of cancer defined by the extent of the distant metastasis (M) for the cancer based on evidence obtained from clinical assessment parameters determined at time of primary diagnosis and prior to treatment, according to criteria based on multiple editions of the AJCC's Cancer Staging Manual",
       "valueType": "string",
       "meta": {
-        "dependsOn": "diagnosis.tumour_staging_system",
-        "notes": "This field is required only if the selected tumour_staging_system is any edition of the AJCC cancer staging system.",
+        "dependsOn": "diagnosis.tumor_staging_system",
+        "notes": "This field is required only if the selected tumor_staging_system is any edition of the AJCC cancer staging system.",
         "displayName": "M Category"
       },
       "restrictions": {

@@ -73,21 +73,21 @@
       }
     },
     {
-      "name": "tumour_normal_designation",
+      "name": "tumor_normal_designation",
       "valueType": "string",
-      "description": "Description of specimen tumour/normal status for data processing",
+      "description": "Description of specimen tumor/normal status for data processing",
       "restrictions": {
         "required": true,
         "codeList": [
           "Normal",
-          "Tumour",
+          "Tumor",
           "Not applicable"
         ]
       },
       "meta": {
         "validationDependency": true,
         "core": true,
-        "displayName": "Tumour Normal Designation",
+        "displayName": "Tumor Normal Designation",
         "notes": "Indicate `Not applicable' if the biospecimen was not analysed."
       }
     },
@@ -122,20 +122,20 @@
         "required": true,
         "codeList": [
           "Cell line - derived from normal",
-          "Cell line - derived from tumour",
-          "Cell line - derived from xenograft tumour",
-          "Metastatic tumour - additional metastatic",
-          "Metastatic tumour - metastasis local to lymph node",
-          "Metastatic tumour - metastasis to distant location",
-          "Metastatic tumour",
-          "Normal - tissue adjacent to primary tumour",
+          "Cell line - derived from tumor",
+          "Cell line - derived from xenograft tumor",
+          "Metastatic tumor - additional metastatic",
+          "Metastatic tumor - metastasis local to lymph node",
+          "Metastatic tumor - metastasis to distant location",
+          "Metastatic tumor",
+          "Normal - tissue adjacent to primary tumor",
           "Normal",
-          "Primary tumour - additional new primary",
-          "Primary tumour - adjacent to normal",
-          "Primary tumour",
-          "Recurrent tumour",
-          "Xenograft - derived from primary tumour",
-          "Xenograft - derived from tumour cell line",
+          "Primary tumor - additional new primary",
+          "Primary tumor - adjacent to normal",
+          "Primary tumor",
+          "Recurrent tumor",
+          "Xenograft - derived from primary tumor",
+          "Xenograft - derived from tumor cell line",
           "Derived from allogenic bone marrow transplant",
           "Derived from autologous bone marrow transplant"
         ]
@@ -163,21 +163,21 @@
       }
     },
     {
-      "name": "tumour_histological_type",
+      "name": "tumor_histological_type",
       "description": "The code to represent the histology (morphology) of neoplasms that is usually obtained from a pathology report, according to the International Classification of Diseases for Oncology, 3rd Edition (WHO ICD-O-3)",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "core": true,
-        "dependsOn": "sample_registration.tumour_normal_designation",
-        "notes": "If biospecimen is a tumour, Refer to the ICD-O-3 manual for guidelines at https://apps.who.int/iris/handle/10665/42344",
+        "dependsOn": "sample_registration.tumor_normal_designation",
+        "notes": "If biospecimen is a tumor, Refer to the ICD-O-3 manual for guidelines at https://apps.who.int/iris/handle/10665/42344",
         "valueType": "string",
         "examples": "8260/3,9691/36",
-        "displayName": "Tumour Histological Type"
+        "displayName": "Tumor Histological Type"
       },
       "restrictions": {
         "regex": "^[8,9]{1}[0-9]{3}/[0,1,2,3,6,9]{1}[1-9]{0,1}$",
-        "script": "#/script/biospecimen/ensureTumourNormalDesignation"
+        "script": "#/script/biospecimen/ensureTumorNormalDesignation"
       }
     },
     {
