@@ -60,6 +60,7 @@
         "required": true
       },
       "meta": {
+        "core": true,
         "examples": "breast cancer, stroke",
         "notes": "Provide exact information as per the dataset",
         "displayName": "Name of the condition"
@@ -70,11 +71,10 @@
       "valueType": "string",
       "description": "ICD-10 code used to define a condtion",
       "restrictions": {
-        "required": true,
-        "regex": "#/regex/icd10"
+        "regex": "#/regex/icd10",
+        "script": "#/script/diagnosis/ensureHasICDorMondo"
       },
       "meta": {
-        "core": true,
         "examples": "C41.1, C16.9",
         "notes": "Write the exact ICD-10 code - refer to https://apps.who.int/classifications/apps/icd/ClassificationDownload/DLArea/Download.aspx",
         "displayName": "Diagnosis ICD-10 code"
@@ -85,11 +85,10 @@
       "valueType": "string",
       "description": "Mondo code used to define a condtion",
       "restrictions": {
-        "required": true,
-        "regex": "#/regex/mondo"
+        "regex": "#/regex/mondo",
+        "script": "#/script/diagnosis/ensureHasICDorMondo"
       },
       "meta": {
-        "core": true,
         "examples": "MONDO_0002131, MONDO_0001056",
         "notes": "Write the exact MONDO code. For MONDO codes, refer to https://www.ebi.ac.uk/ols/ontologies/mondo",
         "displayName": "Diagnosis Mondo code"

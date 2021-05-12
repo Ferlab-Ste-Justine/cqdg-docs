@@ -1,0 +1,1 @@
+{"schemas":{"donor":{"updated":{"age_of_death":{"valueType":{"left":"number","right":"integer"},"meta":{"units":{"left":"years","right":"days"}}}},"created":{},"deleted":{}},"phenotype":{"updated":{"age_at_phenotype":{"valueType":{"left":"number","right":"integer"},"meta":{"units":{"left":"years","right":"days"}}}},"created":{},"deleted":{}}}}
