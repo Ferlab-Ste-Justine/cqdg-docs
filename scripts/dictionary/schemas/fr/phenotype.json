@@ -59,6 +59,7 @@
         "required": true
       },
       "meta": {
+        "core": true,
         "examples": "trigonocéphalie, angiome",
         "notes": "Veuillez fournir l'information telle qu'elle est rapportée dans l'étude",
         "displayName": "Phénotype rapporté dans l'étude"
@@ -82,12 +83,9 @@
       "name": "age_at_phenotype",
       "valueType": "number",
       "description": "Age (en jour) où le phénotype a été observé chez ce donneur",
-      "restrictions": {
-        "required": true
-      },
+      "restrictions": {},
       "meta": {
         "units": "years",
-        "core": true,
         "displayName": "Age où le phénotype a été observé"
       }
     },

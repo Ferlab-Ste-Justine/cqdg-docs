@@ -59,6 +59,7 @@
         "required": true
       },
       "meta": {
+        "core": true,
         "examples": "microcephaly, angioma",
         "notes": "Provide exact information as per the dataset",
         "displayName": "Name of the phenotype"
@@ -82,12 +83,9 @@
       "name": "age_at_phenotype",
       "valueType": "number",
       "description": "Age (in days) of partipant when phenotype was observed",
-      "restrictions": {
-        "required": true
-      },
+      "restrictions": {},
       "meta": {
         "units": "years",
-        "core": true,
         "displayName": "Age at phenotype occurence"
       }
     },
