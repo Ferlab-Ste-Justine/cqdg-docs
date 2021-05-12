@@ -66,24 +66,13 @@
       "valueType": "string",
       "restrictions": {
         "required": true,
-        "codeList": [
-          "DUO:0000017",
-          "DUO:0000018",
-          "DUO:0000019",
-          "DUO:0000020",
-          "DUO:0000021",
-          "DUO:0000022",
-          "DUO:0000025",
-          "DUO:0000026",
-          "DUO:0000027",
-          "DUO:0000028",
-          "DUO:0000029"
-        ]
+        "script": "#/script/data_access/accessRequirement"
       },
       "meta": {
         "core": true,
         "displayName": "Data Use Requirements",
-        "notes": "Refer to the Data Use Ontology code https://github.com/EBISPOT/DUO"
+        "notes": "Refer to the Data Use Ontology code https://github.com/EBISPOT/DUO",
+        "examples": "DUO:0000021;DUO:0000025"
       }
     }
   ]

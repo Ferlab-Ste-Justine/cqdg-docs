@@ -33,6 +33,9 @@
       "name": "short_name",
       "valueType": "string",
       "description": "Accronyme ou nom abrégé de l'étude",
+      "restrictions": {
+        "required": true
+      },
       "meta": {
         "core": true,
         "displayName": "Accronyme ou nom abrégé de l'étude"
