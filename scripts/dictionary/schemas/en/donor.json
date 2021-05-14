@@ -63,6 +63,7 @@
       "name": "gender",
       "valueType": "string",
       "restrictions": {
+        "required": true,
         "codeList": [
           "Male",
           "Female",
