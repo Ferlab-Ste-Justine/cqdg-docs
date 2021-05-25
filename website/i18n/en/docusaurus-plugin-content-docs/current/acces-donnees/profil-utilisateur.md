@@ -12,10 +12,11 @@ Having a CQDG User Account is required to have access to its tools and applicati
 -	The Data Submission Portal (upcoming) 
 
 
- > **IMPORTANT: By creating your user account, you agree to the CQDG Plaform's Terms of Use, including its requirements with regards to the protection of confidentiality.** 
+ > **IMPORTANT: By creating your User Account, you agree to the CQDG Plaform's Terms of Use, including its requirements with regards to the protection of confidentiality.** 
 
 ## How to create your User Account
 
-Create your CQGG User Account at **connexion** on the [portal's homepage](https://plateforme.cqdg.ca). 
-
-You will reveive an email in order to activate your account. 
+- Go to the [portal's homepage](https://plateforme.cqdg.ca).
+- Click **Create an account**.
+- Fill out the User Information Form.
+- Enter and confirm your password.
