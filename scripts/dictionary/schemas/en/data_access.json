@@ -23,7 +23,7 @@
     {
       "name": "entity_id",
       "valueType": "string",
-      "description": "Unique identifier for the entity",
+      "description": "Identifier for the entity",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
