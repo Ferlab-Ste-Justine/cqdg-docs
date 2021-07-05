@@ -5,7 +5,7 @@
     {
       "name": "study_id",
       "valueType": "string",
-      "description": "Unique identifier for the Study",
+      "description": "Identifier for the Study",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
@@ -18,7 +18,7 @@
       }
     },
     {
-      "description": "Unique identifier of the donor, assigned by the data provider",
+      "description": "Identifier of the donor, assigned by the data provider",
       "name": "submitter_donor_id",
       "valueType": "string",
       "meta": {
