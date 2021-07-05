@@ -8,7 +8,7 @@
     {
       "name": "study_id",
       "valueType": "string",
-      "description": "Identifant unique pour l'étude",
+      "description": "Identifant pour l'étude",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
@@ -22,7 +22,7 @@
     },
     {
       "name": "submitter_donor_id",
-      "description": "Identifiant unique pour le donneur, soumis par l'étude",
+      "description": "Identifiant pour le donneur, soumis par l'étude",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
@@ -54,7 +54,7 @@
     {
       "name": "submitter_diagnosis_id",
       "valueType": "string",
-      "description": "Identifiant unique du diagnostic qui est relié à ce traitement",
+      "description": "Identifiant du diagnostic qui est relié à ce traitement",
       "meta": {
         "primaryId": true,
         "foreignKey": "diagnosis.submitter_diagnosis_id",
