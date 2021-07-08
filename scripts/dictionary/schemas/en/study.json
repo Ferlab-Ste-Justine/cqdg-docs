@@ -106,6 +106,46 @@
         "core": true,
         "displayName": "Study population"
       }
+    },
+    {
+      "name": "access_limitations",
+      "description": "Data access limitations as defined in the GA4GH Data Use Ontology (DUO)",
+      "valueType": "string",
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "DUO:0000004",
+          "DUO:0000005",
+          "DUO:0000006",
+          "DUO:0000007",
+          "DUO:0000011",
+          "DUO:0000012",
+          "DUO:0000014",
+          "DUO:0000015",
+          "DUO:0000016",
+          "DUO:0000042"
+        ]
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Data Access Limitations",
+        "notes": "Refer to the Data Use Ontology code https://github.com/EBISPOT/DUO"
+      }
+    },
+    {
+      "name": "access_requirements",
+      "description": "Data use requirements as defined in the GA4GH Data Use Ontology (DUO)",
+      "valueType": "string",
+      "restrictions": {
+        "required": true,
+        "script": "#/script/study/accessRequirement"
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Data Use Requirements",
+        "notes": "Refer to the Data Use Ontology code https://github.com/EBISPOT/DUO",
+        "examples": "DUO:0000021;DUO:0000025"
+      }
     }
   ]
 }

@@ -1,11 +1,11 @@
 {
-  "name": "family_relationship",
+  "name": "family",
   "description": "The collection of data elements related to a family and relationships within this family. This table should be completed only if the Study is contributing data from groups of donors who share family ties (ex: twins, trios, sib-pairs).",
   "fields": [
     {
       "name": "study_id",
       "valueType": "string",
-      "description": "Unique identifier for the Study",
+      "description": "Identifier for the Study",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
@@ -20,7 +20,7 @@
     {
       "name": "submitter_family_id",
       "valueType": "string",
-      "description": "Unique identifier of the family, assigned by the data provider",
+      "description": "Identifier of the family, assigned by the data provider",
       "restrictions": {
         "required": true,
         "regex": "#/regex/id"
@@ -34,28 +34,13 @@
       }
     },
     {
-      "description": "Unique identifier of the donor 1, assigned by the data provider",
-      "name": "submitter_donor_id_1",
+      "description": "Unique identifier of the donor, assigned by the data provider",
+      "name": "submitter_donor_id",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "Submitter Donor 1 ID",
-        "notes": "#/notes/id"
-      },
-      "restrictions": {
-        "required": true,
-        "regex": "#/regex/id"
-      }
-    },
-    {
-      "description": "Unique identifier of the donor 2, assigned by the data provider",
-      "name": "submitter_donor_id_2",
-      "valueType": "string",
-      "meta": {
-        "validationDependency": true,
-        "primaryId": true,
-        "displayName": "Submitter Donor 2 ID",
+        "displayName": "Submitter Donor ID",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -83,55 +68,28 @@
       }
     },
     {
-      "name": "family_1_2_relationship",
-      "description": "Relationship of donor 1 to donor 2",
-      "valueType": "string",
+      "description": "Indicate if the donor is a proband or a family member",
+      "name": "is_a_proband",
       "restrictions": {
-        "required": true,
         "codeList": [
-          "Mother",
-          "Father",
-          "Brother",
-          "Sister",
-          "Half-brother",
-          "Half-sister",
-          "Identical twin",
-          "Fraternal twin brother",
-          "Fraternal twin sister",
-          "Son",
-          "Daughter",
-          "Maternal grand-mother",
-          "Maternal grand-father",
-          "Paternal grand-mother",
-          "Paternal grand-father",
-          "Maternal aunt",
-          "Maternal uncle",
-          "Paternal aunt",
-          "Paternal uncle",
-          "Maternal cousin",
-          "Paternal cousin",
-          "Granddaughter",
-          "Grandson",
-          "Nephew",
-          "Niece",
-          "Spouse",
-          "Former spouse",
-          "Husband",
-          "Wife"
+          "Is a family member",
+          "Is a proband",
+          "Not applicable"
         ]
       },
+      "valueType": "string",
       "meta": {
-        "core": true,
-        "displayName": "Relationship of donor 1 to donor 2"
+        "displayName": "Is a proband"
       }
     },
     {
-      "name": "family_2_1_relationship",
-      "description": "Relationship of donor 2 to donor 1",
+      "name": "relationship_to_proband",
+      "description": "Relationship of the donor to the proband",
       "valueType": "string",
       "restrictions": {
         "required": true,
         "codeList": [
+          "Is the proband",
           "Mother",
           "Father",
           "Brother",
@@ -165,7 +123,7 @@
       },
       "meta": {
         "core": true,
-        "displayName": "Relationship of donor 2 to donor 1"
+        "displayName": "Relationship of the donor to the proband"
       }
     }
   ]
