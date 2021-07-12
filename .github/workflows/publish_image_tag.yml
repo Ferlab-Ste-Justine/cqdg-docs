@@ -1,22 +1,22 @@
-name: Publish
+name: Publish Image Using Tag
 
 on:
   push:
-    branches:
-      - master
+    tags:
+      - v*
 
 jobs:
-  publish:
+  build:
     name: Publish Image
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
-    - name: Push the docs image on the docker registry
+    - name: Push the image on the docker registry
       uses: Ferlab-Ste-Justine/action-push-image@master
       with:
         username: ${{ secrets.FERLAB_DOCKER_HUB_USER }}
         password: ${{ secrets.FERLAB_DOCKER_HUB_TOKEN }}
         image: ferlabcrsj/cqdg-docs
-        tag_source: sha
+        tag_source: ref
         location: .
         dockerfile: Dockerfile
