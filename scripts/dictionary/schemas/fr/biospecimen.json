@@ -98,15 +98,60 @@
       "restrictions": {
         "required": true,
         "codeList": [
+          "Amniotic fluid", 
+          "Anorectal",
           "Blood derived - bone marrow",
           "Blood derived - peripheral blood",
           "Blood derived",
           "Bone marrow",
           "Bone",
+          "Bronchial specimen",
+          "Bronchoalveolar lavage",
           "Buccal cell",
           "Buffy coat",
           "Cerebellum",
-          "Cerebrospinal fluid"
+          "Cerebrospinal fluid", 
+          "Cervix",
+          "Cord blood",
+          "Cornea or Conjunctiva",
+          "Dialysis fluid", 
+          "Endometrium",
+          "Esophagus", 
+          "Fibroblast",
+          "Intestine", 
+          "Liver",
+          "Lower respiratory specimen",
+          "Lymph node", 
+          "Mononuclear cells from bone marrow", 
+          "Nasopharynx",
+          "Oropharyngeal wash",
+          "Other", 
+          "Pericardial fluid",
+          "Peritoneal fluid",
+          "Plasma", 
+          "Pleural effusion", 
+          "Red Blood Cells",
+          "Saliva",
+          "Specimen",
+          "Serum",
+          "Skin",
+          "Solid tissue",
+          "Spleen",
+          "Pus",
+          "Sputum",
+          "Stem cell product",
+          "Stomach",
+          "Stool",
+          "Sweat",
+          "Synovial fluid", 
+          "Throat",
+          "Tonsil",
+          "Umbilical cord structure",
+          "Upper respiratory specimen",
+          "Urethra",
+          "Urine", 
+          "Vaginal fluid",
+          "Vitreous fluid"
         ]
       },
       "meta": {
@@ -130,6 +175,7 @@
           "Metastatic tumor",
           "Normal - tissue adjacent to primary tumor",
           "Normal",
+          "Peritumoral",
           "Primary tumor - additional new primary",
           "Primary tumor - adjacent to normal",
           "Primary tumor",
@@ -147,19 +193,34 @@
       }
     },
     {
-      "name": "biospecimen_anatomic_location",
+      "name": "biospecimen_anatomic_location_source_text",
       "valueType": "string",
-      "description": "Site anatomique d'où le spécimen biologique a éte collecté selon la classification topographique ICD-O-3",
+      "description": "Site anatomique d'où le spécimen biologique a été collecté",
       "restrictions": {
-        "required": true,
-        "regex": "^[C][0-9]{2}(.[0-9]{1})?$"
+        "required": true
       },
       "meta": {
         "validationDependency": true,
         "core": true,
-        "notes": "Veuillez vous référer aux lignes directrices du manuel ICD-O-3 à l'adresse suivante: https://apps.who.int/iris/handle/10665/42344",
-        "displayName": "Localisation anatomique du spécimen biologique",
-        "examples": "C50.1,C18"
+        "notes": "Utiliser le terme inscrit au moment de la collecte du biospécimen",
+        "displayName": "Localisation anatomique du spécimen biologique (terme)",
+        "examples": "Esophagus"
+      }
+    },
+    {
+      "name": "biospecimen_anatomic_location_SNOMED_code",
+      "valueType": "string",
+      "description": "Indiquer the SNOMED CT notation (code) for the anatomic location of the biospecimen",
+      "restrictions": {
+        "required": true,
+        "regex": "^[0-9]*$"
+      },
+      "meta": {
+        "validationDependency": true,
+        "core": true,
+        "notes": "Veuillez vous référer au code (notation) dans SNOMED CT https://www.snomed.org/snomed-ct/Use-SNOMED-CT",
+        "displayName": "Localisation anatomique du spécimen biologique (code)",
+        "examples": "32849002"
       }
     },
     {
