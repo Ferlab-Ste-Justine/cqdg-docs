@@ -98,15 +98,60 @@
       "restrictions": {
         "required": true,
         "codeList": [
+          "Amniotic fluid", 
+          "Anorectal",
           "Blood derived - bone marrow",
           "Blood derived - peripheral blood",
           "Blood derived",
           "Bone marrow",
           "Bone",
+          "Bronchial specimen",
+          "Bronchoalveolar lavage",
           "Buccal cell",
           "Buffy coat",
           "Cerebellum",
-          "Cerebrospinal fluid"
+          "Cerebrospinal fluid", 
+          "Cervix",
+          "Cord blood",
+          "Cornea or Conjunctiva",
+          "Dialysis fluid", 
+          "Endometrium",
+          "Esophagus", 
+          "Fibroblast",
+          "Intestine", 
+          "Liver",
+          "Lower respiratory specimen",
+          "Lymph node", 
+          "Mononuclear cells from bone marrow", 
+          "Nasopharynx",
+          "Oropharyngeal wash",
+          "Other", 
+          "Pericardial fluid",
+          "Peritoneal fluid",
+          "Plasma", 
+          "Pleural effusion", 
+          "Red Blood Cells",
+          "Saliva",
+          "Specimen",
+          "Serum",
+          "Skin",
+          "Solid tissue",
+          "Spleen",
+          "Pus",
+          "Sputum",
+          "Stem cell product",
+          "Stomach",
+          "Stool",
+          "Sweat",
+          "Synovial fluid", 
+          "Throat",
+          "Tonsil",
+          "Umbilical cord structure",
+          "Upper respiratory specimen",
+          "Urethra",
+          "Urine", 
+          "Vaginal fluid",
+          "Vitreous fluid"
         ]
       },
       "meta": {
@@ -130,10 +175,12 @@
           "Metastatic tumor",
           "Normal - tissue adjacent to primary tumor",
           "Normal",
+          "Peritumoral",
           "Primary tumor - additional new primary",
           "Primary tumor - adjacent to normal",
           "Primary tumor",
           "Recurrent tumor",
+          "Unknown",
           "Xenograft - derived from primary tumor",
           "Xenograft - derived from tumor cell line",
           "Derived from allogenic bone marrow transplant",
@@ -147,19 +194,34 @@
       }
     },
     {
-      "name": "biospecimen_anatomic_location",
+      "name": "biospecimen_anatomic_location_source_text",
       "valueType": "string",
-      "description": "Indicate the ICD-O-3 topography code for the anatomic location of a biospecimen when it was collected",
+      "description": "Indicate the anatomic location where the biospecimen was collected",
       "restrictions": {
-        "required": true,
-        "regex": "^[C][0-9]{2}(.[0-9]{1})?$"
+        "required": true
       },
       "meta": {
         "validationDependency": true,
         "core": true,
-        "notes": "Refer to guidelines in the ICD-O-3 manual: ICD-O-3 manual at https://apps.who.int/iris/handle/10665/42344",
-        "displayName": "Biospecimen anatonmic location",
-        "examples": "C50.1,C18"
+        "notes": "Use the term that was used when collecting the biospecimen",
+        "displayName": "Biospecimen anatomic location (term)",
+        "examples": "Esophagus"
+      }
+    },
+    {
+      "name": "biospecimen_anatomic_location_SNOMED_code",
+      "valueType": "string",
+      "description": "Indicate the SNOMED CT notation (code) for the anatomic location of the biospecimen",
+      "restrictions": {
+        "required": true,
+        "regex": "^[0-9]*$"
+      },
+      "meta": {
+        "validationDependency": true,
+        "core": true,
+        "notes": "Refer to SNOMED CT https://www.snomed.org/snomed-ct/Use-SNOMED-CT",
+        "displayName": "Biospecimen anatomic location (code)",
+        "examples": "32849002"
       }
     },
     {
