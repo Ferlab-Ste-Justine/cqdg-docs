@@ -30,18 +30,6 @@
       }
     },
     {
-      "name": "short_name",
-      "valueType": "string",
-      "description": "Accronyme ou nom abrégé de l'étude",
-      "restrictions": {
-        "required": true
-      },
-      "meta": {
-        "core": true,
-        "displayName": "Accronyme ou nom abrégé de l'étude"
-      }
-    },
-    {
       "name": "description",
       "valueType": "string",
       "description": "Brève description de l'étude",
@@ -81,6 +69,7 @@
           "Cancer",
           "Rare disease",
           "Neurodevelopmental conditions",
+          "Congenital malformations and deformations",
           "General health",
           "Not applicable"
         ]
