@@ -64,12 +64,18 @@
       }
     },
     {
-      "description": "Date de collecte du spécimen biologique",
-      "name": "date_biospecimen_collection",
+      "description": "Âge du donneur lors de la collecte du spécimen biologique",
+      "name": "age_biospecimen_collection",
       "valueType": "string",
       "meta": {
-        "notes": "Collected DateTime",
-        "displayName": "Date de collecte du spécimen biologique"
+        "displayName": "Âge du donneur lors de la collecte du spécimen biologique",
+        "units": "days"
+      },
+      "restrictions": {
+        "range": {
+          "min": 0,
+          "max": 40000
+        }
       }
     },
     {
@@ -195,32 +201,33 @@
     {
       "name": "biospecimen_anatomic_location_source_text",
       "valueType": "string",
-      "description": "Site anatomique d'où le spécimen biologique a été collecté",
+      "description": "Site anatomique d'où provient le spécimen biologique",
       "restrictions": {
         "required": true
       },
       "meta": {
         "validationDependency": true,
         "core": true,
-        "notes": "Utiliser le terme inscrit au moment de la collecte du biospécimen",
-        "displayName": "Localisation anatomique du spécimen biologique (terme)",
+        "notes": "Utiliser le terme inscrit au moment de la collecte du biospécimen. Ne laisser aucune cellule vide",
+        "displayName": "Site anatomique du spécimen biologique (terme)",
         "examples": "Esophagus"
       }
     },
     {
-      "name": "biospecimen_anatomic_location_SNOMED_code",
+      "name": "biospecimen_anatomic_location_icd_code",
       "valueType": "string",
-      "description": "Indiquer the SNOMED CT notation (code) for the anatomic location of the biospecimen",
+      "description": "Indiquer le code CIM-O3 du site anatomique du spécimen biologique",
       "restrictions": {
         "required": true,
-        "regex": "^[0-9]*$"
+        "regex": "^[C][0-9]{2}(.[0-9]{1})?$"
       },
       "meta": {
         "validationDependency": true,
         "core": true,
-        "notes": "Veuillez vous référer au code (notation) dans SNOMED CT https://www.snomed.org/snomed-ct/Use-SNOMED-CT",
-        "displayName": "Localisation anatomique du spécimen biologique (code)",
-        "examples": "32849002"
+        "dependsOn": "biospecimen.tumor_normal_designation",
+        "notes": "Si le spécimen biologique est une tumeur, indiquer le code provenant de la liste de codes de topographie de la Classification Internationale des Maladies pour l'Oncologie (CIM-O), 3e édition disponible ici https://apps.who.int/classifications/apps/icd/ClassificationDownload/DLArea/Download.aspx",
+        "displayName": "Site anatomique du spécimen biologique (code)",
+        "examples": "C38.0"
       }
     },
     {
@@ -230,7 +237,7 @@
       "meta": {
         "validationDependency": true,
         "core": true,
-        "dependsOn": "sample_registration.tumor_normal_designation",
+        "dependsOn": "biospecimen.tumor_normal_designation",
         "notes": "Si le spécimen biologique est une tumeur. Veuillez vous référer au manuel ICD-O-3 à l'adresse suivante https://apps.who.int/iris/handle/10665/42344",
         "valueType": "string",
         "examples": "8260/3,9691/36",

@@ -34,28 +34,19 @@
       }
     },
     {
-      "description": "Date de naissance du donneur",
-      "name": "dob",
+      "description": "Âge du donneur (en jour) lors du recrutement",
+      "name": "age_at_recruitment",
       "valueType": "string",
       "meta": {
         "core": true,
-        "notes": "Une date partielle peut être soumise; l'année de naissance étant le minimum acceptable",
-        "displayName": "Date de naissance"
+        "displayName": "date de recrutement",
+        "units": "days"
       },
       "restrictions": {
-        "required": true
-      }
-    },
-    {
-      "description": "Date de recrutement du donneur",
-      "name": "date_of_recruitment",
-      "valueType": "string",
-      "meta": {
-        "core": true,
-        "displayName": "date de recrutement"
-      },
-      "restrictions": {
-        "required": true
+        "range": {
+          "min": 0,
+          "max": 40000
+        }
       }
     },
     {
@@ -144,19 +135,26 @@
       }
     },
     {
-      "description": "Age du donneur au moment de son décès (en jour)",
+      "description": "Âge du donneur (en jours) au moment de son décès.",
       "name": "age_of_death",
       "valueType": "number",
       "meta": {
         "dependsOn": "donor.vital_status",
         "notes": "Requis si le donneur est décédé.",
         "validationDependency": true,
-        "units": "years",
+        "units": "days",
         "core": "true",
-        "displayName": "Age de décès"
+        "displayName": "Âge de décès"
       },
       "restrictions": {
-        "script": "#/script/donor/ensureDeceased"
+        "restrictions": {
+          "range": {
+            "min": 0,
+            "max": 40000
+          },
+          "required": true,
+          "script": "#/script/donor/ensureDeceased"
+        }
       }
     },
     {

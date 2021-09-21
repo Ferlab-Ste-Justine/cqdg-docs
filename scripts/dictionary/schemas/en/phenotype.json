@@ -83,9 +83,14 @@
       "name": "age_at_phenotype",
       "valueType": "number",
       "description": "Age (in days) of partipant when phenotype was observed",
-      "restrictions": {},
+      "restrictions": {
+        "range": {
+          "min": 0,
+          "max": 40000
+        }
+      },
       "meta": {
-        "units": "years",
+        "units": "days",
         "displayName": "Age at phenotype occurence"
       }
     },

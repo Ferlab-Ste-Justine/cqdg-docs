@@ -34,28 +34,19 @@
       }
     },
     {
-      "description": "Donor's date of birth",
-      "name": "dob",
+      "description": "Donor's age (in days) at recruitment",
+      "name": "age_at_recruitment",
       "valueType": "string",
       "meta": {
         "core": true,
-        "notes": "Partial date of birth may be provided minimum of year of birth",
-        "displayName": "dob"
+        "units": "days",
+        "displayName": "Age (in days) at recuitment"
       },
       "restrictions": {
-        "required": true
-      }
-    },
-    {
-      "description": "Donor's date of recruitment",
-      "name": "date_of_recruitment",
-      "valueType": "string",
-      "meta": {
-        "core": true,
-        "displayName": "date of recuitment"
-      },
-      "restrictions": {
-        "required": true
+        "range": {
+          "min": 0,
+          "max": 40000
+        }
       }
     },
     {
@@ -144,18 +135,22 @@
       }
     },
     {
-      "description": "Numeric value to represent the age of the donor at the time of death, in days",
+      "description": "Age (in days) of the donor at the time of death.",
       "name": "age_of_death",
       "valueType": "number",
       "meta": {
         "dependsOn": "donor.vital_status",
         "notes": "Age_of_death is only required to be submitted if the donor's vital_status is Deceased.",
         "validationDependency": true,
-        "units": "years",
+        "units": "days",
         "core": "true",
         "displayName": "Age of death"
       },
       "restrictions": {
+        "range": {
+          "min": 0,
+          "max": 40000
+        },
         "script": "#/script/donor/ensureDeceased"
       }
     },

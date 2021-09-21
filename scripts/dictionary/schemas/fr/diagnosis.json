@@ -97,15 +97,15 @@
     {
       "name": "age_at_diagnosis",
       "valueType": "number",
-      "description": "Age au moment du diagnostic de la condition",
+      "description": "Age (en jours) au moment du diagnostic de la condition",
       "restrictions": {
         "range": {
             "min": 0,
-            "max": 100
+            "max": 40000
         }
       },
       "meta": {
-        "units": "years",
+        "units": "days",
         "core": true,
         "displayName": "Age au diagnostic"
       }

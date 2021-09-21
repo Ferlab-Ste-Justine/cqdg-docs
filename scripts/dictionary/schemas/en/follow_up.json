@@ -68,7 +68,7 @@
       }
     },
     {
-      "description": "Time interval between primary diagnosis and follow-up event",
+      "description": "Time interval between primary diagnosis and follow-up event (in days)",
       "name": "days_to_follow_up",
       "valueType": "integer",
       "restrictions": {

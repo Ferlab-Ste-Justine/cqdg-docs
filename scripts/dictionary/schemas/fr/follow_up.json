@@ -103,7 +103,7 @@
     },
     {
       "name": "relapse_interval",
-      "description": "Intervalle entre la fin du traitement de première intention et la progressiojn de la maladie (en jours)",
+      "description": "Intervalle entre la fin du traitement de première intention et la progression de la maladie (en jours)",
       "valueType": "integer",
       "meta": {
         "units": "days",

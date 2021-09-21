@@ -82,11 +82,16 @@
     {
       "name": "age_at_phenotype",
       "valueType": "number",
-      "description": "Age (en jour) où le phénotype a été observé chez ce donneur",
-      "restrictions": {},
+      "description": "Âge (en jours) où le phénotype a été observé chez ce donneur",
+      "restrictions": {
+        "range": {
+          "min": 0,
+          "max": 40000
+        }
+      },
       "meta": {
-        "units": "years",
-        "displayName": "Age où le phénotype a été observé"
+        "units": "days",
+        "displayName": "Âge où le phénotype a été observé"
       }
     },
     {
