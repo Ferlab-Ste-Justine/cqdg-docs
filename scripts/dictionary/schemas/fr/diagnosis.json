@@ -67,7 +67,7 @@
       }
     },
     {
-      "name": "diagnosis_ICD_code",
+      "name": "diagnosis_icd_code",
       "valueType": "string",
       "description": "Code utilisé pour définir la maladie selon la CIM-10",
       "restrictions": {
@@ -100,8 +100,8 @@
       "description": "Age (en jours) au moment du diagnostic de la condition",
       "restrictions": {
         "range": {
-            "min": 0,
-            "max": 40000
+          "min": 0,
+          "max": 40000
         }
       },
       "meta": {
@@ -132,7 +132,7 @@
     },
     {
       "name": "diagnosis_type",
-      "description": "Indiquer si le diagnostic est basé sur des critères cliniques ou histologiques (histo-pathologique)",
+      "description": "Indiquer si le diagnostic de cancer est basé sur des critères cliniques ou histologiques (histo-pathologique)",
       "restrictions": {
         "codeList": [
           "Clinical",
@@ -144,18 +144,19 @@
       "meta": {
         "dependsOn": "diagnosis.is_cancer",
         "notes": "Cette information est requise si le diagnostic est un diagnostic de cancer",
-        "core": true,
         "displayName": "Type de diagnostic"
       }
     },
     {
       "name": "is_cancer_primary",
       "description": "Indiquer si le diagnostic est un diagnostic de cancer primaire",
+      "restrictions": {
+        "script": "#/script/diagnosis/ensureIsCancer"
+      },
       "valueType": "boolean",
       "meta": {
         "dependsOn": "diagnosis.is_cancer",
         "notes": "Cette information est requise si le diagnostic est un diagnostic de cancer",
-        "core": true,
         "displayName": "Est un cancer primaire"
       }
     },
@@ -180,7 +181,6 @@
       },
       "meta": {
         "dependsOn": "diagnosis.is_cancer",
-        "core": true,
         "displayName": "Système de stadification"
       }
     },

@@ -72,18 +72,24 @@
             "required": true,
             "codeList": [
                 "Amplified DNA",
+                "ChIP DNA",
                 "ctDNA",
+                "Fresh/Frozen Cell Pellet",
+                "Frozen cell suspension",
                 "Other DNA enrichments",
                 "Other RNA fractions",
+                "PBMC",
+                "Plasma",
+                "Protein pellet",
                 "polyA+ RNA",
+                "Purified PCR Products",
+                "Red blood cells",
                 "Ribo-Zero RNA",
+                "Serum",
                 "Total DNA",
                 "Total RNA",
-                "ChIP DNA",
-                "Purified PCR Products",
-                "Frozen cell suspension",
-                "Fresh/Frozen Cell Pellet",
-                "Other"
+                "White blood cells",
+                "Other"                      
             ]
         },
         "meta": {

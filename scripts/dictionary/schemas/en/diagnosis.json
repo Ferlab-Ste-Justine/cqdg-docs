@@ -67,7 +67,7 @@
       }
     },
     {
-      "name": "diagnosis_ICD_code",
+      "name": "diagnosis_icd_code",
       "valueType": "string",
       "description": "ICD-10 code used to define a condtion",
       "restrictions": {
@@ -100,8 +100,8 @@
       "description": "Age (in days) at diagnosis of condition",
       "restrictions": {
         "range": {
-            "min": 0,
-            "max": 40000
+          "min": 0,
+          "max": 40000
         }
       },
       "meta": {
@@ -132,7 +132,7 @@
     },
     {
       "name": "diagnosis_type",
-      "description": "Indicate if the diagnosis is based on clinical or histological (histo-pathological) criteria",
+      "description": "Indicate if the cancer diagnosis is based on clinical or histological (histo-pathological) criteria",
       "restrictions": {
         "codeList": [
           "Clinical",
@@ -144,18 +144,19 @@
       "meta": {
         "dependsOn": "diagnosis.is_cancer",
         "notes": "Basis of diagnosis is only required to be submitted if the donor's diagnosis is cancer",
-        "core": true,
         "displayName": "Basis of Diagnosis"
       }
     },
     {
       "name": "is_cancer_primary",
       "description": "Diagnosis is a primary cancer diagnosis",
+      "restrictions": {
+        "script": "#/script/diagnosis/ensureIsCancer"
+      },
       "valueType": "boolean",
       "meta": {
         "dependsOn": "diagnosis.is_cancer",
         "notes": "This field is only required to be submitted if the donor's diagnosis is cancer",
-        "core": true,
         "displayName": "Is primary cancer"
       }
     },
@@ -180,7 +181,6 @@
       },
       "meta": {
         "dependsOn": "diagnosis.is_cancer",
-        "core": true,
         "displayName": "Tumor Staging System"
       }
     },

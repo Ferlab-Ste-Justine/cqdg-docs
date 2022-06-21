@@ -43,6 +43,7 @@
         "units": "days"
       },
       "restrictions": {
+        "required": true,
         "range": {
           "min": 0,
           "max": 40000
@@ -128,9 +129,8 @@
       },
       "valueType": "string",
       "meta": {
-        "core": true,
         "dependsOn": "donor.vital_status",
-        "notes": "Requis si le donneur est décédé",
+        "notes": "Si le donneur est décédé",
         "displayName": "Cause du décès"
       }
     },
@@ -152,9 +152,23 @@
             "min": 0,
             "max": 40000
           },
-          "required": true,
           "script": "#/script/donor/ensureDeceased"
         }
+      }
+    },
+    {
+      "description": "Indiquer si le donneur est un proband",
+      "name": "is_a_proband",
+      "restrictions": {
+        "codeList": [
+          "Is a family member",
+          "Is a proband",
+          "Not applicable"
+        ]
+      },
+      "valueType": "string",
+      "meta": {
+        "displayName": "Est un proband"
       }
     },
     {
@@ -211,37 +225,6 @@
       "valueType": "boolean",
       "meta": {
         "displayName": "Données généalogiques disponibles"
-      }
-    },
-    {
-      "description": "Indiquer si le donneur est un proband",
-      "name": "is_a_proband",
-      "restrictions": {
-        "codeList": [
-          "Is a family member",
-          "Is a proband",
-          "Not applicable"
-        ]
-      },
-      "valueType": "string",
-      "meta": {
-        "displayName": "Est un proband"
-      }
-    },
-    {
-      "description": "Indiquer si le donneur est affecté par la conditon",
-      "name": "is_affected",
-      "restrictions": {
-        "codeList": [
-          "Yes",
-          "No",
-          "Unknown",
-          "Not applicable"
-        ]
-      },
-      "valueType": "string",
-      "meta": {
-        "displayName": "Est affecté"
       }
     }
   ]

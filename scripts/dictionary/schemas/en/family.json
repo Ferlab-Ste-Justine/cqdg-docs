@@ -68,21 +68,6 @@
       }
     },
     {
-      "description": "Indicate if the donor is a proband or a family member",
-      "name": "is_a_proband",
-      "restrictions": {
-        "codeList": [
-          "Is a family member",
-          "Is a proband",
-          "Not applicable"
-        ]
-      },
-      "valueType": "string",
-      "meta": {
-        "displayName": "Is a proband"
-      }
-    },
-    {
       "name": "relationship_to_proband",
       "description": "Relationship of the donor to the proband",
       "valueType": "string",
@@ -125,6 +110,14 @@
       "meta": {
         "core": true,
         "displayName": "Relationship of the donor to the proband"
+      }
+    },
+    {
+      "description": "Indicate if the donor is affected by the condition",
+      "name": "is_affected",
+      "valueType": "string",
+      "meta": {
+        "displayName": "Is affected"
       }
     }
   ]

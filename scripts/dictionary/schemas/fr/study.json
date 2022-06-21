@@ -66,12 +66,20 @@
       "restrictions": {
         "required": true,
         "codeList": [
+          "Aging",
+          "Birth Defects", 
           "Cancer",
-          "Rare disease",
-          "Neurodevelopmental conditions",
-          "Congenital malformations and deformations",
-          "General health",
-          "Not applicable"
+          "Circulatory and Respiratory Health",
+          "General Health",
+          "Infection and Immunity",
+          "Musculoskeletal Health and Arthritis",
+          "Neurodevelopmental Conditions",
+          "Neurosciences, Mental Health and Addiction",
+          "Nutrition, Metabolism and Diabetes",
+          "Population Genomics",
+          "Rare Diseases", 
+          "Not Applicable",
+          "Other"
         ]
       },
       "meta": {

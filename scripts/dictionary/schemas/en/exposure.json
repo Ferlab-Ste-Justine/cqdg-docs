@@ -35,7 +35,7 @@
     },
     {
       "name": "smoking_status",
-      "description": "Smoking status of a patient at the time of the data collection",
+      "description": "Smoking status of a donor at the time of the data collection",
       "valueType": "string",
       "restrictions": {
         "codeList": [
@@ -56,6 +56,9 @@
     {
       "name": "smoking_pack_years",
       "description": "Number of packs of cigarettes per day multiplied by the number of years donor smoked",
+      "restrictions": {
+        "script": "#/script/donor/ensureSmoker"
+      },
       "valueType": "string",
       "meta": {
         "dependsOn": "exposure.smoking_status",
