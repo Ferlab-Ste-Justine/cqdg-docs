@@ -1,8 +1,8 @@
 {
   "name": "follow_up",
-  "description": "The collection of data elements related to a specific follow-up visit by a donor with a cancer diagnosis. A follow-up is defined as any point of contact with a patient after primary cancer diagnosis. To submit multiple follow-ups for a single donor, submit multiple rows in the follow-up file for this donor.",
+  "description": "The collection of data elements related to a specific follow-up visit by a participant with a cancer diagnosis. A follow-up is defined as any point of contact with a patient after primary cancer diagnosis. To submit multiple follow-ups for a single participant, submit multiple rows in the follow-up file for this participant.",
   "meta": {
-    "parent": "donor"
+    "parent": "participant"
   },
   "fields": [
     {
@@ -21,14 +21,14 @@
       }
     },
     {
-      "description": "Identifier of the donor, assigned by the data provider",
-      "name": "submitter_donor_id",
+      "description": "Identifier of the participant, assigned by the data provider",
+      "name": "submitter_participant_id",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "donor.submitter_donor_id",
-        "displayName": "Submitter Donor ID",
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "Submitter participant ID",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -52,22 +52,7 @@
         "regex": "#/regex/id"
       }
     },
-    {
-      "description": "Unique identifier for a follow-up event in a donor's clinical record, assigned by the data provider",
-      "name": "submitter_follow_up_id",
-      "valueType": "string",
-      "meta": {
-        "validationDependency": true,
-        "primaryId": true,
-        "displayName": "Submitter Follow-Up ID",
-        "notes": "#/notes/id"
-      },
-      "restrictions": {
-        "required": true,
-        "regex": "#/regex/id"
-      }
-    },
-    {
+      {
       "description": "Time interval between primary diagnosis and follow-up event",
       "name": "days_to_follow_up",
       "valueType": "integer",
@@ -81,7 +66,7 @@
       }
     },
     {
-      "description": "Indicate the donor's disease status at time of follow-up",
+      "description": "Indicate the participant's disease status at time of follow-up",
       "name": "disease_status_at_followup",
       "valueType": "string",
       "restrictions": {
@@ -108,7 +93,7 @@
       "meta": {
         "units": "days",
         "dependsOn": "follow_up.disease_status_at_followup",
-        "notes": "If the donor was clinically disease free following primary treatment and then relapse or recurrence or progression (for liquid tumors) occurred afterwards, then this field will indicate the length of disease free interval, in days.",
+        "notes": "If the participant was clinically disease free following primary treatment and then relapse or recurrence or progression (for liquid tumors) occurred afterwards, then this field will indicate the length of disease free interval, in days.",
         "displayName": "Relapse Interval"
       }
     }

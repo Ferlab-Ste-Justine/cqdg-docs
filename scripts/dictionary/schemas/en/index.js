@@ -20,7 +20,7 @@
 
 const sample_registration = require('./sample_registration.json');
 const study = require('./study.json');
-const donor = require('./donor.json');
+const participant = require('./participant.json');
 const biospecimen = require('./biospecimen.json');
 const diagnosis = require('./diagnosis.json');
 const treatment = require('./treatment.json');
@@ -33,7 +33,7 @@ const family_history = require('./family_history.json');
 module.exports = [
     sample_registration,
     study,
-    donor,
+    participant,
     biospecimen,
     diagnosis,
     treatment,

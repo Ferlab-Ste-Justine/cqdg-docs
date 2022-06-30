@@ -1,6 +1,6 @@
 {
   "name": "biospecimen",
-  "description": "The collection of data elements related to a donor's biospecimen. A biospecimen is any material sample taken for testing, diagnostic or research purposes. To submit multiple biospecimens for a single donor, submit multiple rows in the biospecimens file for this donor.",
+  "description": "The collection of data elements related to a participant's biospecimen. A biospecimen is any material sample taken for testing, diagnostic or research purposes. To submit multiple biospecimens for a single participant, submit multiple rows in the biospecimens file for this participant.",
   "fields": [
     {
       "name": "study_id",
@@ -18,14 +18,14 @@
       }
     },
     {
-      "name": "submitter_donor_id",
-      "description": "Identifier of the donor, assigned by the data provider",
+      "name": "submitter_participant_id",
+      "description": "Identifier of the participant, assigned by the data provider",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "donor.submitter_donor_id",
-        "displayName": "Submitter Donor ID",
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "Submitter participant ID",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -49,27 +49,37 @@
       }
     },
     {
-      "name": "submitter_diagnosis_id",
-      "valueType": "string",
-      "description": "Indicate the diagnosis event in the clinical timeline that this biospecimen acquisition was related to",
-      "meta": {
-        "primaryId": true,
-        "validationDependency": true,
-        "foreignKey": "diagnosis.submitter_diagnosis_id",
-        "displayName": "Submitter Diagnosis ID",
-        "notes": "not required if the biospecimen was not collected for a diagnostic purpose #/notes/id"
-      },
+      "description": "Age (in days) of participant when biospecimen was collected",
+      "name": "age_biospecimen_collection",
       "restrictions": {
-        "regex": "#/regex/id"
+        "range": {
+          "min": 0,
+          "max": 4000
+        }
+      },
+      "valueType": "number",
+      "meta": {
+        "units": "days",
+        "displayName": "Age (in days) at biospecimen collection"
       }
     },
     {
-      "description": "Date when biospecimen was collected",
-      "name": "date_biospecimen_collection",
+      "description": "Tissue source of the biospecimen",
+      "name": "biospecimen_tissue_source",
       "valueType": "string",
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "Blood",
+          "Bone marrow",
+          "Saliva",
+          "Solid tissue"
+        ]
+      },
       "meta": {
-        "notes": "Collected DateTime",
-        "displayName": "Date of biospecimen collection"
+        "core": true,
+        "notes": "Terms are taken from NCI Thesaurus (NCIt) at http://purl.obolibrary.org/obo/ncit.owl",
+        "displayName": "Biospecimen tissue source"
       }
     },
     {
@@ -92,111 +102,31 @@
       }
     },
     {
-      "description": "Tissue source of the biospecimen",
-      "name": "biospecimen_tissue_source",
+      "name": "cancer_biospecimen_type",
       "valueType": "string",
+      "description": "Description of the kind of biospecimen that was collected (specific to cancer) based on  NCI Thesaurus (NCIt)",
       "restrictions": {
         "required": true,
         "codeList": [
-          "Amniotic fluid", 
-          "Anorectal",
-          "Blood derived - bone marrow",
-          "Blood derived - peripheral blood",
-          "Blood derived",
-          "Bone marrow",
-          "Bone",
-          "Bronchial specimen",
-          "Bronchoalveolar lavage",
-          "Buccal cell",
-          "Buffy coat",
-          "Cerebellum",
-          "Cerebrospinal fluid", 
-          "Cervix",
-          "Cord blood",
-          "Cornea or Conjunctiva",
-          "Dialysis fluid", 
-          "Endometrium",
-          "Esophagus", 
-          "Fibroblast",
-          "Intestine", 
-          "Liver",
-          "Lower respiratory specimen",
-          "Lymph node", 
-          "Mononuclear cells from bone marrow", 
-          "Nasopharynx",
-          "Oropharyngeal wash",
-          "Other", 
-          "Pericardial fluid",
-          "Peritoneal fluid",
-          "Plasma", 
-          "Pleural effusion", 
-          "Red Blood Cells",
-          "Saliva",
-          "Specimen",
-          "Serum",
-          "Skin",
-          "Solid tissue",
-          "Spleen",
-          "Pus",
-          "Sputum",
-          "Stem cell product",
-          "Stomach",
-          "Stool",
-          "Sweat",
-          "Synovial fluid", 
-          "Throat",
-          "Tonsil",
-          "Umbilical cord structure",
-          "Upper respiratory specimen",
-          "Urethra",
-          "Urine", 
-          "Vaginal fluid",
-          "Vitreous fluid"
-        ]
-      },
-      "meta": {
-        "core": true,
-        "displayName": "Biospecimen_tissue_source"
-      }
-    },
-    {
-      "name": "biospecimen_type",
-      "valueType": "string",
-      "description": "Description of the kind of biospecimen that was collected",
-      "restrictions": {
-        "required": true,
-        "codeList": [
-          "Cell line - derived from normal",
-          "Cell line - derived from tumor",
-          "Cell line - derived from xenograft tumor",
-          "Metastatic tumor - additional metastatic",
-          "Metastatic tumor - metastasis local to lymph node",
-          "Metastatic tumor - metastasis to distant location",
-          "Metastatic tumor",
-          "Normal - tissue adjacent to primary tumor",
-          "Normal",
-          "Peritumoral",
-          "Primary tumor - additional new primary",
-          "Primary tumor - adjacent to normal",
-          "Primary tumor",
-          "Recurrent tumor",
-          "Unknown",
-          "Xenograft - derived from primary tumor",
-          "Xenograft - derived from tumor cell line",
-          "Derived from allogenic bone marrow transplant",
-          "Derived from autologous bone marrow transplant"
+          "Derived Cell Line",
+          "Metastatic Tumor Sample",
+          "Sample Derived from New Primary",
+          "Tumor-Adjacent Normal Specimen",
+          "Tumor Tissue",
+          "Normal Tissue Segment",
+          "Cell Line-Derived Xenograft"
         ]
       },
       "meta": {
         "validationDependency": true,
         "core": true,
-        "displayName": "Biospecimen Type"
+        "displayName": "Cancer Biospecimen Type"
       }
     },
     {
-      "name": "biospecimen_anatomic_location_source_text",
+      "name": "cancer_biospecimen_anatomic_location_source_text",
       "valueType": "string",
-      "description": "Indicate the anatomic location where the biospecimen was collected",
+      "description": "Indicate the anatomic location where the biospecimen was collected (cancer specific)",
       "restrictions": {
         "required": true
       },
@@ -205,36 +135,36 @@
         "core": true,
         "notes": "Use the term that was used when collecting the biospecimen",
         "displayName": "Biospecimen anatomic location (term)",
-        "examples": "Esophagus"
+        "examples": "Breast"
       }
     },
     {
-      "name": "biospecimen_anatomic_location_SNOMED_code",
+      "name": "cancer_biospecimen_anatomic_location_ncit_code",
       "valueType": "string",
-      "description": "Indicate the SNOMED CT notation (code) for the anatomic location of the biospecimen",
+      "description": "Indicate the  NCI Thesaurus (NCIt) code for the anatomic location of the biospecimen",
       "restrictions": {
         "required": true,
-        "regex": "^[0-9]*$"
+        "regex": "^[8,9]{1}[0-9]{3}/[0,1,2,3,6,9]{1}[1-9]{0,1}$"
       },
       "meta": {
         "validationDependency": true,
         "core": true,
-        "notes": "Refer to SNOMED CT https://www.snomed.org/snomed-ct/Use-SNOMED-CT",
+        "notes": "Refer to  NCI Thesaurus (NCIt) at http://purl.obolibrary.org/obo/ncit.owl",
         "displayName": "Biospecimen anatomic location (code)",
-        "examples": "32849002"
+        "examples": "NCIT:C12971"
       }
     },
     {
-      "name": "tumor_histological_type",
-      "description": "The code to represent the histology (morphology) of neoplasms that is usually obtained from a pathology report, according to the International Classification of Diseases for Oncology, 3rd Edition (WHO ICD-O-3)",
+      "name": "tumor_histological_type_source_text",
+      "description": "The histology of neoplasms that is usually obtained from a pathology report",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "core": true,
-        "dependsOn": "sample_registration.tumor_normal_designation",
-        "notes": "If biospecimen is a tumor, Refer to the ICD-O-3 manual for guidelines at https://apps.who.int/iris/handle/10665/42344",
+        "dependsOn": "biospecimen.tumor_normal_designation",
+        "notes": "Use the term that was used in the pathology report",
         "valueType": "string",
-        "examples": "8260/3,9691/36",
+        "examples": "Mucinous Adenocarcinoma",
         "displayName": "Tumor Histological Type"
       },
       "restrictions": {
@@ -243,58 +173,21 @@
       }
     },
     {
-      "name": "biospecimen_processing",
+      "name": "tumor_histological_type_ncit_code",
+      "description": "The code to represent the histology of neoplasms that is usually obtained from a pathology report, according to NCI Thesaurus (NCIt) at http://purl.obolibrary.org/obo/ncit.owl",
       "valueType": "string",
-      "description": "Processing method of biospecimen",
-      "restrictions": {
-        "codeList": [
-          "Cryopreservation in liquid nitrogen (dead tissue)",
-          "Cryopreservation in dry ice (dead tissue)",
-          "Cryopreservation of live cells in liquid nitrogen",
-          "Cryopreservation - other",
-          "Formalin fixed & paraffin embedded",
-          "Formalin fixed - buffered",
-          "Formalin fixed - unbuffered",
-          "Fresh",
-          "Other"
-        ]
-      },
-      "meta": {
-        "displayName": "Biospecimen processing"
-      }
-    },
-    {
-      "name": "biospecimen_storage",
-      "valueType": "string",
-      "description": "Storage method of biospecimen",
-      "restrictions": {
-        "codeList": [
-          "Cut slide",
-          "Frozen in -70 freezer",
-          "Frozen in liquid nitrogen",
-          "Frozen in vapour phase",
-          "Not Applicable",
-          "Other",
-          "Paraffin block",
-          "RNA later frozen"
-        ]
-      },
-      "meta": {
-        "notes": "For biospecimens that were freshly extracted or immediately cultured, select Not Applicable.",
-        "displayName": "Biospecimen storage"
-      }
-    },
-    {
-      "name": "biospecimen_access",
-      "valueType": "boolean",
-      "description": "Biospecimen may be accessed (consent type)",
-      "restrictions": {
-        "required": true
-      },
       "meta": {
         "validationDependency": true,
         "core": true,
-        "displayName": "Biospecimen access"
+        "dependsOn": "sample_registration.tumor_normal_designation",
+        "notes": "If biospecimen is a tumor refer to  NCI Thesaurus (NCIt) at http://purl.obolibrary.org/obo/ncit.owl",
+        "valueType": "string",
+        "examples": "NCIT:C136709 ",
+        "displayName": "Tumor Histological Type"
+      },
+      "restrictions": {
+        "regex": "^[8,9]{1}[0-9]{3}/[0,1,2,3,6,9]{1}[1-9]{0,1}$",
+        "script": "#/script/biospecimen/ensureTumorNormalDesignation"
       }
     }
   ]

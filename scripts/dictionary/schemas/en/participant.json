@@ -1,0 +1,160 @@
+{
+  "name": "participant",
+  "description": "The collection of data elements related to a specific participant in the CQDG program.",
+  "fields": [
+    {
+      "name": "study_id",
+      "valueType": "string",
+      "description": "Identifier for the Study",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "Study ID",
+        "notes": "#/notes/id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/id"
+      }
+    },
+    {
+      "description": "Unique identifier of the participant, assigned by the data provider",
+      "name": "submitter_participant_id",
+      "valueType": "string",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "Submitter participant ID",
+        "notes": "#/notes/id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/id"
+      }
+    },
+    {
+      "description": "participant's age (in days) at recruitment",
+      "name": "age_at_recruitment",
+      "valueType": "number",
+      "meta": {
+        "core": true,
+        "displayName": "Age of participant at recruitment", 
+        "units":"days"
+      },
+      "restrictions": {
+        "range": {
+          "min": 0,
+          "max": 40000
+        },
+        "required": true
+      }
+    },
+    {
+      "description": "Administrative gender of the participant",
+      "name": "gender",
+      "valueType": "string",
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "Male",
+          "Female",
+          "Other",
+          "Unknown"
+        ]
+      },
+      "meta": {
+        "core": true,
+        "notes": "Data from administrative health record, medical record or self-reported",
+        "displayName": "Gender"
+      }
+    },
+    {
+      "description": "Ethnic background of the participant",
+      "name": "ethnicity",
+      "valueType": "string",
+      "restrictions": {
+        "codeList": [
+          "French Canadian",
+          "English Canadian",
+          "First Nation, Inuit, Metis",
+          "European",
+          "Arab",
+          "Latin American",
+          "African or Caribbean",
+          "East and Southeast Asian",
+          "South Asian",
+          "Mixed",
+          "Other"
+        ]
+      },
+      "meta": {
+        "displayName": "Ethnicity",
+        "notes": "French Canadian trace their ancestry to French colonists who settled in Canada, English Canadians are of English ethnic origin and heritage, Aboriginal (First Nations, Metis, Inuit), White (European descent), Arab (e.g. Egypt, Iraq, Jordan, Lebanon), Latin American (Hispanic), Black (African/Caribbean), East Asian (e.g. China, Japan, Korea, Taiwan), West Asian (e.g. Turkey, Iran, Afghanistan), Southeast Asian (e.g. Malaysia, Indonesia, Viet Nam), South Asian (e.g. India, Sri Lanka, Pakistan, Bangladesh), Filipino, Unknown, Other"
+      }
+    },
+    {
+      "description": "participant's last known state of living or deceased",
+      "name": "vital_status",
+      "restrictions": {
+        "codeList": [
+          "Alive",
+          "Deceased",
+          "Unknown"
+        ],
+        "required": true
+      },
+      "valueType": "string",
+      "meta": {
+        "validationDependency": true,
+        "core": true,
+        "displayName": "Vital Status"
+      }
+    },
+    {
+      "description": "Indicates the cause of a participant's death",
+      "name": "cause_of_death",
+      "restrictions": {
+        "codeList": [
+          "Cancer",
+          "Heart disease",
+          "Cerebrovascular disease",
+          "Accidental death",
+          "Chronic lower respiratory diseases",
+          "Influenza and pneumonia",
+          "Other reason",
+          "Unknown"
+        ],
+        "script": "#/script/participant/ensureDeceased"
+      },
+      "valueType": "string",
+      "meta": {
+        "core": true,
+        "dependsOn": "participant.vital_status",
+        "notes": "Cause of death is only required to be submitted if the participant's vital_status is 'Deceased'.",
+        "displayName": "Cause of Death"
+      }
+    },
+    {
+      "description": "Numeric value to represent the age of the participant at the time of death, in days",
+      "name": "age_of_death",
+      "valueType": "number",
+      "meta": {
+        "dependsOn": "participant.vital_status",
+        "notes": "Age_of_death is only required to be submitted if the participant's vital_status is Deceased.",
+        "validationDependency": true,
+        "units": "days",
+        "core": "true",
+        "displayName": "Age of death"
+      },
+      "restrictions": {
+        "range": {
+          "min": 0,
+          "max": 40000
+        },
+        "required": true,
+        "script": "#/script/participant/ensureDeceased"
+      }
+    }
+  ]
+}

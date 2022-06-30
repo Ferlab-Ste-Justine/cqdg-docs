@@ -1,7 +1,7 @@
 /**
  * Validates that stage_group is a permissable value based on tumour_staging_system
  *
- * @param {Object} $row The object representing the row for a donor. Object keys represent the fields.
+ * @param {Object} $row The object representing the row for a participant. Object keys represent the fields.
  * @param {String} $field The value for the field.
  */
 const validation = () =>

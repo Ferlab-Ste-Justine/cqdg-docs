@@ -1,8 +1,8 @@
 {
   "name": "treatment",
-  "description": "L'ensemble de champs reliés au traitement d'un donneur. Pour soumettre plus d'un traitement pour un donneur, veuillez ajouter des lignes dans la table traitement pour ce donneur.",
+  "description": "L'ensemble de champs reliés au traitement d'un participant. Pour soumettre plus d'un traitement pour un participant, veuillez ajouter des lignes dans la table traitement pour ce participant.",
   "meta": {
-    "parent": "donor"
+    "parent": "participant"
   },
   "fields": [
     {
@@ -21,29 +21,14 @@
       }
     },
     {
-      "name": "submitter_donor_id",
-      "description": "Identifiant pour le donneur, soumis par l'étude",
+      "name": "submitter_participant_id",
+      "description": "Identifiant pour le participant, soumis par l'étude",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "donor.submitter_donor_id",
-        "displayName": "ID du donneur soumis par l'étude",
-        "notes": "#/notes/id"
-      },
-      "restrictions": {
-        "required": true,
-        "regex": "#/regex/id"
-      }
-    },
-    {
-      "name": "submitter_treatment_id",
-      "description": "Identifiant unique pour le traitement du donneur, soumis par l'étude",
-      "valueType": "string",
-      "meta": {
-        "validationDependency": true,
-        "primaryId": true,
-        "displayName": "ID du traitement soumis par l'étude",
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "ID du participant soumis par l'étude",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -68,7 +53,7 @@
     },
     {
       "name": "treatment_type",
-      "description": "Type de traitement reçu par le donneur",
+      "description": "Type de traitement reçu par le participant",
       "valueType": "string",
       "restrictions": {
         "required": true,
@@ -97,7 +82,7 @@
     },
     {
       "name": "treatment_is_primary",
-      "description": "Indiquer si ce traitement est le traitement de première intention reçu par le donneur après son diagnostic",
+      "description": "Indiquer si ce traitement est le traitement de première intention reçu par le participant après son diagnostic",
       "valueType": "string",
       "restrictions": {
         "codeList": [
@@ -134,7 +119,7 @@
     },
     {
       "name": "treatment_response",
-      "description": "Indiquer la réponse du donneur à ce traitement",
+      "description": "Indiquer la réponse du participant à ce traitement",
       "valueType": "string",
       "restrictions": {
         "codeList": [

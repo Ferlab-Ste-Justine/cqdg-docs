@@ -1,8 +1,8 @@
 {
   "name": "treatment",
-  "description": "The collection of data elements related to a donor's treatment at a specific point in the clinical record. To submit multiple treatments for a single donor, please submit treatment rows in the treatment file for this donor.",
+  "description": "The collection of data elements related to a participant's treatment at a specific point in the clinical record. To submit multiple treatments for a single participant, please submit treatment rows in the treatment file for this participant.",
   "meta": {
-    "parent": "donor"
+    "parent": "participant"
   },
   "fields": [
     {
@@ -21,29 +21,14 @@
       }
     },
     {
-      "name": "submitter_donor_id",
-      "description": "Identifier of the donor, assigned by the data provider",
+      "name": "submitter_participant_id",
+      "description": "Identifier of the participant, assigned by the data provider",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "donor.submitter_donor_id",
-        "displayName": "Submitter Donor ID",
-        "notes": "#/notes/id"
-      },
-      "restrictions": {
-        "required": true,
-        "regex": "#/regex/id"
-      }
-    },
-    {
-      "name": "submitter_treatment_id",
-      "description": "Unique identifier of the treatment, assigned by the data provider",
-      "valueType": "string",
-      "meta": {
-        "validationDependency": true,
-        "primaryId": true,
-        "displayName": "Submitter Treatment ID",
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "Submitter participant ID",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -68,7 +53,7 @@
     },
     {
       "name": "treatment_type",
-      "description": "Indicate the type of treatment the donor received",
+      "description": "Indicate the type of treatment the participant received",
       "valueType": "string",
       "restrictions": {
         "required": true,
@@ -134,7 +119,7 @@
     },
     {
       "name": "treatment_response",
-      "description": "The donor's response to the treatment",
+      "description": "The participant's response to the treatment",
       "valueType": "string",
       "restrictions": {
         "codeList": [

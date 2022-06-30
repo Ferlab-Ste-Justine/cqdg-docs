@@ -135,6 +135,19 @@
         "notes": "Refer to the Data Use Ontology code https://github.com/EBISPOT/DUO",
         "examples": "DUO:0000021;DUO:0000025"
       }
+    },
+    {
+      "name": "biospecimen_access",
+      "valueType": "boolean",
+      "description": "Biospecimen may be accessed (consent type)",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "validationDependency": true,
+        "core": true,
+        "displayName": "Biospecimen access"
+      }
     }
   ]
 }

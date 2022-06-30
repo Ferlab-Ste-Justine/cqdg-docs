@@ -24,7 +24,7 @@ module.exports = {
             name: 'sample_registration',
             required: true,
             description:
-                'The collection of elements required to register the required Donor-Specimen-Sample data to the ARGO Platform. Registration of samples is required before genomic and clinical data submission can proceed.',
+                'The collection of elements required to register the required Participant-Specimen-Sample data to the ARGO Platform. Registration of samples is required before genomic and clinical data submission can proceed.',
             fields: [
                 {
                     name: 'program_id',
