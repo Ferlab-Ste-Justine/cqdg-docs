@@ -68,21 +68,6 @@
       }
     },
     {
-      "description": "Indiquer si le donneur est un proband",
-      "name": "is_a_proband",
-      "restrictions": {
-        "codeList": [
-          "Is a family member",
-          "Is a proband",
-          "Not applicable"
-        ]
-      },
-      "valueType": "string",
-      "meta": {
-        "displayName": "Est un proband"
-      }
-    },
-    {
       "name": "relationship_to_proband",
       "description": "Relation du donneur envers le proband",
       "valueType": "string",
@@ -100,26 +85,7 @@
           "Fraternal twin brother",
           "Fraternal twin sister",
           "Son",
-          "Daughter",
-          "Maternal grand-mother",
-          "Maternal grand-father",
-          "Paternal grand-mother",
-          "Paternal grand-father",
-          "Maternal aunt",
-          "Maternal uncle",
-          "Paternal aunt",
-          "Paternal uncle",
-          "Maternal cousin",
-          "Paternal cousin",
-          "Granddaughter",
-          "Grandson",
-          "Nephew",
-          "Niece",
-          "Cousin",
-          "Spouse",
-          "Former spouse",
-          "Husband",
-          "Wife"
+          "Daughter"
         ]
       },
       "meta": {

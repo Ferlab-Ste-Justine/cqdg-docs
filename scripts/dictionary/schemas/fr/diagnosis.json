@@ -21,22 +21,6 @@
       }
     },
     {
-      "name": "submitter_donor_id",
-      "valueType": "string",
-      "description": "Identifiant pour le donneur, soumis par l'étude",
-      "meta": {
-        "validationDependency": true,
-        "primaryId": true,
-        "foreignKey": "donor.submitter_donor_id",
-        "displayName": "ID du donneur soumis par l'étude",
-        "notes": "#/notes/id"
-      },
-      "restrictions": {
-        "required": true,
-        "regex": "#/regex/id"
-      }
-    },
-    {
       "name": "submitter_diagnosis_id",
       "valueType": "string",
       "description": "Identifiant unique pour le diagnostic du donneur, soumis par l'étude",
@@ -97,25 +81,17 @@
     {
       "name": "age_at_diagnosis",
       "valueType": "number",
-      "description": "Age au moment du diagnostic de la condition",
+      "description": "Age (en jours) au moment du diagnostic de la condition",
       "restrictions": {
         "range": {
             "min": 0,
-            "max": 100
+            "max": 40000
         }
       },
       "meta": {
-        "units": "years",
+        "units": "days",
         "core": true,
         "displayName": "Age au diagnostic"
-      }
-    },
-    {
-      "name": "is_self_reported",
-      "description": "Indiquer si le diagnostic est auto-déclaré (par le donneur)",
-      "valueType": "boolean",
-      "meta": {
-        "displayName": "Est auto-déclaré"
       }
     },
     {
@@ -131,27 +107,16 @@
       }
     },
     {
-      "name": "diagnosis_type",
-      "description": "Indiquer si le diagnostic est basé sur des critères cliniques ou histologiques (histo-pathologique)",
-      "restrictions": {
-        "codeList": [
-          "Clinical",
-          "Histological"
-        ],
-        "script": "#/script/diagnosis/ensureIsCancer"
-      },
-      "valueType": "string",
-      "meta": {
-        "dependsOn": "diagnosis.is_cancer",
-        "notes": "Cette information est requise si le diagnostic est un diagnostic de cancer",
-        "core": true,
-        "displayName": "Type de diagnostic"
-      }
-    },
-    {
       "name": "is_cancer_primary",
       "description": "Indiquer si le diagnostic est un diagnostic de cancer primaire",
-      "valueType": "boolean",
+      "valueType": "string",
+      "restrictions": {
+        "codeList": [
+          "Yes",
+          "No",
+          "Unknown"
+        ]
+      },
       "meta": {
         "dependsOn": "diagnosis.is_cancer",
         "notes": "Cette information est requise si le diagnostic est un diagnostic de cancer",

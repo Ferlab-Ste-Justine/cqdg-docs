@@ -37,21 +37,6 @@
       }
     },
     {
-      "name": "submitter_treatment_id",
-      "description": "Identifiant unique pour le traitement du donneur, soumis par l'étude",
-      "valueType": "string",
-      "meta": {
-        "validationDependency": true,
-        "primaryId": true,
-        "displayName": "ID du traitement soumis par l'étude",
-        "notes": "#/notes/id"
-      },
-      "restrictions": {
-        "required": true,
-        "regex": "#/regex/id"
-      }
-    },
-    {
       "name": "submitter_diagnosis_id",
       "valueType": "string",
       "description": "Identifiant du diagnostic qui est relié à ce traitement",

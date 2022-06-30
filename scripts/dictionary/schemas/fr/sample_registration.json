@@ -71,19 +71,8 @@
       "restrictions": {
         "required": true,
         "codeList": [
-          "Amplified DNA",
-          "ctDNA",
-          "Other DNA enrichments",
-          "Other RNA fractions",
-          "polyA+ RNA",
-          "Ribo-Zero RNA",
-          "Total DNA",
-          "Total RNA",
-          "ChIP DNA",
-          "Purified PCR Products",
-          "Frozen cell suspension",
-          "Fresh/Frozen Cell Pellet",
-          "Other"
+          "DNA",
+          "RNA"
         ]
       },
       "meta": {

@@ -100,31 +100,27 @@
           "Fraternal twin brother",
           "Fraternal twin sister",
           "Son",
-          "Daughter",
-          "Maternal grand-mother",
-          "Maternal grand-father",
-          "Paternal grand-mother",
-          "Paternal grand-father",
-          "Maternal aunt",
-          "Maternal uncle",
-          "Paternal aunt",
-          "Paternal uncle",
-          "Maternal cousin",
-          "Paternal cousin",
-          "Granddaughter",
-          "Grandson",
-          "Nephew",
-          "Niece",
-          "Cousin",
-          "Spouse",
-          "Former spouse",
-          "Husband",
-          "Wife"
+          "Daughter"
         ]
       },
       "meta": {
         "core": true,
         "displayName": "Relationship of the donor to the proband"
+      }
+    },
+    {
+      "name": "is_affected",
+      "description": "Is affected by the condition",
+      "valueType": "string",
+      "restrictions": {
+        "codeList": [
+          "Yes",
+          "No",
+          "Unknown"
+        ]
+      },
+      "meta": {
+        "displayName": "Is affected by the condition"
       }
     }
   ]

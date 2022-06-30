@@ -37,22 +37,6 @@
       }
     },
     {
-      "name": "submitter_diagnosis_id",
-      "valueType": "string",
-      "description": "Unique identifier of the diagnosis event, assigned by the data provider",
-      "meta": {
-        "primaryId": true,
-        "validationDependency": true,
-        "foreignKey": "diagnosis.submitter_diagnosis_id",
-        "displayName": "Submitter Diagnosis ID",
-        "notes": "#/notes/id"
-      },
-      "restrictions": {
-        "required": true,
-        "regex": "#/regex/id"
-      }
-    },
-    {
       "name": "diagnosis_source_text",
       "valueType": "string",
       "description": "Condition as reported in the study's dataset",
@@ -97,25 +81,17 @@
     {
       "name": "age_at_diagnosis",
       "valueType": "number",
-      "description": "Age at diagnosis of condition",
+      "description": "Age (in days) at diagnosis of condition",
       "restrictions": {
         "range": {
-            "min": 0,
-            "max": 100
+          "min": 0,
+          "max": 40000
         }
       },
       "meta": {
-        "units": "years",
+        "units": "days",
         "core": true,
-        "displayName": "Age at Diagnosis"
-      }
-    },
-    {
-      "name": "is_self_reported",
-      "description": "Indicates whether the information is reported by donor or extracted from (administrative) health records",
-      "valueType": "boolean",
-      "meta": {
-        "displayName": "Is self-reported"
+        "displayName": "Age at diagnosis"
       }
     },
     {
@@ -131,27 +107,16 @@
       }
     },
     {
-      "name": "diagnosis_type",
-      "description": "Indicate if the diagnosis is based on clinical or histological (histo-pathological) criteria",
-      "restrictions": {
-        "codeList": [
-          "Clinical",
-          "Histological"
-        ],
-        "script": "#/script/diagnosis/ensureIsCancer"
-      },
-      "valueType": "string",
-      "meta": {
-        "dependsOn": "diagnosis.is_cancer",
-        "notes": "Basis of diagnosis is only required to be submitted if the donor's diagnosis is cancer",
-        "core": true,
-        "displayName": "Basis of Diagnosis"
-      }
-    },
-    {
       "name": "is_cancer_primary",
       "description": "Diagnosis is a primary cancer diagnosis",
-      "valueType": "boolean",
+      "valueType": "string",
+      "restrictions": {
+        "codeList": [
+          "Yes",
+          "No",
+          "Unknown"
+        ]
+      },
       "meta": {
         "dependsOn": "diagnosis.is_cancer",
         "notes": "This field is only required to be submitted if the donor's diagnosis is cancer",

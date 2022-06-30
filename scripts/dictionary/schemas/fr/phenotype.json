@@ -37,21 +37,6 @@
       }
     },
     {
-      "name": "submitter_phenotype_id",
-      "description": "Identifiant unique pour le phénotype, soumis par l'étude",
-      "valueType": "string",
-      "meta": {
-        "validationDependency": true,
-        "primaryId": true,
-        "displayName": "ID du phénotype soumis par l'étude",
-        "notes": "#/notes/id"
-      },
-      "restrictions": {
-        "required": true,
-        "regex": "#/regex/id"
-      }
-    },
-    {
       "name": "phenotype_source_text",
       "valueType": "string",
       "description": "Le phenotype (ou anomalie) du donneur tel que rapporté par l'étude",
@@ -83,27 +68,15 @@
       "name": "age_at_phenotype",
       "valueType": "number",
       "description": "Age (en jour) où le phénotype a été observé chez ce donneur",
-      "restrictions": {},
-      "meta": {
-        "units": "years",
-        "displayName": "Age où le phénotype a été observé"
-      }
-    },
-    {
-      "name": "phenotype_severity",
-      "valueType": "string",
-      "description": "Sévérité de la manifestation du phénotype",
       "restrictions": {
-        "codeList": [
-          "Borderline",
-          "Mild",
-          "Moderate",
-          "Severe",
-          "Profound"
-        ]
+        "range": {
+          "min": 0,
+          "max": 40000
+        }
       },
       "meta": {
-        "displayName": "Sévérité du phénotype"
+        "units": "days",
+        "displayName": "Age où le phénotype a été observé"
       }
     },
     {

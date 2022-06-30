@@ -34,27 +34,19 @@
       }
     },
     {
-      "description": "Donor's date of birth",
-      "name": "dob",
+      "description": "Donor's age (in days) at recruitment",
+      "name": "age_at_recruitment",
       "valueType": "string",
       "meta": {
         "core": true,
-        "notes": "Partial date of birth may be provided minimum of year of birth",
-        "displayName": "dob"
+        "displayName": "Age of donor at recruitment", 
+        "units":"days"
       },
       "restrictions": {
-        "required": true
-      }
-    },
-    {
-      "description": "Donor's date of recruitment",
-      "name": "date_of_recruitment",
-      "valueType": "string",
-      "meta": {
-        "core": true,
-        "displayName": "date of recuitment"
-      },
-      "restrictions": {
+        "range": {
+          "min": 0,
+          "max": 40000
+        },
         "required": true
       }
     },
@@ -85,7 +77,7 @@
         "codeList": [
           "French Canadian",
           "English Canadian",
-          "Aboriginal",
+          "First Nation, Inuit, Metis",
           "European",
           "Arab",
           "Latin American",
@@ -151,99 +143,17 @@
         "dependsOn": "donor.vital_status",
         "notes": "Age_of_death is only required to be submitted if the donor's vital_status is Deceased.",
         "validationDependency": true,
-        "units": "years",
+        "units": "days",
         "core": "true",
         "displayName": "Age of death"
       },
       "restrictions": {
+        "range": {
+          "min": 0,
+          "max": 40000
+        },
+        "required": true,
         "script": "#/script/donor/ensureDeceased"
-      }
-    },
-    {
-      "description": "Indicate if physical measures are available for this donor",
-      "name": "physical_measures_available",
-      "valueType": "boolean",
-      "meta": {
-        "displayName": "Availability of physical measures"
-      }
-    },
-    {
-      "description": "Indicate if laboratory meausres are available for this donor",
-      "name": "laboratory_measures_available",
-      "valueType": "boolean",
-      "meta": {
-        "displayName": "Availability of laboratory measures"
-      }
-    },
-    {
-      "description": "Indicate if lifestyle and behavior data is available for this donor",
-      "name": "lifestyle_available",
-      "valueType": "boolean",
-      "meta": {
-        "displayName": "Availability of lifestyle data"
-      }
-    },
-    {
-      "description": "Indicate if information about medication use is available for this donor",
-      "name": "medication_available",
-      "valueType": "boolean",
-      "meta": {
-        "displayName": "Availability of medication data"
-      }
-    },
-    {
-      "description": "Indicate if information about environmental exposure is available for this donor",
-      "name": "environment_exposure_available",
-      "valueType": "boolean",
-      "meta": {
-        "displayName": "Availability of environmental exposure data"
-      }
-    },
-    {
-      "description": "Indicate if information about the donor's family health history is available",
-      "name": "family_history_available",
-      "valueType": "boolean",
-      "meta": {
-        "displayName": "Availability of family history data"
-      }
-    },
-    {
-      "description": "Indicate the donor's availability of genealogical data",
-      "name": "genealogy_available",
-      "valueType": "boolean",
-      "meta": {
-        "displayName": "Availability of genealogical data"
-      }
-    },
-    {
-      "description": "Indicate if the donor is a proband or a family member",
-      "name": "is_a_proband",
-      "restrictions": {
-        "codeList": [
-          "Is a family member",
-          "Is a proband",
-          "Not applicable"
-        ]
-      },
-      "valueType": "string",
-      "meta": {
-        "displayName": "Is a proband"
-      }
-    },
-    {
-      "description": "Indicate if the donor is affected by the condition",
-      "name": "is_affected",
-      "restrictions": {
-        "codeList": [
-          "Yes",
-          "No",
-          "Unknown",
-          "Not applicable"
-        ]
-      },
-      "valueType": "string",
-      "meta": {
-        "displayName": "Is affected"
       }
     }
   ]

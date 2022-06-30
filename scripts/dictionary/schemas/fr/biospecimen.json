@@ -49,27 +49,37 @@
       }
     },
     {
-      "name": "submitter_diagnosis_id",
-      "valueType": "string",
-      "description": "Indiquez le diagnosic associé au biospécimen",
-      "meta": {
-        "primaryId": true,
-        "validationDependency": true,
-        "foreignKey": "diagnosis.submitter_diagnosis_id",
-        "displayName": "ID du diagnostic soumis par l'étude",
-        "notes": "non requis si le spécimen n'a pas été collecté pour des fins de diagnostic #/notes/id"
-      },
+      "description": "Age du donneur (en jours) au moment de la collecte du spécimen biologique",
+      "name": "age_biospecimen_collection",
       "restrictions": {
-        "regex": "#/regex/id"
+        "range": {
+          "min": 0,
+          "max": 4000
+        }
+      },
+      "valueType": "number",
+      "meta": {
+        "units": "days",
+        "displayName": "Age (en jours) au moment de la collecte du spécimen biologique"
       }
     },
     {
-      "description": "Date de collecte du spécimen biologique",
-      "name": "date_biospecimen_collection",
+      "description": "Source tissulaire du spécimen biologique",
+      "name": "biospecimen_tissue_source",
       "valueType": "string",
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "Blood",
+          "Bone marrow",
+          "Saliva",
+          "Solid tissue"
+        ]
+      },
       "meta": {
-        "notes": "Collected DateTime",
-        "displayName": "Date de collecte du spécimen biologique"
+        "core": true,
+        "notes": "Termes tirés de NCI Thesaurus (NCIt) http://purl.obolibrary.org/obo/ncit.owl",
+        "displayName": "Source tissulaire du spécimen biologique"
       }
     },
     {
@@ -92,110 +102,31 @@
       }
     },
     {
-      "description": "Source tissulaire du spécimen biologique",
-      "name": "biospecimen_tissue_source",
+      "name": "cancer_biospecimen_type",
       "valueType": "string",
+      "description": "Description du type de tissu d'où provient le spécimen biologique (spécifique au cancer), basé sur le  NCI Thesaurus (NCIt)",
       "restrictions": {
         "required": true,
         "codeList": [
-          "Amniotic fluid", 
-          "Anorectal",
-          "Blood derived - bone marrow",
-          "Blood derived - peripheral blood",
-          "Blood derived",
-          "Bone marrow",
-          "Bone",
-          "Bronchial specimen",
-          "Bronchoalveolar lavage",
-          "Buccal cell",
-          "Buffy coat",
-          "Cerebellum",
-          "Cerebrospinal fluid", 
-          "Cervix",
-          "Cord blood",
-          "Cornea or Conjunctiva",
-          "Dialysis fluid", 
-          "Endometrium",
-          "Esophagus", 
-          "Fibroblast",
-          "Intestine", 
-          "Liver",
-          "Lower respiratory specimen",
-          "Lymph node", 
-          "Mononuclear cells from bone marrow", 
-          "Nasopharynx",
-          "Oropharyngeal wash",
-          "Other", 
-          "Pericardial fluid",
-          "Peritoneal fluid",
-          "Plasma", 
-          "Pleural effusion", 
-          "Red Blood Cells",
-          "Saliva",
-          "Specimen",
-          "Serum",
-          "Skin",
-          "Solid tissue",
-          "Spleen",
-          "Pus",
-          "Sputum",
-          "Stem cell product",
-          "Stomach",
-          "Stool",
-          "Sweat",
-          "Synovial fluid", 
-          "Throat",
-          "Tonsil",
-          "Umbilical cord structure",
-          "Upper respiratory specimen",
-          "Urethra",
-          "Urine", 
-          "Vaginal fluid",
-          "Vitreous fluid"
-        ]
-      },
-      "meta": {
-        "core": true,
-        "displayName": "Source tissulaire du spécimen biologique"
-      }
-    },
-    {
-      "name": "biospecimen_type",
-      "valueType": "string",
-      "description": "Description du type de tissu d'où provient le spécimen biologique",
-      "restrictions": {
-        "required": true,
-        "codeList": [
-          "Cell line - derived from normal",
-          "Cell line - derived from tumor",
-          "Cell line - derived from xenograft tumor",
-          "Metastatic tumor - additional metastatic",
-          "Metastatic tumor - metastasis local to lymph node",
-          "Metastatic tumor - metastasis to distant location",
-          "Metastatic tumor",
-          "Normal - tissue adjacent to primary tumor",
-          "Normal",
-          "Peritumoral",
-          "Primary tumor - additional new primary",
-          "Primary tumor - adjacent to normal",
-          "Primary tumor",
-          "Recurrent tumor",
-          "Xenograft - derived from primary tumor",
-          "Xenograft - derived from tumor cell line",
-          "Derived from allogenic bone marrow transplant",
-          "Derived from autologous bone marrow transplant"
+          "Derived Cell Line",
+          "Metastatic Tumor Sample",
+          "Sample Derived from New Primary",
+          "Tumor-Adjacent Normal Specimen",
+          "Tumor Tissue",
+          "Normal Tissue Segment",
+          "Cell Line-Derived Xenograft"
         ]
       },
       "meta": {
         "validationDependency": true,
         "core": true,
-        "displayName": "Type de spécimen biologique"
+        "displayName": "Type de spécimen biologique (spécifique au cancer)"
       }
     },
     {
-      "name": "biospecimen_anatomic_location_source_text",
+      "name": "cancer_biospecimen_anatomic_location_source_text",
       "valueType": "string",
-      "description": "Site anatomique d'où le spécimen biologique a été collecté",
+      "description": "Site anatomique d'où le spécimen biologique a été collecté (spécifique) au cancer",
       "restrictions": {
         "required": true
       },
@@ -204,36 +135,36 @@
         "core": true,
         "notes": "Utiliser le terme inscrit au moment de la collecte du biospécimen",
         "displayName": "Localisation anatomique du spécimen biologique (terme)",
-        "examples": "Esophagus"
+        "examples": "Breast"
       }
     },
     {
-      "name": "biospecimen_anatomic_location_SNOMED_code",
+      "name": "biospecimen_anatomic_location_ncit_code",
       "valueType": "string",
-      "description": "Indiquer the SNOMED CT notation (code) for the anatomic location of the biospecimen",
+      "description": "Indiquer le code NCIT représentant la localisation anatomic du spécimen biologique",
       "restrictions": {
         "required": true,
-        "regex": "^[0-9]*$"
+        "regex": "^[8,9]{1}[0-9]{3}/[0,1,2,3,6,9]{1}[1-9]{0,1}$"
       },
       "meta": {
         "validationDependency": true,
         "core": true,
-        "notes": "Veuillez vous référer au code (notation) dans SNOMED CT https://www.snomed.org/snomed-ct/Use-SNOMED-CT",
+        "notes": "Refer to  NCI Thesaurus (NCIt) at http://purl.obolibrary.org/obo/ncit.owl",
         "displayName": "Localisation anatomique du spécimen biologique (code)",
-        "examples": "32849002"
+        "examples": "NCIT:C12971"
       }
     },
     {
-      "name": "tumor_histological_type",
-      "description": "Code histologique (morphologie) du néoplasme selon la classification ICD-O-3 (International Classification of Diseases for Oncology, 3rd Edition) déclaré dans le rapport de pathologie",
+      "name": "tumor_histological_type_source_text",
+      "description": "Histologie du néoplasme, selon le rapport de pathologie",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "core": true,
         "dependsOn": "sample_registration.tumor_normal_designation",
-        "notes": "Si le spécimen biologique est une tumeur. Veuillez vous référer au manuel ICD-O-3 à l'adresse suivante https://apps.who.int/iris/handle/10665/42344",
+        "notes": "Si le spécimen biologique est une tumeur. Veuillez utiliser le terme fourni dans le rapport de pathologie",
         "valueType": "string",
-        "examples": "8260/3,9691/36",
+        "examples": "Mucinous Adenocarcinoma",
         "displayName": "Type histologique de la tumeur"
       },
       "restrictions": {
@@ -242,58 +173,21 @@
       }
     },
     {
-      "name": "biospecimen_processing",
+      "name": "tumor_histological_type_ncit_code",
+      "description": "Code histologique du néoplasme selon le NCI Thesaurus (NCIt) at http://purl.obolibrary.org/obo/ncit.owl",
       "valueType": "string",
-      "description": "Méthode de traitement du spécimen biologique",
-      "restrictions": {
-        "codeList": [
-          "Cryopreservation in liquid nitrogen (dead tissue)",
-          "Cryopreservation in dry ice (dead tissue)",
-          "Cryopreservation of live cells in liquid nitrogen",
-          "Cryopreservation - other",
-          "Formalin fixed & paraffin embedded",
-          "Formalin fixed - buffered",
-          "Formalin fixed - unbuffered",
-          "Fresh",
-          "Other"
-        ]
-      },
-      "meta": {
-        "displayName": "Traitement du biospécimen"
-      }
-    },
-    {
-      "name": "biospecimen_storage",
-      "valueType": "string",
-      "description": "Méthode d'entreposage du spécimen biologique",
-      "restrictions": {
-        "codeList": [
-          "Cut slide",
-          "Frozen in -70 freezer",
-          "Frozen in liquid nitrogen",
-          "Frozen in vapour phase",
-          "Not Applicable",
-          "Other",
-          "Paraffin block",
-          "RNA later frozen"
-        ]
-      },
-      "meta": {
-        "notes": "Pour les spécimens biologiques frais ou qui ont été immédiatement mis en culture, veuillez indiquer - Not applicable - .",
-        "displayName": "Entreposage du biospécimen"
-      }
-    },
-    {
-      "name": "biospecimen_access",
-      "valueType": "boolean",
-      "description": "Possibilité d'avoir accès au spécimen biologique",
-      "restrictions": {
-        "required": true
-      },
       "meta": {
         "validationDependency": true,
         "core": true,
-        "displayName": "Accès au biospécimen"
+        "dependsOn": "biospecimen.tumor_normal_designation",
+        "notes": "If biospecimen is a tumor refer to  NCI Thesaurus (NCIt) at http://purl.obolibrary.org/obo/ncit.owl",
+        "valueType": "string",
+        "examples": "NCIT:C136709",
+        "displayName": "Tumor Histological Type"
+      },
+      "restrictions": {
+        "regex": "^[8,9]{1}[0-9]{3}/[0,1,2,3,6,9]{1}[1-9]{0,1}$",
+        "script": "#/script/biospecimen/ensureTumorNormalDesignation"
       }
     }
   ]

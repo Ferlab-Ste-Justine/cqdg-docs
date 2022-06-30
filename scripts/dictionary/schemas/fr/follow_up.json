@@ -53,21 +53,6 @@
       }
     },
     {
-      "description": "Identifiant unique pour la visite de suivi du donneur, soumis par l'étude ",
-      "name": "submitter_follow_up_id",
-      "valueType": "string",
-      "meta": {
-        "validationDependency": true,
-        "primaryId": true,
-        "displayName": "ID du suivi soumis par l'étude",
-        "notes": "#/notes/id"
-      },
-      "restrictions": {
-        "required": true,
-        "regex": "#/regex/id"
-      }
-    },
-    {
       "description": "Intervalle de temps (en jours) entre le diagnostic et la visite de suivi",
       "name": "days_to_follow_up",
       "valueType": "integer",

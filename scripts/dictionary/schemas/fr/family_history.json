@@ -34,21 +34,6 @@
       }
     },
     {
-      "name": "submitter_family_condition_id",
-      "valueType": "string",
-      "description": "Identifiant unique pour la condition médicale observée dans la famille du donneur, soumis par l'étude ",
-      "restrictions": {
-        "required": true,
-        "regex": "#/regex/id"
-      },
-      "meta": {
-        "displayName": "ID de la condition médicale d'un membre de la famille",
-        "validationDependency": true,
-        "primaryId": true,
-        "notes": "#/notes/id"
-      }
-    },
-    {
       "name": "family_condition_name",
       "description": "Nom de la condition médicale observée dans la famille du donneur",
       "valueType": "string",
@@ -58,15 +43,6 @@
       "meta": {
         "core": true,
         "displayName": "Nom de la condition médicale d'un membre de la famille"
-      }
-    },
-    {
-      "name": "family_condition_age",
-      "description": "Age du membre de la famille affecté lorsque la condition a été observée",
-      "valueType": "integer",
-      "meta": {
-        "units": "years",
-        "displayName": "Age du membre de la famille lorsque la condition a été observée"
       }
     },
     {
@@ -109,23 +85,6 @@
       "meta": {
         "displayName": "Relation avec le membre de la famille affecté",
         "notes": "Référez-vous au système de code HL7 pour identifier un type de relation entre le donneur et le membre affecté de sa famille http://terminology.hl7.org/CodeSystem/v3-RoleCode"
-      }
-    },
-    {
-      "name": "family_cancer_history",
-      "description": "Indiquer si le donneur a une histoire familiale de cancer",
-      "restrictions": {
-        "codeList": [
-          "Yes",
-          "No",
-          "Unknown"
-        ],
-        "required": true
-      },
-      "valueType": "string",
-      "meta": {
-        "core": true,
-        "displayName": "Histoire familiale de cancer"
       }
     }
   ]
