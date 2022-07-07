@@ -36,7 +36,7 @@
     {
       "description": "Âge du donneur au moment du recrutement",
       "name": "age_at_recruitment",
-      "valueType": "string",
+      "valueType": "number",
       "meta": {
         "core": true,
         "displayName": "Âge au recruitment"

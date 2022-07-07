@@ -36,7 +36,7 @@
     {
       "description": "Donor's age (in days) at recruitment",
       "name": "age_at_recruitment",
-      "valueType": "string",
+      "valueType": "number",
       "meta": {
         "core": true,
         "displayName": "Age of donor at recruitment", 
