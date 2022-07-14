@@ -1,6 +1,6 @@
 {
   "name": "biospecimen",
-  "description": "Ensemble de champs reliés au spécimen biologique du donneur. Un spécimen biologique est tout type d'échantillon biologique collecté pour analyse, pour des fins de diagnostic ou pour la recherche. Pour soumettre plus d'un diagnostic pour un donneur, veuillez ajouter des lignes dans la table biospecimen pour ce donneur. .",
+  "description": "Ensemble de champs reliés au spécimen biologique du participant. Un spécimen biologique est tout type d'échantillon biologique collecté pour analyse, pour des fins de diagnostic ou pour la recherche. Pour soumettre plus d'un diagnostic pour un participant, veuillez ajouter des lignes dans la table biospecimen pour ce participant. .",
   "fields": [
     {
       "name": "study_id",
@@ -18,14 +18,14 @@
       }
     },
     {
-      "name": "submitter_donor_id",
-      "description": "Identifiant pour le donneur, soumis par l'étude",
+      "name": "submitter_participant_id",
+      "description": "Identifiant pour le participant, soumis par l'étude",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "donor.submitter_donor_id",
-        "displayName": "ID du donneur soumis par l'étude",
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "ID du participant soumis par l'étude",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -49,7 +49,7 @@
       }
     },
     {
-      "description": "Age du donneur (en jours) au moment de la collecte du spécimen biologique",
+      "description": "Age du participant (en jours) au moment de la collecte du spécimen biologique",
       "name": "age_biospecimen_collection",
       "restrictions": {
         "range": {

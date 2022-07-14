@@ -1,15 +1,15 @@
 {
-  "name": "donor",
-  "description": "The collection of data elements related to a specific donor in the CQDG program.",
+  "name": "participant",
+  "description": "Ensemble de champs reliés aux caractéristiques des participants dans le CQDG.",
   "fields": [
     {
       "name": "study_id",
       "valueType": "string",
-      "description": "Identifier for the Study",
+      "description": "Identifant pour l'étude",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "Study ID",
+        "displayName": "ID étude",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -18,14 +18,14 @@
       }
     },
     {
-      "description": "Unique identifier of the donor, assigned by the data provider",
-      "name": "submitter_donor_id",
+      "description": "Identifiant unique pour le participant, soumis par l'étude",
+      "name": "submitter_participant_id",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "donor.submitter_donor_id",
-        "displayName": "Submitter Donor ID",
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "ID du participant soumis par l'étude",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -34,13 +34,12 @@
       }
     },
     {
-      "description": "Donor's age (in days) at recruitment",
+      "description": "Âge du participant au moment du recrutement",
       "name": "age_at_recruitment",
-      "valueType": "string",
+      "valueType": "number",
       "meta": {
         "core": true,
-        "displayName": "Age of donor at recruitment", 
-        "units":"days"
+        "displayName": "Âge au recruitment"
       },
       "restrictions": {
         "range": {
@@ -51,7 +50,7 @@
       }
     },
     {
-      "description": "Administrative gender of the donor",
+      "description": "Sexe du participant",
       "name": "gender",
       "valueType": "string",
       "restrictions": {
@@ -65,12 +64,12 @@
       },
       "meta": {
         "core": true,
-        "notes": "Data from administrative health record, medical record or self-reported",
-        "displayName": "Gender"
+        "notes": "Information obtenue des données médico-administrative ou déclarée par le participant",
+        "displayName": "Genre"
       }
     },
     {
-      "description": "Ethnic background of the donor",
+      "description": "Identité éthnique du participant",
       "name": "ethnicity",
       "valueType": "string",
       "restrictions": {
@@ -89,12 +88,12 @@
         ]
       },
       "meta": {
-        "displayName": "Ethnicity",
-        "notes": "French Canadian trace their ancestry to French colonists who settled in Canada, English Canadians are of English ethnic origin and heritage, Aboriginal (First Nations, Metis, Inuit), White (European descent), Arab (e.g. Egypt, Iraq, Jordan, Lebanon), Latin American (Hispanic), Black (African/Caribbean), East Asian (e.g. China, Japan, Korea, Taiwan), West Asian (e.g. Turkey, Iran, Afghanistan), Southeast Asian (e.g. Malaysia, Indonesia, Viet Nam), South Asian (e.g. India, Sri Lanka, Pakistan, Bangladesh), Filipino, Unknown, Other"
+        "displayName": "Ethnicité",
+        "notes": "Les Canadiens français désigne les Canadiens dont les ancêtres font partie des colons français venus s'installés au Canada. Les Canadiens anglais désigne les Canadiens anglophones d'ascendance et de culture anglaise. Autochtone (Premières Nations, Métis, Inuits), blancs (ascendance européenne), arabes (ex; Égypte, Irak, Jordanie, Liban) , Latino-américain (hispanique), noire (Afrique / Caraïbes), d'Asie de l'Est (ex: Chine, Japon, Corée, Taïwan), d'Asie occidentale (ex: Turquie, Iran, Afghanistan), Asie du Sud-Est (ex: Malaisie, Indonésie, Viet Nam), Asie du Sud (ex: Inde, Sri Lanka, Pakistan, Bangladesh), Philippin, Inconnu, Autre"
       }
     },
     {
-      "description": "Donor's last known state of living or deceased",
+      "description": "Statut vital du participant",
       "name": "vital_status",
       "restrictions": {
         "codeList": [
@@ -108,11 +107,11 @@
       "meta": {
         "validationDependency": true,
         "core": true,
-        "displayName": "Vital Status"
+        "displayName": "Statut vital"
       }
     },
     {
-      "description": "Indicates the cause of a donor's death",
+      "description": "Cause du décès",
       "name": "cause_of_death",
       "restrictions": {
         "codeList": [
@@ -125,35 +124,34 @@
           "Other reason",
           "Unknown"
         ],
-        "script": "#/script/donor/ensureDeceased"
+        "script": "#/script/participant/ensureDeceased"
       },
       "valueType": "string",
       "meta": {
         "core": true,
-        "dependsOn": "donor.vital_status",
-        "notes": "Cause of death is only required to be submitted if the donor's vital_status is 'Deceased'.",
-        "displayName": "Cause of Death"
+        "dependsOn": "participant.vital_status",
+        "notes": "Requis si le participant est décédé",
+        "displayName": "Cause du décès"
       }
     },
     {
-      "description": "Numeric value to represent the age of the donor at the time of death, in days",
+      "description": "Age du participant au moment de son décès (en jour)",
       "name": "age_of_death",
       "valueType": "number",
       "meta": {
-        "dependsOn": "donor.vital_status",
-        "notes": "Age_of_death is only required to be submitted if the donor's vital_status is Deceased.",
+        "dependsOn": "participant.vital_status",
+        "notes": "Requis si le participant est décédé.",
         "validationDependency": true,
         "units": "days",
         "core": "true",
-        "displayName": "Age of death"
+        "displayName": "Age de décès"
       },
       "restrictions": {
         "range": {
           "min": 0,
           "max": 40000
         },
-        "required": true,
-        "script": "#/script/donor/ensureDeceased"
+        "script": "#/script/participant/ensureDeceased"
       }
     }
   ]

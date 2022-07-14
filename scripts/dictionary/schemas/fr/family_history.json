@@ -1,6 +1,6 @@
 {
   "name": "family_history",
-  "description": "L'ensemble de champs reliés à l'histoire de santé familiale.  Pour soumettre plusieurs conditions de santé pour la famille d'un donneur, veuillez ajouter des lignes dans la table histoire familiale.",
+  "description": "L'ensemble de champs reliés à l'histoire de santé familiale.  Pour soumettre plusieurs conditions de santé pour la famille d'un participant, veuillez ajouter des lignes dans la table histoire familiale.",
   "fields": [
     {
       "name": "study_id",
@@ -18,14 +18,14 @@
       }
     },
     {
-      "description": "Identifiant pour le donneur, soumis par l'étude",
-      "name": "submitter_donor_id",
+      "description": "Identifiant pour le participant, soumis par l'étude",
+      "name": "submitter_participant_id",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "donor.submitter_donor_id",
-        "displayName": "ID du donneur soumis par l'étude",
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "ID du participant soumis par l'étude",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -35,7 +35,7 @@
     },
     {
       "name": "family_condition_name",
-      "description": "Nom de la condition médicale observée dans la famille du donneur",
+      "description": "Nom de la condition médicale observée dans la famille du participant",
       "valueType": "string",
       "restrictions": {
         "required": true
@@ -47,7 +47,7 @@
     },
     {
       "name": "family_condition_relationship",
-      "description": "Quelle est la relation de ce membre de la famille envers le donneur.",
+      "description": "Quelle est la relation de ce membre de la famille envers le participant.",
       "restrictions": {
         "codeList": [
           "Mother",
@@ -84,7 +84,7 @@
       "valueType": "string",
       "meta": {
         "displayName": "Relation avec le membre de la famille affecté",
-        "notes": "Référez-vous au système de code HL7 pour identifier un type de relation entre le donneur et le membre affecté de sa famille http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+        "notes": "Référez-vous au système de code HL7 pour identifier un type de relation entre le participant et le membre affecté de sa famille http://terminology.hl7.org/CodeSystem/v3-RoleCode"
       }
     }
   ]

@@ -1,8 +1,8 @@
 {
   "name": "follow_up",
-  "description": "L'ensemble de champs reliés à une visite de suivi du donneur ayant un diagnostic de cancer. Un suivi est défini comme tout épisode suivant le diagnostic de cancer. Pour soumettre plus d'un suivi pour un donneur, ajouter des lignes à la table  suivi de ce donneur.",
+  "description": "L'ensemble de champs reliés à une visite de suivi du participant ayant un diagnostic de cancer. Un suivi est défini comme tout épisode suivant le diagnostic de cancer. Pour soumettre plus d'un suivi pour un participant, ajouter des lignes à la table  suivi de ce participant.",
   "meta": {
-    "parent": "donor"
+    "parent": "participant"
   },
   "fields": [
     {
@@ -21,14 +21,14 @@
       }
     },
     {
-      "description": "Identifiant pour le donneur, soumis par l'étude",
-      "name": "submitter_donor_id",
+      "description": "Identifiant pour le participant, soumis par l'étude",
+      "name": "submitter_participant_id",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "donor.submitter_donor_id",
-        "displayName": "ID du donneur soumis par l'étude",
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "ID du participant soumis par l'étude",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -39,7 +39,7 @@
     {
       "name": "submitter_diagnosis_id",
       "valueType": "string",
-      "description": "Identifiant pour le diagnostic du donneur, soumis par l'étude.",
+      "description": "Identifiant pour le diagnostic du participant, soumis par l'étude.",
       "meta": {
         "primaryId": true,
         "validationDependency": true,

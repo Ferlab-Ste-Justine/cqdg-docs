@@ -1,8 +1,8 @@
 {
   "name": "Diagnosis",
-  "description": "The collection of data elements related to a donor's diagnosis. To submit multiple diagnoses for a single donor, submit multiple rows in the diagnosis file for this donor.",
+  "description": "The collection of data elements related to a participant's diagnosis. To submit multiple diagnoses for a single participant, submit multiple rows in the diagnosis file for this participant.",
   "meta": {
-    "parent": "donor"
+    "parent": "participant"
   },
   "fields": [
     {
@@ -21,14 +21,14 @@
       }
     },
     {
-      "name": "submitter_donor_id",
+      "name": "submitter_participant_id",
       "valueType": "string",
-      "description": "Identifier of the donor, assigned by the data provider",
+      "description": "Identifier of the participant, assigned by the data provider",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "donor.submitter_donor_id",
-        "displayName": "Submitter Donor ID",
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "Submitter participant ID",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -119,7 +119,7 @@
       },
       "meta": {
         "dependsOn": "diagnosis.is_cancer",
-        "notes": "This field is only required to be submitted if the donor's diagnosis is cancer",
+        "notes": "This field is only required to be submitted if the participant's diagnosis is cancer",
         "core": true,
         "displayName": "Is primary cancer"
       }

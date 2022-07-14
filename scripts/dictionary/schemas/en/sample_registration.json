@@ -19,14 +19,14 @@
       }
     },
     {
-      "name": "submitter_donor_id",
-      "description": "Identifier of the donor, assigned by the data provider.",
+      "name": "submitter_participant_id",
+      "description": "Identifier of the participant, assigned by the data provider.",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "donor.submitter_donor_id",
-        "displayName": "Submitter Donor ID",
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "Submitter participant ID",
         "notes": "#/notes/id"
       },
       "restrictions": {

@@ -1,6 +1,6 @@
 {
   "name": "exposure",
-  "description": "L'ensemble de champs reliés à l'exposition à des facteurs de risque pour la santé pour le donneur.",
+  "description": "L'ensemble de champs reliés à l'exposition à des facteurs de risque pour la santé pour le participant.",
   "fields": [
     {
       "name": "study_id",
@@ -18,14 +18,14 @@
       }
     },
     {
-      "name": "submitter_donor_id",
+      "name": "submitter_participant_id",
       "valueType": "string",
-      "description": "Identifiant unique pour le donneur, soumis par l'étude",
+      "description": "Identifiant unique pour le participant, soumis par l'étude",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "donor.submitter_donor_id",
-        "displayName": "ID du donneur soumis par l'étude",
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "ID du participant soumis par l'étude",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -35,7 +35,7 @@
     },
     {
       "name": "smoking_status",
-      "description": "Statut tabagique du donneur au moment de la collecte de données",
+      "description": "Statut tabagique du participant au moment de la collecte de données",
       "valueType": "string",
       "restrictions": {
         "codeList": [

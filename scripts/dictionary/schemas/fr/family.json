@@ -1,6 +1,6 @@
 {
   "name": "family",
-  "description": "L'ensemble de champs reliés aux relation entre les donneurs d'un même groupe familial. Cette table de données doit être soumise uniquemement si l'étude détient des données sur des groupes de donneurs qui partagent des liens de parenté (ex: jumeaux, trios).",
+  "description": "L'ensemble de champs reliés aux relation entre les participants d'un même groupe familial. Cette table de données doit être soumise uniquemement si l'étude détient des données sur des groupes de participants qui partagent des liens de parenté (ex: jumeaux, trios).",
   "fields": [
     {
       "name": "study_id",
@@ -20,7 +20,7 @@
     {
       "name": "submitter_family",
       "valueType": "string",
-      "description": "Identifant pour la famille du donneur, soumis par l'étude",
+      "description": "Identifant pour la famille du participant, soumis par l'étude",
       "restrictions": {
         "required": true,
         "regex": "#/regex/id"
@@ -34,13 +34,13 @@
       }
     },
     {
-      "description": "Identifiant unique du donneur, soumis par l'étude",
-      "name": "submitter_donor_id",
+      "description": "Identifiant unique du participant, soumis par l'étude",
+      "name": "submitter_participant_id",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "ID du donneur soumis par l'étude",
+        "displayName": "ID du participant soumis par l'étude",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -50,7 +50,7 @@
     },
     {
       "name": "family_type",
-      "description": "Type de groupe familial auquel fait partie le donneur",
+      "description": "Type de groupe familial auquel fait partie le participant",
       "valueType": "string",
       "restrictions": {
         "required": true,
@@ -69,7 +69,7 @@
     },
     {
       "name": "relationship_to_proband",
-      "description": "Relation du donneur envers le proband",
+      "description": "Relation du participant envers le proband",
       "valueType": "string",
       "restrictions": {
         "required": true,
@@ -90,7 +90,7 @@
       },
       "meta": {
         "core": true,
-        "displayName": "Relation du donneur envers le proband"
+        "displayName": "Relation du participant envers le proband"
       }
     }
   ]

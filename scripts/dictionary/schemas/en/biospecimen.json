@@ -1,6 +1,6 @@
 {
   "name": "biospecimen",
-  "description": "The collection of data elements related to a donor's biospecimen. A biospecimen is any material sample taken for testing, diagnostic or research purposes. To submit multiple biospecimens for a single donor, submit multiple rows in the biospecimens file for this donor.",
+  "description": "The collection of data elements related to a participant's biospecimen. A biospecimen is any material sample taken for testing, diagnostic or research purposes. To submit multiple biospecimens for a single participant, submit multiple rows in the biospecimens file for this participant.",
   "fields": [
     {
       "name": "study_id",
@@ -18,14 +18,14 @@
       }
     },
     {
-      "name": "submitter_donor_id",
-      "description": "Identifier of the donor, assigned by the data provider",
+      "name": "submitter_participant_id",
+      "description": "Identifier of the participant, assigned by the data provider",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "donor.submitter_donor_id",
-        "displayName": "Submitter Donor ID",
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "Submitter participant ID",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -49,7 +49,7 @@
       }
     },
     {
-      "description": "Age (in days) of donor when biospecimen was collected",
+      "description": "Age (in days) of participant when biospecimen was collected",
       "name": "age_biospecimen_collection",
       "restrictions": {
         "range": {
