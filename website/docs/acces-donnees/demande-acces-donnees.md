@@ -12,8 +12,8 @@ Le CQDG héberge les données cliniques et génomiques de différentes études p
 Si vous souhaitez accéder à ces données à des fins de recherche, vous devez :
 
 1. Créer un compte d’utilisateur sur le portail de données. Si vous avez déjà un compte d'utilisateur, vous pouvez accéder au portail de données pour débuter le processus de demande d'accès. 
-2. Utiliser les filtres pour sélectionner l'ensemble de donneurs ou de fichiers de données moléculaires nécessaire pour votre recherche à partir du répertoire des fichiers. 
-3. Sauvegarder l'ensemble de donneurs ou de fichiers de données moléculaires choisi pour votre recherche.
+2. Utiliser les filtres pour sélectionner l'ensemble de participants ou de fichiers de données moléculaires nécessaire pour votre recherche à partir du répertoire des fichiers. 
+3. Sauvegarder l'ensemble de participants ou de fichiers de données moléculaires choisi pour votre recherche.
 4. Télécharger l'ensemble complet de tous les fichiers que vous demandez pour chaque étude ainsi que les instructions pour faire la demande d'accès aux données. 
 5. Envoyer vos ensembles de fichiers au bureau d'accès des études respectives pour débuter la procédure d'accès. 
 

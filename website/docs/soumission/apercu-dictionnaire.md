@@ -27,7 +27,7 @@ Chacun des champs est classé en fonction de l'exigence des données et de ses a
 
 ![Conditional](/assets/submission/dictionary-conditional.svg)
 
-- Ces champs doivent rencontrer certaines conditions et dépendent de la valeur d'un autre champ. Par exemple, l'âge du décès ne peut être soumis que lorsque le statut du donneur est "décédé". 
+- Ces champs doivent rencontrer certaines conditions et dépendent de la valeur d'un autre champ. Par exemple, l'âge du décès ne peut être soumis que lorsque le statut du participant est "décédé". 
 - Les règles entourant les champs conditionnels sont décrites dans les notes et scripts du dictionnaire de données.
 
 ![Required](/assets/submission/dictionary-required.svg)

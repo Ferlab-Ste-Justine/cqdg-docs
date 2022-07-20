@@ -28,7 +28,7 @@ platform_key: DOCS_SUBMITTING_CLINICAL_DATA
 
 1. From the **File Templates** folder, open .tsv files for which you would like to submit data by using Excel.
 2. Copy your data in TEXT format in the appropriate fields (field names are indicated in the first row). There is one template for each table of the Data Dictionary. You do not have to complete all of these templates in order to submit data the CQDG.
-3. Name your files starting with the name of the Clinical Data Table (e.g. _donor_, _biospecimen_, etc.) and save them in .tsv format.
+3. Name your files starting with the name of the Clinical Data Table (e.g. _participant_, _biospecimen_, etc.) and save them in .tsv format.
 4. Upload your files (including your _registration_ file) using your SFTP account. 
 
 

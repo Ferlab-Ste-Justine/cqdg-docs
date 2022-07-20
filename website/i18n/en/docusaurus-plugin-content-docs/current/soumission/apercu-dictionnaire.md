@@ -26,7 +26,7 @@ Each field has a data tier and an attribute classification. This information may
 
 ![Conditional](/assets/submission/dictionary-conditional.svg)
 
-- These fields must meet certain conditions and depend on the value of another field. For example, age of death can only be submitted when the donor's status is "deceased".
+- These fields must meet certain conditions and depend on the value of another field. For example, age of death can only be submitted when the participant's status is "deceased".
 - The rules surrounding conditional fields are described in the Data Dictionary Notes and Scripts.
 
 ![Required](/assets/submission/dictionary-required.svg)

@@ -12,8 +12,8 @@ The CQDG hosts clinical and genomic data from various partner studies. You can e
 If you wish to access this data for research purposes, you must: 
 
 1. Create a user account on the CQDG Portal. If you already have a User Account, you can access the CQDG Portal and begin the access process.  
-2. In the File Repository, use filters to select molecular data files or donors that are required for your study. 
-3. Save the selected set of molecular data files or donors.
+2. In the File Repository, use filters to select molecular data files or participants that are required for your study. 
+3. Save the selected set of molecular data files or participants.
 4. Click on the **Access** button to download the full set of molecular data files that you are requesting for your study as well as the instructions on how to apply for access. 
 5. The list of files may be sent to the Data Access Office or Access Authority of originating studies to begin the access process. 
 
