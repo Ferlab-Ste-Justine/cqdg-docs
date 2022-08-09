@@ -1,6 +1,6 @@
 {
   "name": "family",
-  "description": "The collection of data elements related to a family and relationships within this family. This table should be completed only if the Study is contributing data from groups of donors who share family ties (ex: twins, trios, sib-pairs).",
+  "description": "The collection of data elements related to a family and relationships within this family. This table should be completed only if the Study is contributing data from groups of participants who share family ties (ex: twins, trios, sib-pairs).",
   "fields": [
     {
       "name": "study_id",
@@ -34,13 +34,13 @@
       }
     },
     {
-      "description": "Unique identifier of the donor, assigned by the data provider",
-      "name": "submitter_donor_id",
+      "description": "Unique identifier of the participant, assigned by the data provider",
+      "name": "submitter_participant_id",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "Submitter Donor ID",
+        "displayName": "Submitter participant ID",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -68,7 +68,7 @@
       }
     },
     {
-      "description": "Indicate if the donor is a proband or a family member",
+      "description": "Indicate if the participant is a proband or a family member",
       "name": "is_a_proband",
       "restrictions": {
         "codeList": [
@@ -84,7 +84,7 @@
     },
     {
       "name": "relationship_to_proband",
-      "description": "Relationship of the donor to the proband",
+      "description": "Relationship of the participant to the proband",
       "valueType": "string",
       "restrictions": {
         "required": true,
@@ -100,31 +100,27 @@
           "Fraternal twin brother",
           "Fraternal twin sister",
           "Son",
-          "Daughter",
-          "Maternal grand-mother",
-          "Maternal grand-father",
-          "Paternal grand-mother",
-          "Paternal grand-father",
-          "Maternal aunt",
-          "Maternal uncle",
-          "Paternal aunt",
-          "Paternal uncle",
-          "Maternal cousin",
-          "Paternal cousin",
-          "Granddaughter",
-          "Grandson",
-          "Nephew",
-          "Niece",
-          "Cousin",
-          "Spouse",
-          "Former spouse",
-          "Husband",
-          "Wife"
+          "Daughter"
         ]
       },
       "meta": {
         "core": true,
-        "displayName": "Relationship of the donor to the proband"
+        "displayName": "Relationship of the participant to the proband"
+      }
+    },
+    {
+      "name": "is_affected",
+      "description": "Is affected by the condition",
+      "valueType": "string",
+      "restrictions": {
+        "codeList": [
+          "Yes",
+          "No",
+          "Unknown"
+        ]
+      },
+      "meta": {
+        "displayName": "Is affected by the condition"
       }
     }
   ]

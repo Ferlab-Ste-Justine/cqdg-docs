@@ -28,7 +28,7 @@ platform_key: DOCS_SUBMITTING_CLINICAL_DATA
 
 1. À partir du dossier **Modèle de fichier**, ouvrez les fichiers pour lesquels vous souhaitez soumettre des données en utilisant Excel.
 2. Copiez vos données en format TEXT dans les champs appropriés (indiqués à la première ligne dans le fichier). Il existe un gabarit pour chacune des tables du dictionnaire de données. Il n'est pas nécessaire de compléter tous ces gabarits pour que vos données soit considérées recevables. 
-3. Nommez vos fichiers en débutant par le nom de la table de données cliniques (ex. _donor_, _biospecimen_, etc.) et sauvegardez-les en format .tsv. 
+3. Nommez vos fichiers en débutant par le nom de la table de données cliniques (ex. _participant_, _biospecimen_, etc.) et sauvegardez-les en format .tsv. 
 4. Téléversez vos fichiers (incluant votre fichier _registration_) en utilisant votre compte SFTP.  
 
 

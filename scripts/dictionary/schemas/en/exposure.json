@@ -1,6 +1,6 @@
 {
   "name": "exposure",
-  "description": "The collection of data elements related to a donor's exposure to specific risk factors.",
+  "description": "The collection of data elements related to a participant's exposure to specific risk factors.",
   "fields": [
     {
       "name": "study_id",
@@ -18,14 +18,14 @@
       }
     },
     {
-      "name": "submitter_donor_id",
+      "name": "submitter_participant_id",
       "valueType": "string",
-      "description": "Unique identifier of the donor, assigned by the data provider",
+      "description": "Unique identifier of the participant, assigned by the data provider",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "donor.submitter_donor_id",
-        "displayName": "Submitter Donor ID",
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "Submitter participant ID",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -51,16 +51,6 @@
       },
       "meta": {
         "displayName": "Smoking status"
-      }
-    },
-    {
-      "name": "smoking_pack_years",
-      "description": "Number of packs of cigarettes per day multiplied by the number of years donor smoked",
-      "valueType": "string",
-      "meta": {
-        "dependsOn": "exposure.smoking_status",
-        "notes": "Not required if smoking history is unknown or if the donor never smoked. Pack-years is calculated by multiplying the number of packs of cigarettes (20 cigarettes per pack) smoked per day by the number of years the person has smoked. For example, 1 pack year is equal to smoking 1 pack per day for 1 year",
-        "displayName": "smoking_pack_years"
       }
     },
     {

@@ -31,16 +31,16 @@ module.exports = {
             required: false,
             children: [
                 {
-                    name: 'donor',
+                    name: 'participant',
                     parentName: 'specimen',
                     required: true,
-                    fields: [{name: 'donor_submitter_id', required: true}],
+                    fields: [{name: 'participant_submitter_id', required: true}],
                     children: [
                         {
                             name: 'treatment',
-                            parentName: 'donor',
+                            parentName: 'participant',
                             required: true,
-                            fields: [{name: 'donor_submitter_id', required: true}],
+                            fields: [{name: 'participant_submitter_id', required: true}],
                             children: [
                                 {
                                     parentName: 'treatment',

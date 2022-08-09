@@ -1,8 +1,8 @@
 {
   "name": "phenotype",
-  "description": "The collection of data elements related to a donor's phenotypes. To submit multiple phenotypes for a single donor, submit multiple rows in the phenotype file for this donor.",
+  "description": "The collection of data elements related to a participant's phenotypes. To submit multiple phenotypes for a single participant, submit multiple rows in the phenotype file for this participant.",
   "meta": {
-    "parent": "donor"
+    "parent": "participant"
   },
   "fields": [
     {
@@ -21,29 +21,14 @@
       }
     },
     {
-      "name": "submitter_donor_id",
-      "description": "Identifier of the donor, assigned by the data provider",
+      "name": "submitter_participant_id",
+      "description": "Identifier of the participant, assigned by the data provider",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "donor.submitter_donor_id",
-        "displayName": "Submitter Donor ID",
-        "notes": "#/notes/id"
-      },
-      "restrictions": {
-        "required": true,
-        "regex": "#/regex/id"
-      }
-    },
-    {
-      "name": "submitter_phenotype_id",
-      "description": "Unique identifier of the phenotype, assigned by the data provider",
-      "valueType": "string",
-      "meta": {
-        "validationDependency": true,
-        "primaryId": true,
-        "displayName": "Submitter Phenotype ID",
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "Submitter participant ID",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -83,27 +68,15 @@
       "name": "age_at_phenotype",
       "valueType": "number",
       "description": "Age (in days) of partipant when phenotype was observed",
-      "restrictions": {},
-      "meta": {
-        "units": "years",
-        "displayName": "Age at phenotype occurence"
-      }
-    },
-    {
-      "name": "phenotype_severity",
-      "valueType": "string",
-      "description": "Indicate the intensity or the degree of a manifestation",
       "restrictions": {
-        "codeList": [
-          "Borderline",
-          "Mild",
-          "Moderate",
-          "Severe",
-          "Profound"
-        ]
+        "range": {
+          "min": 0,
+          "max": 40000
+        }
       },
       "meta": {
-        "displayName": "Phenotype severity"
+        "units": "days",
+        "displayName": "Age at phenotype occurence"
       }
     },
     {

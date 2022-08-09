@@ -1,5 +1,5 @@
 /**
- * If and only if a donor is deceased, then the cause of death must be provided.
+ * If and only if a participant is deceased, then the cause of death must be provided.
  */
 const validation = () =>
     (function validate(inputs) {
@@ -12,7 +12,7 @@ const validation = () =>
         if ($field && vitalStatus && vitalStatus.trim().toLowerCase() !== 'deceased') {
             result = {
                 valid: false,
-                message: `${$name} cannot be provided if the donor's vital_status is not Deceased.`,
+                message: `${$name} cannot be provided if the participant's vital_status is not Deceased.`,
             };
         }
         return result;

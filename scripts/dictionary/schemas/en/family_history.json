@@ -1,6 +1,6 @@
 {
   "name": "family_history",
-  "description": "The collection of data elements related to the donor's family health history. To submit multiple conditions for a single donor' family, submit multiple rows in the family history file for this donor.",
+  "description": "The collection of data elements related to the participant's family health history. To submit multiple conditions for a single participant' family, submit multiple rows in the family history file for this participant.",
   "fields": [
     {
       "name": "study_id",
@@ -18,34 +18,19 @@
       }
     },
     {
-      "description": "Identifier of the donor, assigned by the data provider",
-      "name": "submitter_donor_id",
+      "description": "Identifier of the participant, assigned by the data provider",
+      "name": "submitter_participant_id",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "donor.submitter_donor_id",
-        "displayName": "Submitter Donor ID",
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "Submitter participant ID",
         "notes": "#/notes/id"
       },
       "restrictions": {
         "required": true,
         "regex": "#/regex/id"
-      }
-    },
-    {
-      "name": "submitter_family_condition_id",
-      "valueType": "string",
-      "description": "Unique identifier of the condition observed in the family, assigned by the data provider (within a study)",
-      "restrictions": {
-        "required": true,
-        "regex": "#/regex/id"
-      },
-      "meta": {
-        "displayName": "Submitter Family Condition ID",
-        "validationDependency": true,
-        "primaryId": true,
-        "notes": "#/notes/id"
       }
     },
     {
@@ -61,17 +46,8 @@
       }
     },
     {
-      "name": "family_condition_age",
-      "description": "Age when condition was observed in family member",
-      "valueType": "integer",
-      "meta": {
-        "units": "years",
-        "displayName": "Family condition age"
-      }
-    },
-    {
       "name": "family_condition_relationship",
-      "description": "What is the relationship of the family member to the donor.",
+      "description": "What is the relationship of the family member to the participant.",
       "valueType": "string",
       "restrictions": {
         "codeList": [
@@ -108,23 +84,6 @@
       },
       "meta": {
         "displayName": "Family condition relationship"
-      }
-    },
-    {
-      "name": "family_cancer_history",
-      "description": "Donor has a history of cancer in the family",
-      "restrictions": {
-        "codeList": [
-          "Yes",
-          "No",
-          "Unknown"
-        ],
-        "required": true
-      },
-      "valueType": "string",
-      "meta": {
-        "core": true,
-        "displayName": "Family cancer history"
       }
     }
   ]

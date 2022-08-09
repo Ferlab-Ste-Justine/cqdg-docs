@@ -1,8 +1,8 @@
 {
   "name": "phenotype",
-  "description": "L'ensemble de champes reliés aux phénotypes du donneur. Pour soumettre plus d'un phénotype, veuillez ajouter des lignes à la table phénotype pour ce donneur.",
+  "description": "L'ensemble de champes reliés aux phénotypes du participant. Pour soumettre plus d'un phénotype, veuillez ajouter des lignes à la table phénotype pour ce participant.",
   "meta": {
-    "parent": "donor"
+    "parent": "participant"
   },
   "fields": [
     {
@@ -21,29 +21,14 @@
       }
     },
     {
-      "name": "submitter_donor_id",
-      "description": "Identifiant pour le donneur, soumis par l'étude",
+      "name": "submitter_participant_id",
+      "description": "Identifiant pour le participant, soumis par l'étude",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "donor.submitter_donor_id",
-        "displayName": "ID du donneur soumis par l'étude",
-        "notes": "#/notes/id"
-      },
-      "restrictions": {
-        "required": true,
-        "regex": "#/regex/id"
-      }
-    },
-    {
-      "name": "submitter_phenotype_id",
-      "description": "Identifiant unique pour le phénotype, soumis par l'étude",
-      "valueType": "string",
-      "meta": {
-        "validationDependency": true,
-        "primaryId": true,
-        "displayName": "ID du phénotype soumis par l'étude",
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "ID du participant soumis par l'étude",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -54,7 +39,7 @@
     {
       "name": "phenotype_source_text",
       "valueType": "string",
-      "description": "Le phenotype (ou anomalie) du donneur tel que rapporté par l'étude",
+      "description": "Le phenotype (ou anomalie) du participant tel que rapporté par l'étude",
       "restrictions": {
         "required": true
       },
@@ -68,7 +53,7 @@
     {
       "name": "phenotype_HPO_code",
       "valueType": "string",
-      "description": "Code du phénoype du donneur selon le système de classification Human Phenoytpe Ontology (HPO)",
+      "description": "Code du phénoype du participant selon le système de classification Human Phenoytpe Ontology (HPO)",
       "restrictions": {
         "required": true,
         "regex": "#/regex/hpo"
@@ -82,28 +67,16 @@
     {
       "name": "age_at_phenotype",
       "valueType": "number",
-      "description": "Age (en jour) où le phénotype a été observé chez ce donneur",
-      "restrictions": {},
-      "meta": {
-        "units": "years",
-        "displayName": "Age où le phénotype a été observé"
-      }
-    },
-    {
-      "name": "phenotype_severity",
-      "valueType": "string",
-      "description": "Sévérité de la manifestation du phénotype",
+      "description": "Age (en jour) où le phénotype a été observé chez ce participant",
       "restrictions": {
-        "codeList": [
-          "Borderline",
-          "Mild",
-          "Moderate",
-          "Severe",
-          "Profound"
-        ]
+        "range": {
+          "min": 0,
+          "max": 40000
+        }
       },
       "meta": {
-        "displayName": "Sévérité du phénotype"
+        "units": "days",
+        "displayName": "Age où le phénotype a été observé"
       }
     },
     {

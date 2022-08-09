@@ -19,14 +19,14 @@
       }
     },
     {
-      "name": "submitter_donor_id",
-      "description": "Identifiant pour le donneur, soumis par l'étude.",
+      "name": "submitter_participant_id",
+      "description": "Identifiant pour le participant, soumis par l'étude.",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "donor.submitter_donor_id",
-        "displayName": "ID du donneur soumis par l'étude",
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "ID du participant soumis par l'étude",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -71,19 +71,8 @@
       "restrictions": {
         "required": true,
         "codeList": [
-          "Amplified DNA",
-          "ctDNA",
-          "Other DNA enrichments",
-          "Other RNA fractions",
-          "polyA+ RNA",
-          "Ribo-Zero RNA",
-          "Total DNA",
-          "Total RNA",
-          "ChIP DNA",
-          "Purified PCR Products",
-          "Frozen cell suspension",
-          "Fresh/Frozen Cell Pellet",
-          "Other"
+          "DNA",
+          "RNA"
         ]
       },
       "meta": {

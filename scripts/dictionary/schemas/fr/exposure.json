@@ -1,6 +1,6 @@
 {
   "name": "exposure",
-  "description": "L'ensemble de champs reliés à l'exposition à des facteurs de risque pour la santé pour le donneur.",
+  "description": "L'ensemble de champs reliés à l'exposition à des facteurs de risque pour la santé pour le participant.",
   "fields": [
     {
       "name": "study_id",
@@ -18,14 +18,14 @@
       }
     },
     {
-      "name": "submitter_donor_id",
+      "name": "submitter_participant_id",
       "valueType": "string",
-      "description": "Identifiant unique pour le donneur, soumis par l'étude",
+      "description": "Identifiant unique pour le participant, soumis par l'étude",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "foreignKey": "donor.submitter_donor_id",
-        "displayName": "ID du donneur soumis par l'étude",
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "ID du participant soumis par l'étude",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -35,7 +35,7 @@
     },
     {
       "name": "smoking_status",
-      "description": "Statut tabagique du donneur au moment de la collecte de données",
+      "description": "Statut tabagique du participant au moment de la collecte de données",
       "valueType": "string",
       "restrictions": {
         "codeList": [
@@ -53,17 +53,7 @@
         "displayName": "Statut tabagique"
       }
     },
-    {
-      "name": "smoking_pack_years",
-      "description": "Nombre de paquets de cigarettes fumés par jour multiplié par le nombre d'année où le donneur a fumé ",
-      "valueType": "string",
-      "meta": {
-        "dependsOn": "exposure.smoking_status",
-        "notes": "Non requis si l'historique de consommation de tabac est inconnu ou si le donneur n'a jamais fumé.Les paquets-années sont calculés en multipliant le nombre de paquets de cigarettes (20 cigarettes par paquet) fumés par jour par le nombre d'années que la personne a fumé. Par exemple, 1 paquet par an équivaut à fumer 1 paquet par jour pendant 1 an.",
-        "displayName": "Paquet-année de cigarettes"
-      }
-    },
-    {
+      {
       "name": "alcohol_status",
       "description": "Consommation d'alcool actuelle basée sur la limite quotidienne recommandée",
       "valueType": "string",
