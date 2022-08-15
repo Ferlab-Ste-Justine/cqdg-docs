@@ -83,7 +83,8 @@
         ]
       },
       "meta": {
-        "displayName": "Family condition relationship"
+        "displayName": "Family condition relationship", 
+        "notes": "Refer to HL7 code system to identify the type of relation between the participant and affected family member http://terminology.hl7.org/CodeSystem/v3-RoleCode"
       }
     }
   ]

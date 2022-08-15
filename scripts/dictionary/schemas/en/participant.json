@@ -51,8 +51,8 @@
       }
     },
     {
-      "description": "Administrative gender of the participant",
-      "name": "gender",
+      "description": "Sex of the participant",
+      "name": "sex",
       "valueType": "string",
       "restrictions": {
         "required": true,
@@ -66,7 +66,7 @@
       "meta": {
         "core": true,
         "notes": "Data from administrative health record, medical record or self-reported",
-        "displayName": "Gender"
+        "displayName": "Sex"
       }
     },
     {
@@ -152,7 +152,6 @@
           "min": 0,
           "max": 40000
         },
-        "required": true,
         "script": "#/script/participant/ensureDeceased"
       }
     }

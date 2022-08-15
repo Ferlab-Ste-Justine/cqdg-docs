@@ -98,7 +98,7 @@
         "validationDependency": true,
         "core": true,
         "displayName": "Tissu normal ou tumoral",
-        "notes": "Indicate `Not applicable' if the biospecimen was not analysed."
+        "notes": "Indiquer `Not applicable' si le biospécimen n'a pas été analysé."
       }
     },
     {
@@ -149,7 +149,7 @@
       "meta": {
         "validationDependency": true,
         "core": true,
-        "notes": "Refer to  NCI Thesaurus (NCIt) at http://purl.obolibrary.org/obo/ncit.owl",
+        "notes": "Référez-vous au  NCI Thesaurus (NCIt) http://purl.obolibrary.org/obo/ncit.owl",
         "displayName": "Localisation anatomique du spécimen biologique (code)",
         "examples": "NCIT:C12971"
       }
@@ -180,7 +180,7 @@
         "validationDependency": true,
         "core": true,
         "dependsOn": "biospecimen.tumor_normal_designation",
-        "notes": "If biospecimen is a tumor refer to  NCI Thesaurus (NCIt) at http://purl.obolibrary.org/obo/ncit.owl",
+        "notes": "Si le biospécimen est une tumeur, référez-vous au NCI Thesaurus (NCIt) http://purl.obolibrary.org/obo/ncit.owl",
         "valueType": "string",
         "examples": "NCIT:C136709",
         "displayName": "Tumor Histological Type"
