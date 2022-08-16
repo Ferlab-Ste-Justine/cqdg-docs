@@ -51,7 +51,7 @@
     },
     {
       "description": "Sexe du participant",
-      "name": "gender",
+      "name": "sex",
       "valueType": "string",
       "restrictions": {
         "required": true,
@@ -65,7 +65,7 @@
       "meta": {
         "core": true,
         "notes": "Information obtenue des données médico-administrative ou déclarée par le participant",
-        "displayName": "Genre"
+        "displayName": "Sexe"
       }
     },
     {

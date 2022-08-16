@@ -92,6 +92,21 @@
         "core": true,
         "displayName": "Relation du participant envers le proband"
       }
+    },
+    {
+      "name": "is_affected",
+      "description": "Est affecté par la condition",
+      "valueType": "string",
+      "restrictions": {
+        "codeList": [
+          "Yes",
+          "No",
+          "Unknown"
+        ]
+      },
+      "meta": {
+        "displayName": "Est affecté par la condition"
+      }
     }
   ]
 }

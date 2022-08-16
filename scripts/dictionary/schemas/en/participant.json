@@ -39,7 +39,7 @@
       "valueType": "number",
       "meta": {
         "core": true,
-        "displayName": "Age of participant at recruitment", 
+        "displayName": "Age of participant at recruitment",
         "units":"days"
       },
       "restrictions": {
@@ -51,8 +51,8 @@
       }
     },
     {
-      "description": "Administrative gender of the participant",
-      "name": "gender",
+      "description": "Sex of the participant",
+      "name": "sex",
       "valueType": "string",
       "restrictions": {
         "required": true,
@@ -66,7 +66,7 @@
       "meta": {
         "core": true,
         "notes": "Data from administrative health record, medical record or self-reported",
-        "displayName": "Gender"
+        "displayName": "Sex"
       }
     },
     {
