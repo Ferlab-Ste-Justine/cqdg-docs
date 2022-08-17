@@ -18,7 +18,7 @@
       }
     },
     {
-      "description": "Identifiant unique pour le participant, soumis par l'étude",
+      "description": "Identifiant unique pour le participant soumis par l'étude",
       "name": "submitter_participant_id",
       "valueType": "string",
       "meta": {
@@ -34,12 +34,13 @@
       }
     },
     {
-      "description": "Âge du participant au moment du recrutement",
+      "description": "Âge (en jours) du participant au moment du recrutement",
       "name": "age_at_recruitment",
       "valueType": "number",
       "meta": {
         "core": true,
-        "displayName": "Âge au recruitment"
+        "displayName": "Âge (en jours) au recrutement",
+        "units": "days"
       },
       "restrictions": {
         "range": {
@@ -64,7 +65,7 @@
       },
       "meta": {
         "core": true,
-        "notes": "Information obtenue des données médico-administrative ou déclarée par le participant",
+        "notes": "Information obtenue des données médico-administratives ou déclarée par le participant",
         "displayName": "Sexe"
       }
     },
@@ -89,7 +90,7 @@
       },
       "meta": {
         "displayName": "Ethnicité",
-        "notes": "Les Canadiens français désigne les Canadiens dont les ancêtres font partie des colons français venus s'installés au Canada. Les Canadiens anglais désigne les Canadiens anglophones d'ascendance et de culture anglaise. Autochtone (Premières Nations, Métis, Inuits), blancs (ascendance européenne), arabes (ex; Égypte, Irak, Jordanie, Liban) , Latino-américain (hispanique), noire (Afrique / Caraïbes), d'Asie de l'Est (ex: Chine, Japon, Corée, Taïwan), d'Asie occidentale (ex: Turquie, Iran, Afghanistan), Asie du Sud-Est (ex: Malaisie, Indonésie, Viet Nam), Asie du Sud (ex: Inde, Sri Lanka, Pakistan, Bangladesh), Philippin, Inconnu, Autre"
+        "notes": "Les Canadiens français désignent les Canadiens dont les ancêtres font partie des colons français venus s'installer au Canada. Les Canadiens anglais désignent les Canadiens anglophones d'ascendance et de culture anglaise."
       }
     },
     {
@@ -135,7 +136,7 @@
       }
     },
     {
-      "description": "Age du participant au moment de son décès (en jour)",
+      "description": "Âge du participant au moment de son décès (en jours)",
       "name": "age_of_death",
       "valueType": "number",
       "meta": {
@@ -144,7 +145,7 @@
         "validationDependency": true,
         "units": "days",
         "core": "true",
-        "displayName": "Age de décès"
+        "displayName": "Âge (en jours) du décès"
       },
       "restrictions": {
         "range": {

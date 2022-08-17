@@ -53,9 +53,9 @@
     {
       "name": "access_authority",
       "valueType": "string",
-      "description": "Contact information for the Stuy's access authority",
+      "description": "Contact information for the Stuy's Access Authority",
       "meta": {
-        "displayName": "Access authority",
+        "displayName": "Access Authority",
         "notes": "Provide website or email information"
       }
     },
@@ -96,7 +96,7 @@
         "codeList": [
           "Pediatric",
           "Adult",
-          "Pediatric and adult"
+          "Pediatric and Adult"
         ]
       },
       "meta": {
@@ -121,7 +121,7 @@
       "meta": {
         "core": true,
         "displayName": "Data Access Limitations",
-        "notes": "Refer to the Data Use Ontology code https://github.com/EBISPOT/DUO"
+        "notes": "Refer to the Data Use Ontology https://github.com/EBISPOT/DUO"
       }
     },
     {
@@ -135,7 +135,7 @@
       "meta": {
         "core": true,
         "displayName": "Data Use Requirements",
-        "notes": "Refer to the Data Use Ontology code https://github.com/EBISPOT/DUO",
+        "notes": "Refer to the Data Use Ontology https://github.com/EBISPOT/DUO",
         "examples": "DUO:0000021;DUO:0000025"
       }
     },

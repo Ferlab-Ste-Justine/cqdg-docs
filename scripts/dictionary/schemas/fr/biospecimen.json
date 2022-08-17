@@ -1,6 +1,6 @@
 {
   "name": "biospecimen",
-  "description": "Ensemble de champs reliés au spécimen biologique du participant. Un spécimen biologique est tout type d'échantillon biologique collecté pour analyse, pour des fins de diagnostic ou pour la recherche. Pour soumettre plus d'un diagnostic pour un participant, veuillez ajouter des lignes dans la table biospecimen pour ce participant. .",
+  "description": "Ensemble de champs reliés au spécimen biologique du participant. Un spécimen biologique est tout type d'échantillon biologique collecté pour analyse, pour des fins de diagnostic ou pour la recherche. Pour soumettre plus d'un spécimen biologique pour un participant, veuillez ajouter des lignes dans la table biospecimen pour ce participant.",
   "fields": [
     {
       "name": "study_id",
@@ -19,7 +19,7 @@
     },
     {
       "name": "submitter_participant_id",
-      "description": "Identifiant pour le participant, soumis par l'étude",
+      "description": "Identifiant pour le participant soumis par l'étude",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
@@ -35,12 +35,12 @@
     },
     {
       "name": "submitter_biospecimen_id",
-      "description": "Identifiant unique pour le spécimen biologique, soumis par l'étude",
+      "description": "Identifiant unique pour le spécimen biologique soumis par l'étude",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "ID du biospécimen soumis par l'étude",
+        "displayName": "ID du spécimen biologique soumis par l'étude",
         "notes": "#/notes/id"
       },
       "restrictions": {
@@ -49,7 +49,7 @@
       }
     },
     {
-      "description": "Age du participant (en jours) au moment de la collecte du spécimen biologique",
+      "description": "Âge du participant (en jours) au moment de la collecte du spécimen biologique",
       "name": "age_biospecimen_collection",
       "restrictions": {
         "range": {
@@ -60,7 +60,7 @@
       "valueType": "number",
       "meta": {
         "units": "days",
-        "displayName": "Age (en jours) au moment de la collecte du spécimen biologique"
+        "displayName": "Âge (en jours) au moment de la collecte du spécimen biologique"
       }
     },
     {
@@ -85,7 +85,7 @@
     {
       "name": "tumor_normal_designation",
       "valueType": "string",
-      "description": "Le spécimen biologique provient de tissu tumoral ou normal",
+      "description": "Le spécimen biologique provient d'un tissu tumoral ou normal",
       "restrictions": {
         "required": true,
         "codeList": [
@@ -98,7 +98,7 @@
         "validationDependency": true,
         "core": true,
         "displayName": "Tissu normal ou tumoral",
-        "notes": "Indiquer `Not applicable' si le biospécimen n'a pas été analysé."
+        "notes": "Indiquer `Not applicable' si le spécimen biologique n'a pas été analysé."
       }
     },
     {
@@ -133,7 +133,7 @@
       "meta": {
         "validationDependency": true,
         "core": true,
-        "notes": "Utiliser le terme inscrit au moment de la collecte du biospécimen",
+        "notes": "Utilisez le terme inscrit au moment de la collecte du spécimen biologique",
         "displayName": "Localisation anatomique du spécimen biologique (terme)",
         "examples": "Breast"
       }
@@ -141,7 +141,7 @@
     {
       "name": "biospecimen_anatomic_location_ncit_code",
       "valueType": "string",
-      "description": "Indiquer le code NCIT représentant la localisation anatomic du spécimen biologique",
+      "description": "Indiquer le code NCIT représentant la localisation anatomique du spécimen biologique",
       "restrictions": {
         "required": true,
         "regex": "^[8,9]{1}[0-9]{3}/[0,1,2,3,6,9]{1}[1-9]{0,1}$"
@@ -162,7 +162,7 @@
         "validationDependency": true,
         "core": true,
         "dependsOn": "sample_registration.tumor_normal_designation",
-        "notes": "Si le spécimen biologique est une tumeur. Veuillez utiliser le terme fourni dans le rapport de pathologie",
+        "notes": "Si le spécimen biologique est une tumeur, veuillez utiliser le terme fourni dans le rapport de pathologie",
         "valueType": "string",
         "examples": "Mucinous Adenocarcinoma",
         "displayName": "Type histologique de la tumeur"
@@ -174,13 +174,13 @@
     },
     {
       "name": "tumor_histological_type_ncit_code",
-      "description": "Code histologique du néoplasme selon le NCI Thesaurus (NCIt) at http://purl.obolibrary.org/obo/ncit.owl",
+      "description": "Code histologique du néoplasme selon le NCI Thesaurus (NCIt)",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "core": true,
         "dependsOn": "biospecimen.tumor_normal_designation",
-        "notes": "Si le biospécimen est une tumeur, référez-vous au NCI Thesaurus (NCIt) http://purl.obolibrary.org/obo/ncit.owl",
+        "notes": "Si le spécimen biologique est une tumeur, référez-vous au NCI Thesaurus (NCIt) http://purl.obolibrary.org/obo/ncit.owl",
         "valueType": "string",
         "examples": "NCIT:C136709",
         "displayName": "Tumor Histological Type"

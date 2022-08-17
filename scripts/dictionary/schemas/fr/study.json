@@ -47,7 +47,7 @@
       "description": "Mots-clés associés à l'étude",
       "meta": {
         "displayName": "Mots-clés associés à l'étude",
-        "notes": "liste de mots-clés délimitée avec des points-virgules (;)"
+        "notes": "Liste de mots-clés délimitée avec des points-virgules (;)"
       }
     },
     {
@@ -121,7 +121,7 @@
       "meta": {
         "core": true,
         "displayName": "Restrictions pour l'accès",
-        "notes": "Référez-vous au code du Data Use Ontology https://github.com/EBISPOT/DUO"
+        "notes": "Référez-vous au Data Use Ontology https://github.com/EBISPOT/DUO"
       }
     },
     {

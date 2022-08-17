@@ -22,7 +22,7 @@
     },
     {
       "name": "submitter_participant_id",
-      "description": "Identifier of the participant, assigned by the data provider",
+      "description": "Identifier of the participant assigned by the data provider",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
@@ -67,7 +67,7 @@
     {
       "name": "age_at_phenotype",
       "valueType": "number",
-      "description": "Age (in days) of partipant when phenotype was observed",
+      "description": "Participant's age (in days) when phenotype was observed",
       "restrictions": {
         "range": {
           "min": 0,

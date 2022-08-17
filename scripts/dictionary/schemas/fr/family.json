@@ -20,7 +20,7 @@
     {
       "name": "submitter_family",
       "valueType": "string",
-      "description": "Identifant pour la famille du participant, soumis par l'étude",
+      "description": "Identifant pour la famille du participant soumis par l'étude",
       "restrictions": {
         "required": true,
         "regex": "#/regex/id"
@@ -34,7 +34,7 @@
       }
     },
     {
-      "description": "Identifiant unique du participant, soumis par l'étude",
+      "description": "Identifiant unique du participant soumis par l'étude",
       "name": "submitter_participant_id",
       "valueType": "string",
       "meta": {
@@ -69,7 +69,7 @@
     },
     {
       "name": "relationship_to_proband",
-      "description": "Relation du participant envers le proband",
+      "description": "Relation du participant envers le sujet proposant",
       "valueType": "string",
       "restrictions": {
         "required": true,
@@ -90,7 +90,7 @@
       },
       "meta": {
         "core": true,
-        "displayName": "Relation du participant envers le proband"
+        "displayName": "Relation du participant envers le sujet proposant"
       }
     },
     {

@@ -19,7 +19,7 @@
     },
     {
       "name": "submitter_participant_id",
-      "description": "Identifier of the participant, assigned by the data provider",
+      "description": "Identifier of the participant assigned by the data provider",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
@@ -35,7 +35,7 @@
     },
     {
       "name": "submitter_biospecimen_id",
-      "description": "Unique identifier of the biospecimen, assigned by the data provider",
+      "description": "Unique identifier of the biospecimen assigned by the data provider",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
@@ -49,7 +49,7 @@
       }
     },
     {
-      "description": "Age (in days) of participant when biospecimen was collected",
+      "description": "Participant's age (in days) when biospecimen was collected",
       "name": "age_biospecimen_collection",
       "restrictions": {
         "range": {
@@ -174,13 +174,13 @@
     },
     {
       "name": "tumor_histological_type_ncit_code",
-      "description": "The code to represent the histology of neoplasms that is usually obtained from a pathology report, according to NCI Thesaurus (NCIt) at http://purl.obolibrary.org/obo/ncit.owl",
+      "description": "The code to represent the histology of neoplasms according to NCI Thesaurus (NCIt)",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
         "core": true,
         "dependsOn": "sample_registration.tumor_normal_designation",
-        "notes": "If biospecimen is a tumor refer to  NCI Thesaurus (NCIt) at http://purl.obolibrary.org/obo/ncit.owl",
+        "notes": "If biospecimen is a tumor refer to NCI Thesaurus (NCIt) at http://purl.obolibrary.org/obo/ncit.owl",
         "valueType": "string",
         "examples": "NCIT:C136709 ",
         "displayName": "Tumor Histological Type"
