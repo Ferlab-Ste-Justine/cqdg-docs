@@ -22,7 +22,7 @@
     },
     {
       "name": "submitter_participant_id",
-      "description": "Identifiant pour le participant, soumis par l'étude",
+      "description": "Identifiant pour le participant soumis par l'étude",
       "valueType": "string",
       "meta": {
         "validationDependency": true,

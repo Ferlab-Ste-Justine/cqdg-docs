@@ -23,7 +23,7 @@
     {
       "name": "submitter_participant_id",
       "valueType": "string",
-      "description": "Identifier of the participant, assigned by the data provider",
+      "description": "Identifier of the participant assigned by the data provider",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
@@ -81,7 +81,7 @@
     {
       "name": "age_at_diagnosis",
       "valueType": "number",
-      "description": "Age (in days) at diagnosis of condition",
+      "description": "Participant's age (in days) at diagnosis of condition",
       "restrictions": {
         "range": {
           "min": 0,

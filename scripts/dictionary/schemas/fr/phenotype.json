@@ -22,7 +22,7 @@
     },
     {
       "name": "submitter_participant_id",
-      "description": "Identifiant pour le participant, soumis par l'étude",
+      "description": "Identifiant pour le participant soumis par l'étude",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
@@ -60,14 +60,14 @@
       },
       "meta": {
         "core": true,
-        "notes": "Fournissez le code exact tels qu'il apparait dans HPO (par example: HP:0001161. Veuillez-vous référer à https://hpo.jax.org/app/.",
+        "notes": "Fournissez le code exact tel qu'il apparait dans HPO (par example: HP:0001161). Veuillez-vous référer à https://hpo.jax.org/app/.",
         "displayName": "Code HPO"
       }
     },
     {
       "name": "age_at_phenotype",
       "valueType": "number",
-      "description": "Age (en jour) où le phénotype a été observé chez ce participant",
+      "description": "Âge du participant (en jours) où le phénotype a été observé",
       "restrictions": {
         "range": {
           "min": 0,
@@ -76,7 +76,7 @@
       },
       "meta": {
         "units": "days",
-        "displayName": "Age où le phénotype a été observé"
+        "displayName": "Âge (en jours) où le phénotype a été observé"
       }
     },
     {

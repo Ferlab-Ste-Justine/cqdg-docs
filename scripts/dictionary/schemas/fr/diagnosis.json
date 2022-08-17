@@ -23,7 +23,7 @@
     {
       "name": "submitter_diagnosis_id",
       "valueType": "string",
-      "description": "Identifiant unique pour le diagnostic du participant, soumis par l'étude",
+      "description": "Identifiant unique pour le diagnostic du participant soumis par l'étude",
       "meta": {
         "primaryId": true,
         "validationDependency": true,
@@ -81,7 +81,7 @@
     {
       "name": "age_at_diagnosis",
       "valueType": "number",
-      "description": "Age (en jours) au moment du diagnostic de la condition",
+      "description": "Âge du participant (en jours) au moment du diagnostic de la condition",
       "restrictions": {
         "range": {
             "min": 0,
@@ -91,7 +91,7 @@
       "meta": {
         "units": "days",
         "core": true,
-        "displayName": "Age au diagnostic"
+        "displayName": "Âge (en jours) au diagnostic"
       }
     },
     {

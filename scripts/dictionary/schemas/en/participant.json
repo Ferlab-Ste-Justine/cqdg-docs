@@ -18,7 +18,7 @@
       }
     },
     {
-      "description": "Unique identifier of the participant, assigned by the data provider",
+      "description": "Unique identifier of the participant assigned by the data provider",
       "name": "submitter_participant_id",
       "valueType": "string",
       "meta": {
@@ -34,12 +34,12 @@
       }
     },
     {
-      "description": "participant's age (in days) at recruitment",
+      "description": "Participant's age (in days) at recruitment",
       "name": "age_at_recruitment",
       "valueType": "number",
       "meta": {
         "core": true,
-        "displayName": "Age of participant at recruitment", 
+        "displayName": "Age of participant (in days) at recruitment", 
         "units":"days"
       },
       "restrictions": {
@@ -65,7 +65,7 @@
       },
       "meta": {
         "core": true,
-        "notes": "Data from administrative health record, medical record or self-reported",
+        "notes": "Data from administrative health records or self-reported",
         "displayName": "Sex"
       }
     },
@@ -90,11 +90,11 @@
       },
       "meta": {
         "displayName": "Ethnicity",
-        "notes": "French Canadian trace their ancestry to French colonists who settled in Canada, English Canadians are of English ethnic origin and heritage, Aboriginal (First Nations, Metis, Inuit), White (European descent), Arab (e.g. Egypt, Iraq, Jordan, Lebanon), Latin American (Hispanic), Black (African/Caribbean), East Asian (e.g. China, Japan, Korea, Taiwan), West Asian (e.g. Turkey, Iran, Afghanistan), Southeast Asian (e.g. Malaysia, Indonesia, Viet Nam), South Asian (e.g. India, Sri Lanka, Pakistan, Bangladesh), Filipino, Unknown, Other"
+        "notes": "French Canadian trace their ancestry to French colonists who settled in Canada, English Canadians are of English ethnic origin and heritage."
       }
     },
     {
-      "description": "participant's last known state of living or deceased",
+      "description": "Participant's last known state of living or deceased",
       "name": "vital_status",
       "restrictions": {
         "codeList": [
@@ -136,16 +136,16 @@
       }
     },
     {
-      "description": "Numeric value to represent the age of the participant at the time of death, in days",
+      "description": "Participant's age (in days) at the time of death",
       "name": "age_of_death",
       "valueType": "number",
       "meta": {
         "dependsOn": "participant.vital_status",
-        "notes": "Age_of_death is only required to be submitted if the participant's vital_status is Deceased.",
+        "notes": "Age_of_death is only required to be submitted if the participant's vital_status is 'Deceased'.",
         "validationDependency": true,
         "units": "days",
         "core": "true",
-        "displayName": "Age of death"
+        "displayName": "Age of death (in days)"
       },
       "restrictions": {
         "range": {

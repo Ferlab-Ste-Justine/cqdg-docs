@@ -22,7 +22,7 @@
     },
     {
       "name": "submitter_participant_id",
-      "description": "Identifier of the participant, assigned by the data provider",
+      "description": "Identifier of the participant assigned by the data provider",
       "valueType": "string",
       "meta": {
         "validationDependency": true,
@@ -185,7 +185,7 @@
       "name": "treatment_start_date",
       "valueType": "string",
       "meta": {
-        "notes": "For medication, provide date of first prescription dispensation (MM-YYYY). For one-time treatments, such as surgeries, provide the date of the intervention.",
+        "notes": "For medication, provide date of first prescription dispensation (DD-MM-YYYY). For one-time treatments, such as surgeries, provide the date of the intervention.",
         "displayName": "Treatment start date"
       },
       "restrictions": {

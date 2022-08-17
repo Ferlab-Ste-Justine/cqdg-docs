@@ -49,7 +49,7 @@
       }
     },
     {
-      "description": "Age (in days) of participant when biospecimen was collected",
+      "description": "Participant's age (in days) when biospecimen was collected",
       "name": "age_biospecimen_collection",
       "restrictions": {
         "range": {
@@ -174,7 +174,7 @@
     },
     {
       "name": "tumor_histological_type_ncit_code",
-      "description": "The code to represent the histology of neoplasms that is usually obtained from a pathology report, according to NCI Thesaurus (NCIt) at http://purl.obolibrary.org/obo/ncit.owl",
+      "description": "The code to represent the histology of neoplasms according to NCI Thesaurus (NCIt)",
       "valueType": "string",
       "meta": {
         "validationDependency": true,

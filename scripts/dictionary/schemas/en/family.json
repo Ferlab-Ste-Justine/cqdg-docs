@@ -20,7 +20,7 @@
     {
       "name": "submitter_family_id",
       "valueType": "string",
-      "description": "Identifier of the family, assigned by the data provider",
+      "description": "Identifier of the family assigned by the data provider",
       "restrictions": {
         "required": true,
         "regex": "#/regex/id"
@@ -34,7 +34,7 @@
       }
     },
     {
-      "description": "Unique identifier of the participant, assigned by the data provider",
+      "description": "Unique identifier of the participant assigned by the data provider",
       "name": "submitter_participant_id",
       "valueType": "string",
       "meta": {

@@ -20,7 +20,7 @@
     {
       "name": "submitter_participant_id",
       "valueType": "string",
-      "description": "Unique identifier of the participant, assigned by the data provider",
+      "description": "Unique identifier of the participant assigned by the data provider",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
@@ -45,8 +45,8 @@
           "Never smoker",
           "Smoker, current status unknown",
           "Unknown if ever smoked",
-          "Current Heavy tobacco smoker (more than 20)",
-          "Current Light tobacco smoker"
+          "Current heavy tobacco smoker (more than 20)",
+          "Current light tobacco smoker"
         ]
       },
       "meta": {

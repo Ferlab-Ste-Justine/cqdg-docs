@@ -18,7 +18,7 @@
       }
     },
     {
-      "description": "Identifier of the participant, assigned by the data provider",
+      "description": "Identifier of the participant assigned by the data provider",
       "name": "submitter_participant_id",
       "valueType": "string",
       "meta": {
@@ -84,7 +84,7 @@
       },
       "meta": {
         "displayName": "Family condition relationship", 
-        "notes": "Refer to HL7 code system to identify the type of relation between the participant and affected family member http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+        "notes": "Refer to HL7 code system to identify the type of relationship between the participant and the affected family member http://terminology.hl7.org/CodeSystem/v3-RoleCode"
       }
     }
   ]
