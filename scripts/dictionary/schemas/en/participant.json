@@ -9,7 +9,7 @@
       "meta": {
         "validationDependency": true,
         "primaryId": true,
-        "displayName": "Study IsD",
+        "displayName": "Study ID",
         "notes": "#/notes/id"
       },
       "restrictions": {

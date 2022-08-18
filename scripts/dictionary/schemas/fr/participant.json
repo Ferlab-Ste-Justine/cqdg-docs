@@ -136,7 +136,7 @@
       }
     },
     {
-      "description": "Âge du participant au moment de son décès (en jours)",
+      "description": "Âge du participant (en jours) au moment de son décès",
       "name": "age_of_death",
       "valueType": "number",
       "meta": {
