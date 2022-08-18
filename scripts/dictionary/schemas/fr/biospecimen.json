@@ -98,7 +98,7 @@
         "validationDependency": true,
         "core": true,
         "displayName": "Tissu normal ou tumoral",
-        "notes": "Indiquer `Not applicable' si le spécimen biologique n'a pas été analysé."
+        "notes": "Indiquez `Not applicable' si le spécimen biologique n'a pas été analysé."
       }
     },
     {
