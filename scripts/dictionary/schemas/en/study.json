@@ -53,9 +53,9 @@
     {
       "name": "access_authority",
       "valueType": "string",
-      "description": "Contact information for the Stuy's access authority",
+      "description": "Contact information for the Stuy's Access Authority",
       "meta": {
-        "displayName": "Access authority",
+        "displayName": "Access Authority",
         "notes": "Provide website or email information"
       }
     },
@@ -66,12 +66,20 @@
       "restrictions": {
         "required": true,
         "codeList": [
+          "Aging",
+          "Birth Defects",
           "Cancer",
-          "Rare disease",
-          "Neurodevelopmental conditions",
-          "Congenital malformations and deformations",
-          "General health",
-          "Not applicable"
+          "Circulatory and Respiratory Health",
+          "General Health",
+          "Infection and Immunity",
+          "Musculoskeletal Health and Arthritis",
+          "Neurodevelopmental Conditions",
+          "Neurosciences, Mental Health and Addiction",
+          "Nutrition, Metabolism and Diabetes",
+          "Population Genomics",
+          "Rare Diseases",
+          "Not Applicable",
+          "Other"
         ]
       },
       "meta": {
@@ -88,7 +96,7 @@
         "codeList": [
           "Pediatric",
           "Adult",
-          "Pediatic and adult"
+          "Pediatric and Adult"
         ]
       },
       "meta": {
@@ -104,21 +112,16 @@
         "required": true,
         "codeList": [
           "DUO:0000004",
-          "DUO:0000005",
           "DUO:0000006",
           "DUO:0000007",
           "DUO:0000011",
-          "DUO:0000012",
-          "DUO:0000014",
-          "DUO:0000015",
-          "DUO:0000016",
           "DUO:0000042"
         ]
       },
       "meta": {
         "core": true,
         "displayName": "Data Access Limitations",
-        "notes": "Refer to the Data Use Ontology code https://github.com/EBISPOT/DUO"
+        "notes": "Refer to the Data Use Ontology https://github.com/EBISPOT/DUO"
       }
     },
     {
@@ -132,7 +135,7 @@
       "meta": {
         "core": true,
         "displayName": "Data Use Requirements",
-        "notes": "Refer to the Data Use Ontology code https://github.com/EBISPOT/DUO",
+        "notes": "Refer to the Data Use Ontology https://github.com/EBISPOT/DUO",
         "examples": "DUO:0000021;DUO:0000025"
       }
     },

@@ -21,7 +21,7 @@
       }
     },
     {
-      "description": "Identifiant pour le participant, soumis par l'étude",
+      "description": "Identifiant pour le participant soumis par l'étude",
       "name": "submitter_participant_id",
       "valueType": "string",
       "meta": {
@@ -39,7 +39,7 @@
     {
       "name": "submitter_diagnosis_id",
       "valueType": "string",
-      "description": "Identifiant pour le diagnostic du participant, soumis par l'étude.",
+      "description": "Identifiant pour le diagnostic du participant soumis par l'étude",
       "meta": {
         "primaryId": true,
         "validationDependency": true,
@@ -53,7 +53,7 @@
       }
     },
     {
-      "description": "Intervalle de temps (en jours) entre le diagnostic et la visite de suivi",
+      "description": "Nombre de jours entre le diagnostic et la visite de suivi",
       "name": "days_to_follow_up",
       "valueType": "integer",
       "restrictions": {
@@ -88,12 +88,12 @@
     },
     {
       "name": "relapse_interval",
-      "description": "Intervalle entre la fin du traitement de première intention et la progressiojn de la maladie (en jours)",
+      "description": "Intervalle entre la fin du traitement de première intention et la progression de la maladie (en jours)",
       "valueType": "integer",
       "meta": {
         "units": "days",
         "dependsOn": "follow_up.disease_status_at_followup",
-        "notes": "Ce champ indique la durée de l'intervalle sans maladie, en jours dans le cas où la maladie était non-détectée suite au traitement primaire, puis une rechute, une récidive ou une progression (pour les tumeurs liquides) s'est produite par la suite",
+        "notes": "Ce champ indique la durée de l'intervalle sans maladie en jours dans le cas où la maladie était non-détectée suite au traitement primaire, puis une rechute, une récidive ou une progression (pour les tumeurs liquides) s'est produite par la suite",
         "displayName": "Intervalle de recidive"
       }
     }
