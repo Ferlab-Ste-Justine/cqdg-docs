@@ -128,7 +128,7 @@
       "valueType": "string",
       "description": "Site anatomique d'où le spécimen biologique a été collecté (spécifique) au cancer",
       "restrictions": {
-        "script": "#/script/biospecimen/ensureTumorNormalDesignation",
+        "script": "#/script/biospecimen/ensureTumorNormalDesignation"
       },
       "meta": {
         "validationDependency": true,

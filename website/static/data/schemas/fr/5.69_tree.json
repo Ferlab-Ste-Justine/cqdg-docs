@@ -1,0 +1,1 @@
+{"name":"family_history","fields":[{"name":"study_id","required":true},{"name":"submitter_participant_id","required":true},{"name":"family_condition_name","required":true},{"name":"family_condition_relationship","required":false}],"required":false,"parentName":"","children":[]}
