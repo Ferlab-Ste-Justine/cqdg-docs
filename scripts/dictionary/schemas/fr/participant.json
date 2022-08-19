@@ -144,7 +144,7 @@
         "notes": "Requis si le participant est décédé.",
         "validationDependency": true,
         "units": "days",
-        "core": "true",
+        "core": true,
         "displayName": "Âge (en jours) du décès"
       },
       "restrictions": {

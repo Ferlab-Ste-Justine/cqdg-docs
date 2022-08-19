@@ -1,5 +1,5 @@
 /**
- * Validates that stage_group is a permissable value based on tumour_staging_system
+ * Validates that stage_group is a permissable value based on tumor_staging_system
  *
  * @param {Object} $row The object representing the row for a participant. Object keys represent the fields.
  * @param {String} $field The value for the field.
@@ -17,10 +17,10 @@ const validation = () =>
 
         const isCancer = $row.is_cancer && $row.is_cancer.trim().toLowerCase() == "true";
 
-        if ($field && !$row.tumour_staging_system) {
+        if ($field && !$row.tumor_staging_system) {
             result = {
                 valid: false,
-                message: `Please provide a value for the tumour_staging_system or leave stage_group blank`,
+                message: `Please provide a value for the tumor_staging_system or leave stage_group blank`,
             };
         }
 
@@ -33,7 +33,7 @@ const validation = () =>
 
         if ($field) {
             let codeList = [];
-            switch ($row.tumour_staging_system && $row.tumour_staging_system.trim().toLowerCase()) {
+            switch ($row.tumor_staging_system && $row.tumor_staging_system.trim().toLowerCase()) {
                 case 'revised international staging system (riss)':
                     codeList = ['stage i', 'stage ii', 'stage iii'];
                     break;
@@ -204,8 +204,8 @@ const validation = () =>
             }
 
             if (!codeList.includes($field.trim().toLowerCase()) && codeList.length) {
-                const msg = `'${$field}' is not a permissible value. When 'tumour_staging_system' is set to '${
-                    $row.tumour_staging_system
+                const msg = `'${$field}' is not a permissible value. When 'tumor_staging_system' is set to '${
+                    $row.tumor_staging_system
                 }', 'stage_group' must be one of the following: \n${codeList
                     .map((code) => `- "${code}"`)
                     .join('\n')}`;
