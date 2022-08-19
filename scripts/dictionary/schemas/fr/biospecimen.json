@@ -54,7 +54,7 @@
       "restrictions": {
         "range": {
           "min": 0,
-          "max": 4000
+          "max": 40000
         }
       },
       "valueType": "number",
