@@ -106,7 +106,7 @@
       "valueType": "string",
       "description": "Description du type de tissu d'où provient le spécimen biologique (spécifique au cancer), basé sur le  NCI Thesaurus (NCIt)",
       "restrictions": {
-        "required": true,
+        "script": "#/script/biospecimen/ensureTumorNormalDesignation",
         "codeList": [
           "Derived Cell Line",
           "Metastatic Tumor Sample",
@@ -128,7 +128,7 @@
       "valueType": "string",
       "description": "Site anatomique d'où le spécimen biologique a été collecté (spécifique) au cancer",
       "restrictions": {
-        "required": true
+        "script": "#/script/biospecimen/ensureTumorNormalDesignation"
       },
       "meta": {
         "validationDependency": true,
@@ -143,8 +143,8 @@
       "valueType": "string",
       "description": "Indiquer le code NCIT représentant la localisation anatomique du spécimen biologique",
       "restrictions": {
-        "required": true,
-        "regex": "^[8,9]{1}[0-9]{3}/[0,1,2,3,6,9]{1}[1-9]{0,1}$"
+        "regex": "^ncit:C\\d+$",
+        "script": "#/script/biospecimen/ensureTumorNormalDesignation"
       },
       "meta": {
         "validationDependency": true,
@@ -168,7 +168,6 @@
         "displayName": "Type histologique de la tumeur"
       },
       "restrictions": {
-        "regex": "^[8,9]{1}[0-9]{3}/[0,1,2,3,6,9]{1}[1-9]{0,1}$",
         "script": "#/script/biospecimen/ensureTumorNormalDesignation"
       }
     },
@@ -186,7 +185,7 @@
         "displayName": "Tumor Histological Type"
       },
       "restrictions": {
-        "regex": "^[8,9]{1}[0-9]{3}/[0,1,2,3,6,9]{1}[1-9]{0,1}$",
+        "regex": "^ncit:C\\d+$",
         "script": "#/script/biospecimen/ensureTumorNormalDesignation"
       }
     }

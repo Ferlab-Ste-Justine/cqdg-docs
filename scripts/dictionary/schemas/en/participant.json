@@ -144,7 +144,7 @@
         "notes": "Age_of_death is only required to be submitted if the participant's vital_status is 'Deceased'.",
         "validationDependency": true,
         "units": "days",
-        "core": "true",
+        "core": true,
         "displayName": "Age of death"
       },
       "restrictions": {

@@ -1,23 +1,23 @@
 /**
- * If and only if the tumour_normal_designation is "tumour", then the "tumour_histological_type" must be provided.
+ * If and only if the tumor_normal_designation is "tumor", then the "tumor_histological_type" must be provided.
  */
 const validation = () =>
     (function validate(inputs) {
         const {$row, $name} = inputs;
         const $field = $row[$name];
 
-        let result = {valid: true, message: 'Ok'};
         const currField = typeof $field === 'string' ? $field.trim().toLowerCase() : $field;
-        const tumourNormalDesignation = $row.tumour_normal_designation || '';
+        const tumorNormalDesignation = $row.tumor_normal_designation || '';
+        const tumorNormalDesignationLowered = tumorNormalDesignation.trim().toLowerCase();
 
-        if (!currField && tumourNormalDesignation && tumourNormalDesignation.trim().toLowerCase() === 'tumour') {
-            result = {
+        if (!currField && (tumorNormalDesignationLowered === 'tumor' || tumorNormalDesignationLowered === 'normal')) {
+            return {
                 valid: false,
-                message: `${$name} must be provided when the biospecimen's tumour_normal_designation is Tumour.`,
+                message: `${$name} must be provided when the biospecimen's tumor_normal_designation is Tumor or Normal.`,
             };
         }
 
-        return result;
+        return { valid: true, message: 'Ok' };
     });
 
 module.exports = validation;
