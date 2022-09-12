@@ -65,20 +65,21 @@
       }
     },
     {
-        "description": "Type of molecular sample used for analysis testing",
-        "name": "sample_type",
-        "valueType": "string",
-        "restrictions": {
-            "required": true,
-            "codeList": [
-                "DNA",
-                "RNA"
-            ]
-        },
-        "meta": {
-            "core": true,
-            "displayName": "Sample type"
-        }
+      "description": "Type of molecular sample used for analysis testing",
+      "name": "sample_type",
+      "valueType": "string",
+      "restrictions": {
+        "required": true,
+        "codeList": [
+          "NCIT:C449",
+          "NCIT:C812"
+        ]
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Sample type",
+        "notes": "Codes are taken from NCI Thesaurus (NCIt) at http://purl.obolibrary.org/obo/ncit.owl DNA (NCIT:C449), Ribonucleic Acid (NCIT:C812)"
+      }
     }
   ]
 }

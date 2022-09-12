@@ -70,15 +70,15 @@
       "restrictions": {
         "required": true,
         "codeList": [
-          "Blood",
-          "Bone marrow",
-          "Saliva",
-          "Solid tissue"
+          "NCIT:12434",
+          "NCIT:C13275",
+          "NCIT:C164014",
+          "NCIT:C12431"
         ]
       },
       "meta": {
         "core": true,
-        "notes": "Termes tirés de NCI Thesaurus (NCIt) http://purl.obolibrary.org/obo/ncit.owl",
+        "notes": "Codes tirés du NCI Thesaurus (NCIt) http://purl.obolibrary.org/obo/ncit.owl Blood (NCIT:12434), Saliva (NCIT:C13275), Solid Tissue Sample (NCIT:C164014), Bone Marrow (NCIT:C12431)",
         "displayName": "Source tissulaire du spécimen biologique"
       }
     },
@@ -108,19 +108,21 @@
       "restrictions": {
         "script": "#/script/biospecimen/ensureTumorNormalDesignation",
         "codeList": [
-          "Derived Cell Line",
-          "Metastatic Tumor Sample",
-          "Sample Derived from New Primary",
-          "Tumor-Adjacent Normal Specimen",
-          "Tumor Tissue",
-          "Normal Tissue Segment",
-          "Cell Line-Derived Xenograft"
+          "NCIT:C156445",
+          "NCIT:156440",
+          "NCIT:156441",
+          "NCIT:164032",
+          "NCIT:C18009",
+          "NCIT:C162623",
+          "NCIT:C156443"
         ]
       },
       "meta": {
         "validationDependency": true,
         "core": true,
-        "displayName": "Type de spécimen biologique (spécifique au cancer)"
+        "displayName": "Type de spécimen biologique (spécifique au cancer)",
+        "notes": "Codes tirés du NCI Thesaurus (NCIt) http://purl.obolibrary.org/obo/ncit.owl Derived Cell Line (NCIT:C156445), Metastatic Tumor Sample (NCIT:156440), Sample Derived from New Primary (NCIT:156441), Tumor-Adjacent Normal Specimen (NCIT:164032), Tumor Tissue (NCIT:C18009), Normal Tissue Segment (NCIT:C162623), Cell Line-Derived Xenograft (NCIT:C156443)"
+
       }
     },
     {

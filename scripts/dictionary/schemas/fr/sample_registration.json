@@ -71,13 +71,14 @@
       "restrictions": {
         "required": true,
         "codeList": [
-          "DNA",
-          "RNA"
+          "NCIT:C449",
+          "NCIT:C812"
         ]
       },
       "meta": {
         "core": true,
-        "displayName": "Type d'échantillon"
+        "displayName": "Type d'échantillon",
+        "notes": "Les dodes sont tirés du NCI Thesaurus (NCIt) http://purl.obolibrary.org/obo/ncit.owl DNA (NCIT:C449), Ribonucleic Acid (NCIT:C812)"
       }
     }
   ]

@@ -2,7 +2,9 @@ const validation = () =>
     (function validate(inputs) {
         let result = {valid: true, message: 'Ok'};
         const list = [
-            "DUO:0000017",
+            "DUO:0000012",
+            "DUO:0000015",
+            "DUO:0000016",
             "DUO:0000018",
             "DUO:0000019",
             "DUO:0000020",
@@ -16,7 +18,8 @@ const validation = () =>
             "DUO:0000043",
             "DUO:0000044",
             "DUO:0000045",
-            "DUO:0000046"
+            "DUO:0000046",
+            "Biospecimen Access"
           ];
 
         const {$row, $name} = inputs;
