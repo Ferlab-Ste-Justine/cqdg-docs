@@ -21,14 +21,14 @@
       }
     },
     {
-      "name": "submitter_diagnosis_id",
+      "name": "submitter_participant_id",
       "valueType": "string",
-      "description": "Identifiant unique pour le diagnostic du participant soumis par l'étude",
+      "description": "Identifiant pour le participant soumis par l'étude",
       "meta": {
-        "primaryId": true,
         "validationDependency": true,
-        "foreignKey": "diagnosis.submitter_diagnosis_id",
-        "displayName": "ID du diagnostic soumis par l'étude",
+        "primaryId": true,
+        "foreignKey": "participant.submitter_participant_id",
+        "displayName": "Submitter participant ID",
         "notes": "#/notes/id"
       },
       "restrictions": {
