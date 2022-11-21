@@ -78,7 +78,7 @@
       "meta": {
         "core": true,
         "displayName": "Type d'échantillon",
-        "notes": "Les dodes sont tirés du NCI Thesaurus (NCIt) http://purl.obolibrary.org/obo/ncit.owl DNA (NCIT:C449), Ribonucleic Acid (NCIT:C812)"
+        "notes": "Les codes sont tirés du NCI Thesaurus (NCIt) http://purl.obolibrary.org/obo/ncit.owl DNA (NCIT:C449), Ribonucleic Acid (NCIT:C812)"
       }
     }
   ]

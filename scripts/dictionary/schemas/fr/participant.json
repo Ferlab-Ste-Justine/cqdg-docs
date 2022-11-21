@@ -47,7 +47,7 @@
           "min": 0,
           "max": 40000
         },
-        "required": true
+        "required": false
       }
     },
     {
