@@ -5,7 +5,7 @@
       "https://docs.qa.cqdg.ferlab.bio/en/submission/submitting-clinical-data/"
     ],
     "stop_urls": [
-      "https://docs.qa.cqdg.ferlab.bio/dictionary/",
+      "https://docs.qa.cqdg.ferlab.bio/dictionnaire/",
       "https://docs.qa.cqdg.ferlab.bio/soumission/soumettre-donnees-cliniques/",
       "https://docs.qa.cqdg.ferlab.bio/acces-donnees/demande-acces-donnees/",
       "https://docs.qa.cqdg.ferlab.bio/acces-donnees/processus-publication/",

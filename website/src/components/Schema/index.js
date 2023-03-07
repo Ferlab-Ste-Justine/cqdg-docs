@@ -7,7 +7,7 @@ import get from 'lodash/get';
 import startCase from 'lodash/startCase';
 import union from 'lodash/union';
 
-import { ModalPortal } from '../../pages/dictionnaire';
+import { ModalPortal } from '../../pages/dictionary';
 import { ChangeType } from '../../types';
 import { Button } from '../Button';
 import CodeBlock, { CompareCodeBlock } from '../CodeBlock';
