@@ -101,12 +101,12 @@ yarn run add
    And modified the following files:
 
    - /website/static/data/schemas/schema-versions.json
-   - /website/src/pages/dictionary/data.json
+   - /website/src/pages/dictionnaire/data.json
 
    Commit all these added and modified files to git. The following command will work from the argo-docs root directory:
 
    ```
-   git add ./website/static/data/schemas/ ./website/src/pages/dictionary/data.json
+   git add ./website/static/data/schemas/ ./website/src/pages/dictionnaire/data.json
 
    git commit
    ```
