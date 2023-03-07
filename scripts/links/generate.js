@@ -24,7 +24,7 @@ import { getConfig } from 'global/config';
 
 const { DOCS_URL_ROOT } = getConfig();
 
-export const DOCS_DICTIONARY_PATH = ${DOCS_DICTIONARY_PATH};
+export const DOCS_DICTIONARY_PATH = '${DOCS_DICTIONARY_PATH}';
 `;
 
 const traverse = async (path) => {
