@@ -59,7 +59,7 @@ const Home = () => (
                 </div>
             </BlocItem>
 
-            <BlocItem href="/dictionary" icon="Literature">
+            <BlocItem href={translate('navbar.dictionary.link')} icon="Literature">
                 <div className={styles['pages__blocs__item']}>
                     <h2 className={styles['pages__blocs__item__title']}>
                         {t('landing.content.items.dictionary.title')}
