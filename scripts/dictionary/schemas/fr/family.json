@@ -5,7 +5,7 @@
     {
       "name": "study_id",
       "valueType": "string",
-      "description": "Identifant pour l'étude",
+      "description": "Identifiant pour l'étude",
       "meta": {
         "validationDependency": true,
         "primaryId": true,
@@ -18,9 +18,9 @@
       }
     },
     {
-      "name": "submitter_family",
+      "name": "submitter_family_id",
       "valueType": "string",
-      "description": "Identifant pour la famille du participant soumis par l'étude",
+      "description": "Identifiant pour la famille du participant soumis par l'étude",
       "restrictions": {
         "required": true,
         "regex": "#/regex/id"
