@@ -52,7 +52,7 @@
     },
     {
       "description": "Genre du participant",
-      "name": "genre",
+      "name": "gender",
       "valueType": "string",
       "restrictions": {
         "required": true,
