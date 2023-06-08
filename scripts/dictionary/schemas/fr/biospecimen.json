@@ -73,12 +73,15 @@
           "NCIT:C12434",
           "NCIT:C13275",
           "NCIT:C164014",
-          "NCIT:C12431"
+          "NCIT:C12431",
+          "NCIT:C13300",
+          "NCIT:C34320",
+          "Unknown"
         ]
       },
       "meta": {
         "core": true,
-        "notes": "Les codes sont tirés du NCI Thesaurus (NCIt) http://purl.obolibrary.org/obo/ncit.owl Blood (NCIT:C12434), Saliva (NCIT:C13275), Solid Tissue Sample (NCIT:C164014), Bone Marrow (NCIT:C12431)",
+        "notes": "Les codes sont tirés du NCI Thesaurus (NCIt) http://purl.obolibrary.org/obo/ncit.owl Blood (NCIT:C12434), Saliva (NCIT:C13275), Solid Tissue Sample (NCIT:C164014), Bone Marrow (NCIT:C12431), Umbilical Cord (NCIT:C34320), Umbilical Cord Blood (NCIT:C34320)",
         "displayName": "Source tissulaire du spécimen biologique"
       }
     },
@@ -141,7 +144,7 @@
       }
     },
     {
-      "name": "biospecimen_anatomic_location_ncit_code",
+      "name": "cancer_biospecimen_anatomic_location_ncit_code",
       "valueType": "string",
       "description": "Indiquer le code NCIT représentant la localisation anatomique du spécimen biologique",
       "restrictions": {
