@@ -1,0 +1,46 @@
+{
+  "name": "datat",
+  "description": "Ensemble de champs reliés à un jeu de données spécifique appartenant à une étude du CQDG. Un jeu de données est un sous-ensemble de données provenant d'un seul type d'approche expérimentale.",
+  "fields": [
+    {
+      "name": "study_id",
+      "valueType": "string",
+      "description": "Identifiant unique pour l'étude",
+      "meta": {
+        "validationDependency": true,
+        "primaryId": true,
+        "displayName": "ID étude",
+        "notes": "#/notes/id"
+      },
+      "restrictions": {
+        "required": true,
+        "regex": "#/regex/id"
+      }
+    },
+    {
+      "name": "dataset_name",
+      "valueType": "string",
+      "description": "Nom du jeu de données",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Nom du jeu de données"
+      }
+    },
+    {
+      "name": "dataset_description",
+      "valueType": "string",
+      "description": "Description brève du jeux de données",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "notes": "Veuillez décrire le but, l'approche expérimentale et les critères de sélection du jeu de données.",
+        "displayName": "Description brève du jeux de données"
+      }
+    }
+  ]
+}

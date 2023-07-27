@@ -158,6 +158,43 @@
         "notes": "Référez-vous aux codes du Data Use Ontology pour obtenir la définition des codes https://github.com/EBISPOT/DUO",
         "examples": "DUO:0000021;DUO:0000025"
       }
+    },
+    {
+      "name": "data_source",
+      "valueType": "string",
+      "description": "Décrit la principale source des données colligées des participants de l'étude",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Source des données"
+      }
+    },
+    {
+      "name": "selection_criteria",
+      "valueType": "string",
+      "description": "Critères d'inclusion et d'exclusion de l'étude",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Critères de sélection"
+      }
+    },
+    {
+      "name": "publication",
+      "valueType": "string",
+      "description": "Digital Object Identifier de la publication décrivant la méthodologie et les critères de sélection de l'étude.",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "notes": "Veuillez fournier un hyperlien DOI avec le format suivant, https://doi.org/ suivi du numéro DOI.",
+        "displayName": "Publication"
+      }
     }
   ]
 }
