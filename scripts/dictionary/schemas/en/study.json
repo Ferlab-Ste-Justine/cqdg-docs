@@ -158,6 +158,43 @@
         "notes": "Refer to the Data Use Ontology for the full description https://github.com/EBISPOT/DUO",
         "examples": "DUO:0000021;DUO:0000025"
       }
+    },
+    {
+      "name": "data_source",
+      "valueType": "string",
+      "description": "Describes the main source of the data collected from study participants",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Data source"
+      }
+    },
+    {
+      "name": "selection_criteria",
+      "valueType": "string",
+      "description": "Inclusion and exclusion criteria for the study",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "displayName": "Selection criteria"
+      }
+    },
+    {
+      "name": "publication",
+      "valueType": "string",
+      "description": "Digital Object Identifier of the journal article that describes the study's methodology and rational ",
+      "restrictions": {
+        "required": true
+      },
+      "meta": {
+        "core": true,
+        "notes": "Provide a DOI URL formatted as https://doi.org/ followed by the DOI number.",
+        "displayName": "Publication"
+      }
     }
   ]
 }
