@@ -192,7 +192,7 @@
       },
       "meta": {
         "core": true,
-        "notes": "Veuillez fournier un hyperlien DOI avec le format suivant, https://doi.org/ suivi du numéro DOI.",
+        "notes": "Veuillez fournir un hyperlien DOI avec le format suivant, https://doi.org/ suivi du numéro DOI.",
         "displayName": "Publication"
       }
     }

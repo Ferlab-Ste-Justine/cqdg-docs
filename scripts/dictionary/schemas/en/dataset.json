@@ -32,14 +32,14 @@
     {
       "name": "dataset_description",
       "valueType": "string",
-      "description": "Brief description of the Dataset ",
+      "description": "Brief description of the Dataset",
       "restrictions": {
         "required": true
       },
       "meta": {
         "core": true,
         "notes": "Provide information on the goal, experimental strategy and selection criteria for this dataset",
-        "displayName": "Brief description of the Dataset "
+        "displayName": "Brief description of the Dataset"
       }
     }
   ]
