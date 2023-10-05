@@ -17,6 +17,6 @@ Il est nécessaire de s’inscrire comme utilisateur du CQDG pour avoir accès �
 ## Comment créer un compte d’utilisateur
 
 - Rendez-vous sur la page principale du [portail de données](https://plateforme.cqdg.ca). 
-- Cliquez sur **Créer un compte**.
-- Complétez le Formulaire de renseignements de l'utilisateur. 
+- Cliquez sur **créer un compte**.
+- Complétez le formulaire de renseignements de l'utilisateur. 
 - Entrez et validez votre mot de passe. 
