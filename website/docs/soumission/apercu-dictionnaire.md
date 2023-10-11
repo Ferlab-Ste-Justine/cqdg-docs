@@ -10,7 +10,7 @@ Le [dictionnaire de données](/dictionnaire) présente les détails du modèle d
 
 ## Comprendre le dictionnaire de données
 
-Le [visionneur du dictionnaire](https://docs.cqdg.ca/dictionnaire/) présente l'ensemble des renseignements cliniques qui peut accompagner les données moléculaires hébergées au CQDG.
+Le [visionneur du dictionnaire](/dictionnaire) présente l'ensemble des renseignements cliniques qui peut accompagner les données moléculaires hébergées au CQDG.
 
 La liste des champs peut être filtrée de manière à identifier les **champs nécessaires** pour la soumission.
 

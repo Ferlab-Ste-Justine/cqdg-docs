@@ -11,11 +11,11 @@ platform_key: DOCS_SUBMITTING_CLINICAL_DATA
 
 ## How to Submit your Clinical Data
 
-Before beginning the procedure for submitting your data, please [contact us](https://plateforme.cqdg.ca/contact) to tell us about your needs regarding the storage and sharing of your data. Please note that clinical data must be submitted following the data model described in the [data dictionary](https://docs.cqdg.ca/dictionnaire/). We recommend that you review the latest version of the data dictionary to familiarize yourself with the specific formats and restrictions for each data field before beginning the submission process.
+Before beginning the procedure for submitting your data, please [contact us](https://portail.cqdg.ca/contact) to tell us about your needs regarding the storage and sharing of your data. Please note that clinical data must be submitted following the data model described in the [data dictionary](https://docs.cqdg.ca/dictionnaire/). We recommend that you review the latest version of the data dictionary to familiarize yourself with the specific formats and restrictions for each data field before beginning the submission process.
 
 ### Step 1: Download a SFTP Client
 
-[Contact-us](https://plateforme.cqdg.ca/contact) to create your SFTP account allowing you to securely transfer your data. 
+[Contact-us](https://portail.cqdg.ca/contact) to create your SFTP account allowing you to securely transfer your data. 
 
 ### Step 2: Register your Samples
 
@@ -33,11 +33,11 @@ Before beginning the procedure for submitting your data, please [contact us](htt
 4. Upload your files (including your _registration_ file) using your SFTP account. 
 
 
-[Contact-us](https://plateforme.cqdg.ca/contact) if you need assistance in registering your samples or submitting your clinical data.
+[Contact-us](https://portail.cqdg.ca/contact) if you need assistance in registering your samples or submitting your clinical data.
 
 ## How to Submit your Molecular Data
 
-> Please note that the tools for submitting molecular data are under development. [Contact us](https://plateforme.cqdg.ca/contact) to plan the transfer of your molecular data to the CQDG.
+> Please note that the tools for submitting molecular data are under development. [Contact us](https://portail.cqdg.ca/contact) to plan the transfer of your molecular data to the CQDG.
 
 
 ## Processing of Submitted Molecular Data

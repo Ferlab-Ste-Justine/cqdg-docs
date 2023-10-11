@@ -11,17 +11,17 @@ platform_key: DOCS_SUBMITTING_CLINICAL_DATA
 
 ## Comment soumettre vos données cliniques
 
-Avant de débuter la procédure de soumission de vos données, veuillez [nous contacter](https://plateforme.cqdg.ca/contact) pour nous faire part de vos besoins concernant l'entreposage et le partage de vos données. Veuillez prendre note que les données cliniques doivent être soumises en suivant le modèle de données décrit dans le [dictionnaire de données](https://docs.cqdg.ca/dictionnaire/). Nous vous recommandons de prendre connaissance de la dernière version du dictionnaire de données pour vous familiariser avec les formats et restrictions spécifiques pour chaque champ de donnée avant de débuter le processus de soumission. 
+Avant de débuter la procédure de soumission de vos données, veuillez [nous contacter](https://portail.cqdg.ca/contact) pour nous faire part de vos besoins concernant l'entreposage et le partage de vos données. Veuillez prendre note que les données cliniques doivent être soumises en suivant le modèle de données décrit dans le [dictionnaire de données](https://docs.cqdg.ca/dictionnaire/). Nous vous recommandons de prendre connaissance de la dernière version du dictionnaire de données pour vous familiariser avec les formats et restrictions spécifiques pour chaque champ de donnée avant de débuter le processus de soumission. 
 
 ### Étape 1: Télécharger un client SFTP
 
-[Contactez-nous](https://plateforme.cqdg.ca/contact) pour créer un compte SFTP pour vous permettre de téléverser vos fichiers en toute sécurité. 
+[Contactez-nous](https://portail.cqdg.ca/contact) pour créer un compte SFTP pour vous permettre de téléverser vos fichiers en toute sécurité. 
 
 
 ### Étape 2: Inscription de vos échantillons
 
 1. Accédez à votre compte à partir de la page principale du portail.
-2. Cliquez **Modèle de fichier** dans le [dictionnaire de données](https://docs.cqdg.ca/dictionnaire/) pour télécharger le dossier comportant l'ensemble des gabarits pour la soumission de vos données. 
+2. Cliquez **Modèle de fichier** dans le [dictionnaire de données](/dictionnaire) pour télécharger le dossier comportant l'ensemble des gabarits pour la soumission de vos données. 
 3. Ouvrez le fichier **sample_registration** en utilisant Excel et entrez les données en lien avec les échantillons que vous souhaitez enregistrer dans le CQDG.
 3. Nommer votre fichier en débutant par _registration_ et sauvegardez-le en format .tsv. 
 
@@ -33,12 +33,12 @@ Avant de débuter la procédure de soumission de vos données, veuillez [nous co
 3. Nommez vos fichiers en débutant par le nom de la table de données cliniques (ex. _participant_, _biospecimen_, etc.) et sauvegardez-les en format .tsv. 
 4. Téléversez vos fichiers (incluant votre fichier _registration_) en utilisant votre compte SFTP.  
 
-[Contactez-nous](https://plateforme.cqdg.ca/contact) si vous avez besoin d'assistance pour l'inscription de vos échantillons ou pour la soumission de vos données cliniques.
+[Contactez-nous](https://portail.cqdg.ca/contact) si vous avez besoin d'assistance pour l'inscription de vos échantillons ou pour la soumission de vos données cliniques.
 
 
 ## Comment soumettre vos données moléculaires
 
-> Veuillez noter que les outils pour la soumission des données moléculaires sont en développement. [Contactez-nous](https://plateforme.cqdg.ca/contact) pour planifier le transfer de vos données moléculaires vers le CQDG.
+> Veuillez noter que les outils pour la soumission des données moléculaires sont en développement. [Contactez-nous](https://portail.cqdg.ca/contact) pour planifier le transfer de vos données moléculaires vers le CQDG.
 
 
 ## Traitement des données moléculaires soumises

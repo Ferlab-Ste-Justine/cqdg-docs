@@ -16,7 +16,7 @@ Having a CQDG User Account is required to have access to its tools and applicati
 
 ## How to create your User Account
 
-- Go to the [portal's homepage](https://plateforme.cqdg.ca).
+- Go to the [portal's homepage](https://portail.cqdg.ca).
 - Click **Create an account**.
 - Fill out the User Information Form.
 - Enter and confirm your password.
