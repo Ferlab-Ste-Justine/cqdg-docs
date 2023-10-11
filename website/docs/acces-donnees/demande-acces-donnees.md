@@ -11,11 +11,11 @@ Le CQDG héberge les données cliniques et génomiques de différentes études p
 
 Si vous souhaitez accéder à ces données à des fins de recherche, vous devez :
 
-1. Créer un compte d’utilisateur sur le portail de données. Si vous avez déjà un compte d'utilisateur, vous pouvez accéder au portail de données pour débuter le processus de demande d'accès. 
-2. Utiliser les filtres pour sélectionner l'ensemble de donneurs ou de fichiers de données moléculaires nécessaire pour votre recherche à partir du répertoire des fichiers. 
-3. Sauvegarder l'ensemble de donneurs ou de fichiers de données moléculaires choisi pour votre recherche.
+1. Créer un compte d’utilisateur sur [le portail de données](https://portail.cqdg.ca/login?redirect_path=/variants). Si vous avez déjà un compte d'utilisateur, vous pouvez accéder au portail de données pour débuter le processus de demande d'accès. 
+2. Utiliser les filtres pour sélectionner l'ensemble de [participants](https://portail.cqdg.ca/data-exploration/participants) ou de [fichiers de données moléculaires](https://portail.cqdg.ca/data-exploration/datafiles) nécessaire pour votre recherche à partir du répertoire des fichiers. 
+3. Enregistrer l'ensemble de participants ou de fichiers de données moléculaires choisi pour votre recherche à l'aide du bouton situé  au coin supérieur droit du tableau.
 4. Télécharger l'ensemble complet de tous les fichiers que vous demandez pour chaque étude ainsi que les instructions pour faire la demande d'accès aux données. 
-5. Envoyer vos ensembles de fichiers au bureau d'accès des études respectives pour débuter la procédure d'accès. 
+5. Envoyer vos ensembles de fichiers au bureau d'accès ou à la personne désignée des études respectives pour débuter la procédure d'accès. 
 
 
    > **IMPORTANT: Vous devrez suivre les procédures mises en place par les études partenaires pour obtenir l'accès aux données. Ces procédures peuvent varier d'une étude à l'autre. Il est de la responsabilité du demandeur de prendre connaissance des politiques d'accès et d'utilisation des données.** 
