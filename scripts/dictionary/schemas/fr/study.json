@@ -188,10 +188,9 @@
       "valueType": "string",
       "description": "Digital Object Identifier de la publication décrivant la méthodologie et les critères de sélection de l'étude.",
       "restrictions": {
-        "required": true
+        "required": false
       },
       "meta": {
-        "core": true,
         "notes": "Veuillez fournir un hyperlien DOI avec le format suivant, https://doi.org/ suivi du numéro DOI.",
         "displayName": "Publication"
       }
