@@ -1,1 +1,0 @@
-{"schemas":{"Diagnosis":{"updated":{"age_at_diagnosis":{"meta":{"min":{"left":null,"right":0},"max":{"left":null,"right":100}},"restrictions":{"range":{"left":{"min":0,"max":100},"right":null}}}},"created":{},"deleted":{}}}}
