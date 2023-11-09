@@ -29,7 +29,7 @@ const Home = () => (
                 <div className={styles['pages__splash__content__link']}>
                     <a
                         className={styles['pages__splash__content__link__text']}
-                        href="https://portal.qa.cqdg.ferlab.bio/"
+                        href="https://portail.qa.cqdg.ferlab.bio/"
                         target="_blank"
                     >
                         {t('landing.header.to_portal')}
