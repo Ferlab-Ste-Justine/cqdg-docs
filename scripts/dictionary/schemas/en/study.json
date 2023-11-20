@@ -122,7 +122,8 @@
         "core": true,
         "displayName": "Data Access Limitations",
         "notes": "Refer to the Data Use Ontology https://github.com/EBISPOT/DUO"
-      }
+      },
+      "isArray": true
     },
     {
       "name": "access_requirements",
@@ -130,7 +131,6 @@
       "valueType": "string",
       "restrictions": {
         "required": true,
-        "script": "#/script/study/accessRequirement",
         "codeList": [
           "DUO:0000012",
           "DUO:0000015",
@@ -157,7 +157,8 @@
         "displayName": "Data Use Requirements",
         "notes": "Refer to the Data Use Ontology for the full description https://github.com/EBISPOT/DUO",
         "examples": "DUO:0000021;DUO:0000025"
-      }
+      },
+      "isArray": true
     },
     {
       "name": "data_source",
