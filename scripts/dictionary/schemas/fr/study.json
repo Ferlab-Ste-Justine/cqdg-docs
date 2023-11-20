@@ -116,7 +116,8 @@
           "DUO:0000007",
           "DUO:0000011",
           "DUO:0000042"
-        ]
+        ],
+        "isArray": true
       },
       "meta": {
         "core": true,
@@ -130,7 +131,6 @@
       "valueType": "string",
       "restrictions": {
         "required": true,
-        "script": "#/script/study/accessRequirement",
         "codeList": [
           "DUO:0000012",
           "DUO:0000015",
@@ -157,7 +157,8 @@
         "displayName": "Conditions d'utilisation",
         "notes": "Référez-vous aux codes du Data Use Ontology pour obtenir la définition des codes https://github.com/EBISPOT/DUO",
         "examples": "DUO:0000021;DUO:0000025"
-      }
+      },
+      "isArray": true
     },
     {
       "name": "data_source",
