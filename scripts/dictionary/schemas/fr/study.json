@@ -116,9 +116,9 @@
           "DUO:0000007",
           "DUO:0000011",
           "DUO:0000042"
-        ],
-        "isArray": true
+        ]
       },
+      "isArray": true,
       "meta": {
         "core": true,
         "displayName": "Restrictions pour l'accès",
