@@ -71,7 +71,7 @@ function Navbar() {
                             <div className={styles['theme-navbar__links__right-item__text']}>
                                 <a
                                     className={styles['theme-navbar__links__right-item__text']}
-                                    href="https://portal.qa.cqdg.ferlab.bio/"
+                                    href="https://portail.qa.juno.cqdg.ferlab.bio/"
                                     target="_blank"
                                 >
                                     {t('portal')}
