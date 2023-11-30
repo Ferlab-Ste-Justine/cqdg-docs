@@ -158,7 +158,8 @@
         "displayName": "Conditions d'utilisation",
         "notes": "Référez-vous aux codes du Data Use Ontology pour obtenir la définition des codes https://github.com/EBISPOT/DUO",
         "examples": "DUO:0000021;DUO:0000025"
-      }
+      },
+      "isArray": true
     },
     {
       "name": "data_source",
