@@ -118,6 +118,7 @@
           "DUO:0000042"
         ]
       },
+      "isArray": true,
       "meta": {
         "core": true,
         "displayName": "Data Access Limitations",
@@ -152,6 +153,7 @@
           "Biospecimen Access"
         ]
       },
+      "isArray": true,
       "meta": {
         "core": true,
         "displayName": "Data Use Requirements",

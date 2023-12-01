@@ -152,6 +152,7 @@
           "Biospecimen Access"
         ]
       },
+      "isArray": true,
       "meta": {
         "core": true,
         "displayName": "Conditions d'utilisation",

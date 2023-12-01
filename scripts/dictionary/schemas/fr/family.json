@@ -74,7 +74,7 @@
       "restrictions": {
         "required": true,
         "codeList": [
-          "Is the proband",
+          "Proband",
           "Mother",
           "Father",
           "Brother",
