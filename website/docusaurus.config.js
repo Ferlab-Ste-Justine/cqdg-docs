@@ -4,7 +4,7 @@ module.exports = {
     baseUrl: '/',
     customFields: {
         GATEWAY_API_ROOT: '',
-        PLATFORM_UI_ROOT: 'https://portail.qa.juno.cqdg.ferlab.bio/',
+        PLATFORM_UI_ROOT: process.env.CQDG_PORTAL_URL || 'https://portail.cqdg.ca',
     },
     favicon: 'favicon.ico',
     i18n: {

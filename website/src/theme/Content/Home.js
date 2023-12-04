@@ -29,7 +29,7 @@ const Home = () => (
                 <div className={styles['pages__splash__content__link']}>
                     <a
                         className={styles['pages__splash__content__link__text']}
-                        href="https://portail.qa.juno.cqdg.ferlab.bio/"
+                        href={process.env.CQDG_PORTAL_URL || 'https://portail.cqdg.ca'}
                         target="_blank"
                     >
                         {t('landing.header.to_portal')}
