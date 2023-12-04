@@ -15,11 +15,14 @@ export const setLocale = (locale) => {
 export const getLocale = () => {
     let locale = Cookies.get(COOKIE_LOCALE);
 
-    // check if /en/ is present in url to set locale
-    const url = window.location.pathname;
-    if (url.includes('/en/')) {
-        locale = 'en';
-        setLocale(locale);
+    //ssr issue
+    if (typeof window !== 'undefined') {
+        // check if /en/ is present in url to set locale
+        const url = window.location.pathname;
+        if (url.includes('/en/')) {
+            locale = 'en';
+            setLocale(locale);
+        }
     }
 
     if (!isValidLocale(locale)) {
