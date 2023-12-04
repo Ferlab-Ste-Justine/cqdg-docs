@@ -11,11 +11,23 @@ const isValidLocale = (locale) => supportedLanguages.find((l) => l === locale) !
 export const setLocale = (locale) => {
     Cookies.set(COOKIE_LOCALE, locale);
 };
+
 export const getLocale = () => {
     let locale = Cookies.get(COOKIE_LOCALE);
+
+    //ssr issue
+    if (typeof window !== 'undefined') {
+        // check if /en/ is present in url to set locale
+        const url = window.location.pathname;
+        if (url.includes('/en/')) {
+            locale = 'en';
+            setLocale(locale);
+        }
+    }
+
     if (!isValidLocale(locale)) {
         locale = 'fr';
-        Cookies.set(COOKIE_LOCALE, locale);
+        setLocale(locale);
     }
 
     return locale;

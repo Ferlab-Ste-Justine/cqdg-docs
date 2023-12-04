@@ -1,5 +1,5 @@
 const sidebarFR = {
-    "Demande D'accès Aux Données": [
+    "Demande d'accès aux données": [
         'acces-donnees/demande-acces-donnees',
         'acces-donnees/telechargement-donnees',
         'acces-donnees/profil-utilisateur',
