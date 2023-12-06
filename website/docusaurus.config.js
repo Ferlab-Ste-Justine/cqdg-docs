@@ -1,5 +1,5 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
-const path = require('path');
+
 module.exports = {
     baseUrl: '/',
     customFields: {
