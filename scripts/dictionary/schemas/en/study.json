@@ -94,8 +94,9 @@
       "restrictions": {
         "required": true,
         "codeList": [
-          "Pediatric",
           "Adult",
+          "Fetal",
+          "Pediatric",
           "Pediatric and Adult"
         ]
       },
