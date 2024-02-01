@@ -185,7 +185,7 @@ const DataDictionary = () => {
     return (
         <ThemeProvider theme={mergedTheme}>
             <div className={styles.modalCont} id="modalCont" ref={modalPortalRef} />
-            <Layout permalink="dictionary">
+            <Layout permalink="/" title="CQDG Dict">
                 <StyleWrapper>
                     <div className={styles.mainContainer}>
                         <div className={styles.dict}>

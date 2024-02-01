@@ -20,11 +20,6 @@
 
 /* Search Banner */
 
-.homeSplashFade {
-  background-image: url('/img/galaxy-splash.jpg');
-  background-position: center;
-  background-size: cover;
-}
 .homeContainer .homeWrapper {
   padding: 0;
 }

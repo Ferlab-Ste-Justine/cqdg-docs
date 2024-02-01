@@ -41,24 +41,6 @@ const Home = () => (
             <PillsBackground height="489px" />
         </div>
         <div className={styles['pages__blocs']}>
-            <BlocItem href={translate('navbar.submit.link')} icon="Cloud">
-                <div className={styles['pages__blocs__item']}>
-                    <h2 className={styles['pages__blocs__item__title']}>{t('landing.content.items.submit.title')}</h2>
-                    <p className={styles['pages__blocs__item__description']}>
-                        {t('landing.content.items.submit.subtitle')}
-                    </p>
-                </div>
-            </BlocItem>
-
-            <BlocItem href={translate('navbar.access.link')} icon="Genetic">
-                <div className={styles['pages__blocs__item']}>
-                    <h2 className={styles['pages__blocs__item__title']}>{t('landing.content.items.access.title')}</h2>
-                    <p className={styles['pages__blocs__item__description']}>
-                        {t('landing.content.items.access.subtitle')}
-                    </p>
-                </div>
-            </BlocItem>
-
             <BlocItem href={translate('navbar.dictionary.link')} icon="Literature">
                 <div className={styles['pages__blocs__item']}>
                     <h2 className={styles['pages__blocs__item__title']}>

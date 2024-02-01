@@ -1,12 +1,7 @@
 import React from 'react';
-import Layout from '@theme/Layout';
 
-import Home from '../theme/Content/Home';
+import DataDictionary from './dictionnaire';
 
-const Index = () => (
-    <Layout permalink="/" title="CQDG Docs">
-        <Home />
-    </Layout>
-);
+const Index = () => <DataDictionary />;
 
 export default Index;

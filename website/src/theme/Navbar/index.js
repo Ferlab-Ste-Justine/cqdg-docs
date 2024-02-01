@@ -15,30 +15,7 @@ function Navbar() {
 
     const locale = useContext(TranslationContext);
 
-    const links = [
-        {
-            action: () => {
-                setSelectedIndex(0);
-            },
-            href: translate('navbar.submit.link'),
-            title: t('submit'),
-        },
-        {
-            action: () => {
-                setSelectedIndex(1);
-            },
-            href: translate('navbar.access.link'),
-            title: t('access'),
-        },
-
-        {
-            action: () => {
-                setSelectedIndex(2);
-            },
-            href: translate('navbar.dictionary.link'),
-            title: t('dictionary'),
-        },
-    ];
+    const links = [];
 
     const switchLanguage = () => {
         const newLang = locale === 'fr' ? 'en' : 'fr';
@@ -52,7 +29,7 @@ function Navbar() {
                 <nav className={styles['theme-navbar']}>
                     <Helmet htmlAttributes={{ lang: locale }}></Helmet>
                     <a href={translate('navbar.home.link')}>
-                        <img alt="CQDG" src={'/img/navbar/logo.svg'}></img>
+                        <img alt="CQDG" src={'/img/logos/cqdg.svg'}></img>
                     </a>
                     <div className={styles['theme-navbar__links']}>
                         {links.map((link, index) => (
@@ -66,7 +43,6 @@ function Navbar() {
                                 <a href={link.href}>{link.title}</a>
                             </div>
                         ))}
-                        <div className={styles['theme-navbar__links__divider']}></div>
                         <div className={styles['theme-navbar__links__right-item']}>
                             <div className={styles['theme-navbar__links__right-item__text']}>
                                 <a
@@ -87,6 +63,18 @@ function Navbar() {
                                     target="_blank"
                                 >
                                     {t('website')}
+                                </a>
+                            </div>
+                            <OpenNew />
+                        </div>
+                        <div className={styles['theme-navbar__links__right-item']}>
+                            <div className={styles['theme-navbar__links__right-item__text']}>
+                                <a
+                                    className={styles['theme-navbar__links__right-item__text']}
+                                    href={process.env.CQDG_DOCS_URL}
+                                    target="_blank"
+                                >
+                                    {t('documentation')}
                                 </a>
                             </div>
                             <OpenNew />
