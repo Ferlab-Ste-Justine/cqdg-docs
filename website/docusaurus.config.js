@@ -26,17 +26,13 @@ module.exports = {
         [
             '@docusaurus/preset-classic',
             {
-                docs: {
-                    routeBasePath: '/',
-                    sidebarPath: require.resolve('./sidebars.js'),
-                },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'), // Don't use Array, put more CSS in 'stylesheets' above
                 },
             },
         ],
     ],
-    projectName: 'cqdg-documentation',
+    projectName: 'cqdg-dictionary',
     stylesheets: ['https://fonts.googleapis.com/css?family=Source+Code+Pro|Work+Sans&display=swap'],
     tagline: 'CQDG Docs',
     themeConfig: {
@@ -56,5 +52,5 @@ module.exports = {
         },
     },
     title: 'CQDG Docs',
-    url: 'https://docs.qa.cqdg.ferlab.bio',
+    url: process.env.CQDG_DOCS_URL || 'https://docs.cqdg.ca',
 };
