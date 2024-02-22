@@ -51,8 +51,8 @@
       }
     },
     {
-      "description": "Gender of the participant",
-      "name": "gender",
+      "description": "Sex of the participant",
+      "name": "sex",
       "valueType": "string",
       "restrictions": {
         "required": true,
@@ -66,7 +66,7 @@
       "meta": {
         "core": true,
         "notes": "Data from administrative health records or self-reported",
-        "displayName": "Gender"
+        "displayName": "Sex"
       }
     },
     {
