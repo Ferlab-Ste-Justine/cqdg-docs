@@ -51,7 +51,7 @@
       }
     },
     {
-      "description": "Sex du participant",
+      "description": "Sexe du participant",
       "name": "sex",
       "valueType": "string",
       "restrictions": {

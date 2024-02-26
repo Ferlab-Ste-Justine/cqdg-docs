@@ -32,6 +32,7 @@ const constants = require('./constants');
 
 const apiRoot = 'https://schema.qa.juno.cqdg.ferlab.bio';
 //const apiRoot = 'http://localhost:3500';
+// const apiRoot = 'https://schema.cqdg.ca';
 
 const defaultVersion = '0.0';
 
