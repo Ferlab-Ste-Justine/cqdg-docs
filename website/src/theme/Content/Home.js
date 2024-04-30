@@ -6,6 +6,7 @@ import { Search, SearchButton } from '../../components/LandingSearch';
 import OpenNew from '../../components/OpenNew';
 import PillsBackground from '../../components/PillsBackground';
 import { t, translate } from '../../components/Utils/translation';
+import { CQDG_PORTAL_URL } from '../../utils';
 
 import styles from './styles.module.scss';
 
@@ -27,11 +28,7 @@ const Home = () => (
                 </BrowserOnly>
 
                 <div className={styles['pages__splash__content__link']}>
-                    <a
-                        className={styles['pages__splash__content__link__text']}
-                        href={process.env.CQDG_PORTAL_URL || 'https://portail.cqdg.ca'}
-                        target="_blank"
-                    >
+                    <a className={styles['pages__splash__content__link__text']} href={CQDG_PORTAL_URL} target="_blank">
                         {t('landing.header.to_portal')}
                     </a>
 

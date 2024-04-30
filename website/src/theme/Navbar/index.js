@@ -6,6 +6,7 @@ import { setLocale } from '../../components/IntlProvider/TranslationContextProvi
 import TranslationContext from '../../components/IntlProvider/TranslationContextProvider/TranslationContext';
 import OpenNew from '../../components/OpenNew';
 import { t, translate, urlTranslate } from '../../components/Utils/translation';
+import { CQDG_PORTAL_URL } from '../../utils';
 
 import styles from './header.module.scss';
 
@@ -47,7 +48,7 @@ function Navbar() {
                             <div className={styles['theme-navbar__links__right-item__text']}>
                                 <a
                                     className={styles['theme-navbar__links__right-item__text']}
-                                    href={process.env.CQDG_PORTAL_URL}
+                                    href={CQDG_PORTAL_URL}
                                     target="_blank"
                                 >
                                     {t('portal')}
