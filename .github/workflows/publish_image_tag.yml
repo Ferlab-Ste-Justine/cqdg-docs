@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set the Prod configuration file
-      run: mv website/.env.prod .env
+      run: mv website/.env.prod website/.env
     - name: Push the image on the registry
       uses: Ferlab-Ste-Justine/action-push-image@v2
       with:
